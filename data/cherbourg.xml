@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_CHERBOURG.53.2026"><id>NW.AVURNAV_CHERBOURG.53.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV CHERBOURG</nameOfSeries><productionAgency>COMAR MANCHE</productionAgency><warningNumber>53</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-20T07:22:43.211138Z</publicationDate><generalArea><locationName><text>ANTIFER</text></locationName></generalArea><locality><locationName><text>PARC EOLIEN CENTRE MANCHE</text></locationName></locality><warningHazardTypeGeneral>SCIENTIFIC_INSTRUMENTS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_CHERBOURG.53.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_CHERBOURG.53.2026.1"><id>NW.AVURNAV_CHERBOURG.53.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        -74361.41984990674,6439034.194113427 -63062.49153438948,6441745.467894406 -53043.73736299486,6413867.242029836 -66550.50224591205,6402977.430462382 -74361.41984990674,6403034.859246328 -74361.41984990674,6407917.749118549 -74120.22761985466,6407946.480444966 -73916.14188673366,6408061.406738865 -73730.6094020782,6408233.799144525 -73637.84315975047,6408434.928114656 
+        -73600.73666281938,6408693.529621231 -73600.73666281938,6420971.94766192 -74361.41984990674,6420971.94766192 -74361.41984990674,6439034.194113427 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>22:00:00</timeOfDayStart><timeOfDayEnd>21:59:00</timeOfDayEnd><dateStart><date>2026-05-25</date></dateStart><dateEnd><date>2026-08-26</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_BUOY_APPARATUS</warningHazardTypeDetails><information>travaux géophysiques:
+investigation UXO
+acquisition sismique.
+zone délimitée par : 
+49-57.49N 000-40.08W
+49-58.43N 000-33.99W
+49-48.75N 000-28.59W
+49-44.96N 000-35.87W
+49-44.98N 000-40.08W
+49-46.68N 000-40.08W
+49-46.69N 000-39.95W
+49-46.73N 000-39.84W
+49-46.79N 000-39.74W
+49-46.86N 000-39.69W
+49-46.95N 000-39.67W
+49-51.22N 000-39.67W
+49-51.22N 000-40.08W
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_CHERBOURG.53.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_CHERBOURG.55.2026"><id>NW.AVURNAV_CHERBOURG.55.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV CHERBOURG</nameOfSeries><productionAgency>COMAR MANCHE</productionAgency><warningNumber>55</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-26T12:49:39.787182Z</publicationDate><generalArea><locationName><text>TAMISE</text></locationName></generalArea><locality><locationName><text>DST MANCHE EST</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_CHERBOURG.55.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_CHERBOURG.55.2026.1"><id>NW.AVURNAV_CHERBOURG.55.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    227648.35867224,6665339.1305382 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><warningHazardTypeDetails>AIS_TRANSMITTER_OUT_OF_SERVICE</warningHazardTypeDetails><warningHazardTypeDetails>LIGHT_BUOY_LIGHT_UNLIT</warningHazardTypeDetails><warningHazardTypeDetails>BUOY_DAMAGED</warningHazardTypeDetails><information>BOUÉE SANDETTIE EST
+51-14.90N 002-02.70E
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_CHERBOURG.55.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_CHERBOURG.43.2026"><id>NW.AVURNAV_CHERBOURG.43.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV CHERBOURG</nameOfSeries><productionAgency>COMAR MANCHE</productionAgency><warningNumber>43</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-04-14T07:56:50.264081Z</publicationDate><generalArea><locationName><text>ANTIFER</text></locationName></generalArea><locality><locationName><text>LE HAVRE ANTIFER</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_CHERBOURG.43.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_CHERBOURG.43.2026.1"><id>NW.AVURNAV_CHERBOURG.43.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -32598.057553963612,6405590.839784099 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>CHENAL D'ANTIFER - BOUÉE A5
+Marque : Cardinale Ouest
+Fonction principale : Atterrissage
+49-45.87N 000-17.57W
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_CHERBOURG.43.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_CHERBOURG.52.2025"><id>NW.AVURNAV_CHERBOURG.52.2025</id><messageSeriesIdentifier><nameOfSeries>AVURNAV CHERBOURG</nameOfSeries><productionAgency>COMAR MANCHE</productionAgency><warningNumber>52</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-08-08T07:12:55.515678Z</publicationDate><generalArea><locationName><text>ANTIFER</text></locationName></generalArea><locality><locationName><text>PARC EOLIEN CENTRE MANCHE</text></locationName></locality><warningHazardTypeGeneral>SCIENTIFIC_INSTRUMENTS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_CHERBOURG.52.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_CHERBOURG.52.2025.1"><id>NW.AVURNAV_CHERBOURG.52.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -100744.1391679126,6427420.316349822 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_BUOY_APPARATUS</warningHazardTypeDetails><information>ANTIFER - PARC EOLIEN CENTRE MANCHE
+ANNULE AVURNAV 038/25
+CONFORMEMENT A L'ARRETE PREFECTORAL NUMERO 52/2025/PREMAR MANCHE/AEM/NP, LES NAVIGATEURS SONT INFORMES QUE LES NAVIRES LE ROZEL ET LE SUROIT EFFECTUERONT L'INSTALLATION D'UNE BOUEE METEO-OCEANIQUE DANS LA ZONE A COMPTER DU 01 JUILLET 2025 JUSQU’AU 31 JUILLET 2026.
+POSITION (WGS 84): 49-53,46N 000-54,30W
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_CHERBOURG.52.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_CHERBOURG.8.2026"><id>NW.AVURNAV_CHERBOURG.8.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV CHERBOURG</nameOfSeries><productionAgency>COMAR MANCHE</productionAgency><warningNumber>8</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-01-15T08:50:34.329497Z</publicationDate><generalArea><locationName><text>ANTIFER</text></locationName></generalArea><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_CHERBOURG.8.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_CHERBOURG.8.2026.1"><id>NW.AVURNAV_CHERBOURG.8.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    51819.22296426885,6499323.075941286 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBMERGED_FISH_NET</warningHazardTypeDetails><information>CHALUT COQUILLE + 300M DE CABLE
+50-18.32N 000-27.93E
+RECUPERATION PREVUE SAMEDI
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_CHERBOURG.8.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_CHERBOURG.56.2026"><id>NW.AVURNAV_CHERBOURG.56.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV CHERBOURG</nameOfSeries><productionAgency>COMAR MANCHE</productionAgency><warningNumber>56</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-01T06:30:04.660337Z</publicationDate><generalArea><locationName><text>TAMISE</text></locationName></generalArea><locality><locationName><text>LARGE DUNKERQUE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_CHERBOURG.56.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_CHERBOURG.56.2026.1"><id>NW.AVURNAV_CHERBOURG.56.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    254773.2079288721,6683885.357359652 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>MARINE_AIDS_TO_NAVIGATION_UNRELIABLE</warningHazardTypeDetails><information>cardinale sud Fairy S dysfonctionne.
+51-21.15N 002-17.32E
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_CHERBOURG.56.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_CHERBOURG.28.2026"><id>NW.AVURNAV_CHERBOURG.28.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV CHERBOURG</nameOfSeries><productionAgency>COMAR MANCHE</productionAgency><warningNumber>28</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-06T08:53:23.269862Z</publicationDate><generalArea><locationName><text>ANTIFER</text></locationName></generalArea><locality><locationName><text>LARGE CAYEUX-SUR-MER</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_CHERBOURG.28.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_CHERBOURG.28.2026.1"><id>NW.AVURNAV_CHERBOURG.28.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        165936.45407905,6477615.9495655 165363.16714717,6476469.37570175 150325.40993416,6485641.96661175 147326.67829051,6492168.61783616 133611.89092028,6501341.20874616 120161.69751861,6503457.96049462 120470.39048192,6504516.33636884 134433.4512306,6502345.28097093 148578.18478783,6492496.09440026 151993.60775433,6486006.46126957 
+        165936.45407905,6477615.9495655 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><dateStart><date>2026-03-05</date></dateStart><dateEnd/></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>CABLE_LAYING_OPERATION</warningHazardTypeDetails><information>Jusqu'à nouvel avis
+Ne pas pêcher, chaluter, draguer, mouiller et plonger dans cette zone
+zone délimitée par : 
+50-10.84N 001-29.44E
+50-10.44N 001-29.13E
+50-13.61N 001-21.02E
+50-15.86N 001-19.41E
+50-19.01N 001-12.02E
+50-19.74N 001-04.77E
+50-20.11N 001-04.93E
+50-19.36N 001-12.46E
+50-15.97N 001-20.08E
+50-13.73N 001-21.92E</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_CHERBOURG.28.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet></S124:ExchangeSet>

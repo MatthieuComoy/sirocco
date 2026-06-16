@@ -3,12 +3,12 @@
 import { state } from './state.js';
 import { translations, translateUI } from './i18n.js';
 import { calculateHaversineDistance, getPointOfSail, getSimulatedDepth } from './utils.js';
-import { renderZoneList, checkDangerZoneProximity } from './dangerZones.js';
 import { updateAnchorLocation, checkAnchorAlarm, deactivateAnchorAlarm } from './anchorAlarm.js';
 import { toggleSimulator, startRealGPS, stopRealGPS } from './gpsSimulator.js';
 import { updateWeatherAndTides, updateBoatSails, onMapMove } from './weatherTides.js';
-import { fetchHarborsInViewport, clearHarborMarkers, onMapMoveHarbors, renderHarborListAndMarkers } from './harbors.js';
+import { fetchHarborsInViewport, clearHarborMarkers, onMapMoveHarbors, renderHarborListAndMarkers, loadHarborsFromLocalStorage } from './harbors.js';
 import { startRouteTracking, stopRouteTracking, clearHistory, renderSavedTracks } from './tracking.js';
+import { initPingWarnings } from './pingWarnings.js';
 
 // Update recenter button styling based on auto-centering state
 export function updateRecenterButtonUI() {
@@ -46,44 +46,6 @@ export function initMap() {
   });
   state.openseamap.addTo(state.map);
 
-  // Danger zone layer - color-coded
-  import('./dangerZones.js').then(({ dangerZoneGeoJSON }) => {
-    state.dangerZoneLayer = L.geoJSON(dangerZoneGeoJSON, {
-      style: function (feature) {
-        const type = feature.properties.type;
-        let color = '#ef4444'; // Firing zone
-        let fillOpacity = 0.25;
-        
-        if (type === 'military_restricted') color = '#f97316';
-        else if (type === 'nato_exercise') { color = '#a855f7'; fillOpacity = 0.15; }
-        else if (type === 'anchoring_prohibited') color = '#eab308';
-        else if (type === 'restricted_navigation') color = '#3b82f6';
-
-        return {
-          color: color,
-          weight: 2,
-          fillColor: color,
-          fillOpacity: fillOpacity
-        };
-      },
-      onEachFeature: function (feature, layer) {
-        const p = feature.properties;
-        const statusLabel = p.status === 'permanent' ? '🔴 Permanent' : '🟡 Périodique';
-        
-        const popupContent = `
-          <div style="font-family: var(--font-family, sans-serif); line-height: 1.4; color: var(--text-color);">
-            <strong style="color: #ef4444; font-size: 0.95rem;">⚠️ ${p.name}</strong><br>
-            <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 600; color: var(--text-muted);">${p.authority}</span>
-            <hr style="margin: 4px 0; border-color: var(--border-color);">
-            <p style="font-size: 0.8rem; margin: 4px 0;">${p.description}</p>
-            <div style="font-size: 0.75rem; font-weight: 700; margin-top: 4px;">Statut : ${statusLabel}</div>
-          </div>
-        `;
-        layer.bindPopup(popupContent, { maxWidth: 220 });
-      }
-    }).addTo(state.map);
-  });
-
   // AVURNAV Warnings Overlay via SHOM WMS service
   state.pingWmsLayer = L.tileLayer.wms('https://services.ping-info-nautique.fr/wms', {
     layers: 'avurnav_active_zones',
@@ -102,21 +64,24 @@ export function initMap() {
       <div class="boat-outer-ring">
         <svg id="boat-svg" class="boat-marker-svg" viewBox="0 0 100 100" style="transform: rotate(${state.currentHeading}deg);">
           <!-- Hull -->
-          <path class="boat-hull" d="M50,10 C62,35 65,70 50,90 C35,70 38,35 50,10 Z" />
+          <path class="boat-hull" d="M50,10 C62,32 64,65 62,85 L38,85 C36,65 38,32 50,10 Z" />
           <!-- Mast & Boom -->
           <line class="boat-mast" x1="50" y1="45" x2="50" y2="85" />
           <!-- Mainsail (Grand Voile) -->
-          <path id="boat-mainsail" class="boat-sail" d="M50,45 C50,45 28,65 50,80" />
+          <path id="boat-mainsail" class="boat-sail" d="M50,45 C50,45 28,65 50,80 Z" />
           <!-- Jib / Genoa (Foc) -->
-          <path id="boat-jib" class="boat-sail" d="M50,15 C50,15 32,32 50,43" />
+          <path id="boat-jib" class="boat-sail" d="M50,15 C50,15 32,32 50,43 Z" />
         </svg>
       </div>
     `,
-    iconSize: [44, 44],
-    iconAnchor: [22, 22]
+    iconSize: [52, 52],
+    iconAnchor: [26, 26]
   });
 
-  state.userMarker = L.marker([state.currentLat, state.currentLon], { icon: userIcon }).addTo(state.map);
+  state.userMarker = L.marker([state.currentLat, state.currentLon], {
+    icon: userIcon,
+    zIndexOffset: 10000
+  }).addTo(state.map);
 
   // Track drawing line
   state.trackLine = L.polyline([], { color: '#06b6d4', weight: 4, opacity: 0.85 }).addTo(state.map);
@@ -236,13 +201,6 @@ export function updatePosition(lat, lng, speedKts, headingDeg) {
       warningText = state.currentLang === 'fr' ? `⚠️ ÉCHOUEMENT PROCHE ! Sondeur: ${depth.toFixed(1)}m` : `⚠️ GROUNDING RISK! Depth: ${depth.toFixed(1)}m`;
     } else if (depth <= criticalDepth) {
       warningText = state.currentLang === 'fr' ? `⚠️ PROFONDEUR BASSE ! Sondeur: ${depth.toFixed(1)}m` : `⚠️ SHALLOW DEPTH! Depth: ${depth.toFixed(1)}m`;
-    }
-
-    if (!warningText) {
-      const prox = checkDangerZoneProximity(lat, lng);
-      if (prox.warningText) {
-        warningText = `⚠️ ${prox.warningText}`;
-      }
     }
 
     const banner = document.getElementById('danger-warning-banner');
@@ -446,6 +404,25 @@ export function saveBoatProfile(profile) {
   renderHarborListAndMarkers();
 }
 
+// Update online/offline UI and status
+export function updateOnlineStatus() {
+  const offlineBadge = document.getElementById('status-offline-badge');
+  if (offlineBadge) {
+    if (navigator.onLine) {
+      offlineBadge.style.display = 'none';
+    } else {
+      offlineBadge.style.display = 'inline-flex';
+    }
+  }
+  
+  if (navigator.onLine) {
+    if (state.lastFetchedLat !== null && state.lastFetchedLon !== null) {
+      updateWeatherAndTides(state.lastFetchedLat, state.lastFetchedLon, true);
+    }
+    fetchHarborsInViewport();
+  }
+}
+
 // Initializations & Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
   // Load local settings
@@ -463,11 +440,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // Load boat profile settings
   loadBoatProfile();
 
+  // Load persisted harbors cache
+  loadHarborsFromLocalStorage();
+
   // Init Map
   initMap();
   
+  // Init PING warnings
+  initPingWarnings();
+  
   // Set Language
   translateUI(cachedLang);
+
+  // Register connection status listeners
+  window.addEventListener('online', updateOnlineStatus);
+  window.addEventListener('offline', updateOnlineStatus);
+  updateOnlineStatus();
 
   // Render initial harbors on map and list
   fetchHarborsInViewport();
@@ -475,11 +463,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render history list
   renderSavedTracks();
 
+
   // Initial weather and tides fetch for current user position
   updateWeatherAndTides(state.currentLat, state.currentLon, true);
-
-  // Render danger zone list in sidebar
-  renderZoneList();
 
   // Mode Switcher Controls
   document.getElementById('mode-consultation-btn').addEventListener('click', () => {
@@ -593,38 +579,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (settingsModal) settingsModal.style.display = 'none';
   });
 
-  // PING AVURNAV button: open portal in new tab
-  const avurnavBtn = document.getElementById('show-avurnav-btn');
-  if (avurnavBtn) {
-    avurnavBtn.addEventListener('click', () => {
-      window.open('https://portail.ping-info-nautique.fr/avurnav-notice', '_blank', 'noopener,noreferrer');
-    });
-  }
-
   // Overlays Custom Controls
-  const layerDangers = document.getElementById('layer-dangers');
-  if (layerDangers) {
-    layerDangers.addEventListener('change', (e) => {
-      if (!state.dangerZoneLayer || !state.map) return;
-      if (e.target.checked) {
-        state.dangerZoneLayer.addTo(state.map);
-      } else {
-        state.map.removeLayer(state.dangerZoneLayer);
-      }
-    });
-  }
-
-  const layerAvurnav = document.getElementById('layer-avurnav');
-  if (layerAvurnav) {
-    layerAvurnav.addEventListener('change', (e) => {
-      if (!state.pingWmsLayer || !state.map) return;
-      if (e.target.checked) {
-        state.pingWmsLayer.addTo(state.map);
-      } else {
-        state.map.removeLayer(state.pingWmsLayer);
-      }
-    });
-  }
 
   const layerHarbors = document.getElementById('layer-harbors');
   if (layerHarbors) {

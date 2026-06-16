@@ -83,6 +83,12 @@
     </div>
     
     <div class="header-controls">
+      <!-- Connection Status Badge -->
+      <div id="status-offline-badge" class="compact-status-badge status-off" style="display: none;" title="Mode hors-ligne actif">
+        <span class="status-dot-off"></span>
+        <span data-i18n="offline_badge">HORS LIGNE</span>
+      </div>
+
       <!-- Status Indicators (Compact notifications shown only when active) -->
       <div id="status-track-badge" class="compact-status-badge status-rec" style="display: none;" title="Enregistrement en cours...">
         <span class="status-dot-rec"></span>
@@ -152,14 +158,30 @@
           <div class="card layers-selector">
             <div class="layer-section-title">Éléments de carte</div>
             <div class="layer-list-options">
+              <!-- Global toggle -->
               <label class="checkbox-container">
-                <input type="checkbox" id="layer-dangers" checked>
-                <span class="checkbox-label">Zones de Danger</span>
+                <input type="checkbox" id="layer-all-warnings" checked>
+                <span class="checkbox-label" style="font-weight: 700;">Alertes à la navigation</span>
               </label>
-              <label class="checkbox-container">
-                <input type="checkbox" id="layer-avurnav">
-                <span class="checkbox-label">AVURNAV PING (live)</span>
-              </label>
+              
+              <!-- Sub-toggles (indented) -->
+              <div class="sub-checkboxes" style="margin-left: 1rem; display: flex; flex-direction: column; gap: 0.35rem; margin-top: 0.2rem;">
+                <label class="checkbox-container" style="font-size: 0.75rem;">
+                  <input type="checkbox" id="layer-avurnav" checked>
+                  <span class="checkbox-label">AVURNAV / NAVAREA</span>
+                </label>
+                <label class="checkbox-container" style="font-size: 0.75rem;">
+                  <input type="checkbox" id="layer-avurnav-local" checked>
+                  <span class="checkbox-label">AVURNAV Local</span>
+                </label>
+                <label class="checkbox-container" style="font-size: 0.75rem;">
+                  <input type="checkbox" id="layer-avinav" checked>
+                  <span class="checkbox-label">AVINAV</span>
+                </label>
+              </div>
+
+              <hr style="margin: 0.5rem 0; border-color: rgba(255, 255, 255, 0.05);">
+
               <label class="checkbox-container">
                 <input type="checkbox" id="layer-harbors" checked>
                 <span class="checkbox-label" data-i18n="harbors_title">Ports de plaisance</span>
@@ -171,38 +193,6 @@
           <h3 data-i18n="harbors_title">Ports de plaisance</h3>
           <div id="harbors-list-container" class="history-list" style="margin-bottom: 1.25rem;">
             <!-- Populated by JS -->
-          </div>
-
-          <!-- Danger Zones and Legend -->
-          <h3 data-i18n="danger_view">Zones Danger</h3>
-          <div class="card" style="padding: 0.6rem 0.75rem; margin-bottom: 0.75rem;">
-            <div style="font-size: 0.7rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem;">Légende</div>
-            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
-              <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem;"><span style="width: 12px; height: 12px; border-radius: 2px; background: rgba(239,68,68,0.3); border: 2px solid #ef4444; flex-shrink:0;"></span>💣 Tir militaire</div>
-              <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem;"><span style="width: 12px; height: 12px; border-radius: 2px; background: rgba(249,115,22,0.25); border: 2px solid #f97316; flex-shrink:0;"></span>⛔ Zone restreinte</div>
-              <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem;"><span style="width: 12px; height: 12px; border-radius: 2px; background: rgba(168,85,247,0.15); border: 2px solid #a855f7; flex-shrink:0;"></span>🔵 Exercice OTAN</div>
-              <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem;"><span style="width: 12px; height: 12px; border-radius: 2px; background: rgba(234,179,8,0.25); border: 2px solid #eab308; flex-shrink:0;"></span>⚓ Mouillage interdit</div>
-              <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem;"><span style="width: 12px; height: 12px; border-radius: 2px; background: rgba(59,130,246,0.2); border: 2px solid #3b82f6; flex-shrink:0;"></span>🚫 Navigation restreinte</div>
-            </div>
-          </div>
-          <div id="zone-list-container" class="history-list" style="margin-bottom: 1.25rem;">
-            <!-- Populated by JS -->
-          </div>
-
-          <!-- PING AVURNAV Live Section -->
-          <div class="card" style="margin-top: 0.75rem; background: rgba(6, 182, 212, 0.05); border-color: rgba(6, 182, 212, 0.3);">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
-              <svg style="width: 1rem; height: 1rem; fill: var(--accent-color); flex-shrink: 0;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v7z"/></svg>
-              <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent-color);" data-i18n="ping_title">SHOM PING - AVURNAV</span>
-            </div>
-            <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 0.5rem;" data-i18n="ping_desc">
-              Consultez les avis urgents aux navigateurs (AVURNAVs) en vigueur sur le portail officiel PING du SHOM.
-            </p>
-            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-              <button id="show-avurnav-btn" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem 0.75rem; width: 100%;">
-                🌐 Ouvrir PING / AVURNAV
-              </button>
-            </div>
           </div>
         </div>
 

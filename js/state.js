@@ -67,9 +67,9 @@ export const state = {
   currentTideData: null,
 
   // Danger Zone Layers
-  dangerZoneLayer: null,
   avurnavNotices: [],
   pingWmsLayer: null,
+  pingWarningsLayer: null,
   osm: null,
   openseamap: null,
 

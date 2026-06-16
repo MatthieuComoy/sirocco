@@ -145,6 +145,28 @@ export function parseAndCacheHarbors(elements) {
       state.allHarborsCache.set(uniqueKey, newHarbor);
     }
   });
+  saveHarborsToLocalStorage();
+}
+
+export function saveHarborsToLocalStorage() {
+  try {
+    const arrayData = Array.from(state.allHarborsCache.entries());
+    localStorage.setItem('sirroco_harbors_cache', JSON.stringify(arrayData));
+  } catch (err) {
+    console.error("Failed to save harbors to localStorage:", err);
+  }
+}
+
+export function loadHarborsFromLocalStorage() {
+  try {
+    const data = localStorage.getItem('sirroco_harbors_cache');
+    if (data) {
+      const parsed = JSON.parse(data);
+      state.allHarborsCache = new Map(parsed);
+    }
+  } catch (err) {
+    console.error("Failed to load harbors from localStorage:", err);
+  }
 }
 
 // Update currentHarbors from global map cache filtering by the map bounds

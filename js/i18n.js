@@ -47,7 +47,9 @@ export const translations = {
     ping_desc: "Access active navigational warnings (AVURNAVs) and regulation zones directly on the official PING platform.",
     avg_speed: "Avg Speed",
     max_speed: "Max Speed",
-    max_shelter_dist: "Max Shelter"
+    max_shelter_dist: "Max Shelter",
+    offline_badge: "Offline",
+    online_badge: "Online"
   },
   fr: {
     title: "Sirroco Marine",
@@ -91,7 +93,9 @@ export const translations = {
     ping_desc: "Consultez en direct les Avis Urgents aux Navigateurs (AVURNAV) et zones réglementées officielles du SHOM sur la plateforme PING.",
     avg_speed: "Vit. Moyenne",
     max_speed: "Vit. Max",
-    max_shelter_dist: "Max Abri"
+    max_shelter_dist: "Max Abri",
+    offline_badge: "Hors ligne",
+    online_badge: "En ligne"
   },
   es: {
     title: "Sirroco Marine",
@@ -418,12 +422,13 @@ export function translateUI(lang) {
   
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (translations[lang][key]) {
+    const text = translations[lang][key] || translations['en'][key];
+    if (text) {
       // Check if it's an input placeholder or select option
       if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
-        el.setAttribute('placeholder', translations[lang][key]);
+        el.setAttribute('placeholder', text);
       } else {
-        el.innerHTML = translations[lang][key];
+        el.innerHTML = text;
       }
     }
   });

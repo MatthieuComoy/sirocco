@@ -89,9 +89,9 @@ export function updateBoatSails(heading, windDir) {
   if (!mainsail || !jib) return;
 
   if (windDir === null || windDir === undefined || isNaN(windDir)) {
-    // Default sail setting (beam reach on port tack) when wind is not loaded
-    mainsail.style.transform = 'rotate(30deg)';
-    jib.style.transform = 'rotate(35deg)';
+    // Default sail setting (broad reach / grand largue on port tack) when wind is not loaded
+    mainsail.style.transform = 'scaleX(1) rotate(55deg)';
+    jib.style.transform = 'scaleX(1) rotate(60deg)';
     mainsail.classList.remove('sail-flutter');
     jib.classList.remove('sail-flutter');
     return;
@@ -104,13 +104,14 @@ export function updateBoatSails(heading, windDir) {
 
   const absAlpha = Math.abs(alpha);
   // Sails swing to the opposite side of the wind
-  // wind from starboard (alpha > 0) -> sails swing to port/left (negative degrees)
-  // wind from port (alpha < 0) -> sails swing to starboard/right (positive degrees)
-  const side = alpha >= 0 ? -1 : 1;
+  // wind from starboard (alpha > 0) -> sails swing to port/left (scaleX(1) + rotate)
+  // wind from port (alpha < 0) -> sails swing to starboard/right (scaleX(-1) + rotate)
+  const side = alpha >= 0 ? 1 : -1;
 
   let mainAngle = 0;
   let jibAngle = 0;
   let isFluttering = false;
+  let jibSideMultiplier = 1; // 1 means same side as mainsail, -1 means opposite side (wing-on-wing)
 
   if (absAlpha < 30) {
     // Head to wind: sails flapping in the centerline
@@ -118,25 +119,26 @@ export function updateBoatSails(heading, windDir) {
     jibAngle = 0;
     isFluttering = true;
   } else if (absAlpha < 55) {
-    // Close-hauled: sails trimmed tight
-    mainAngle = side * 10;
-    jibAngle = side * 15;
+    // Close-hauled (au près): sails trimmed tight, practically in the axis of the boat
+    mainAngle = 5;
+    jibAngle = 8;
   } else if (absAlpha < 110) {
-    // Beam reach: sails opened halfway
-    mainAngle = side * 30;
-    jibAngle = side * 35;
+    // Beam reach (au travers): sails opened halfway
+    mainAngle = 35;
+    jibAngle = 40;
   } else if (absAlpha < 155) {
-    // Broad reach: sails opened wide
-    mainAngle = side * 55;
-    jibAngle = side * 60;
+    // Broad reach (grand largue): sails opened wide
+    mainAngle = 60;
+    jibAngle = 65;
   } else {
-    // Running (downwind): sails wing-on-wing
-    mainAngle = side * 75;
-    jibAngle = -side * 70; // Jib is trimmed to the opposite side!
+    // Running (vent arrière): sails opened practically at right angle, wing-on-wing
+    mainAngle = 80;
+    jibAngle = 80;
+    jibSideMultiplier = -1; // Jib is trimmed on the opposite side of the mainsail
   }
 
-  mainsail.style.transform = `rotate(${mainAngle}deg)`;
-  jib.style.transform = `rotate(${jibAngle}deg)`;
+  mainsail.style.transform = `scaleX(${side}) rotate(${mainAngle}deg)`;
+  jib.style.transform = `scaleX(${side * jibSideMultiplier}) rotate(${jibAngle}deg)`;
 
   if (isFluttering) {
     mainsail.classList.add('sail-flutter');
@@ -197,6 +199,10 @@ export async function updateWeatherAndTides(lat, lon, force = false) {
       }
     } catch (err) {
       console.warn("Nominatim geocoding failed/timed out:", err);
+    }
+
+    if (!navigator.onLine) {
+      locationName += state.currentLang === 'fr' ? ' (Hors-ligne / Cache)' : ' (Offline / Cache)';
     }
 
     if (locationEl) locationEl.textContent = locationName;

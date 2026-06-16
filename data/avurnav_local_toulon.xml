@@ -1,0 +1,1515 @@
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2855.2026"><id>NW.AVURNAV_LOCAL_TOULON.2855.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2855</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-01T00:23:23.279844Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><warningHazardTypeGeneral>DRIFTING_HAZARDS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2855.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2855.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2855.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    458186.11186191,5391531.15553534 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:fixedDateRange><dateStart><date>2026-05-31</date></dateStart><dateEnd><date>2026-06-03</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>LOG_ADRIFT</warningHazardTypeDetails><information>Palette en bois type europe (1,2m x 0.8m) à la dérive entre chenal de Port-Camargue et la cardinale nord se dirigeant vers le banc de sable.
+Palette en bois 43-31.23N 004-06.96E</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2855.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2879.2026"><id>NW.AVURNAV_LOCAL_TOULON.2879.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2879</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-03T06:21:59.872849Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS ILE SAINTE-MARGUERITE</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2879.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2879.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2879.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        784302.27733083,5392713.72838735 784301.08732398,5392446.31136468 784474.76506615,5392446.55437749 784471.06559248,5392719.23376993 784302.27733083,5392713.72838735 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>06:00:00</timeOfDayStart><timeOfDayEnd>17:00:00</timeOfDayEnd><dateStart><date>2025-06-08</date></dateStart><dateEnd><date>2025-07-03</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>DIVING_OPERATIONS</warningHazardTypeDetails><warningHazardTypeDetails>UNDERWATER_OPERATIONS</warningHazardTypeDetails><information>CHANTIER ARCHEOLOGIQUE SOUS-MARIN PAR LE 
+NAVIRE ALFRED MERLIN DANS LA ZONE DELIMITEE PAR :
+43-31.69N 007-02.73E
+43-31.59N 007-02.73E
+43-31.59N 007-02.82E
+43-31.69N 007-02.82E
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2879.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2962.2026"><id>NW.AVURNAV_LOCAL_TOULON.2962.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2962</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T13:37:23.205654Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>PETITE RADE DU PORT DE TOULON</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2962.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2962.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2962.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        656327.2354315963,5328852.1030676095 656961.6759880005,5328133.070668201 657018.0708068733,5327900.442233003 658141.4115028724,5327471.594749031 658359.9408480469,5327284.7872968195 658240.1022432471,5325406.138168212 658638.3899772527,5325229.90474454 659829.7284067634,5324951.455807987 659516.27197465,5325466.38927758 658980.2826997328,5327327.083314647 
+        659600.7156032303,5328770.763817901 659954.73692359,5328805.89572894 659921.0307508853,5329612.642668657 659307.738444211,5329521.001280641 659268.9671025622,5330197.7379512 658507.638203694,5330091.997858466 658482.9655667634,5330215.361235771 657601.7982557482,5330106.096466858 656473.3355202012,5329186.855219552 656327.2354315963,5328852.1030676095 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>06:00:00</timeOfDayStart><timeOfDayEnd>18:00:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-19</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>06:00:00</timeOfDayStart><timeOfDayEnd>18:00:00</timeOfDayEnd><dateStart><date>2026-06-22</date></dateStart><dateEnd><date>2026-06-26</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>MILITARY_OPERATION</warningHazardTypeDetails><information>MISE EN OEUVRE DE DRONES SOUS-MARINS PAR SEMI-RIGIDES  MARINE 
+NATIONALE ET DE PLONGEURS DEMINEURS DANS LA ZONE DELIMITEE PAR :
+43-06.65N 005-53.75E/43-06.37N 005-54.10E
+43-06.27N 005-54.13E/43-06.10N 005-54.73E
+43-06.03N 005-54.85E/43-05.29N 005-54.78E
+43-05.22N 005-55.00E/43-05.11N 005-55.64E
+43-05.32N 005-55.47E/43-06.05N 005-55.18E
+43-06.62N 005-55.52E/43-06.63N 005-55.71E
+43-06.95N 005-55.69E/43-06.91N 005-55.36E
+43-07.18N 005-55.34E/43-07.14N 005-54.93E
+43-07.18N 005-54.92E/43-07.14N 005-54.44E
+43-06.78N 005-53.83E
+(CARTE FR7093)
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2962.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2841.2026"><id>NW.AVURNAV_LOCAL_TOULON.2841.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2841</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-28T12:33:10.589129Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS PORT-BARCARES</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2841.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2841.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2841.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        338207.16627843067,5280517.223779721 359580.50851073925,5287928.17075641 360675.1501702064,5287877.564241114 360990.5553941207,5288383.641681139 361231.74762417277,5288206.51147114 360786.46966099966,5287624.535759962 360638.04367327533,5287548.628546546 359283.6565352905,5287624.535759962 338281.37927229283,5280264.393672052 338207.16627843067,5280517.223779721 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-01</date></dateStart><dateEnd><date>2026-07-31</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>UNDERWATER_OPERATIONS</warningHazardTypeDetails><information>MISE EN OEUVRE DE ROV PAR NAVIRE ROXANE-Z DANS LA ZONE DÉLIMITÉE PAR :
+42-47.58N 003-02.29E/42-50.51N 003-13.81E
+42-50.49N 003-14.40E/42-50.69N 003-14.57E
+42-50.62N 003-14.70E/42-50.39N 003-14.46E
+42-50.36N 003-14.38E/42-50.39N 003-13.65E
+42-47.48N 003-02.33E
+(CARTE FR6844)
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2841.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2760.2026"><id>NW.AVURNAV_LOCAL_TOULON.2760.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2760</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-19T08:20:13.541895Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS CAP CEPET</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2760.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2760.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2760.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    662939.10819634,5322279.62127259 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_MOVE</warningHazardTypeDetails><information>BOUÉE DES COFFRES DU CANNIER DÉPLACEE A LA POSITION: 
+43-04.06N 005-57.32E
+MARQUE CARDINALE EST
+Q(3)10S 2M
+(CARTE FR7091)
+LIVRE DES FEUX NON RENSEIGNE
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2760.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2810.2026"><id>NW.AVURNAV_LOCAL_TOULON.2810.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2810</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-26T08:33:15.482379Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>AVANT-PORT DE MARSEILLAN-PLAGE</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2810.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2810.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2810.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        396387.54571322,5360489.10109198 396173.93079891,5360437.55712299 396173.03226693,5360316.25530551 396234.13244167,5360300.98026182 396376.19254441,5360426.99258023 396387.54571322,5360489.10109198 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SANDSPIT</warningHazardTypeDetails><warningHazardTypeDetails>SHALLOW_DEPTH_REPORTED</warningHazardTypeDetails><information>BANC DE SABLE REPORTE LE 241300 UTC MAR 26
+DANS LA ZONE DELIMITEE PAR : 
+43-19.08N 003-33.65E/43-19.06N 003-33.53E
+43-19.01N 003-33.53E/43-19.00N 003-33.57E
+43-19.05N 003-33.64E
+(CARTE FR7054)
+ZONE BALISEE PAR DES BOUEES PASSIVES ROUGE
+IL EST RECOMMANDE DE SERRER LA DIGUE NORD (FEU VERT) AUX NAVIRES 
+AYANT UN TIRANT D'EAU SUPERIEUR OU EGAL A 1.3 METRE
+DANGEREUX POUR LA NAVIGATION
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 2645/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2810.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2844.2026"><id>NW.AVURNAV_LOCAL_TOULON.2844.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2844</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-29T08:01:26.373105Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS EMBOUCHURE DU RHONE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2844.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2844.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2844.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    539268.71989955,5359557.15077035 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_CHANGE</warningHazardTypeDetails><information>DEPLACEMENT DE LA BALISE A FLOTTEUR ROUSTAN SUD A LA POSITION :
+43-18.69N 004-50.82E
+VERS LA NOUVELLE POSITION :
+43-18.71N 004-50.66E
+(CARTE FR6684)
+NOUVELLE HAUTEUR DE PLAN FOCAL : 5.6 METRES
+N° DE LIVRE DES FEUX L1 : 52960 E.0600.3
+MARQUE : CARDINALE SUD
+FONCTION PRINCIPALE : JALONNEMENT
+Q(6)+LFL.W.15S
+NAVIGUER AVEC PRUDENCE
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 2666/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2844.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2859.2026"><id>NW.AVURNAV_LOCAL_TOULON.2859.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2859</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-01T08:03:33.984242Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>ABORDS CAPO PERTUSATO</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2859.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2859.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2859.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        1023868.43787052,5066568.86259876 1023963.05943769,5066509.53164388 1023504.7942006,5065777.81318765 1023426.87055704,5065918.71411833 1023868.43787052,5066568.86259876 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        1023979.75736131,5066697.4142523 1024035.41710671,5066623.24962783 1023963.05943769,5066509.53164388 1023868.43787052,5066568.86259876 1023979.75736131,5066697.4142523 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-06-30</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>DIVING_OPERATIONS</warningHazardTypeDetails><warningHazardTypeDetails>CABLE_LAYING_OPERATION</warningHazardTypeDetails><warningHazardTypeDetails>UNDERWATER_OPERATIONS</warningHazardTypeDetails><information>ABORDS CALA SCIUMARA
+TRAVAUX D'ATTERRAGE DE CABLES SOUS-MARIN (PROJET SACOI 3)
+PAR LES NAVIRES  JUMBO-SEATRUCK-POSEIDON III-ALTAGNA-RABLE
+DANS LES ZONES SUIVANTES :
+ZONE A DELIMITEE PAR :
+41-22.05N 009-11.91E/41-22.02N 009-11.94E
+41-21.97N 009-11.91E/41-22.00N 009-11.85E
+
+ZONE B DELIMITEE PAR :
+41-22.00N 009-11.85E/41-21.97N 009-11.91E
+41-21.68N 009-11.66E/41-21.73N 009-11.62E
+(CARTE FR7024)
+MOYENS NAUTIQUES EN SOUTIEN POUR LES OPERATIONS DE PLONGEE :
+VEDETTES A MISERICORDIA-GRECALE-NESO-MARC 1
+LA NAVIGATION EN SURFACE OU SOUS-MARINE, LE MOUILLAGE, LA BAIGNADE, 
+LA PLONGEE SOUS-MARINE ET LA MISE EN OEUVRE DE TOUS ENGINS DE PECHE 
+SONT INTERDITS DANS CES ZONES. 
+RAYON DE SECURITE DE 150 METRES
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2859.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2965.2026"><id>NW.AVURNAV_LOCAL_TOULON.2965.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2965</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T14:25:27.221987Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ETANG DE BERRE</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2965.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2965.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2965.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        571254.5202541488,5384041.865307162 582200.9368488209,5384042.12096202 582200.9368488209,5378163.922739724 571254.5202541488,5378163.922739724 571254.5202541488,5384041.865307162 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><information>MISE EN OEUVRE DE PLONGEURS ET PRÉLÈVEMENTS PAR LE NAVIRE ACARTIA
+DANS LA ZONE DÉLIMITÉE PAR :
+43-28.30N 005-07.90E/43-28.30N 005-13.80E
+43-26.00N 005-13.80E/43-26.00N 005-07.90E
+(CARTE FR6907)
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2965.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2853.2026"><id>NW.AVURNAV_LOCAL_TOULON.2853.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2853</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-29T12:21:44.769541Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GOLFE DE FOS SUR MER</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2853.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2853.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2853.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    558600.49359279,5366041.12690403 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    557280.35668934,5366969.65303168 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:fixedDateRange><timeOfDayStart>06:00:00</timeOfDayStart><dateStart><date>2025-05-28</date></dateStart><dateEnd/></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_ESTABLISHMENT</warningHazardTypeDetails><information>BOUEES OCEANOGRAPHIQUES AUX ABORDS DE LA CENTRALE ELECTRIQUE EDF DE PONTEAU AUX POSITIONS :
+BOUEE 1
+43-21.25N 005-01.08E
+BOUEE 2
+43-21.65N 005-00.37E
+(CARTE FR6684)
+CARACTERISTIQUES :
+COULEUR JAUNE
+FL(5)Y.20S 2M
+MARQUE SPECIALE
+LF L1 NON REFERENCE 
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2853.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2811.2026"><id>NW.AVURNAV_LOCAL_TOULON.2811.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2811</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-26T08:59:56.390720Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>PETITE RADE DU PORT DE TOULON</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2811.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2811.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2811.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        656914.86841957,5328577.50219109 656914.86841957,5328425.02245911 656525.2502018,5328450.43557478 656543.80345026,5328552.08872943 656914.86841957,5328577.50219109 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        656803.54892878,5328552.08872943 656599.46319566,5328552.08872943 656599.46319566,5328857.05483662 656803.54892878,5328857.05483662 656803.54892878,5328552.08872943 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        656209.84497788,5328806.22646006 656451.03720793,5328780.81237558 656599.46319566,5328780.81237558 656599.46319566,5328552.08872943 656543.80345026,5328552.08872943 656358.27096561,5328653.74299126 656209.84497788,5328806.22646006 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>17:00:00</timeOfDayEnd><dateStart><date>2026-05-27</date></dateStart><dateEnd><date>2026-06-29</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>DIVING_OPERATIONS</warningHazardTypeDetails><warningHazardTypeDetails>WORKS_IN_PROGRESS</warningHazardTypeDetails><warningHazardTypeDetails>UNDERWATER_OPERATIONS</warningHazardTypeDetails><information>MISE EN OEUVRE DE PLONGEURS ET OPERATION DE SONDAGES GEOTECHNIQUES ET DE SECURISATION PYROTECHNIQUE PAR LE NAVIRE ADRIANETTE TOUS LES JOURS DE 06H00 UTC A 17H00 UTC HORS WE DANS LES ZONES SUIVANTES : 
+ZONE B1 DELIMITEE PAR : 
+43-06.53N 005-54.01E/43-06.53N 005-53.90E
+43-06.65N 005-53.90E/43-06.65N 005-54.01E
+
+ZONE B4 DELIMITEE PAR : 
+43-06.63N 005-53.69E/43-06.62N 005-53.82E
+43-06.62N 005-53.90E/43-06.53N 005-53.90E
+43-06.53N 005-53.87E/43-06.57N 005-53.77E
+
+ZONE C11 DELIMITEE PAR :
+43-06.54N 005-54.07E/43-06.48N 005-54.07E
+43-06.49N 005-53.86E/43-06.53N 005-53.87E
+(CARTE FR7093) 
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 2777/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2811.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2964.2026"><id>NW.AVURNAV_LOCAL_TOULON.2964.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2964</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T13:45:04.465008Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILE DE PORQUEROLLES</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2964.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2964.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2964.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        667916.94475964,5303097.1294407 690180.8429183,5303097.1294407 695746.81745796,5279050.90391531 667916.94475964,5279050.90391531 667916.94475964,5303097.1294407 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-21</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><information>REMORQUAGE D'HYDROPHONES PAR LE NAVIRE MOUSQUEMER
+DANS LA ZONE 11 DELIMITEE PAR :
+42-56.50N 006-00.00E/42-56.50N 006-12.00E
+42-47.00N 006-15.00E/42-47.00N 006-00.00E
+(CARTE FR6951)
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2964.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2819.2026"><id>NW.AVURNAV_LOCAL_TOULON.2819.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2819</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-27T06:54:01.678676Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS ILES DE LERINS</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2819.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2819.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2819.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    785136.36856496,5388619.47299887 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>VOILIER COULÉ ENTRE DEUX EAUX REPORTÉ LE 251604 UTC AVR 26 A LA POSITION :
+43-30.09N 007-03.18E
+(CARTE FR7205) 
+LONGEUR : 8 METRES 
+DANGEUREUX POUR LA NAVIGATION
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 2648/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2819.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2988.2026"><id>NW.AVURNAV_LOCAL_TOULON.2988.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2988</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-16T08:33:03.038289Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GRANDE RADE DE TOULON</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2988.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2988.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2988.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        659384.30579034,5324413.15918 660126.43572896,5328224.26127786 670145.18990035,5328732.52580574 670887.31983898,5323905.12975145 670998.17833601,5319217.73779439 661610.6956062,5322127.24435621 659384.30579034,5324413.15918 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>07:00:00</timeOfDayStart><timeOfDayEnd>14:59:00</timeOfDayEnd><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SEA_TRIALS</warningHazardTypeDetails><information>MISE EN OEUVRE D'ANTENNE REMORQUEE PAR SEMI-RIGIDE DGA
+ET NAVIRE PETRARQUE DANS LA ZONE DELIMITEE PAR :
+43-04.90N 005-55.40E/43-06.40N 005-55.80E
+43-06.60N 006-01.20E/43-04.70N 006-01.60E
+43-02.90N 006-01.70E/43-04.00N 005-56.60E
+(CARTE FR7091)
+LONGUEUR : 350 METRES
+RAYON DE SECURITE DE 400 METRES DEMANDE
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2988.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2989.2026"><id>NW.AVURNAV_LOCAL_TOULON.2989.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2989</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-16T08:40:53.705508Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS CAP CEPET</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2989.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2989.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2989.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        667802.34206498,5320377.73855895 667854.03422711,5302957.47992115 636321.81532783,5302957.47992115 652553.15423664,5319550.66396487 652394.79491804,5320578.09387823 653690.3818035,5322548.8093684 655809.76045083,5324047.88207017 660720.51585317,5322962.34666544 667802.34206498,5320377.73855895 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-20</date></dateStart><dateEnd><date>2026-06-21</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><warningHazardTypeDetails>HYDROGRAPHIC_SURVEY</warningHazardTypeDetails><information>PAR LE NAVIRE JANUS II
+DANS LA ZONE 06 DELIMITEE PAR : 
+43-03.31N 005-59.94E
+42-56.44N 005-59.97E
+42-56.44N 005-42.97E
+43-02.99N 005-51.72E
+43-04.17N 005-52.33E
+43-04.76N 005-53.47E
+43-04.33N 005-56.12E
+(CARTE FR7407)
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2989.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2765.2026"><id>NW.AVURNAV_LOCAL_TOULON.2765.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2765</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-19T09:24:02.947246Z</publicationDate><generalArea><locationName><text>ELBE</text></locationName></generalArea><locality><locationName><text>PORT DE BASTIA</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2765.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2765.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2765.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1052390.53226909,5266043.54742632 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_BUOY_LIGHT_UNLIT</warningHazardTypeDetails><information>FEU BOUEE B4 A LA POSITION :
+42-41.85N 009-27.23E
+MARQUE : LATERALE BABORD
+VQ.R
+FONCTION PRINCIPALE : CHENALAGE/ALIGNEMENT
+N LIVRE DES FEUX L1 : NON RENSEIGNE
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2765.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2984.2026"><id>NW.AVURNAV_LOCAL_TOULON.2984.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2984</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-16T07:30:34.283339Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILE DU LEVANT</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2984.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2984.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2984.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        709105.15635315,5311971.84694547 709105.15635315,5279050.90391531 742129.93862182,5279050.90391531 742129.93862182,5324664.64397436 721721.36530972,5324664.64397436 721721.36530972,5319331.56912516 709105.15635315,5311971.84694547 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>05:00:00</timeOfDayStart><timeOfDayEnd>15:59:00</timeOfDayEnd><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FIRING_EXERCISE</warningHazardTypeDetails><information>DANS LA ZONE 13 DELIMITEE PAR :
+43-00.00N 006-22.20E/42-47.00N 006-22.20E
+42-47.00N 006-40.00E/43-05.00N 006-40.00E
+43-05.00N 006-29.00E/43-02.90N 006-29.00E
+(CARTE FR6951)
+DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2984.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2955.2026"><id>NW.AVURNAV_LOCAL_TOULON.2955.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2955</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T08:23:08.040588Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILE DU LEVANT</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2955.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2955.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2955.2026.1</id><geometry><S100:curveProperty><S100:Curve><gml:LineString srsName='EPSG:3857'>
+  <gml:coordinates>
+    731265.1563204,5326265.16047767 745399.02100145,5329228.11037221 762818.66598575,5328478.39008194 
+  </gml:coordinates>
+</gml:LineString>
+</S100:Curve></S100:curveProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-21</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SEA_TRIALS</warningHazardTypeDetails><information>MISE EN OEUVRE DE GLIDER PAR LE NAVIRE TANGO III 
+SUR LA LIGNE JOIGNANT LES POINTS :
+A 43-05.63N 006-34.14E 
+B 43-06.80N 006-41.76E 
+C 43-06.50N 006-51.15E
+(CARTE FR7408)
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2955.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2764.2026"><id>NW.AVURNAV_LOCAL_TOULON.2764.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2764</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-19T09:19:54.979919Z</publicationDate><generalArea><locationName><text>ELBE</text></locationName></generalArea><locality><locationName><text>PORT DE BASTIA</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2764.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2764.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2764.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1052329.6490718,5266325.32592391 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_BUOY_LIGHT_UNLIT</warningHazardTypeDetails><information>FEU BOUEE B2 A LA POSITION :
+42-41.96N 009-27.19E
+MARQUE : LATERALE BABORD
+VQ.R
+FONCTION PRINCIPALE : CHENALAGE/ALIGNEMENT
+N LIVRE DES FEUX L1 : NON RENSEIGNE
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2764.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2752.2026"><id>NW.AVURNAV_LOCAL_TOULON.2752.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2752</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-18T06:51:34.152165Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS SAINT MANDRIER</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2752.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2752.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2752.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    660284.8706498431,5324741.0871423865 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>FEU DE LA JETEE DU CHANTIER YSEC A LA POSITION :
+43-05.03N 005-55.89E
+(CARTE FR7093)
+MARQUE LATERALE BABORD
+FL.R.2,5S 3M
+LIVRE DES FEUX L1 : 57860
+NAVIGUER AVEC PRUDENCE
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 2655/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2752.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2967.2026"><id>NW.AVURNAV_LOCAL_TOULON.2967.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2967</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-12T08:53:07.039017Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS DE PORT-LA-NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2967.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2967.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2967.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    365797.7020715435,5315907.308587097 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBSURFACE_MOORING</warningHazardTypeDetails><warningHazardTypeDetails>SUBMERGED_OBJECT</warningHazardTypeDetails><information>ABORDS SITE OFFSHORE EOLMED
+PRESENCE DE CORPS MORT A LA POSITION :
+43-01.55N 003-17.16E
+(CARTE FR7054)
+RISQUE DE CROCHE</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2967.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2957.2026"><id>NW.AVURNAV_LOCAL_TOULON.2957.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2957</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T08:47:22.459357Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILE DE PORQUEROLLES</text></locationName></locality><locality><locationName><text>ABORDS TOULON</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2957.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2957.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2957.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        661794.37276601,5322124.704762 667824.17851731,5320474.11458779 667824.17851731,5318316.09043352 678956.12759664,5302843.68969781 690088.07667597,5302843.68969781 691015.73909925,5309435.35430371 689970.19386557,5309519.69726419 689844.49194148,5310682.44006207 686701.94383909,5312128.01218918 685820.82952889,5312098.68963625 
+        678677.82886966,5316158.56452115 678939.85002618,5316936.11078583 678531.31877287,5317596.04588734 682648.056787,5318067.4281027 682553.78034393,5324289.67334543 676551.51346836,5325798.09643458 670297.8427446,5324352.52430748 671114.90525122,5325986.64932072 668848.77889739,5328086.3370158 665014.87021247,5328589.14471218 
+        664354.93511097,5328212.0389399 663286.46875616,5328714.84663628 661212.38700858,5328494.86826911 659660.74919247,5327586.42845738 659660.74919247,5324283.60905036 661023.83412243,5324566.68314112 662186.57692032,5323623.91871041 661794.37276601,5322124.704762 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-18</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SEA_TRIALS</warningHazardTypeDetails><information>MISE EN OEUVRE DE DRONE SM DDO DANS LA ZONE 01-02-08 DÉLIMITÉE PAR : 
+43-04.00N 005-56.70E/43-03.35N 005-59.95E
+43-02.50N 005-59.95E/42-56.40N 006-05.95E
+42-56.40N 006-11.95E/42-59.00N 006-12.45E
+LA COTE/43-00.05N 006-09.65E
+43-01.65N 006-05.80E/LA COTE
+43-06.15N 005-55.55E/LA COTE
+43-04.85N 005-55.55E
+(CARTE FR7407)
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2957.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2948.2026"><id>NW.AVURNAV_LOCAL_TOULON.2948.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2948</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T06:42:03.895409Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS CAP CROISETTE</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2948.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2948.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2948.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        784783.8568441131,5394532.462277593 787513.0396933949,5394481.273519722 788125.2968927579,5392559.340445421 784748.6056720286,5392587.488384488 784783.8568441131,5394532.462277593 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-06-30</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SEA_TRIALS</warningHazardTypeDetails><information>MISE EN OEUVRE HYDROPHONES REMORQUES PAR SEMI-RIGIDE SOCIETE XPERT
+DANS LA ZONE DELIMITEE PAR :
+43-32.40N 007-02.99E
+43-32.38N 007-04.46E
+43-31.63N 007-04.79E
+43-31.64N 007-02.97E
+(CARTE FR7205)
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2948.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2832.2026"><id>NW.AVURNAV_LOCAL_TOULON.2832.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2832</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-28T06:54:06.896739Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORD ILE DU LEVANT</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2832.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2832.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2832.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    727250.23335246,5316336.22430814 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    719476.42224539,5309790.42186968 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBSURFACE_MOORING</warningHazardTypeDetails><information>MATERIALISE EN SURFACE PAR DES BOUEES SPHÉRIQUES AUX POSITIONS :
+43-01.72N 006-31.98E
+42-59.14N 006-27.79E
+(CARTE FR7407)
+COULEUR : JAUNE
+NON LUMINEUSE
+PRENDRE UN LARGE TOUR
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 2656/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2832.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2952.2026"><id>NW.AVURNAV_LOCAL_TOULON.2952.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2952</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T07:17:06.151109Z</publicationDate><generalArea><locationName><text>ELBE</text></locationName></generalArea><locality><locationName><text>ABORDS ETANG DE DIANE</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2952.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2952.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2952.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        1060503.68229059,5173470.55851498 1072377.76130854,5173470.55851498 1072377.76130854,5195995.98192833 1063472.20204507,5195995.98192833 1060503.68229059,5173470.55851498 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>16:00:00</timeOfDayStart><timeOfDayEnd>20:00:00</timeOfDayEnd><dateStart><date>2026-06-11</date></dateStart><dateEnd><date>2026-06-11</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>06:30:00</timeOfDayStart><timeOfDayEnd>08:30:00</timeOfDayEnd><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>14:00:00</timeOfDayStart><timeOfDayEnd>16:00:00</timeOfDayEnd><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>10:00:00</timeOfDayStart><timeOfDayEnd>16:00:00</timeOfDayEnd><dateStart><date>2026-06-18</date></dateStart><dateEnd><date>2026-06-18</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>06:30:00</timeOfDayStart><timeOfDayEnd>08:30:00</timeOfDayEnd><dateStart><date>2026-06-19</date></dateStart><dateEnd><date>2026-06-19</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>10:00:00</timeOfDayStart><timeOfDayEnd>16:00:00</timeOfDayEnd><dateStart><date>2026-06-19</date></dateStart><dateEnd><date>2026-06-19</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FIRING_EXERCISE</warningHazardTypeDetails><information>TIR CANON AIR/SOL PAR AERONEF MILITAIRE DANS LE CHAMP DE TIR DE DIANE
+ZONE DELIMITEE PAR : 
+42-05.00N 009-31.60E
+42-05.00N 009-38.00E
+42-14.00N 009-38.00E
+42-14.00N 009-33.20E
+(CARTE FR6855)
+DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2952.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2985.2026"><id>NW.AVURNAV_LOCAL_TOULON.2985.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2985</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-16T08:00:49.608522Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS CAP DE L'AIGLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2985.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2985.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2985.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    617396.44918796,5334144.71834555 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_TEMPORARY_CHANGE</warningHazardTypeDetails><information>FEU DU BANC DE LA CASSIDAIGNE A LA POSITION :    
+43-08.73N 005-32.77E  
+(CARTE FR7406)   
+MARQUE : DANGER ISOLE 
+FONCTION PRINCIPALE : DANGER/OBSTRUCTION 
+N° DE LIVRE DES FEUX L1 : 56560
+FL(2)W.6S 7M
+POUR CAUSE DE TRAVAUX, UN ÉCHAFAUDAGE SERA INSTALLÉ, MODIFIANT SON APPARENCE ET SON EMPRISE VISUELLE, TENIR COMPTE ÉGALEMENT DE LA PRÉSENCE PONCTUELLE DE PERSONNEL SUR L'OUVRAGE AINSI QUE D'ÉQUIPES DE PLONGEURS
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2985.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2857.2026"><id>NW.AVURNAV_LOCAL_TOULON.2857.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2857</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-01T07:44:02.027118Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GOLFE DE FOS SUR MER</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2857.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2857.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2857.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    559042.9576466115,5366270.943371014 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    559016.9830987597,5366304.114981187 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    558998.4298502941,5366339.838386145 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SEASONAL_RECOMMISSIONING_COMPLETE</warningHazardTypeDetails><information>ANSE DES LAURONS - ZONE DE LA CENTRALE ELECTRIQUE
+BOUEES PASSIVES DELIMITANT LA ZONE REGLEMENTEE AUX POSITIONS :
+BOUEE SUD
+43-21.34N 005-01.32E
+BOUEE DU MILIEU
+43-21.36N 005-01.30E
+BOUEE NORD
+43-21.37N 005-01.29E
+(CARTE FR6684)
+CARACTERISTIQUES :
+COULEUR JAUNE
+SPHERIQUE
+NON LUMINEUSE
+LF L1 NON REFERENCE 
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2857.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2917.2026"><id>NW.AVURNAV_LOCAL_TOULON.2917.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2917</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-05T17:27:06.983924Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS MENTON</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2917.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2917.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2917.2026.1</id><geometry><S100:curveProperty><S100:Curve><gml:LineString srsName='EPSG:3857'>
+  <gml:coordinates>
+    835701.30645861,5430526.84400141 835920.23843545,5429607.33250478 836445.67357638,5429902.88977155 836040.65032119,5430734.82907876 835734.14615492,5430537.79090091 
+  </gml:coordinates>
+</gml:LineString>
+</S100:Curve></S100:curveProperty></geometry><S124:fixedDateRange><timeOfDayStart>19:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-05</date></dateStart><dateEnd><date>2026-06-30</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>DIVING_OPERATIONS</warningHazardTypeDetails><information>PROSPECTION D'ARCHEOLOGIE SOUS MARINE
+BAIE DE MENTON  
+DU 05/06/2026 AU 30/06/2026 
+PAR L'ASSOCIATION ADE MEDITERRANEE
+DANS LA ZONE DELIMITEE PAR :
+43-46.44N 007-30.43E
+43-46.08N 007-30.55E
+43-46.19N 007-30.84E
+43-46.52N 007-30.62E
+43-46.44N 007-30.45E.
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2917.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2943.2026"><id>NW.AVURNAV_LOCAL_TOULON.2943.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2943</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-10T14:22:39.343346Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><generalArea><locationName><text>CORSE</text></locationName></generalArea><generalArea><locationName><text>ELBE</text></locationName></generalArea><locality><locationName><text>DES ABORDS DU MARAIS DE CANNA AUX ABORDS DE BONIFACIO</text></locationName></locality><locality><locationName><text>DU CAP CORSE A BONIFACIO</text></locationName></locality><locality><locationName><text>DES ABORDS DU CAP CORSE AUX ABORDS DE L'ETANG DE BIGUGLIA</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2943.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2943.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2943.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1035556.98440381,5290709.41861465 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    951135.99323589,5218675.47520038 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1032859.34207692,5082019.68881388 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    952640.66168644,5181035.64891384 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    970969.41584556,5146213.58788129 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1061078.83299302,5249696.8304757 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    973097.47344455,5246859.66466471 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    970993.53506856,5250266.38230544 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    974700.47411198,5136768.33736588 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    974688.59062482,5136882.20742701 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    963280.94968143,5200830.89214045 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    951982.02136592,5215576.42181261 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1044219.49611238,5314110.64477975 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1031592.15520673,5269964.82619763 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    951074.76751595,5197138.69322248 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1048560.95625331,5122330.73252304 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    988869.58996511,5075131.17767067 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1022469.52293622,5272993.38473285 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1022027.95562274,5272167.317437 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1036545.87254703,5289092.19597483 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1030924.23826197,5269674.398549 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1024770.12574595,5276763.39655611 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    973377.62749638,5246688.35339138 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1033551.37824469,5081851.31577617 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    964203.04613017,5119188.30069603 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1047735.3366966,5119797.3149641 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1056431.2442524,5308375.30417651 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    952505.22297265,5217123.31026247 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1056827.29880437,5157419.32678463 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1068681.07630052,5246742.29026223 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    971199.47612653,5147021.26496605 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1054371.83367272,5158969.90427354 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    955740.90950504,5213188.78348246 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    988238.77951729,5087681.70803963 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1059887.71444153,5304034.91614878 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    955998.79965871,5218778.45955086 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    988687.76813015,5087669.32028584 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1046653.68231106,5090637.88203622 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    950978.29062393,5196765.29215778 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1038683.20677026,5301087.54074955 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1028844.41910898,5062861.37861494 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1054523.97031014,5309658.53805768 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    975655.96640795,5139906.58312868 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1047280.78210919,5119332.47200594 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    956035.90615564,5219087.4193281 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    971225.45067438,5146983.87100031 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1055867.30663156,5264536.36380544 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    949709.24842889,5196487.1304458 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-21</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><information>MISE EN OEUVRE DE PLONGEURS
+PAR NAVIRE VICTORIA IV ET SEMI-RIGIDE ANDROMEDE AUX POSITIONS SUIVANTES :
+41-59.19N 009-28.29E/42-58.58N 009-29.40E
+42-35.37N 009-31.91E/42-56.87N 009-31.27E
+42-41.25N 009-29.10E/42-34.20N 009-36.01E
+42-59.09N 009-28.38E/41-58.57N 009-29.62E
+42-44.60N 009-11.10E/42-46.10N 009-12.34E
+42-46.10N 009-12.34E/42-50.97N 009-18.69E
+42-51.61N 009-18.15E/42-55.71N 009-19.84E
+42-55.71N 009-19.84E/43-00.84N 009-22.82E
+41-43.47N 009-24.72E/41-44.49N 009-25.16E
+41-51.55N 008-45.87E/41-51.55N 008-45.87E
+41-44.49N 009-25.16E/42-43.29N 009-15.66E
+42-43.40N 009-16.02E/42-44.28N 009-10.86E
+41-25.46N 008-52.99E/41-20.50N 009-14.54E
+41-28.17N 009-17.07E/41-30.52N 008-52.89E
+41-30.53N 008-52.65E/41-28.24N 009-16.70E
+41-31.72N 009-24.14E/41-43.28N 009-24.47E
+42-21.81N 008-33.11E/42-23.08N 008-35.27E
+42-23.20N 008-35.29E/42-23.04N 008-32.65E
+42-34.18N 008-44.64E/42-22.42N 008-33.39E
+42-34.24N 008-44.49E/42-35.60N 008-43.35E
+41-54.39N 008-43.48E/41-54.40N 008-43.47E
+42-08.02N 008-33.46E/42-14.20N 008-31.88E
+42-14.31N 008-32.57E/42-14.46N 008-32.62E
+42-15.93N 008-39.20E/42-20.85N 008-35.13E
+41-43.22N 008-39.69E/41-43.22N 008-39.69E
+41-50.34N 008-45.35E/41-54.08N 008-43.34E
+41-50.29N 008-45.35E/41-51.55N 008-45.87E
+41-54.08N 008-43.34E/41-54.08N 008-43.34E
+(CARTE FR7025)
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2943.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2970.2026"><id>NW.AVURNAV_LOCAL_TOULON.2970.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2970</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-12T11:03:52.618440Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>PETITE RADE DU PORT DE TOULON</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2970.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2970.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2970.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        656803.54892878,5329238.27648493 656933.42166804,5329339.93822123 657007.6346619,5328857.05483662 656803.54892878,5328857.05483662 656803.54892878,5329238.27648493 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>07:00:00</timeOfDayStart><timeOfDayEnd>18:00:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-19</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><information>TOUS LES JOURS DE 07H00 UTC A 18H00 UTC  
+LEVES MAGNETOMETRIQUES PAR LE NAVIRE LE SEMANTIC 
+ZONE A26 DELIMITEE PAR : 
+43-06.80N 005-54.01E
+43-06.84N 005-54.08E
+43-06.65N 005-54.12E
+43-06.65N 005-54.01E
+(CARTE FR7093)
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2970.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2944.2026"><id>NW.AVURNAV_LOCAL_TOULON.2944.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2944</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-10T14:27:33.150492Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>RADE D'HYERES</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2944.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2944.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2944.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        690161.81611291,5329688.85224117 694595.16375345,5315872.85937862 708468.48438721,5314802.74098262 703748.4978906,5326249.18596833 696143.01357622,5330013.70961137 690161.81611291,5329688.85224117 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-21</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SEA_TRIALS</warningHazardTypeDetails><information>MISE EN OEUVRE DE 2 DRONES DE SURFACE PAR SOCIETE SEA OWL 
+DANS LA ZONE DÉLIMITÉE PAR :
+43-07.00N 006-12.00E/43-01.50N 006-14.40E
+43-01.10N 006-21.90E/43-05.60N 006-19.30E
+43-07.10N 006-15.20E
+(CARTE FR7282)
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2944.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2956.2026"><id>NW.AVURNAV_LOCAL_TOULON.2956.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2956</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T08:31:58.607608Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS ILES D'HYERES</text></locationName></locality><locality><locationName><text>ABORDS CAP CAMARAT</text></locationName></locality><locality><locationName><text>DES ABORDS DU CAP DRAMONT A MONACO</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2956.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2956.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2956.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        717825.18313196,5335339.94219156 769959.81132014,5327205.27427045 769959.81132014,5350102.14346067 743985.26346838,5350102.14346067 741154.06037039,5350111.61600042 741154.06037039,5342615.56124623 737080.1175692,5339193.44929324 730724.76679935,5343104.43438238 724206.45831745,5337563.87217276 717825.18313196,5335339.94219156 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        717825.18313196,5335339.94219156 742129.93862182,5331780.15222214 742129.93862182,5324664.64397436 721721.36530972,5324664.64397436 721721.36530972,5319331.56912516 709105.15635315,5311971.84694547 709105.15635315,5279050.90391531 695746.81745796,5279050.90391531 690180.8429183,5303097.1294407 679048.89383897,5303097.1294407 
+        667916.94475964,5318569.94976083 667916.94475964,5320601.07270902 678863.36135431,5316285.46402444 683127.73827354,5318085.40935511 681172.24572897,5325907.37953338 686875.76565063,5329003.57606229 698771.67863009,5332425.68801528 706919.56423247,5326885.12580567 706919.56423247,5334544.1382719 717825.18313196,5335339.94219156 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        824322.68464904,5422215.85756072 831001.85409663,5404263.46690525 769776.13416033,5362594.47678769 769961.66664499,5380466.19913271 773301.25136879,5393252.8282188 805027.30624487,5418365.97819278 824322.68464904,5422215.85756072 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        709105.15635315,5311971.84694547 709105.15635315,5279050.90391531 742129.93862182,5279050.90391531 742129.93862182,5324664.64397436 721721.36530972,5324664.64397436 721721.36530972,5319331.56912516 709105.15635315,5311971.84694547 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-21</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SEA_TRIALS</warningHazardTypeDetails><information>MISE EN OEUVRE DE GLIDER PAR LES NAVIRES TANGO III ET LA PELAGIA
+DANS LES SECTEURS SUIVANTS :
+ZONE 03-04-08-12 DELIMITEE PAR :
+43-09.20N 006-26.90E/43-07.80N 006-40.00E
+43-05.00N 006-40.00E/43-05.00N 006-29.00E
+43-02.90N 006-29.00E/43-00.00N 006-22.20E
+42-47.00N 006-22.20E/42-47.00N 006-15.00E
+42-56.50N 006-12.00E/42-56.50N 006-06.00E
+43-02.60N 006-00.00E/43-03.40N 006-00.00E
+43-01.70N 006-05.90E/LA COTE
+
+ZONE 13 DÉLIMITÉE PAR :
+43-00.00N 006-22.20E/42-47.00N 006-22.20E
+42-47.00N 006-40.00E/43-05.00N 006-40.00E
+43-05.00N 006-29.00E/43-02.90N 006-29.00E
+
+ZONE 20 DÉLIMITÉE PAR : 
+43-09.20N 006-26.90E/43-06.00N 006-55.00E
+43-15.00N 006-55.00E/43-15.00N 006-41.00E
+LA COTE
+
+ZONE 23 DÉLIMITÉE PAR : 
+43-27,0N 006-55,0E/43-20,0N 006-55,0E
+43-36,3N 007-28,0E/43-43,2N 007-24,4E
+LA COTE
+(CARTE FR6951)
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2956.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2809.2026"><id>NW.AVURNAV_LOCAL_TOULON.2809.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2809</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-26T08:27:13.433423Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>GOLFE DE LA NAPOULE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2809.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2809.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2809.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    780349.63046085,5394581.0918597 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_ESTABLISHMENT</warningHazardTypeDetails><information>MISE EN PLACE DE BOUEE CACPL A LA POSITION :
+43-32.42N 007-00.60E
+(CARTE FR7205)
+MARQUE : SPÉCIALE
+FONCTION PRINCIPALE : AUTRE
+N° LIVRE DES FEUX L1 : NON RENSEIGNE
+PORTEE : 2MN
+RYTHME : FL(5)
+NAVIGUER AVEC PRUDENCE
+ANNULE ET REMPLAVE AVURNAV LOCAL TOULON 2638/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2809.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2963.2026"><id>NW.AVURNAV_LOCAL_TOULON.2963.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2963</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T13:43:02.869812Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>DES ABORDS DU CAP BEAR AUX ABORDS DE BANYULS</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2963.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2963.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2963.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        348382.85673852,5234644.10749342 348716.5747318,5234822.39518846 348705.1460334,5235357.25827358 348958.86313788,5235130.97004526 348872.00503004,5234753.82299806 348588.57330972,5234518.39181102 348382.85673852,5234644.10749342 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        348662.63017759,5238203.55780643 349452.51814569,5238515.47379383 349544.52214197,5238427.95779736 348918.44616726,5237994.86581485 348974.54616499,5237822.07782183 348763.61017351,5237833.29782138 348662.63017759,5238203.55780643 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-10-23</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><information>MISE EN OEUVRE DE CAMERAS, D'HYDROPHONES ET PRÉLÈVEMENTS PAR LE NAVIRE RECREAFISH
+DANS LES ZONES SUIVANTES.
+ZONE SAINTE CATHERINE DÉLIMITÉE PAR : 
+42-30.81N 003-07.93E/42-30.93N 003-08.35E
+42-30.90N 003-08.40E/42-30.72N 003-08.06E
+42-30.65N 003-08.09E/42-30.66N 003-07.98E
+
+ZONE BANYULS SPHYNX DÉLIMITÉE PAR : 
+42-29.39N 003-07.77E/42-29.46N 003-07.95E
+42-29.68N 003-07.95E/42-29.59N 003-08.09E
+42-29.44N 003-08.04E/42-29.34N 003-07.89E
+(CARTE FR6843)
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2963.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2981.2026"><id>NW.AVURNAV_LOCAL_TOULON.2981.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2981</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-15T12:06:27.485882Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>GOLFE DE SANT'AMANZA</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2981.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2981.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2981.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1027929.92949211,5075472.88817468 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_ESTABLISHMENT</warningHazardTypeDetails><information>BOUEE METEO DE LA ZMEL DE SANT'AMANZA A LA POSITION  :
+41-25.597N 009-14.043E
+(CARTE FR6929)
+FL.Y 3M
+MARQUE : SPECIALE
+CROIX DE ST-ANDRE - REFLECTEUR RADAR
+COULEUR JAUNE
+AIS
+LIVRE DES FEUX  L1 : NON RENSEIGNE
+NAVIGUER AVEC PRUDENCE ET RESPECTER LES TERMES DE L'AP 189/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2981.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2738.2026"><id>NW.AVURNAV_LOCAL_TOULON.2738.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2738</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-12T12:48:29.745614Z</publicationDate><generalArea><locationName><text>ELBE</text></locationName></generalArea><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><generalArea><locationName><text>CORSE</text></locationName></generalArea><locality><locationName><text>DU CAP CORSE AUX ABORDS DE PUNTA DI ARCU</text></locationName></locality><locality><locationName><text>DES ABORDS DU MARAIS DE CANNA AUX ABORDS DES ILES LAVEZZI</text></locationName></locality><locality><locationName><text>DES ABORDS DE L'ILE LES MOINES AU CAP CORSE</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2738.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2738.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2738.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1035556.98440381,5290709.41861465 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    951135.99323589,5218675.47520038 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1032859.34207692,5082019.68881388 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    952640.66168644,5181035.64891384 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    970969.41584556,5146213.58788129 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1061078.83299302,5249696.8304757 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    973097.47344455,5246859.66466471 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    970993.53506856,5250266.38230544 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    974700.47411198,5136768.33736588 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    974688.59062482,5136882.20742701 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    963280.94968143,5200830.89214045 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    951982.02136592,5215576.42181261 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1044219.49611238,5314110.64477975 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1031592.15520673,5269964.82619763 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    951074.76751595,5197138.69322248 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1048560.95625331,5122330.73252304 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    988869.58996511,5075131.17767067 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1022469.52293622,5272993.38473285 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1022027.95562274,5272167.317437 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1036545.87254703,5289092.19597483 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1030924.23826197,5269674.398549 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1024770.12574595,5276763.39655611 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    973377.62749638,5246688.35339138 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1033551.37824469,5081851.31577617 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    964203.04613017,5119188.30069603 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1047735.3366966,5119797.3149641 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1056431.2442524,5308375.30417651 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    952505.22297265,5217123.31026247 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1056827.29880437,5157419.32678463 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1068681.07630052,5246742.29026223 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    971199.47612653,5147021.26496605 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1054371.83367272,5158969.90427354 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    955740.90950504,5213188.78348246 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    988238.77951729,5087681.70803963 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1059887.71444153,5304034.91614878 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    955998.79965871,5218778.45955086 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    988687.76813015,5087669.32028584 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1046653.68231106,5090637.88203622 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    950978.29062393,5196765.29215778 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1038683.20677026,5301087.54074955 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1028844.41910898,5062861.37861494 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1054523.97031014,5309658.53805768 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    975655.96640795,5139906.58312868 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1047280.78210919,5119332.47200594 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    956035.90615564,5219087.4193281 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    971225.45067438,5146983.87100031 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1055867.30663156,5264536.36380544 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    949709.24842889,5196487.1304458 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-05-22</date></dateStart><dateEnd><date>2026-06-20</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><information>MISE EN OEUVRE DE PLONGEURS PAR LE NAVIRE VICTORIA IV AUX POSITIONS SUIVANTES :
+41-59.19N 009-28.29E/42-59.09N 009-28.38E
+42-41.25N 009-29.10E/42-58.58N 009-29.40E
+42-34.20N 009-36.01E/41-58.57N 009-29.62E
+42-35.37N 009-31.91E/42-56.87N 009-31.27E
+42-44.60N 009-11.10E/42-46.10N 009-12.34E
+42-50.97N 009-18.69E/42-46.10N 009-12.34E
+42-51.61N 009-18.15E/42-55.71N 009-19.84E
+42-55.71N 009-19.84E/43-00.84N 009-22.82E
+41-43.47N 009-24.72E/41-44.49N 009-25.16E
+41-44.49N 009-25.16E/41-51.55N 008-45.87E
+42-43.29N 009-15.66E/42-43.40N 009-16.02E
+41-51.55N 008-45.87E/42-44.28N 009-10.86E
+41-20.50N 009-14.54E/41-28.17N 009-17.07E
+41-28.24N 009-16.70E/41-30.52N 008-52.89E
+41-30.53N 008-52.65E/41-25.46N 008-52.99E
+41-31.72N 009-24.14E/41-43.28N 009-24.47E
+42-21.81N 008-33.11E/42-22.42N 008-33.39E
+42-23.04N 008-32.65E/42-23.08N 008-35.27E
+42-34.18N 008-44.64E/42-23.20N 008-35.29E
+42-34.24N 008-44.49E/42-35.60N 008-43.35E
+41-54.39N 008-43.48E/41-54.40N 008-43.47E
+42-08.02N 008-33.46E/42-14.20N 008-31.88E
+42-14.31N 008-32.57E/42-14.46N 008-32.62E
+42-15.93N 008-39.20E/42-20.85N 008-35.13E
+41-43.22N 008-39.69E/41-50.29N 008-45.35E
+41-50.34N 008-45.35E/41-43.22N 008-39.69E
+41-51.55N 008-45.87E/41-54.08N 008-43.34E
+41-54.08N 008-43.34E/41-54.08N 008-43.34E
+(CARTE FR7025)
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2738.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2990.2026"><id>NW.AVURNAV_LOCAL_TOULON.2990.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2990</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-16T08:52:45.452242Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS PRESQU'ILE DE GIENS</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2990.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2990.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2990.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        667916.9447596414,5318569.949760834 679048.8938389688,5303097.129440699 667916.9447596414,5303097.129440699 667916.9447596414,5318569.949760834 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>07:59:00</timeOfDayEnd><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>MILITARY_EXERCISE</warningHazardTypeDetails><information>SOUS-MARIN A L'IMMERSION PÉRISCOPIQUE
+DANS LA ZONE 07 DÉLIMITÉE PAR : 
+43-02.60N 006-00.00E
+42-56.50N 006-06.00E
+42-56.50N 006-00.00E
+(CARTE FR6951)
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2990.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2982.2026"><id>NW.AVURNAV_LOCAL_TOULON.2982.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2982</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-16T07:12:30.165933Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILE DU LEVANT</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2982.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2982.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2982.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        709105.15635315,5311971.84694547 709105.15635315,5279050.90391531 742129.93862182,5279050.90391531 742129.93862182,5324664.64397436 721721.36530972,5324664.64397436 721721.36530972,5319331.56912516 709105.15635315,5311971.84694547 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>11:00:00</timeOfDayStart><timeOfDayEnd>17:59:00</timeOfDayEnd><dateStart><date>2026-06-16</date></dateStart><dateEnd><date>2026-06-16</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FIRING_EXERCISE</warningHazardTypeDetails><information>DANS LA ZONE 13 DELIMITEE PAR :
+43-00.00N 006-22.20E/42-47.00N 006-22.20E
+42-47.00N 006-40.00E/43-05.00N 006-40.00E
+43-05.00N 006-29.00E/43-02.90N 006-29.00E
+(CARTE FR6951)
+DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2982.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2973.2026"><id>NW.AVURNAV_LOCAL_TOULON.2973.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2973</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-14T22:34:22.521538Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><warningHazardTypeGeneral>DRIFTING_HAZARDS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2973.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2973.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2973.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    830628.93380248,5418876.63648933 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>OBJECT_ADRIFT</warningHazardTypeDetails><information>COLIS ENTOURER D'UNE BACHE BLANCHE
+POSITION:43-41.90N 007-27.70E</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2973.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2977.2026"><id>NW.AVURNAV_LOCAL_TOULON.2977.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2977</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-15T08:14:31.423090Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>GOLFE D'AIGUES-MORTES</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2977.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2977.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2977.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        441165.44900648,5378938.35117677 441837.03713857,5378541.87143614 441707.57436612,5377805.55191782 441026.7395942,5378128.04654961 441165.44900648,5378938.35117677 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>06:00:00</timeOfDayStart><timeOfDayEnd>14:00:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-20</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>OPERATION_ON_PIPE</warningHazardTypeDetails><warningHazardTypeDetails>DIVING_OPERATIONS</warningHazardTypeDetails><information>TOUS LES JOURS DE 06H00 UTC A 14H00 UTC
+TRAVAUX DE CURAGE D'UN TRONCON D'EMISSAIRE EN MER
+DEPUIS LES NAVIRES HARMATTAN (SUPPORT PLONGEE)
+ET VAGABONDE 4 DANS LA ZONE DELIMITEE PAR :
+43-26.30N 003-57.78E
+43-26.15N 003-58.15E
+43-25.86N 003-58.08E
+43-25.99N 003-57.71E
+(CARTE FR7053)
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2977.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2961.2026"><id>NW.AVURNAV_LOCAL_TOULON.2961.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2961</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T12:55:45.277063Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS PORT LA NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2961.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2961.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2961.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    341938.2245448519,5313397.911532995 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_ESTABLISHMENT</warningHazardTypeDetails><information>BOUEE N°7 A LA POSITION :
+43-00.56N 003-04.30E
+(CARTE FR7434)
+MARQUE : CHENAL PRÉFÉRÉ TRIBORD
+LIVRE DES FEUX L1 : NON RENSEIGNE
+FL(2+1).R.2M
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2961.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2954.2026"><id>NW.AVURNAV_LOCAL_TOULON.2954.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2954</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T08:12:43.900204Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>DE LA BAIE DE BANDOL A L'ILE DU PLANIER</text></locationName></locality><locality><locationName><text>DE GIENS A CAVALAIRE</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2954.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2954.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2954.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        671025.79410971,5319399.34737242 671206.605666,5323738.82472344 676371.9242873748,5325587.597154619 683131.9445382376,5324593.476529492 688599.6079764355,5330359.376155228 697745.5177276027,5332148.793280456 706294.9551036939,5326979.366029797 707786.1360413842,5333341.738030609 715341.4527923486,5336025.863718451 718398.4218584,5335129.95276989 
+        742084.73573275,5329705.60608111 742627.17040163,5324642.88250491 721854.9364774,5325004.50561749 721854.9364774,5317410.4202532 690212.91412617,5303307.11886237 687139.11766919,5311986.07356441 671025.79410971,5319399.34737242 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        622142.37014545,5337379.80562283 556597.45396637,5337374.72321399 556597.45396637,5311971.84694547 618874.51970152,5311802.72772503 626976.10733857,5317893.0085713 640642.70103572,5328645.03626038 641880.55150944,5329619.50862331 641911.59851542,5329657.12995661 641912.71171033,5329657.57220262 641912.71171033,5329675.42980875 
+        641937.05728297,5329687.11123313 642357.98967351,5329888.93073537 642669.68424773,5330224.44206104 643003.64272011,5330361.70017132 643526.84432684,5331932.68678962 643385.89917958,5333727.08077484 641214.84185207,5334333.8222601 639346.08364471,5333727.08077484 633877.21772776,5336209.28481076 634042.10815389,5339436.21608747 
+        630826.74477194,5341035.8773788 627556.41791462,5341311.67925239 625138.02494235,5340484.27346081 622142.37014545,5337379.80562283 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-21</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SEA_TRIALS</warningHazardTypeDetails><information>ESSAIS AUV-USV125-T18 PAR LE NAVIRE ODYSSEE DANS LES ZONES SUIVANTES :
+ZONE 02-03-04 DELIMITEE PAR :
+43-02.93N 006-01.68E/43-04.64N 006-01.77E
+43-09.12N 006-27.21E/43-06.98N 006-39.98E
+43-04.99N 006-40.27E/43-05.13N 006-29.07E
+43-02.14N 006-29.07E/42-56.58N 006-12.02E
+43-00.01N 006-10.36E
+
+ZONE 30 DELIMITEE PAR :
+LA COTE/43-10,0N 005-36,0E
+43-10,0N 005-00,0E/43-00,0N 005-00,0E
+43-00,0N 005-34,0E/43-07,0N 005-46,0E
+(CARTE FR6951)
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2954.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2933.2026"><id>NW.AVURNAV_LOCAL_TOULON.2933.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2933</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-09T11:14:19.182213Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>ABORDS SOLENZARA</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2933.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2933.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2933.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1046811.3849230135,5139408.380089716 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_ESTABLISHMENT</warningHazardTypeDetails><information>BOUÉE BABORD SOLENZARA A LA POSITION :
+41-51.35N 009-24.22E
+(CARTE FR6855)
+MARQUE : LATERALE BABORD
+FONCTION PRINCIPALE : CHENALAGE/ALIGNEMENT
+N° LIVRE DES FEUX L1 : 68320
+PORTEE : 3MN
+RYTHME : ISOPHASE
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2933.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2787.2026"><id>NW.AVURNAV_LOCAL_TOULON.2787.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2787</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-22T06:46:15.884251Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><generalArea><locationName><text>ELBE</text></locationName></generalArea><locality><locationName><text>ABORDS CAPO PERTUSATO</text></locationName></locality><locality><locationName><text>ABORDS PUNTA DI ARCU</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2787.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2787.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2787.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        1089817.81486615,5256326.93277128 1090003.3473508,5251536.65728045 1080541.19063338,5240200.97002921 1061060.27974455,5237910.297208 1061190.15248381,5238514.37672089 1080541.19063338,5245489.26162174 1089817.81486615,5256326.93277128 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        1023953.78281346,5066774.05162968 1028313.79620286,5057186.74216961 1027293.36753726,5056445.85152715 1022840.58790553,5065340.29182847 1023953.78281346,5066774.05162968 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-05-25</date></dateStart><dateEnd><date>2026-06-30</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>OPERATION_ON_CABLE</warningHazardTypeDetails><warningHazardTypeDetails>UNDERWATER_OPERATIONS</warningHazardTypeDetails><information>MISE EN OEUVRE DE ROV ET DE GRAPIN PAR LE CABLIER ARTABRO - PROJET SACOI 3 DANS LES
+ZONES SUIVANTES.
+ZONE BONIFACIO DELIMITEE PAR : 
+41-22.08N 009-11.90E
+41-18.20N 009-14.25E
+41-17.90N 009-13.70E
+41-21.50N 009-11.30E
+
+ZONE ARCU DELIMITEE PAR : 
+42-38.00N 009-47.40E
+42-36.10N 009-47.50E
+42-31.60N 009-42.40E
+42-30.69N 009-31.90E
+42-30.93N 009-31.97E
+42-33.70N 009-42.40E
+(CARTE FR7025)
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2787.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2974.2026"><id>NW.AVURNAV_LOCAL_TOULON.2974.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2974</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-15T07:35:51.343833Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILE DU LEVANT</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2974.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2974.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2974.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        709105.15635315,5311971.84694547 709105.15635315,5279050.90391531 742129.93862182,5279050.90391531 742129.93862182,5324664.64397436 721721.36530972,5324664.64397436 721721.36530972,5319331.56912516 709105.15635315,5311971.84694547 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>05:00:00</timeOfDayStart><timeOfDayEnd>15:59:00</timeOfDayEnd><dateStart><date>2026-06-16</date></dateStart><dateEnd><date>2026-06-16</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FIRING_EXERCISE</warningHazardTypeDetails><information>DANS LA ZONE 13 DELIMITEE PAR :
+43-00.00N 006-22.20E/42-47.00N 006-22.20E
+42-47.00N 006-40.00E/43-05.00N 006-40.00E
+43-05.00N 006-29.00E/43-02.90N 006-29.00E
+(CARTE FR6951)
+DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2974.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2845.2026"><id>NW.AVURNAV_LOCAL_TOULON.2845.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2845</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-29T08:08:14.545509Z</publicationDate><generalArea><locationName><text>CORSE</text></locationName></generalArea><locality><locationName><text>ABORDS LA REVELLATA</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2845.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2845.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2845.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    962915.45068666,5246600.17968464 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_REMOVAL</warningHazardTypeDetails><information>BOUEE ODAS HOULOGRAPHE RELEVEE POUR ENTRETIEN A LA POSITION :
+42-34.14N 008-39.00E
+(CARTE FR6970)
+MARQUE : SPECIALE
+FL(5)Y.20S
+NAVIGUER AVEC PRUDENCE
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 2676/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2845.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2945.2026"><id>NW.AVURNAV_LOCAL_TOULON.2945.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2945</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-10T14:41:01.736149Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>DE LA BAIE DE BANDOL A L'ILE DU PLANIER</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2945.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2945.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2945.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        623389.148442332,5337374.71812649 556597.4539663679,5337374.71812649 556597.4539663679,5311971.846945471 619678.4987492228,5311971.846945471 641942.3969078776,5329746.596241549 644949.4974110649,5333223.407147838 638904.1003261445,5333533.427511168 634718.8254211994,5335858.580236137 634408.8050578702,5339268.8042327585 627898.3774279559,5342058.987502722 
+        624333.1432496695,5340508.885686075 623389.148442332,5337374.71812649 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-21</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SEA_TRIALS</warningHazardTypeDetails><information>DE SONAR TRACTE ET DE SONDEUR PAR LES NAVIRES GGIX, DRIX, IXL ET LET'S DOIX
+DANS LA ZONE 30 DÉLIMITÉE PAR : 
+43-10.00N 005-36.00E/43-10.00N 005-00.00E
+43-00.00N 005-00.00E/43-00.00N 005-34.00E
+43-07.00N 005-46.00E/LA COTE
+(CARTE FR6951)
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2945.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2828.2026"><id>NW.AVURNAV_LOCAL_TOULON.2828.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2828</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-27T14:11:29.744665Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILE DU LEVANT</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2828.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2828.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2828.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    718752.8455552364,5316285.464024437 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SECTOR_LIGHT_SECTOR_OBSCURED</warningHazardTypeDetails><information>PORT DE L'AVIS - FEU DE GUIDAGE
+A LA POSITION :
+43-01.70N 006-27.40E
+(CARTE FR6615)
+N° LIVRE DES FEUX L1 : 58840
+LEGENDE LF: Fl.G.4S8M 6M
+SECTEUR VERT DU FEU DE GUIDAGE ETEINT
+DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2828.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2980.2026"><id>NW.AVURNAV_LOCAL_TOULON.2980.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2980</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-15T11:44:51.225003Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS CAP COURONNE</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2980.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2980.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2980.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        565300.7828215554,5362390.427152698 565541.9750516075,5362390.427152698 565541.9750516075,5362109.866218568 565300.7828215554,5362109.866218568 565300.7828215554,5362390.427152698 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>04:00:00</timeOfDayStart><timeOfDayEnd>12:30:00</timeOfDayEnd><dateStart><date>2026-06-16</date></dateStart><dateEnd><date>2026-06-30</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>WORKS_IN_PROGRESS</warningHazardTypeDetails><warningHazardTypeDetails>BREAKWATER_CONSTRUCTION</warningHazardTypeDetails><information>TRAVAUX D'ENROCHEMENT SUR LA DIGUE DE L'ANSE DE TAMARIS 
+DANS LA ZONE DÉLIMITÉE PAR :
+43-19.82N 005-04.69E
+43-19.82N 005-04.82E
+43-19.71N 005-04.82E
+43-19.71N 005-04.69E
+(CARTE FR6767)
+MOYENS NAUTIQUES SUR ZONE.
+BARGES PONTOS ET ELEVINE, REMORQUEUR GAZELLE
+AMPLITUDE HORAIRE DE 04H00 A 12H30 UTC CHAQUE JOUR
+PRENDRE UN LARGE TOUR ET RESPECTER LES TERMES DE L'AP 196/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2980.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2942.2026"><id>NW.AVURNAV_LOCAL_TOULON.2942.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2942</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-10T14:12:53.502844Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GRANDE RADE DE TOULON</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2942.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2942.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2942.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        659673.92199888,5325937.66739372 661479.15307458,5326255.25167431 659761.12226667,5326781.19500327 659673.92199888,5325937.66739372 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-16</date></dateStart><dateEnd><date>2026-06-18</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>DIVING_OPERATIONS</warningHazardTypeDetails><information>POUR ESSAIS DE TRACTEUR SOUS-MARIN ALSEAMAR DANS LA ZONE DELIMITEE PAR :
+43-05.50N 005-55.56E
+43-05.63N 005-56.53E
+43-05.83N 005-55.60E
+(CARTE FR7093)
+1 EMBARCATION DE SURVEILLANCE
+BOUEE SPHERIQUE ORANGE EN SURFACE DERRIERE
+LES PLONGEURS.
+VHF 16/74 - INDICATIF : LOU BAR
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2942.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2972.2026"><id>NW.AVURNAV_LOCAL_TOULON.2972.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2972</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-14T13:09:11.854613Z</publicationDate><generalArea><locationName><text>ELBE</text></locationName></generalArea><locality><locationName><text>PORT DE PLAISANCE DE TAVERNA</text></locationName></locality><warningHazardTypeGeneral>DRIFTING_HAZARDS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2972.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2972.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2972.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1069464.90129944,5215084.28304539 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>OBJECT_ADRIFT</warningHazardTypeDetails><information>prendre un large detour et naviguer avec precaution
+aussiere a la derive 42-21.61N 009-36.43E
+annuler ce message 16/06/26 a 15h00 LT</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2972.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2862.2026"><id>NW.AVURNAV_LOCAL_TOULON.2862.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2862</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-01T10:57:41.910241Z</publicationDate><generalArea><locationName><text>ELBE</text></locationName></generalArea><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>DES ABORDS DE BASTIA AUX ABORDS DE PORTO-VECCHIO</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2862.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2862.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2862.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        1059753.31914371,5192437.04617499 1051497.60711173,5264442.8165926 1069699.6788099,5264717.97353088 1077652.56338695,5186674.54532287 1052759.56682647,5107200.20232036 1039973.6646961,5109297.05043881 1041031.84296565,5141607.50037539 1059753.31914371,5192437.04617499 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-06-26</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><warningHazardTypeDetails>HYDROGRAPHIC_SURVEY</warningHazardTypeDetails><information>PAR LE NAVIRE VICTORIA IV DANS LA ZONE DÉLIMITÉE PAR :
+42-12.58N 009-31.20E
+42-41.22N 009-26.75E
+42-41.33N 009-36.56E
+42-10.28N 009-40.84E
+41-38.40N 009-27.43E
+41-39.24N 009-20.53E
+41-52.23N 009-21.10E
+(CARTE FR6713)
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2862.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2978.2026"><id>NW.AVURNAV_LOCAL_TOULON.2978.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2978</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-15T08:17:20.046902Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS CAP LARDIER</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2978.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2978.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2978.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:CircleByCenterPoint srsName="EPSG:3857" numArc="1"><gml:Pos> 738421.1442535601,5335393.349385455 </gml:Pos><gml:radius uom="m"> 200 </gml:radius></gml:CircleByCenterPoint></S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-06-30</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><information>MISE EN OEUVRE AUV ET USV  PAR LE NAVIRE
+CAPITAINE REMY DANS LA ZONE D'UN RAYON DE 200 METRES      
+AUTOUR DE LA POSITION :    
+43-09.22N 006-38.00E
+(CARTE FR7267)
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2978.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2821.2026"><id>NW.AVURNAV_LOCAL_TOULON.2821.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2821</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-27T07:15:27.041431Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILE DE PORQUEROLLES</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2821.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2821.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2821.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    690704.04452502,5306471.06602436 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_MISSING</warningHazardTypeDetails><information>BOUEE DE PROTECTION DE LA BOUEE HOULOGRAPHE A LA POSITION :
+42-57.83N 006-12.28E
+(CARTE FR7407)
+FL(4).Y.10S
+MARQUE : SPECIALE
+LIVRE DES FEUX  L1 : NON RENSEIGNE
+NAVIGUER AVEC PRUDENCE
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 2654/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2821.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2843.2026"><id>NW.AVURNAV_LOCAL_TOULON.2843.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2843</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-29T07:52:36.326168Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GOLFE DE FOS SUR MER</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2843.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2843.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2843.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        542237.23965404,5372800.123135 547506.36221825,5372800.123135 548619.55712618,5371140.52744334 548805.08961084,5367439.42094317 548248.49215687,5360806.64418002 546949.76476428,5361061.66346907 547320.8297336,5365908.35987783 546949.76476428,5370885.23135723 545651.0373717,5371523.48473462 542311.4526479,5371523.48473462 
+        542237.23965404,5372800.123135 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>17:00:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-07-31</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><information>CAMPAGNE DE LEVES GEOPHYSIQUES PAR LE NAVIRE FESTINA LENTE DANS LA 
+ZONE DELIMITEE PAR : 
+43-23.90N 004-52.26E/43-23.90N 004-55.10E
+43-23.25N 004-55.70E/43-21.80N 004-55.80E
+43-19.20N 004-55.50E/43-19.30N 004-54.80E
+43-21.20N 004-55.00E/43-23.15N 004-54.80E
+43-23.40N 004-54.10E/43-23.40N 004-52.30E
+(CARTE FR6684)
+RESTRICTIONS POUR LA PECHE AUX ARTS DORMANTS ET A LA LIGNE, LA PLONGEE 
+ET LA BAIGNADE
+INTERDICTION DE MOUILLER HORS DES ZONES REGLEMENTEES PAR LE GPMM
+RAYON DE SECURITE DE 300 METRES DEMANDE
+VEILLE VHF SUR 16, 17 ET 67.
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 2664/26</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2843.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2987.2026"><id>NW.AVURNAV_LOCAL_TOULON.2987.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2987</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-16T08:27:03.351964Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILE DU LEVANT</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2987.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2987.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2987.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        709105.15635315,5311971.84694547 709105.15635315,5279050.90391531 742129.93862182,5279050.90391531 742129.93862182,5324664.64397436 721721.36530972,5324664.64397436 721721.36530972,5319331.56912516 709105.15635315,5311971.84694547 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>06:00:00</timeOfDayStart><timeOfDayEnd>09:59:00</timeOfDayEnd><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FIRING_EXERCISE</warningHazardTypeDetails><information>DANS LA ZONE 13 DELIMITEE PAR :
+43-00.00N 006-22.20E/42-47.00N 006-22.20E
+42-47.00N 006-40.00E/43-05.00N 006-40.00E
+43-05.00N 006-29.00E/43-02.90N 006-29.00E
+(CARTE FR6951)
+DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2987.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2975.2026"><id>NW.AVURNAV_LOCAL_TOULON.2975.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2975</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-15T07:40:11.292474Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GRANDE RADE DE TOULON</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2975.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2975.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2975.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        659384.30579034,5324413.15918 660126.43572896,5328224.26127786 670145.18990035,5328732.52580574 670887.31983898,5323905.12975145 670998.17833601,5319217.73779439 661610.6956062,5322127.24435621 659384.30579034,5324413.15918 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>07:00:00</timeOfDayStart><timeOfDayEnd>14:59:00</timeOfDayEnd><dateStart><date>2026-06-16</date></dateStart><dateEnd><date>2026-06-16</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SEA_TRIALS</warningHazardTypeDetails><information>MISE EN OEUVRE D'ANTENNE REMORQUEE PAR SEMI-RIGIDE DGA
+ET NAVIRE PETRARQUE DANS LA ZONE DELIMITEE PAR :
+43-04.90N 005-55.40E/43-06.40N 005-55.80E
+43-06.60N 006-01.20E/43-04.70N 006-01.60E
+43-02.90N 006-01.70E/43-04.00N 005-56.60E
+(CARTE FR7091)
+LONGUEUR : 350 METRES
+RAYON DE SECURITE DE 400 METRES DEMANDE
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2975.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_TOULON.2986.2026"><id>NW.AVURNAV_LOCAL_TOULON.2986.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>2986</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-16T08:15:29.599283Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>DES ABORDS DE SANARY AUX ABORDS DE TOULON</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_TOULON.2986.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_TOULON.2986.2026.1"><id>NW.AVURNAV_LOCAL_TOULON.2986.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        626992.66303313,5302921.92698634 627014.30089317,5317893.66844018 642098.15816627,5329801.97681368 650698.60310269,5329901.21271679 656116.39949578,5324429.56953634 661868.55883663,5322478.97351288 661754.09165088,5322135.57195565 667782.6967668,5320380.40844089 667762.52954196,5302988.54441527 626992.66303313,5302921.92698634 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>MILITARY_EXERCISE</warningHazardTypeDetails><information>SOUS-MARIN A L'IMMERSION PÉRISCOPIQUE
+DANS LA ZONE 05-06 DÉLIMITÉE PAR : 
+43-04.1N 005-56.7E/43-03.4N 006-00.0E
+42-56.5N 006-00.0E/42-56.5N 005-38.0E
+43-02.4N 005-38.0E/43-07.0N 005-46.0E
+LA COTE
+(CARTE FR6951)
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_TOULON.2986.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet></S124:ExchangeSet>

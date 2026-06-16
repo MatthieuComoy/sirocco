@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.NAVAREA_II.215.2026"><id>NW.NAVAREA_II.215.2026</id><messageSeriesIdentifier><nameOfSeries>NAVAREA II</nameOfSeries><productionAgency>SHOM</productionAgency><warningNumber>215</warningNumber><warningType>NAVAREA_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-21T09:04:06.547607Z</publicationDate><generalArea><locationName><text>GULF OF GUINEA</text></locationName></generalArea><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.NAVAREA_II.215.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.215.2026.1"><id>NW.NAVAREA_II.215.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    783318.15021534,480054.07545286 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>signalee 04-18.50N 007-02.20E
+Naviguer avec prudence et à vitesse réduite</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.215.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.NAVAREA_II.248.2026"><id>NW.NAVAREA_II.248.2026</id><messageSeriesIdentifier><nameOfSeries>NAVAREA II</nameOfSeries><productionAgency>SHOM</productionAgency><warningNumber>248</warningNumber><warningType>NAVAREA_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-16T08:28:41.713398Z</publicationDate><generalArea><locationName><text>CASABLANCA</text></locationName></generalArea><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.NAVAREA_II.248.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.248.2026.1"><id>NW.NAVAREA_II.248.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        -896086.90116656,4030891.21900242 -898504.17449062,4030745.88903838 -901224.61471935,4030559.55386541 -904626.9871778,4030055.29328178 -907800.52194779,4029355.28888042 -910996.31954036,4028295.13447019 -914262.687149,4027058.57783759 -918251.30633755,4024844.62078386 -921823.13937584,4022543.92382008 -925682.00761979,4019479.38254405 
+        -928301.13323973,4016998.37789501 -930500.4962016,4014491.22085372 -932396.34430624,4012025.35690261 -934314.08971521,4009200.47252259 -935805.0365806,4006469.50267004 -937060.05080353,4003664.10915961 -938202.69222076,4000731.83531989 -939184.26470009,3997489.62262328 -939922.86356207,3994292.70662151 -940437.13872053,3990842.05926986 
+        -940655.98183796,3986352.95160558 -896041.80595897,3986256.88784075 -896086.90116656,4030891.21900242 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>00:00:00</timeOfDayStart><timeOfDayEnd>00:00:00</timeOfDayEnd><dateStart><date>2026-06-16</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FIRING_EXERCISE</warningHazardTypeDetails><information>Dans un rayon de 20 milles centré sur :
+ALPHA 33-41N 008-03W entre 270 et 360 degrés
+Naviguer avec prudence
+Zone réglementée</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.248.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.NAVAREA_II.242.2026"><id>NW.NAVAREA_II.242.2026</id><messageSeriesIdentifier><nameOfSeries>NAVAREA II</nameOfSeries><productionAgency>SHOM</productionAgency><warningNumber>242</warningNumber><warningType>NAVAREA_IN_FORCE_BULLETIN</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-14T17:36:15.201169Z</publicationDate><generalArea><locationName><text>TOUTE ZONE NAVAREA II</text></locationName></generalArea><warningHazardTypeGeneral>IN_FORCE_BULLETIN</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.NAVAREA_II.242.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.242.2026.1"><id>NW.NAVAREA_II.242.2026.1</id><S124:warningInformation><information>NAVAREA II en vigueur le 141630 UTC JUN 26 :
+52/26, 208/26, 210/26, 215/26, 223/26, 231/26, 232/26, 235/26, 238/26, 239/26, 240/26, 241/26 et ce MSG
+Seuls ceux ayant moins de 42 jours de diffusion sont transmis quotidiennement sur SAFETYNET et SAFETYCAST à 04H30 et 16H30 UTC.
+Les NAVAREA II en vigueur sont consultables sur : portail.ping-info-nautique.fr
+Alternativement ils peuvent être demandés par mel à : coord.navarea2@shom.fr</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.242.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.NAVAREA_II.223.2026"><id>NW.NAVAREA_II.223.2026</id><messageSeriesIdentifier><nameOfSeries>NAVAREA II</nameOfSeries><productionAgency>SHOM</productionAgency><warningNumber>223</warningNumber><warningType>NAVAREA_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-26T09:51:36.107030Z</publicationDate><generalArea><locationName><text>ROMEO</text></locationName></generalArea><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.NAVAREA_II.223.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.223.2026.1"><id>NW.NAVAREA_II.223.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        -1948091.0888822877,5833927.977655366 -1836771.5980890142,5833927.977655366 -1836771.5980890142,5753680.878045448 -1948091.0888822877,5753680.878045448 -1948091.0888822877,5833927.977655366 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-06-29</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><information>Par N/O POURQUOI-PAS avec ROV
+zone délimitée par : 
+46-20N 017-30W
+46-20N 016-30W
+45-50N 016-30W
+45-50N 017-30W
+Prendre un large tour</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.223.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.NAVAREA_II.235.2026"><id>NW.NAVAREA_II.235.2026</id><messageSeriesIdentifier><nameOfSeries>NAVAREA II</nameOfSeries><productionAgency>SHOM</productionAgency><warningNumber>235</warningNumber><warningType>NAVAREA_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-05T01:49:55.014995Z</publicationDate><generalArea><locationName><text>GULF OF GUINEA</text></locationName></generalArea><generalArea><locationName><text>POINTE NOIRE</text></locationName></generalArea><generalArea><locationName><text>SIERRA LEONE</text></locationName></generalArea><warningHazardTypeGeneral>RIG_LIST</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.1"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.2"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.3"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.4"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.5"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.6"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.7"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.8"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.9"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.10"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.11"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.12"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.13"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.14"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.15"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.16"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.17"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.18"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.19"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.20"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.21"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.22"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.23"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.24"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.25"/><theWarningPart xlink:href="#NW.NAVAREA_II.235.2026.26"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.1"><id>NW.NAVAREA_II.235.2026.1</id><S124:warningInformation><information>Dernières positions connues des plateformes mobiles et navires de forage le 050430 UTC jun 26.
+Pour signaler une unité mobile de forage selon la résolution IMO A.1023(26), paragraphe 11.5.1,
+contactez coord.navarea2@shom.fr - Sujet: MODU report.</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.2"><id>NW.NAVAREA_II.235.2026.2</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    871075.01545737,487906.09843352 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>ADRIATIC 1 04-22.72N 007-49.50E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.3"><id>NW.NAVAREA_II.235.2026.3</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    815378.1635638,475049.25567458 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>BLUE SHARK 04-15.81N 007-19.48E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.4"><id>NW.NAVAREA_II.235.2026.4</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1288151.66989786,-560564.55079523 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>DAGDA 05-01.65S 011-34.30E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.5"><id>NW.NAVAREA_II.235.2026.5</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -1951523.43984841,1542360.58505593 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>LEOPOLD S. SENGHOR 13-43.33N 017-31.85W</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.6"><id>NW.NAVAREA_II.235.2026.6</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1185367.04446371,-466045.03425212 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>MABOMO 04-10.97S 010-38.90E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.7"><id>NW.NAVAREA_II.235.2026.7</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -457096.38244565,517460.23477558 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>DEEPWATER SKYROS 04-38.60N 004-06.37W</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.8"><id>NW.NAVAREA_II.235.2026.8</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    937087.47349778,475998.10232939 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>CLIVANA 04-16.32N 008-25.08E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.9"><id>NW.NAVAREA_II.235.2026.9</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    851167.37985384,479105.18370381 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>DELTA CONQUEST 8 04-17.99N 007-38.77E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.10"><id>NW.NAVAREA_II.235.2026.10</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    561773.81028826,604421.24284626 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>main pass IV 05-25.29N 005-02.79E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.11"><id>NW.NAVAREA_II.235.2026.11</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1264162.69069688,-514835.65621117 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>axima 04-37.19S 011-21.37E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.12"><id>NW.NAVAREA_II.235.2026.12</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1315035.51245692,-640306.45603194 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>shelf drilling tenacious 05-44.54S 011-48.79E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.13"><id>NW.NAVAREA_II.235.2026.13</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1348895.37643903,-599948.60236472 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>HAMAD EAGLE 05-22.89S 012-07.04E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.14"><id>NW.NAVAREA_II.235.2026.14</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    707824.98220903,431599.26851989 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>NATT 03-52.45N 006-21.51E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.15"><id>NW.NAVAREA_II.235.2026.15</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    982394.50625064,-153208.90419772 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>sianna 01-22.57S 008-49.50E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.16"><id>NW.NAVAREA_II.235.2026.16</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    974045.54444114,-133518.92679705 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>banba 01-11.96S 008-45.00E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.17"><id>NW.NAVAREA_II.235.2026.17</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1285777.22515924,-504617.37702928 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>PROSPECTOR 5 04-31.70S 011-33.02E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.18"><id>NW.NAVAREA_II.235.2026.18</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    872299.52985609,451033.84992796 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>oritsetimeyin 04-02.90N 007-50.16E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.19"><id>NW.NAVAREA_II.235.2026.19</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    548044.40642375,583160.171243 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>shelf drilling scepter 05-13.88N 004-55.39E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.20"><id>NW.NAVAREA_II.235.2026.20</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    728233.55552113,455051.46551932 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>shelf drilling achiever 04-05.06N 006-32.51E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.21"><id>NW.NAVAREA_II.235.2026.21</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    871037.90896043,491292.74303037 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>shelf drilling victory 04-24.54N 007-49.48E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.22"><id>NW.NAVAREA_II.235.2026.22</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -520734.02468247,561123.30146433 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>gerd 05-02.05N 004-40.67W</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.23"><id>NW.NAVAREA_II.235.2026.23</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    579918.88728756,594326.16489421 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>admarine 504 05-19.87N 005-12.57E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.24"><id>NW.NAVAREA_II.235.2026.24</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    833838.64578702,447388.3904309 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>JUB PIONEER 04-00.94N 007-29.43E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.25"><id>NW.NAVAREA_II.235.2026.25</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1282660.27941703,-505194.33079767 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>SCARABEO 5 04-32.01S 011-31.34E</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.235.2026.26"><id>NW.NAVAREA_II.235.2026.26</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -320971.19845394,508041.93733053 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>NOBLE VENTURER 04-33.54N 002-53.00W</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.235.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.NAVAREA_II.240.2026"><id>NW.NAVAREA_II.240.2026</id><messageSeriesIdentifier><nameOfSeries>NAVAREA II</nameOfSeries><productionAgency>SHOM</productionAgency><warningNumber>240</warningNumber><warningType>NAVAREA_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-12T16:10:35.850209Z</publicationDate><generalArea><locationName><text>IRVING</text></locationName></generalArea><generalArea><locationName><text>METEOR</text></locationName></generalArea><warningHazardTypeGeneral>HAZARD_OTHER</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.NAVAREA_II.240.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.240.2026.1"><id>NW.NAVAREA_II.240.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        -3495431.45431134,3583065.4405836 -3424929.29567475,3514265.64140506 -3812692.55966962,3106823.36425411 -3885050.22868525,3169357.06767421 -3495431.45431134,3583065.4405836 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-07-17</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FALLOUT_HAZARD</warningHazardTypeDetails><information>Retombées dangereuses possibles de 08:18 à 13:36 UTC chaque jour.
+zone délimitée par : 
+30-37N 031-24W
+30-05N 030-46W
+26-52N 034-15W
+27-22N 034-54W
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.240.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.NAVAREA_II.208.2026"><id>NW.NAVAREA_II.208.2026</id><messageSeriesIdentifier><nameOfSeries>NAVAREA II</nameOfSeries><productionAgency>SHOM</productionAgency><warningNumber>208</warningNumber><warningType>NAVAREA_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-12T14:11:19.229137Z</publicationDate><generalArea><locationName><text>AGADIR</text></locationName></generalArea><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.NAVAREA_II.208.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.208.2026.1"><id>NW.NAVAREA_II.208.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -1075828.665523127,3723667.9735674686 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>FEU DU PHARE DE CAP HADID
+31-41.85N 009-39.86W</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.208.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.NAVAREA_II.52.2026"><id>NW.NAVAREA_II.52.2026</id><messageSeriesIdentifier><nameOfSeries>NAVAREA II</nameOfSeries><productionAgency>SHOM</productionAgency><warningNumber>52</warningNumber><warningType>NAVAREA_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-02-07T12:16:57.216353Z</publicationDate><generalArea><locationName><text>GULF OF GUINEA</text></locationName></generalArea><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.NAVAREA_II.52.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.52.2026.1"><id>NW.NAVAREA_II.52.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        564204.2858372416,410867.2558768874 820239.1146617708,410309.5047388911 819682.5172078045,322592.9093258223 719866.0404631692,295473.3445452262 564389.818321897,292873.1265338841 564204.2858372416,410867.2558768874 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><dateStart><date>2026-02-09</date></dateStart><dateEnd/></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SEISMIC_SURVEY</warningHazardTypeDetails><information>Jusqu'à nouvel avis
+par le navire RAMFORM HYPERION remorquant 12 cables de 6 MILLES de long dans une zone délimitée par : 
+03-41.30N 005-04.10E
+03-41.00N 007-22.10E
+02-53.80N 007-21.80E
+02-39.20N 006-28.00E
+02-37.80N 005-04.20E
+Prendre un large tour, 3 milles sur l'avant, 3 milles sur les côtés,
+7 milles sur l'arrière.</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.52.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.NAVAREA_II.239.2026"><id>NW.NAVAREA_II.239.2026</id><messageSeriesIdentifier><nameOfSeries>NAVAREA II</nameOfSeries><productionAgency>SHOM</productionAgency><warningNumber>239</warningNumber><warningType>NAVAREA_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-11T15:01:24.031048Z</publicationDate><generalArea><locationName><text>TARFAYA</text></locationName></generalArea><generalArea><locationName><text>CANARIAS</text></locationName></generalArea><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.NAVAREA_II.239.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.NAVAREA_II.239.2026.1"><id>NW.NAVAREA_II.239.2026.1</id><geometry><S100:curveProperty><S100:Curve><gml:LineString srsName='EPSG:3857'>
+  <gml:coordinates>
+    -1439732.08092634,3242146.32706873 -1441309.10704591,3243406.52375788 -1443442.73061945,3248448.47846767 -1493352.82431661,3265478.91586711 
+  </gml:coordinates>
+</gml:LineString>
+</S100:Curve></S100:curveProperty></geometry><S124:fixedDateRange><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-11-30</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>CABLE_LAYING_OPERATION</warningHazardTypeDetails><information>Par M/V TELIRI le long d'une ligne joignant :
+27-56.75N 012-56.00W, 
+27-57.35N 012-56.85W, 
+27-59.75N 012-58.00W, 
+28-07.85N 013-24.90W.
+Prendre un large tour</information></S124:warningInformation><header xlink:href="#PR.NAVAREA_II.239.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet></S124:ExchangeSet>

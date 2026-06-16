@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_BREST.240.2026"><id>NW.AVURNAV_BREST.240.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV BREST</nameOfSeries><productionAgency>CECLANT</productionAgency><warningNumber>240</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-12T09:42:32.060540Z</publicationDate><generalArea><locationName><text>IROISE</text></locationName></generalArea><warningHazardTypeGeneral>SCIENTIFIC_INSTRUMENTS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_BREST.240.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_BREST.240.2026.1"><id>NW.AVURNAV_BREST.240.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -495779.90549630945,6021600.867016253 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -502254.98921078484,6053947.73446368 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -516114.2658145473,6031050.353234438 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -473534.5605861203,6039464.68967333 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:fixedDateRange><dateStart><date>2026-06-12</date></dateStart><dateEnd/></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_BUOY_APPARATUS</warningHazardTypeDetails><information>47-40.86N 004-30.71W
+47-35.60N 004-15.23W
+47-29.10N 004-27.22W
+47-32.54N 004-38.18W</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_BREST.240.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_BREST.238.2026"><id>NW.AVURNAV_BREST.238.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV BREST</nameOfSeries><productionAgency>CECLANT</productionAgency><warningNumber>238</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-12T08:00:51.079304Z</publicationDate><generalArea><locationName><text>CANTABRICO</text></locationName></generalArea><generalArea><locationName><text>ROCHEBONNE</text></locationName></generalArea><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_BREST.238.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_BREST.238.2026.1"><id>NW.AVURNAV_BREST.238.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        -222638.98158655,5653062.5386325 -161413.26165025,5682072.71002869 -172545.21072957,5566588.42148956 -244902.8797452,5566588.42148956 -222638.98158655,5653062.5386325 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        -248613.52943831,5545748.80068162 -172545.21072957,5545748.80068162 -174400.53557613,5522361.14385891 -191098.45919512,5429404.03043959 -247685.86701503,5456419.39885211 -263456.12821075,5487391.66361245 -248613.52943831,5545748.80068162 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>09:30:00</timeOfDayStart><timeOfDayEnd>11:00:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-15</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>12:45:00</timeOfDayStart><timeOfDayEnd>14:15:00</timeOfDayEnd><dateStart><date>2026-06-15</date></dateStart><dateEnd><date>2026-06-15</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>09:00:00</timeOfDayStart><timeOfDayEnd>10:30:00</timeOfDayEnd><dateStart><date>2026-06-16</date></dateStart><dateEnd><date>2026-06-16</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>12:45:00</timeOfDayStart><timeOfDayEnd>14:15:00</timeOfDayEnd><dateStart><date>2026-06-16</date></dateStart><dateEnd><date>2026-06-16</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>09:00:00</timeOfDayStart><timeOfDayEnd>10:30:00</timeOfDayEnd><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>12:45:00</timeOfDayStart><timeOfDayEnd>14:15:00</timeOfDayEnd><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>09:00:00</timeOfDayStart><timeOfDayEnd>10:30:00</timeOfDayEnd><dateStart><date>2026-06-18</date></dateStart><dateEnd><date>2026-06-18</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>12:45:00</timeOfDayStart><timeOfDayEnd>14:15:00</timeOfDayEnd><dateStart><date>2026-06-18</date></dateStart><dateEnd><date>2026-06-18</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FIRING_EXERCISE</warningHazardTypeDetails><information>EXERCICES DE TIRS 
+zone délimitée par : 
+45-12.00N 002-00.00W
+45-23.00N 001-27.00W
+44-39.00N 001-33.00W
+44-39.00N 002-12.00W
+
+zone délimitée par : 
+44-31.00N 002-14.00W
+44-31.00N 001-33.00W
+44-22.00N 001-34.00W
+43-46.00N 001-43.00W
+43-56.50N 002-13.50W
+44-08.50N 002-22.00W
+
+Précisions sur la zone employée auprès du bureau opération de DGA essais en vol : 05 57 15 40 29/ 05 57 15 43 05</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_BREST.238.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_BREST.220.2026"><id>NW.AVURNAV_BREST.220.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV BREST</nameOfSeries><productionAgency>CECLANT</productionAgency><warningNumber>220</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-05T06:41:18.383309Z</publicationDate><generalArea><locationName><text>IROISE</text></locationName></generalArea><generalArea><locationName><text>PAZENN</text></locationName></generalArea><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_BREST.220.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_BREST.220.2026.1"><id>NW.AVURNAV_BREST.220.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        -539123.60626461,6145241.75206982 -538506.81491553,6164362.28389117 -833258.3811975,6167537.12966131 -833258.3811975,6184354.77579141 -926198.25381281,6184037.46171348 -997474.46443391,6153892.62431048 -539123.60626461,6145241.75206982 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><dateStart><date>2026-06-08</date></dateStart><dateEnd><date>2026-06-27</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>HYDROGRAPHIC_SURVEY</warningHazardTypeDetails><information>Un drone maritime de surface du SHOM réalisera un levé hydrographique  
+respecter une distance 400m.
+zone délimitée par : 
+48-13.81N 004-50.58W
+48-20.67N 004-50.25W
+48-21.81N 007-29.12W
+48-27.82N 007-29.12W
+48-27.71N 008-19.21W
+48-16.92N 008-57.63W</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_BREST.220.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_BREST.233.2026"><id>NW.AVURNAV_BREST.233.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV BREST</nameOfSeries><productionAgency>CECLANT</productionAgency><warningNumber>233</warningNumber><warningType>COASTAL_IN_FORCE_BULLETIN</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-10T11:32:41.614170Z</publicationDate><generalArea><locationName><text>CANTABRICO</text></locationName></generalArea><generalArea><locationName><text>CASQUETS</text></locationName></generalArea><generalArea><locationName><text>FINISTERRE</text></locationName></generalArea><generalArea><locationName><text>IROISE</text></locationName></generalArea><generalArea><locationName><text>OUESSANT</text></locationName></generalArea><generalArea><locationName><text>PAZENN</text></locationName></generalArea><generalArea><locationName><text>ROCHEBONNE</text></locationName></generalArea><generalArea><locationName><text>SOLE</text></locationName></generalArea><generalArea><locationName><text>YEU</text></locationName></generalArea><warningHazardTypeGeneral>IN_FORCE_BULLETIN</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_BREST.233.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_BREST.233.2026.1"><id>NW.AVURNAV_BREST.233.2026.1</id><S124:warningInformation><information>AVURNAV BREST en vigueur le 101128 UTC JUN 26 :
+198/26, 220/26, 221/26, 222/26, 223/26, 224/26, 227/26, 228/26, 230/26 et ce MSG</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_BREST.233.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_BREST.239.2026"><id>NW.AVURNAV_BREST.239.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV BREST</nameOfSeries><productionAgency>CECLANT</productionAgency><warningNumber>239</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-12T08:46:10.788631Z</publicationDate><generalArea><locationName><text>IROISE</text></locationName></generalArea><generalArea><locationName><text>YEU</text></locationName></generalArea><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_BREST.239.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_BREST.239.2026.1"><id>NW.AVURNAV_BREST.239.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:CircleByCenterPoint srsName="EPSG:3857" numArc="1"><gml:Pos> -697602.142304515,5850065.21567039 </gml:Pos><gml:radius uom="m"> 14816 </gml:radius></gml:CircleByCenterPoint></S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:CircleByCenterPoint srsName="EPSG:3857" numArc="1"><gml:Pos> -957347.62082215,5969320.87181905 </gml:Pos><gml:radius uom="m"> 14816 </gml:radius></gml:CircleByCenterPoint></S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><dateStart><date>2026-06-16</date></dateStart><dateEnd><date>2026-06-21</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><dateStart><date>2026-06-23</date></dateStart><dateEnd><date>2026-06-28</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SEA_TRIALS</warningHazardTypeDetails><information>NAVIRE 'SAPEUR' et 'YARA SELA'
+1 mille de tour demandé autour des navires
+zone d'un rayon de 8 NM autour de 46-26.00N 006-16.00W.
+zone d'un rayon de 8 NM autour de 47-10.00N 008-36.00W.</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_BREST.239.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_BREST.198.2026"><id>NW.AVURNAV_BREST.198.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV BREST</nameOfSeries><productionAgency>CECLANT</productionAgency><warningNumber>198</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-11T07:10:25.738262Z</publicationDate><generalArea><locationName><text>OUESSANT</text></locationName></generalArea><warningHazardTypeGeneral>ROUTING_INFORMATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_BREST.198.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_BREST.198.2026.1"><id>NW.AVURNAV_BREST.198.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        -459118.68652839,6223519.82304144 -455927.52779232,6223407.38795781 -455779.10180459,6223885.24734667 -455797.65505306,6225515.79359989 -455667.7823138,6226021.88888273 -455704.88881073,6229368.50046699 -458098.25786279,6232941.55085349 -461400.73608965,6234010.94510732 -463886.87138404,6234348.67656758 -465129.93903123,6234996.03279044 
+        -469619.82515989,6234855.2989737 -477634.82849701,6234714.56749209 -478803.68315034,6234517.54734066 -482347.35360725,6235164.91645306 -487041.32546904,6235108.62152521 -488024.64763771,6235136.76894243 -492477.42726944,6236797.63193064 -502496.18144084,6241584.9892624 -517208.90747401,6248630.13640565 -530270.39439376,6254862.92928177 
+        -542311.4526479,6260592.11977271 -554315.40440511,6266353.44322258 -565892.63144761,6271666.37535235 -567061.48610094,6271722.91385811 -570660.81630325,6271835.99200406 -575224.91542578,6272740.67163086 -577989.34944714,6275398.72816733 -579789.0145483,6277491.82906215 -583314.13175675,6278962.96697893 -587766.91138848,6280547.55590588 
+        -588842.99979949,6277604.98442321 -584371.66691929,6276105.79885783 -581681.44589179,6274917.95388833 -580364.16525073,6273362.69504538 -576690.62205455,6269716.02841694 -570660.81630325,6268726.89396072 -567284.12508252,6268698.63467641 -566245.14316845,6268416.04702755 -555651.23829463,6263557.01680918 -543610.18004049,6257854.04248582 
+        -531624.78153174,6252126.70419178 -520696.91818554,6246910.58015674 -503776.35558496,6238824.88857747 -492718.61949949,6233532.51522304 -488674.01133401,6232069.25011484 -487041.32546904,6232069.25011484 -481920.62889255,6231956.7017138 -478710.91690801,6231281.44266015 -477041.12454611,6231703.47327041 -469638.37840836,6231816.01831212 
+        -465705.08973366,6231900.42807318 -464795.98055885,6231393.98210357 -460417.41392098,6230465.57633426 -459137.23977686,6228918.45908763 -458729.06831061,6226387.42090927 -458896.0475468,6225853.18710245 -458821.83455294,6224278.79880442 -459118.68652839,6223519.82304144 -459118.68652839,6223519.82304144 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:warningInformation><warningHazardTypeDetails>EXCLUSION_ZONES</warningHazardTypeDetails><information>PROJET CELTIC INTERCONNECTOR
+OPÉRATION CÂBLIER
+LE MOUILLAGE, LES ACTIVITÉS DE PLONGÉE AINSI QUE LES ACTIVITÉS DE PÊCHE AUX ARTS TRAINANTS ET DORMANTS SONT TEMPORAIREMENT INTERDITES DANS UNE ZONE RÉGLEMENTÉE TEMPORAIRE DE MILLE MÈTRES DE PART ET D’OUTRE DU TRACE D’INSTALLATION DE CÂBLES;
+IL EST IMPÉRATIF DE RETIRER TOUS LES ENGINS DE PÊCHE FIXES DANS UN RAYONS DE 1000 MÈTRES DE PART ET D'OUTRE DES POINTS SITUES EN AMONT.
+LES OPÉRATIONS RÉALISÉES PAR LES NAVIRES « ATHÉNA », « AETHRA » et « ARGO ». MAINTENIR UNE DISTANCE DE 1000 MÈTRES AUTOUR DES NAVIRES.
+
+zone délimitée par : 
+48-41.79N 004-07.46W
+48-41.75N 004-05.74W
+48-41.92N 004-05.66W
+48-42.50N 004-05.67W
+48-42.68N 004-05.60W
+48-43.87N 004-05.62W
+48-45.14N 004-06.91W
+48-45.52N 004-08.69W
+48-45.64N 004-10.03W
+48-45.87N 004-10.70W
+48-45.82N 004-13.12W
+48-45.77N 004-17.44W
+48-45.70N 004-18.07W
+48-45.93N 004-19.98W
+48-45.91N 004-22.51W
+48-45.92N 004-23.04W
+48-46.51N 004-25.44W
+48-48.21N 004-30.84W
+48-50.71N 004-38.77W
+48-52.92N 004-45.81W
+48-54.95N 004-52.30W
+48-56.99N 004-58.77W
+48-58.87N 005-05.01W
+48-58.89N 005-05.64W
+48-58.93N 005-07.58W
+48-59.25N 005-10.04W
+49-00.19N 005-11.53W
+49-00.93N 005-12.50W
+49-01.45N 005-14.40W
+49-02.01N 005-16.80W
+49-00.97N 005-17.38W
+49-00.44N 005-14.97W
+49-00.02N 005-13.52W
+49-09.47N 005-12.81W
+48-58.18N 005-10.83W
+48-57.83N 005-07.58W
+48-57.82N 005-05.76W
+48-57.72N 005-05.20W
+48-56.00N 004-59.49W
+48-53.98N 004-53.00W
+48-51.95N 004-46.54W
+48-50.10N 004-40.65W
+48-47.23N 004-31.53W
+48-45.35N 004-25.57W
+48-44.83N 004-23.39W
+48-44.83N 004-22.51W
+48-44.79N 004-19.75W
+48-44.55N 004-18.02W
+48-44.70N 004-17.12W
+48-44.74N 004-13.13W
+48-44.77N 004-11.01W
+48-44.59N 004-10.52W
+48-44.26N 004-08.16W
+48-43.71N 004-07.47W
+48-42.81N 004-07.25W
+48-42.62N 004-07.34W
+48-42.06N 004-07.30W
+48-41.79N 004-07.46W</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_BREST.198.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_BREST.243.2026"><id>NW.AVURNAV_BREST.243.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV BREST</nameOfSeries><productionAgency>CECLANT</productionAgency><warningNumber>243</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-15T12:25:50.371294Z</publicationDate><generalArea><locationName><text>IROISE</text></locationName></generalArea><locality><locationName><text>PIERRES NOIRES</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_BREST.243.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_BREST.243.2026.1"><id>NW.AVURNAV_BREST.243.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:CircleByCenterPoint srsName="EPSG:3857" numArc="1"><gml:Pos> -568471.5329843201,6142976.4398109745 </gml:Pos><gml:radius uom="m"> 9261.3 </gml:radius></gml:CircleByCenterPoint></S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>14:00:00</timeOfDayStart><timeOfDayEnd>23:00:00</timeOfDayEnd><dateStart><date>2026-06-17</date></dateStart><dateEnd><date>2026-06-17</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FIRING_EXERCISE</warningHazardTypeDetails><information>exercice militaire engageant l'espace sous-marin
+zone d'un rayon de 5 NM autour de 48-13.00N 005-06.40W.</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_BREST.243.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet></S124:ExchangeSet>
