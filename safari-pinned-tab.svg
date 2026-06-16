@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Waves -->
+  <path d="M 10,70 Q 30,78 50,70 T 90,70" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  <!-- Hull -->
+  <path d="M 20,70 L 80,70 L 70,82 L 30,82 Z" fill="currentColor"/>
+  <!-- Mast -->
+  <line x1="50" y1="20" x2="50" y2="70" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+  <!-- Sail 1 (left) -->
+  <path d="M 47,22 L 47,62 L 28,62 Z" fill="currentColor"/>
+  <!-- Sail 2 (right) -->
+  <path d="M 53,26 L 53,62 L 72,62 Z" fill="currentColor"/>
+</svg>
