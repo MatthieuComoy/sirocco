@@ -52,7 +52,7 @@ try:
 except AttributeError:
     resample_filter = Image.ANTIALIAS
 
-output_dir = "/var/home/matthieu/Documents/Sirroco"
+output_dir = "/var/home/matthieu/Documents/Sirroco/icons"
 os.makedirs(output_dir, exist_ok=True)
 
 # Generate high-res masters

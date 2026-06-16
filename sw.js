@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sirroco-nav-v16';
+const CACHE_NAME = 'sirroco-nav-v17';
 const ASSETS = [
   './',
   './index.html',
@@ -14,15 +14,15 @@ const ASSETS = [
   './js/harbors.js',
   './js/tracking.js',
   './manifest.json',
-  './favicon.ico',
-  './favicon-16x16.png',
-  './favicon-32x32.png',
-  './apple-touch-icon.png',
-  './safari-pinned-tab.svg',
-  './mstile-150x150.png',
+  './icons/favicon.ico',
+  './icons/favicon-16x16.png',
+  './icons/favicon-32x32.png',
+  './icons/apple-touch-icon.png',
+  './icons/safari-pinned-tab.svg',
+  './icons/mstile-150x150.png',
   './browserconfig.xml',
-  './icon-192.png',
-  './icon-512.png',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
 ];
