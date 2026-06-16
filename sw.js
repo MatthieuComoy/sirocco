@@ -1,9 +1,18 @@
-const CACHE_NAME = 'sirroco-nav-v15';
+const CACHE_NAME = 'sirroco-nav-v16';
 const ASSETS = [
   './',
   './index.html',
   './style.css',
-  './app.js',
+  './js/app.js',
+  './js/state.js',
+  './js/utils.js',
+  './js/i18n.js',
+  './js/dangerZones.js',
+  './js/anchorAlarm.js',
+  './js/gpsSimulator.js',
+  './js/weatherTides.js',
+  './js/harbors.js',
+  './js/tracking.js',
   './manifest.json',
   './favicon.ico',
   './favicon-16x16.png',
