@@ -2,6 +2,8 @@
 
 Sirroco Marine Navigation est une application web progressive (PWA) d'aide à la navigation pour les voiliers. Conçue pour fonctionner de manière autonome et hors-ligne, elle propose une cartographie marine interactive (OpenSeaMap), un suivi de trace précis, une alarme de mouillage de sécurité, et des prévisions météo et de marées locales.
 
+L'application est accessible en ligne et installable en tant que PWA à l'adresse suivante : [https://sirroconavigation.netlify.app/](https://sirroconavigation.netlify.app/)
+
 ---
 
 ## 🌟 Fonctionnalités clés
