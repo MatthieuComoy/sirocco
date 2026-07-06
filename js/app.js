@@ -5,7 +5,7 @@ import { translations, translateUI } from './i18n.js';
 import { calculateHaversineDistance, getPointOfSail, getSimulatedDepth } from './utils.js';
 import { updateAnchorLocation, checkAnchorAlarm, deactivateAnchorAlarm } from './anchorAlarm.js';
 import { toggleSimulator, startRealGPS, stopRealGPS } from './gpsSimulator.js';
-import { updateWeatherAndTides, updateBoatSails, onMapMove, initGribOverlay, activateGribOverlay, deactivateGribOverlay } from './weatherTides.js';
+import { updateWeatherAndTides, updateBoatSails, onMapMove, initGribOverlay, activateGribOverlay, deactivateGribOverlay, centerTideChartScroll } from './weatherTides.js';
 import { fetchHarborsInViewport, clearHarborMarkers, onMapMoveHarbors, renderHarborListAndMarkers, loadHarborsFromLocalStorage } from './harbors.js';
 import { startRouteTracking, stopRouteTracking, clearHistory, renderSavedTracks } from './tracking.js';
 import { initPingWarnings } from './pingWarnings.js';
@@ -368,7 +368,10 @@ export function setAppMode(mode) {
     // Set panel-weather active and others inactive
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     const weatherPanel = document.getElementById('panel-weather');
-    if (weatherPanel) weatherPanel.classList.add('active');
+    if (weatherPanel) {
+      weatherPanel.classList.add('active');
+      setTimeout(() => centerTideChartScroll(), 100);
+    }
 
     // Hide navigation overlays
     if (hud) hud.style.display = 'none';
@@ -805,6 +808,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (targetPanel === 'panel-weather' && state.map) {
         const center = state.map.getCenter();
         updateWeatherAndTides(center.lat, center.lng);
+        setTimeout(() => centerTideChartScroll(), 100);
       }
       
       // On small screens, if sidebar tab changes, keep open or toggle

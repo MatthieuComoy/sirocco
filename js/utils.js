@@ -70,12 +70,12 @@ export function calculateTidesForDay(lat, lon, date) {
   let rawHighTideHour = (daysSinceNewMoon * 0.835 + longitudeOffsetHours + 2.5) % 12.4206;
   if (rawHighTideHour < 0) rawHighTideHour += 12.4206;
 
-  // Generate hourly samples (48 points, every 30 minutes)
+  // Generate hourly samples (96 points, every 30 minutes for 48 hours)
   const samples = [];
   const amplitude = (baseRange / 2) * springNeapFactor;
   const meanLevel = baseRange / 2 + 0.1;
   
-  for (let i = 0; i <= 48; i++) {
+  for (let i = 0; i <= 96; i++) {
     const decimalHour = i * 0.5;
     const height = meanLevel + amplitude * Math.cos(2 * Math.PI * (decimalHour - rawHighTideHour) / 12.4206);
     samples.push({
@@ -84,7 +84,7 @@ export function calculateTidesForDay(lat, lon, date) {
     });
   }
 
-  // 3. Find high tides and low tides in the 24-hour period
+  // 3. Find high tides and low tides in the 48-hour period
   const extremes = [];
   for (let i = 1; i < samples.length - 1; i++) {
     const prev = samples[i-1].height;
@@ -107,8 +107,8 @@ export function calculateTidesForDay(lat, lon, date) {
   }
   
   const formatTime = (decimalHour) => {
-    const h = Math.floor(decimalHour);
-    const m = Math.round((decimalHour - h) * 60);
+    const h = Math.floor(decimalHour) % 24;
+    const m = Math.round((decimalHour % 1) * 60);
     return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
   };
 
@@ -116,7 +116,8 @@ export function calculateTidesForDay(lat, lon, date) {
     type: e.type,
     timeStr: formatTime(e.hour),
     hour: e.hour,
-    height: e.height
+    height: e.height,
+    isTomorrow: e.hour >= 24
   }));
 
   // Calculate current tide height for the current time

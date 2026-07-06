@@ -11,7 +11,7 @@ export function updateWeatherUI(weatherData, marineData) {
   // Wind speed
   const windSpeedEl = document.getElementById('weather-wind-speed');
   if (windSpeedEl && curWeather.wind_speed_10m !== undefined) {
-    windSpeedEl.textContent = `${Math.round(curWeather.wind_speed_10m)} Kts`;
+    windSpeedEl.textContent = Math.round(curWeather.wind_speed_10m);
   }
 
   // Wind Dir
@@ -19,7 +19,7 @@ export function updateWeatherUI(weatherData, marineData) {
   const windArrow = document.getElementById('weather-wind-arrow');
   if (curWeather.wind_direction_10m !== undefined) {
     state.currentWindDirection = curWeather.wind_direction_10m;
-    if (windDirEl) windDirEl.textContent = getWindCardinal(curWeather.wind_direction_10m);
+    if (windDirEl) windDirEl.textContent = `${getWindCardinal(curWeather.wind_direction_10m)} (${curWeather.wind_direction_10m}°)`;
     if (windArrow) {
       windArrow.style.transform = `rotate(${curWeather.wind_direction_10m + 180}deg)`;
     }
@@ -36,20 +36,20 @@ export function updateWeatherUI(weatherData, marineData) {
   // Barometer
   const baroEl = document.getElementById('weather-barometer');
   if (baroEl && curWeather.pressure_msl !== undefined) {
-    baroEl.textContent = `${Math.round(curWeather.pressure_msl)} hPa`;
+    baroEl.textContent = Math.round(curWeather.pressure_msl);
   }
 
   // Temperature
   const tempEl = document.getElementById('weather-temp');
   if (tempEl && curWeather.temperature_2m !== undefined) {
-    tempEl.textContent = `${curWeather.temperature_2m.toFixed(1)} °C`;
+    tempEl.textContent = curWeather.temperature_2m.toFixed(1);
   }
 
   // Wave Height
   const waveHeightEl = document.getElementById('weather-wave-height');
   if (waveHeightEl) {
     if (curMarine && curMarine.wave_height !== null && curMarine.wave_height !== undefined) {
-      waveHeightEl.textContent = `${curMarine.wave_height.toFixed(2)} m`;
+      waveHeightEl.textContent = curMarine.wave_height.toFixed(2);
     } else {
       waveHeightEl.textContent = '--';
     }
@@ -60,7 +60,7 @@ export function updateWeatherUI(weatherData, marineData) {
   const waveArrow = document.getElementById('weather-wave-arrow');
   if (waveDirEl) {
     if (curMarine && curMarine.wave_direction !== null && curMarine.wave_direction !== undefined) {
-      waveDirEl.textContent = getWindCardinal(curMarine.wave_direction);
+      waveDirEl.textContent = `${getWindCardinal(curMarine.wave_direction)} (${curMarine.wave_direction}°)`;
       if (waveArrow) {
         waveArrow.style.display = 'inline-block';
         waveArrow.style.transform = `rotate(${curMarine.wave_direction + 180}deg)`;
@@ -269,8 +269,20 @@ export function onMapMove() {
   }, 800);
 }
 
+export function centerTideChartScroll() {
+  const wrapper = document.getElementById('tide-scroll-wrapper');
+  if (!wrapper) return;
+  const nowLine = wrapper.querySelector('#tide-now-line');
+  if (nowLine) {
+    const x = parseFloat(nowLine.getAttribute('x1'));
+    if (!isNaN(x)) {
+      wrapper.scrollLeft = x - wrapper.clientWidth / 2;
+    }
+  }
+}
+
 export function drawTideChart(lat, lon, tideData) {
-  const container = document.getElementById('tide-widget-content');
+  const container = document.getElementById('tide-scroll-wrapper');
   if (!container) return;
 
   if (!tideData) {
@@ -294,12 +306,14 @@ export function drawTideChart(lat, lon, tideData) {
   });
 
   const heightDiff = maxHeight - minHeight;
-  const yMax = maxHeight + Math.max(0.1, heightDiff * 0.1);
-  const yMin = Math.max(0, minHeight - Math.max(0.1, heightDiff * 0.1));
+  const yMax = maxHeight + Math.max(0.1, heightDiff * 0.15);
+  const yMin = Math.max(0, minHeight - Math.max(0.1, heightDiff * 0.15));
   const yScaleRange = yMax - yMin;
 
-  const getX = (hour) => 15 + (hour / 24) * 270;
-  const getY = (height) => 85 - ((height - yMin) / yScaleRange) * 70;
+  const svgWidth = 960;
+  const svgHeight = 140;
+  const getX = (hour) => 20 + (hour / 48) * 920;
+  const getY = (height) => 115 - ((height - yMin) / yScaleRange) * 85;
 
   let curvePath = "";
   tideData.samples.forEach((s, idx) => {
@@ -312,6 +326,10 @@ export function drawTideChart(lat, lon, tideData) {
     }
   });
 
+  const firstX = getX(tideData.samples[0].hour);
+  const lastX = getX(tideData.samples[tideData.samples.length - 1].hour);
+  const areaPath = `${curvePath} L ${lastX},115 L ${firstX},115 Z`;
+
   const curX = getX(tideData.currentHour);
   const curY = getY(tideData.currentHeight);
 
@@ -321,55 +339,217 @@ export function drawTideChart(lat, lon, tideData) {
     const y = getY(e.height);
     const isHigh = e.type === 'high';
     const label = isHigh ? (state.currentLang === 'fr' ? 'PM' : 'HW') : (state.currentLang === 'fr' ? 'BM' : 'LW');
-    const yOffset = isHigh ? -10 : 12;
+    const yOffset = isHigh ? -10 : 13;
     const colorClass = isHigh ? "var(--warning-color)" : "var(--text-muted)";
     extremesHtml += `
-      <circle cx="${x}" cy="${y}" r="3.5" fill="${colorClass}" />
-      <text x="${x}" y="${y + yOffset}" fill="var(--text-light)" font-size="7" font-weight="600" text-anchor="middle">
+      <circle cx="${x}" cy="${y}" r="4" fill="${colorClass}" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+      <text x="${x}" y="${y + yOffset}" fill="var(--text-color)" font-size="7.5" font-weight="600" text-anchor="middle">
         ${label}: ${e.height.toFixed(2)}m (${e.timeStr})
       </text>
     `;
   });
 
   let gridLines = "";
-  for (let h = 3; h < 24; h += 3) {
+  for (let h = 3; h < 48; h += 3) {
     const x = getX(h);
+    const isDayBoundary = (h === 24);
+    const strokeColor = isDayBoundary ? "rgba(255, 255, 255, 0.25)" : "rgba(255, 255, 255, 0.05)";
+    const strokeDash = isDayBoundary ? "" : "3,3";
+    const labelHour = h % 24 === 0 ? "0h" : `${h % 24}h`;
+    
     gridLines += `
-      <line x1="${x}" y1="10" x2="${x}" y2="90" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
-      <text x="${x}" y="98" fill="var(--text-muted)" font-size="6.5" text-anchor="middle">${h}h</text>
+      <line x1="${x}" y1="20" x2="${x}" y2="115" stroke="${strokeColor}" stroke-width="1" ${strokeDash ? `stroke-dasharray="${strokeDash}"` : ""} />
+      <text x="${x}" y="127" fill="var(--text-muted)" font-size="7" text-anchor="middle">${labelHour}</text>
     `;
   }
 
-  const badgeX = Math.min(230, Math.max(10, curX - 30));
-  const badgeY = curY < 50 ? curY + 15 : curY - 28;
+  const todayText = state.currentLang === 'fr' ? "Aujourd'hui" : "Today";
+  const tomorrowText = state.currentLang === 'fr' ? "Demain" : "Tomorrow";
 
   container.innerHTML = `
-    <svg width="100%" height="110" viewBox="0 0 300 110" style="overflow: visible; user-select: none;">
-      <line x1="15" y1="90" x2="285" y2="90" stroke="var(--border-color)" stroke-width="1" />
-      <text x="15" y="98" fill="var(--text-muted)" font-size="6.5" text-anchor="middle">0h</text>
-      <text x="285" y="98" fill="var(--text-muted)" font-size="6.5" text-anchor="middle">24h</text>
+    <svg width="${svgWidth}" height="${svgHeight}" viewBox="0 0 ${svgWidth} ${svgHeight}" style="overflow: visible; user-select: none; display: block;">
+      <defs>
+        <linearGradient id="tide-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="var(--accent-color)" stop-opacity="0.25" />
+          <stop offset="100%" stop-color="var(--accent-color)" stop-opacity="0.0" />
+        </linearGradient>
+      </defs>
+      
+      <!-- Day Headers -->
+      <text x="250" y="15" fill="var(--accent-color)" font-size="10" font-weight="700" text-anchor="middle" opacity="0.85">${todayText}</text>
+      <text x="710" y="15" fill="var(--accent-color)" font-size="10" font-weight="700" text-anchor="middle" opacity="0.85">${tomorrowText}</text>
+      
+      <!-- Base Line -->
+      <line x1="20" y1="115" x2="940" y2="115" stroke="var(--border-color)" stroke-width="1.5" />
+      <text x="20" y="127" fill="var(--text-muted)" font-size="7" text-anchor="middle">0h</text>
+      <text x="940" y="127" fill="var(--text-muted)" font-size="7" text-anchor="middle">24h</text>
+      
       ${gridLines}
 
-      <path d="${curvePath}" fill="none" stroke="var(--accent-color)" stroke-width="2.5" stroke-linecap="round" />
+      <!-- Filled Gradient Area -->
+      <path d="${areaPath}" fill="url(#tide-gradient)" />
+      
+      <!-- Tide Curve -->
+      <path d="${curvePath}" fill="none" stroke="var(--accent-color)" stroke-width="3" stroke-linecap="round" />
       
       ${extremesHtml}
       
-      <line x1="${curX}" y1="10" x2="${curX}" y2="90" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1.5" stroke-dasharray="3,3" />
-      <circle cx="${curX}" cy="${curY}" r="5" fill="var(--warning-color)" stroke="var(--surface-color)" stroke-width="1" />
+      <!-- Now Indicator (Dashed line and dot) -->
+      <line id="tide-now-line" x1="${curX}" y1="20" x2="${curX}" y2="115" stroke="var(--warning-color)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.8" />
+      <circle cx="${curX}" cy="${curY}" r="5" fill="var(--warning-color)" stroke="var(--surface-color)" stroke-width="1.5" />
       
-      <g transform="translate(${badgeX}, ${badgeY})">
-        <rect x="0" y="0" width="60" height="18" rx="4" fill="rgba(11, 15, 25, 0.85)" stroke="var(--accent-color)" stroke-width="1" />
-        <text x="30" y="12" fill="var(--accent-color)" font-size="8" font-weight="800" text-anchor="middle">${tideData.currentHeight.toFixed(2)} m</text>
-      </g>
+      <!-- Interactive Selector Elements -->
+      <line id="tide-selector-line" x1="0" y1="20" x2="0" y2="115" stroke="var(--accent-color)" stroke-width="1.5" style="display: none;" />
+      <circle id="tide-selector-dot" cx="0" cy="0" r="5.5" fill="var(--accent-color)" stroke="var(--surface-color)" stroke-width="1.5" style="display: none;" />
     </svg>
   `;
+
+  // Dynamic localization for recenter button
+  const recenterTextEl = document.getElementById('tide-recenter-text');
+  if (recenterTextEl) {
+    recenterTextEl.textContent = state.currentLang === 'fr' ? 'Maintenant' : 'Now';
+  }
+
+  // Populate horizontal schedule list below the chart
+  const scheduleContainer = document.getElementById('tide-schedule-list');
+  if (scheduleContainer && tideData.extremes) {
+    let scheduleHtml = "";
+    tideData.extremes.forEach(e => {
+      const isHigh = e.type === 'high';
+      const label = isHigh 
+        ? (state.currentLang === 'fr' ? 'Pleine mer' : 'High Water')
+        : (state.currentLang === 'fr' ? 'Basse mer' : 'Low Water');
+      const dayLabel = e.isTomorrow 
+        ? (state.currentLang === 'fr' ? 'Demain' : 'Auj.')
+        : (state.currentLang === 'fr' ? 'Auj.' : 'Today');
+      const itemClass = isHigh ? 'high' : 'low';
+      
+      scheduleHtml += `
+        <div class="tide-schedule-item ${itemClass}">
+          <span class="tide-schedule-label">${label} (${dayLabel})</span>
+          <span class="tide-schedule-time">${e.timeStr}</span>
+          <span class="tide-schedule-height">${e.height.toFixed(2)} m</span>
+        </div>
+      `;
+    });
+    scheduleContainer.innerHTML = scheduleHtml;
+  }
+
+  // Set up event listeners for interactive scrubbing
+  const svg = container.querySelector('svg');
+  const tooltip = document.getElementById('tide-tooltip');
+  const recenterBtn = document.getElementById('tide-recenter-btn');
+  
+  if (recenterBtn) {
+    recenterBtn.onclick = () => {
+      centerTideChartScroll();
+    };
+  }
+  
+  if (svg) {
+    const selectorLine = svg.getElementById('tide-selector-line');
+    const selectorDot = svg.getElementById('tide-selector-dot');
+    
+    const updateSelector = (clientX) => {
+      const rect = svg.getBoundingClientRect();
+      // Calculate relative x coordinate inside the SVG
+      let x = ((clientX - rect.left) / rect.width) * svgWidth;
+      if (x < 20) x = 20;
+      if (x > 940) x = 940;
+      
+      // Map x to hour (0 to 48)
+      const xPercent = (x - 20) / 920;
+      const hour = xPercent * 48;
+      
+      // Get closest sample for height
+      const closestSample = tideData.samples.reduce((prev, curr) => {
+        return (Math.abs(curr.hour - hour) < Math.abs(prev.hour - hour) ? curr : prev);
+      });
+      const height = closestSample.height;
+      const y = getY(height);
+      
+      // Update SVG selector line and dot
+      if (selectorLine) {
+        selectorLine.setAttribute('x1', x);
+        selectorLine.setAttribute('x2', x);
+        selectorLine.style.display = 'block';
+      }
+      if (selectorDot) {
+        selectorDot.setAttribute('cx', x);
+        selectorDot.setAttribute('cy', y);
+        selectorDot.style.display = 'block';
+      }
+      
+      // Calculate rising/falling trend
+      const sampleIdx = tideData.samples.indexOf(closestSample);
+      const nextSampleIdx = Math.min(tideData.samples.length - 1, sampleIdx + 1);
+      const isRising = tideData.samples[nextSampleIdx].height > closestSample.height;
+      const trendStr = isRising ? '↗' : '↘';
+      const trendWord = isRising 
+        ? (state.currentLang === 'fr' ? 'Montante' : 'Rising') 
+        : (state.currentLang === 'fr' ? 'Descendante' : 'Falling');
+      
+      // Format hour and minute
+      const hr = Math.floor(hour) % 24;
+      const min = Math.round((hour % 1) * 60);
+      const formattedTime = `${hr.toString().padStart(2, '0')}:${min.toString().padStart(2, '0')}`;
+      const dayLabel = hour >= 24 
+        ? (state.currentLang === 'fr' ? 'Demain' : 'Tomorrow')
+        : (state.currentLang === 'fr' ? "Aujourd'hui" : 'Today');
+      
+      // Update and position tooltip
+      if (tooltip) {
+        tooltip.innerHTML = `<strong>${dayLabel} ${formattedTime}</strong> : ${height.toFixed(2)} m <span style="color: ${isRising ? 'var(--success-color)' : 'var(--warning-color)'}; font-weight: 800;">${trendStr} ${trendWord}</span>`;
+        tooltip.style.display = 'block';
+        tooltip.style.opacity = '1';
+      }
+    };
+    
+    const hideSelector = () => {
+      if (selectorLine) selectorLine.style.display = 'none';
+      if (selectorDot) selectorDot.style.display = 'none';
+      if (tooltip) {
+        tooltip.style.display = 'none';
+        tooltip.style.opacity = '0';
+      }
+    };
+    
+    svg.addEventListener('mousemove', (e) => {
+      updateSelector(e.clientX);
+    });
+    svg.addEventListener('mouseleave', () => {
+      hideSelector();
+    });
+    
+    svg.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches[0]) {
+        updateSelector(e.touches[0].clientX);
+      }
+    }, { passive: true });
+    
+    svg.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) {
+        updateSelector(e.touches[0].clientX);
+      }
+    }, { passive: true });
+    
+    svg.addEventListener('touchend', () => {
+      hideSelector();
+    });
+  }
+
+  // Center scrollbar on the current hour after rendering
+  setTimeout(() => {
+    centerTideChartScroll();
+  }, 50);
 }
 
 // ---------------- GRIB WEATHER OVERLAYS AND TIME SLIDER ----------------
 
 let isPlaying = false;
+const GRIB_GRID_SIZE = 10; // 10x10 grid for weather overlay
 
-// Calculate 5x5 grid coordinates covering the current map bounds
+// Calculate grid coordinates covering the current map bounds
 function getGridCoords(bounds) {
   const sw = bounds.getSouthWest();
   const ne = bounds.getNorthEast();
@@ -379,7 +559,7 @@ function getGridCoords(bounds) {
   const minLng = sw.lng;
   const maxLng = ne.lng;
   
-  const size = 5; // 5x5 grid
+  const size = GRIB_GRID_SIZE;
   const coords = [];
   
   for (let r = 0; r < size; r++) {
@@ -416,7 +596,7 @@ function getTempColorArray(temp) {
 function drawInterpolatedHeatmap(canvas, gridData, width, height, type) {
   const ctx = canvas.getContext('2d');
   const imgData = ctx.createImageData(width, height);
-  const size = 5;
+  const size = GRIB_GRID_SIZE;
   
   for (let y = 0; y < height; y++) {
     // Invert y because canvas (0,0) is top (maxLat) and grid row 0 is bottom (minLat)
@@ -536,7 +716,7 @@ export function renderGribOverlay() {
   }
   
   if (state.weatherOverlayType === 'wind') {
-    const size = 5;
+    const size = GRIB_GRID_SIZE;
     const lats = [];
     const lngs = [];
     const sw = state.gribBounds.getSouthWest();

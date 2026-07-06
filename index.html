@@ -256,54 +256,122 @@
             <span id="weather-location" style="font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Recherche de la position...</span>
           </div>
           
-          <div class="card" style="margin-bottom: 0.75rem;">
+          <div class="card" style="margin-bottom: 0.75rem; position: relative;">
             <h4 id="tide-title" style="font-size: 0.85rem; font-weight: 600; color: var(--accent-color); margin: 0 0 0.5rem 0; display: flex; justify-content: space-between; align-items: center;">
               <span data-i18n="tide_lbl">Prédiction Marée</span>
               <span id="tide-range-badge" style="font-size: 0.7rem; font-weight: normal; color: var(--text-muted);"></span>
             </h4>
-            <div id="tide-widget-content" class="tide-widget" style="position: relative;">
-              <!-- SVG Tide Curve drawn by JS -->
+            <div id="tide-widget-content" class="tide-widget">
+              <!-- Scrollable Wrapper for SVG Curve -->
+              <div id="tide-scroll-wrapper" class="tide-scroll-wrapper">
+                <!-- SVG Tide Curve drawn by JS -->
+              </div>
+              
+              <!-- Floating Tooltip -->
+              <div id="tide-tooltip" class="tide-tooltip"></div>
+              
+              <!-- Recenter Button -->
+              <button id="tide-recenter-btn" class="tide-recenter-btn">
+                <svg viewBox="0 0 24 24" style="width: 12px; height: 12px; fill: currentColor;"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
+                <span id="tide-recenter-text">Actualiser</span>
+              </button>
+            </div>
+            
+            <!-- Schedule List below chart -->
+            <div id="tide-schedule-list" class="tide-schedule-list">
+              <!-- High/Low schedules filled dynamically -->
             </div>
           </div>
 
-          <div class="weather-grid">
-            <div class="weather-metric">
-              <span id="weather-wind-speed" class="weather-metric-val">--</span>
-              <span class="weather-metric-lbl" data-i18n="weather_wind">Vent</span>
-            </div>
-            <div class="weather-metric">
-              <div style="display: flex; align-items: center; gap: 0.25rem;">
-                <svg id="weather-wind-arrow" style="width: 12px; height: 12px; fill: var(--accent-color); transition: transform 0.5s ease;" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z"/></svg>
-                <span id="weather-wind-dir" class="weather-metric-val" style="font-size: 1.1rem;">--</span>
+          <div class="instrument-grid">
+            <!-- Wind Instrument Card -->
+            <div class="instrument-card">
+              <div class="instrument-header">
+                <svg class="instrument-icon" viewBox="0 0 24 24"><path d="M13 16v-2h8v2h-8zm0-6V8h8v2h-8zm0 12v-2h8v2h-8zM9 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM3 13h2v-2H3v2z"/></svg>
+                <span data-i18n="weather_wind">Vent & Rafales</span>
               </div>
-              <span class="weather-metric-lbl" data-i18n="weather_wind_dir">Dir.</span>
-            </div>
-            <div class="weather-metric">
-              <span id="weather-wind-gusts" class="weather-metric-val">--</span>
-              <span class="weather-metric-lbl" data-i18n="weather_wind_gusts">Rafales</span>
-            </div>
-            <div class="weather-metric">
-              <span id="weather-barometer" class="weather-metric-val">--</span>
-              <span class="weather-metric-lbl" data-i18n="weather_baro">Baromètre</span>
-            </div>
-            <div class="weather-metric">
-              <span id="weather-wave-height" class="weather-metric-val">--</span>
-              <span class="weather-metric-lbl" data-i18n="weather_waves">Vagues</span>
-            </div>
-            <div class="weather-metric">
-              <div style="display: flex; align-items: center; gap: 0.25rem;">
-                <svg id="weather-wave-arrow" style="width: 12px; height: 12px; fill: var(--accent-color); transition: transform 0.5s ease;" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z"/></svg>
-                <span id="weather-wave-dir" class="weather-metric-val" style="font-size: 1.1rem;">--</span>
+              <div class="instrument-content">
+                <div class="compass-dial">
+                  <span class="compass-label n">N</span>
+                  <span class="compass-label e">E</span>
+                  <span class="compass-label s">S</span>
+                  <span class="compass-label w">W</span>
+                  <!-- Rotating Wind Arrow -->
+                  <svg id="weather-wind-arrow" class="compass-arrow" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z"/></svg>
+                </div>
+                <div class="instrument-values">
+                  <div class="instrument-value-row">
+                    <span id="weather-wind-speed" class="instrument-value-big">--</span>
+                    <span class="instrument-value-unit">Kts</span>
+                  </div>
+                  <div class="instrument-value-row" style="margin-top: 0.1rem;">
+                    <span class="instrument-value-lbl" data-i18n="weather_wind_dir">Direction :</span>
+                    <span id="weather-wind-dir" class="instrument-value-unit" style="font-weight: 600;">--</span>
+                  </div>
+                  <div class="instrument-value-row" style="margin-top: 0.1rem;">
+                    <span class="instrument-value-lbl" data-i18n="weather_wind_gusts">Rafales :</span>
+                    <span id="weather-wind-gusts" class="instrument-value-unit" style="font-weight: 600; color: var(--warning-color);">--</span>
+                  </div>
+                </div>
               </div>
-              <span class="weather-metric-lbl" data-i18n="weather_wave_dir">Dir. vagues</span>
             </div>
-            <div class="weather-metric">
-              <span id="weather-wave-period" class="weather-metric-val">--</span>
-              <span class="weather-metric-lbl" data-i18n="weather_wave_period">Période</span>
+
+            <!-- Waves Instrument Card -->
+            <div class="instrument-card">
+              <div class="instrument-header">
+                <svg class="instrument-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                <span data-i18n="weather_waves">État de la Mer</span>
+              </div>
+              <div class="instrument-content">
+                <div class="compass-dial">
+                  <span class="compass-label n">N</span>
+                  <span class="compass-label e">E</span>
+                  <span class="compass-label s">S</span>
+                  <span class="compass-label w">W</span>
+                  <!-- Rotating Wave Arrow -->
+                  <svg id="weather-wave-arrow" class="compass-arrow" style="fill: var(--accent-color); filter: drop-shadow(0 0 3px var(--accent-color));" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z"/></svg>
+                </div>
+                <div class="instrument-values">
+                  <div class="instrument-value-row">
+                    <span id="weather-wave-height" class="instrument-value-big">--</span>
+                    <span class="instrument-value-unit">m</span>
+                  </div>
+                  <div class="instrument-value-row">
+                    <span class="instrument-value-lbl" data-i18n="weather_wave_dir">Direction :</span>
+                    <span id="weather-wave-dir" class="instrument-value-unit" style="font-weight: 600;">--</span>
+                  </div>
+                  <div class="instrument-value-row">
+                    <span class="instrument-value-lbl" data-i18n="weather_wave_period">Période :</span>
+                    <span id="weather-wave-period" class="instrument-value-unit" style="font-weight: 600;">--</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="weather-metric">
-              <span id="weather-temp" class="weather-metric-val">--</span>
-              <span class="weather-metric-lbl" data-i18n="weather_temp">Température</span>
+
+            <!-- Atmosphere Card -->
+            <div class="instrument-card">
+              <div class="instrument-header">
+                <svg class="instrument-icon" viewBox="0 0 24 24"><path d="M12.003 21c-1.897 0-3.654-.766-4.945-2.168a.75.75 0 011.11-1.01c1.002 1.09 2.37 1.678 3.835 1.678 2.923 0 5.297-2.35 5.297-5.244 0-1.83-1.047-3.486-2.73-4.317a.75.75 0 01.66-1.344C17.756 9.853 19.25 11.968 19.25 14.256c0 3.717-3.056 6.744-7.247 6.744zM8.337 14.542a3.52 3.52 0 011.666-4.148.75.75 0 00-.73-1.31 5.02 5.02 0 00-2.378 5.92c.677 2.152 2.617 3.596 4.805 3.596a.75.75 0 100-1.5c-1.532 0-2.888-1.01-3.363-2.558zM12 2a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0112 2z"/></svg>
+                <span>Atmosphère</span>
+              </div>
+              <div class="instrument-content">
+                <div class="instrument-flex-col">
+                  <div class="instrument-split">
+                    <span class="instrument-value-lbl" data-i18n="weather_temp">Température</span>
+                    <div>
+                      <span id="weather-temp" class="instrument-value-big" style="color: var(--warning-color);">--</span>
+                      <span class="instrument-value-unit">°C</span>
+                    </div>
+                  </div>
+                  <div class="instrument-split">
+                    <span class="instrument-value-lbl" data-i18n="weather_baro">Pression</span>
+                    <div>
+                      <span id="weather-barometer" class="instrument-value-big" style="color: var(--success-color);">--</span>
+                      <span class="instrument-value-unit">hPa</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
