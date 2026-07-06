@@ -408,7 +408,7 @@ function getWarningEmoji(hazardType, textInfo = '') {
   
   // Wreck / Epave
   if (hazardLower.includes('wreck') || infoLower.includes('épave') || infoLower.includes('wreck')) {
-    return '💥';
+    return '⚓';
   }
   // Firing / Tirs / Exercices
   if (hazardLower.includes('firing') || infoLower.includes('tir') || infoLower.includes('firing') || infoLower.includes('exercise') || infoLower.includes('exercice')) {
