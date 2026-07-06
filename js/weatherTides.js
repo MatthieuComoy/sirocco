@@ -990,3 +990,37 @@ export function deactivateGribOverlay() {
   state.gribBounds = null;
 }
 
+// Query weather data (wind & temp) at a given LatLng by finding closest grid point
+export function getWeatherDataAtLatLng(lat, lng) {
+  if (!state.gribData || state.gribData.length === 0) return null;
+  
+  let closestLoc = null;
+  let minDistance = Infinity;
+  
+  state.gribData.forEach(loc => {
+    const dLat = loc.latitude - lat;
+    const dLng = loc.longitude - lng;
+    const distSq = dLat * dLat + dLng * dLng;
+    if (distSq < minDistance) {
+      minDistance = distSq;
+      closestLoc = loc;
+    }
+  });
+  
+  if (!closestLoc) return null;
+  
+  const timeIdx = state.activeWeatherTimeIndex;
+  if (!closestLoc.hourly) return null;
+  
+  const windSpeed = closestLoc.hourly.wind_speed_10m ? (closestLoc.hourly.wind_speed_10m[timeIdx] || 0) : 0;
+  const windDir = closestLoc.hourly.wind_direction_10m ? (closestLoc.hourly.wind_direction_10m[timeIdx] || 0) : 0;
+  const temp = closestLoc.hourly.temperature_2m ? (closestLoc.hourly.temperature_2m[timeIdx] || 0) : 0;
+  
+  return {
+    windSpeed: Math.round(windSpeed),
+    windDir: windDir,
+    windCardinal: getWindCardinal(windDir),
+    temp: temp.toFixed(1)
+  };
+}
+

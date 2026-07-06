@@ -5,7 +5,7 @@ import { translations, translateUI } from './i18n.js';
 import { calculateHaversineDistance, getPointOfSail, getSimulatedDepth } from './utils.js';
 import { updateAnchorLocation, checkAnchorAlarm, deactivateAnchorAlarm } from './anchorAlarm.js';
 import { toggleSimulator, startRealGPS, stopRealGPS } from './gpsSimulator.js';
-import { updateWeatherAndTides, updateBoatSails, onMapMove, initGribOverlay, activateGribOverlay, deactivateGribOverlay, centerTideChartScroll } from './weatherTides.js';
+import { updateWeatherAndTides, updateBoatSails, onMapMove, initGribOverlay, activateGribOverlay, deactivateGribOverlay, centerTideChartScroll, getWeatherDataAtLatLng } from './weatherTides.js';
 import { fetchHarborsInViewport, clearHarborMarkers, onMapMoveHarbors, renderHarborListAndMarkers, loadHarborsFromLocalStorage } from './harbors.js';
 import { startRouteTracking, stopRouteTracking, clearHistory, renderSavedTracks } from './tracking.js';
 import { initPingWarnings } from './pingWarnings.js';
@@ -129,6 +129,43 @@ export function initMap() {
   // Harbors viewport update listener
   state.map.on('moveend', onMapMoveHarbors);
 
+  // Map click listener for weather data popup
+  state.map.on('click', (e) => {
+    if (state.appMode !== 'weather') return;
+    const latlng = e.latlng;
+    const weather = getWeatherDataAtLatLng(latlng.lat, latlng.lng);
+    if (weather) {
+      const latDir = latlng.lat >= 0 ? 'N' : 'S';
+      const lngDir = latlng.lng >= 0 ? 'E' : (state.currentLang === 'fr' ? 'O' : 'W');
+      
+      let content = "";
+      if (state.currentLang === 'fr') {
+        content = `
+          <div style="font-size: 0.8rem; line-height: 1.4; font-family: var(--mono-font), monospace;">
+            <strong style="color: var(--accent-color); font-size: 0.85rem; font-family: var(--main-font);">Météo au point</strong><br>
+            📍 Coordonnées : ${Math.abs(latlng.lat).toFixed(5)}° ${latDir}, ${Math.abs(latlng.lng).toFixed(5)}° ${lngDir}<br>
+            💨 Vent : <b>${weather.windSpeed} kts</b> (${weather.windCardinal} - ${weather.windDir}°)<br>
+            🌡️ Température : <b>${weather.temp}°C</b>
+          </div>
+        `;
+      } else {
+        content = `
+          <div style="font-size: 0.8rem; line-height: 1.4; font-family: var(--mono-font), monospace;">
+            <strong style="color: var(--accent-color); font-size: 0.85rem; font-family: var(--main-font);">Target Weather</strong><br>
+            📍 Position: ${Math.abs(latlng.lat).toFixed(5)}° ${latDir}, ${Math.abs(latlng.lng).toFixed(5)}° ${lngDir}<br>
+            💨 Wind: <b>${weather.windSpeed} kts</b> (${weather.windCardinal} - ${weather.windDir}°)<br>
+            🌡️ Temperature: <b>${weather.temp}°C</b>
+          </div>
+        `;
+      }
+      
+      L.popup()
+        .setLatLng(latlng)
+        .setContent(content)
+        .openOn(state.map);
+    }
+  });
+
   // Crosshairs & GPS tooltip on mouse hover (only for hover-capable devices)
   if (window.matchMedia('(hover: hover)').matches) {
     const crosshairH = document.getElementById('crosshair-h');
@@ -153,7 +190,18 @@ export function initMap() {
         const lng = latlng.lng;
         const latDir = lat >= 0 ? 'N' : 'S';
         const lngDir = lng >= 0 ? 'E' : (state.currentLang === 'fr' ? 'O' : 'W');
-        crosshairCoords.textContent = `${Math.abs(lat).toFixed(5)}° ${latDir}, ${Math.abs(lng).toFixed(5)}° ${lngDir}`;
+        
+        let coordsHtml = `${Math.abs(lat).toFixed(5)}° ${latDir}, ${Math.abs(lng).toFixed(5)}° ${lngDir}`;
+        
+        // Append weather info if in weather mode
+        if (state.appMode === 'weather' && typeof getWeatherDataAtLatLng === 'function') {
+          const w = getWeatherDataAtLatLng(lat, lng);
+          if (w) {
+            coordsHtml += `<br>💨 ${w.windSpeed} kts (${w.windCardinal})<br>🌡️ ${w.temp}°C`;
+          }
+        }
+        
+        crosshairCoords.innerHTML = coordsHtml;
 
         const offsetX = 15;
         const offsetY = 15;
@@ -164,8 +212,10 @@ export function initMap() {
         const mapContainer = state.map.getContainer();
         const mapWidth = mapContainer.clientWidth;
         const mapHeight = mapContainer.clientHeight;
-        const boxWidth = 160; // Estimated box width
-        const boxHeight = 25; // Estimated box height
+        
+        const isWeather = state.appMode === 'weather';
+        const boxWidth = isWeather ? 180 : 160;
+        const boxHeight = isWeather ? 65 : 25;
 
         if (left + boxWidth > mapWidth) {
           left = containerPoint.x - boxWidth - offsetX;
