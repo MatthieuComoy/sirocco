@@ -612,6 +612,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Init Offline Maps
   initOfflineMaps();
   
+  // Layer collapsible sub-categories (Warnings)
+  const warningsChevron = document.getElementById('warnings-chevron-btn');
+  const warningsSubLayers = document.getElementById('warnings-sub-layers');
+  if (warningsChevron && warningsSubLayers) {
+    warningsChevron.addEventListener('click', () => {
+      const isExpanded = warningsSubLayers.classList.toggle('expanded');
+      warningsChevron.classList.toggle('rotated', isExpanded);
+    });
+  }
+  
   // Set Language
   translateUI(cachedLang);
 

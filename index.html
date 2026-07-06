@@ -161,34 +161,63 @@
           <div class="card layers-selector" style="margin-bottom: 1.25rem;">
             <div class="layer-section-title">Éléments de carte</div>
             <div class="layer-list-options">
-              <!-- Global toggle -->
-              <label class="checkbox-container">
-                <input type="checkbox" id="layer-all-warnings" checked>
-                <span class="checkbox-label" style="font-weight: 700;">Alertes à la navigation</span>
-              </label>
               
-              <!-- Sub-toggles (indented) -->
-              <div class="sub-checkboxes" style="margin-left: 1rem; display: flex; flex-direction: column; gap: 0.35rem; margin-top: 0.2rem;">
-                <label class="checkbox-container" style="font-size: 0.75rem;">
+              <!-- Warning row header -->
+              <div class="layer-item-row">
+                <label class="checkbox-container" style="flex-grow: 1; border: none; background: none; padding: 0; margin: 0; border-radius: 0; cursor: pointer;">
+                  <span class="checkbox-label" style="font-weight: 700; display: flex; align-items: center; gap: 0.5rem; color: var(--text-color);">
+                    <span class="layer-icon" style="color: var(--warning-color);">
+                      <svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: currentColor;"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+                    </span>
+                    Alertes à la navigation
+                  </span>
+                  <input type="checkbox" id="layer-all-warnings" checked>
+                </label>
+                <button id="warnings-chevron-btn" class="layer-chevron-btn rotated" aria-label="Toggle sub-layers">
+                  <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+              
+              <!-- Sub-toggles (indented & collapsible) -->
+              <div id="warnings-sub-layers" class="sub-layers-wrapper expanded">
+                <label class="checkbox-container sub-layer-item" style="font-size: 0.75rem; padding: 0.35rem 0.6rem; border-radius: 0.35rem;">
+                  <span class="checkbox-label" style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-color);">
+                    <span class="sub-layer-dot">•</span>
+                    AVURNAV / NAVAREA
+                  </span>
                   <input type="checkbox" id="layer-avurnav" checked>
-                  <span class="checkbox-label">AVURNAV / NAVAREA</span>
                 </label>
-                <label class="checkbox-container" style="font-size: 0.75rem;">
+                <label class="checkbox-container sub-layer-item" style="font-size: 0.75rem; padding: 0.35rem 0.6rem; border-radius: 0.35rem;">
+                  <span class="checkbox-label" style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-color);">
+                    <span class="sub-layer-dot">•</span>
+                    AVURNAV Local
+                  </span>
                   <input type="checkbox" id="layer-avurnav-local" checked>
-                  <span class="checkbox-label">AVURNAV Local</span>
                 </label>
-                <label class="checkbox-container" style="font-size: 0.75rem;">
+                <label class="checkbox-container sub-layer-item" style="font-size: 0.75rem; padding: 0.35rem 0.6rem; border-radius: 0.35rem;">
+                  <span class="checkbox-label" style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-color);">
+                    <span class="sub-layer-dot">•</span>
+                    AVINAV
+                  </span>
                   <input type="checkbox" id="layer-avinav" checked>
-                  <span class="checkbox-label">AVINAV</span>
                 </label>
               </div>
 
-              <hr style="margin: 0.5rem 0; border-color: rgba(255, 255, 255, 0.05);">
+              <hr style="margin: 0.25rem 0; border-color: rgba(255, 255, 255, 0.05);">
 
-              <label class="checkbox-container">
-                <input type="checkbox" id="layer-harbors" checked>
-                <span class="checkbox-label" data-i18n="harbors_title">Ports de plaisance</span>
-              </label>
+              <!-- Harbors Row -->
+              <div class="layer-item-row">
+                <label class="checkbox-container" style="flex-grow: 1; border: none; background: none; padding: 0; margin: 0; border-radius: 0; cursor: pointer;">
+                  <span class="checkbox-label" style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-color);" data-i18n="harbors_title">
+                    <span class="layer-icon" style="color: var(--accent-color);">
+                      <svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="22"/><line x1="9" y1="12" x2="15" y2="12"/><path d="M12 22a7 7 0 0 0 7-7h-2a5 5 0 0 1-10 0H5a7 7 0 0 0 7 7z"/></svg>
+                    </span>
+                    Ports de plaisance
+                  </span>
+                  <input type="checkbox" id="layer-harbors" checked>
+                </label>
+              </div>
+              
             </div>
           </div>
 

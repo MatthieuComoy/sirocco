@@ -2303,3 +2303,81 @@ body[data-app-mode="navigation"] .map-viewport {
 .offline-btn.cancel:hover {
   background: rgba(255, 255, 255, 0.15);
 }
+
+/* Compact Collapsible Layers styling */
+.layer-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.65rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+.layer-item-row:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(34, 211, 238, 0.15);
+}
+.layer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.layer-chevron-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.2s ease;
+  flex-shrink: 0;
+}
+.layer-chevron-btn:hover {
+  color: var(--accent-color);
+}
+.layer-chevron-btn svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.2s ease;
+}
+.layer-chevron-btn.rotated svg {
+  transform: rotate(90deg);
+}
+.sub-layers-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, margin 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-left: 0.75rem;
+}
+.sub-layers-wrapper.expanded {
+  max-height: 150px;
+  opacity: 1;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.sub-layer-item {
+  background: rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.02) !important;
+}
+.sub-layer-dot {
+  color: var(--accent-color);
+  font-weight: 700;
+  opacity: 0.7;
+}
