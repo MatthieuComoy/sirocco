@@ -4,6 +4,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import maplibregl from 'maplibre-gl';
 window.maplibregl = maplibregl;
 
+import './leafletShim.js';
 import { state } from './state.js';
 import { translations, translateUI } from './i18n.js';
 import { calculateHaversineDistance, getPointOfSail, getSimulatedDepth } from './utils.js';
@@ -27,8 +28,6 @@ export function updateRecenterButtonUI() {
     }
   }
 }
-
-import './leafletShim.js';
 
 // MapLibre Map Setup
 export function initMap() {
