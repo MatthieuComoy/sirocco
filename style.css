@@ -1221,11 +1221,7 @@ input:checked + .slider:before {
   }
 
   .telemetry-overlay {
-    top: auto;
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.75rem;
-    min-width: 180px;
+    display: none !important;
   }
 
   .telemetry-value {
