@@ -34,6 +34,10 @@ class ShimMarker {
     if (this.options.icon && this.options.icon.html) {
       el.innerHTML = this.options.icon.html;
       el.className = this.options.icon.className || '';
+      if (this.options.icon.iconSize) {
+        el.style.width = this.options.icon.iconSize[0] + 'px';
+        el.style.height = this.options.icon.iconSize[1] + 'px';
+      }
     } else {
       el.className = 'maplibre-default-marker';
       el.style.fontSize = '24px';
@@ -43,6 +47,14 @@ class ShimMarker {
     const markerOptions = { element: el };
     if (this.options.draggable) {
       markerOptions.draggable = true;
+    }
+    if (this.options.icon && this.options.icon.iconSize && this.options.icon.iconAnchor) {
+      const size = this.options.icon.iconSize;
+      const anchor = this.options.icon.iconAnchor;
+      markerOptions.offset = [
+        (size[0] / 2) - anchor[0],
+        (size[1] / 2) - anchor[1]
+      ];
     }
 
     this.marker = new maplibregl.Marker(markerOptions)
@@ -584,7 +596,7 @@ window.L = {
   featureGroup: () => new ShimLayerGroup(),
   geoJSON: (geojson, options) => new ShimGeoJSON(geojson, options),
   imageOverlay: (url, bounds, options) => new ShimImageOverlay(url, bounds, options),
-  divIcon: (options) => ({ html: options.html, className: options.className }),
+  divIcon: (options) => ({ html: options.html, className: options.className, iconSize: options.iconSize, iconAnchor: options.iconAnchor }),
   circleMarker: (latlng, options) => {
     const radius = options.radius || 8;
     const color = options.color || '#06b6d4';
