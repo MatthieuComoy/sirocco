@@ -10,6 +10,7 @@ import { fetchHarborsInViewport, clearHarborMarkers, onMapMoveHarbors, renderHar
 import { startRouteTracking, stopRouteTracking, clearHistory, renderSavedTracks } from './tracking.js';
 import { initPingWarnings } from './pingWarnings.js';
 import { findRoute, WAYPOINTS } from './routing.js';
+import { initOfflineMaps } from './offlineMaps.js';
 
 // Update recenter button styling based on auto-centering state
 export function updateRecenterButtonUI() {
@@ -607,6 +608,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Init GRIB
   initGribOverlay();
+  
+  // Init Offline Maps
+  initOfflineMaps();
   
   // Set Language
   translateUI(cachedLang);

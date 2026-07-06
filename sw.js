@@ -1,5 +1,6 @@
-const CACHE_NAME = 'sirroco-nav-v32';
+const CACHE_NAME = 'sirroco-nav-v33';
 const TILE_CACHE_NAME = 'sirroco-tiles-v1';
+const OFFLINE_TILE_CACHE = 'sirroco-offline-tiles-v1';
 const API_CACHE_NAME = 'sirroco-api-v1';
 
 // Helper to limit cache size (FIFO)
@@ -113,24 +114,32 @@ self.addEventListener('fetch', event => {
   
   const url = event.request.url;
 
-  // 1. Handle Map Tiles with Stale-While-Revalidate and size limit
+  // 1. Handle Map Tiles: Check offline cache first, then fall back to dynamic cache with limit
   if (url.includes('tile.openstreetmap.org') || url.includes('tiles.openseamap.org') || url.includes('emodnet-bathymetry') || url.includes('ping-info-nautique.fr')) {
     event.respondWith(
-      caches.match(event.request).then(cachedResponse => {
-        const fetchPromise = fetch(event.request).then(networkResponse => {
-          if (networkResponse && (networkResponse.status === 200 || networkResponse.status === 0)) {
-            const responseToCache = networkResponse.clone();
-            caches.open(TILE_CACHE_NAME).then(cache => {
-              cache.put(event.request, responseToCache);
-              limitCacheSize(TILE_CACHE_NAME, 400);
-            });
+      caches.open(OFFLINE_TILE_CACHE).then(offlineCache => {
+        return offlineCache.match(event.request).then(offlineResponse => {
+          if (offlineResponse) {
+            return offlineResponse; // Served from offline downloaded maps!
           }
-          return networkResponse;
-        }).catch(() => {
-          // Silently catch fetch errors (meaning we're offline)
+          // Fall back to dynamic tile caching
+          return caches.match(event.request).then(cachedResponse => {
+            const fetchPromise = fetch(event.request).then(networkResponse => {
+              if (networkResponse && (networkResponse.status === 200 || networkResponse.status === 0)) {
+                const responseToCache = networkResponse.clone();
+                caches.open(TILE_CACHE_NAME).then(cache => {
+                  cache.put(event.request, responseToCache);
+                  limitCacheSize(TILE_CACHE_NAME, 400);
+                });
+              }
+              return networkResponse;
+            }).catch(() => {
+              // Silently catch fetch errors (meaning we're offline)
+            });
+            
+            return cachedResponse || fetchPromise;
+          });
         });
-        
-        return cachedResponse || fetchPromise;
       })
     );
     return;

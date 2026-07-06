@@ -2183,9 +2183,123 @@ body[data-app-mode="navigation"] .map-viewport {
   border: 1px solid var(--border-color);
   font-weight: 700;
   text-align: center;
-  min-width: 80px;
   flex-shrink: 0;
 }
 
-
-
+/* Offline Maps styles */
+.offline-region-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color var(--transition-speed), transform var(--transition-speed);
+}
+.offline-region-card:hover {
+  border-color: rgba(34, 211, 238, 0.2);
+}
+.offline-region-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.offline-region-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+.offline-region-desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+.offline-region-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+.offline-region-status {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.25rem;
+}
+.offline-region-status.not-installed {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+}
+.offline-region-status.downloading {
+  background: rgba(234, 179, 8, 0.15);
+  color: var(--warning-color);
+  animation: pulse 2s infinite ease-in-out;
+}
+.offline-region-status.installed {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--success-color);
+}
+.offline-progress-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0.25rem 0;
+  display: none;
+}
+.offline-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-color), #22d3ee);
+  transition: width 0.2s ease;
+}
+.offline-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.offline-btn {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  transition: all 0.2s;
+}
+.offline-btn.download {
+  background: rgba(34, 211, 238, 0.1);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  color: var(--accent-color);
+}
+.offline-btn.download:hover {
+  background: rgba(34, 211, 238, 0.2);
+  border-color: var(--accent-color);
+}
+.offline-btn.delete {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: var(--danger-color);
+}
+.offline-btn.delete:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: var(--danger-color);
+}
+.offline-btn.cancel {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+}
+.offline-btn.cancel:hover {
+  background: rgba(255, 255, 255, 0.15);
+}

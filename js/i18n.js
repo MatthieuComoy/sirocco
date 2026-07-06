@@ -373,7 +373,17 @@ const newTranslations = {
     harbor_type: "Port de plaisance",
     harbor_no_data: "Aucun port de plaisance trouvé dans cette zone.",
     harbor_loading: "Chargement des ports...",
-    nav_warnings_title: "Alertes à la navigation"
+    nav_warnings_title: "Alertes à la navigation",
+    settings_offline_maps: "Cartes Hors-ligne",
+    offline_desc: "Téléchargez les cartes (fonds OpenStreetMap et seamarks OpenSeaMap) pour naviguer hors-ligne.",
+    download_btn: "Télécharger",
+    delete_btn: "Supprimer",
+    cancel_btn: "Annuler",
+    status_not_installed: "Non installée",
+    status_installed: "Installée",
+    status_downloading: "Téléchargement...",
+    estimated_size: "Taille estimée",
+    tiles_lbl: "tuiles"
   },
   en: {
     mode_consultation: "Consultation",
@@ -417,7 +427,17 @@ const newTranslations = {
     harbor_type: "Marina",
     harbor_no_data: "No marinas found in this area.",
     harbor_loading: "Loading harbors...",
-    nav_warnings_title: "Navigational Warnings"
+    nav_warnings_title: "Navigational Warnings",
+    settings_offline_maps: "Offline Maps",
+    offline_desc: "Download maps (OpenStreetMap background and OpenSeaMap seamarks) for offline navigation.",
+    download_btn: "Download",
+    delete_btn: "Delete",
+    cancel_btn: "Cancel",
+    status_not_installed: "Not installed",
+    status_installed: "Installed",
+    status_downloading: "Downloading...",
+    estimated_size: "Estimated size",
+    tiles_lbl: "tiles"
   }
 };
 

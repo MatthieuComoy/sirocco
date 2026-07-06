@@ -631,6 +631,7 @@
           <button class="modal-tab-btn active" data-tab="tab-general" data-i18n="settings_general">⚙️ Général</button>
           <button class="modal-tab-btn" data-tab="tab-boat" data-i18n="settings_boat">⛵ Mon Bateau</button>
           <button class="modal-tab-btn" data-tab="tab-simulator" data-i18n="settings_simulator">🎮 Simulateur GPS</button>
+          <button class="modal-tab-btn" data-tab="tab-offline-maps" data-i18n="settings_offline_maps">🗺️ Cartes Hors-ligne</button>
         </div>
         <div class="modal-pane-container">
           <!-- General Pane -->
@@ -730,6 +731,21 @@
               <button id="sim-drift-btn-modal" class="btn btn-danger" style="width: 100%; margin-top: 0.5rem;">
                 ⚠️ Simuler dérive (Déclencher Alarme)
               </button>
+            </div>
+          </div>
+
+          <!-- Offline Maps Pane -->
+          <div id="tab-offline-maps" class="modal-pane">
+            <h3 data-i18n="settings_offline_maps">Cartes Hors-ligne</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.25rem;" data-i18n="offline_desc">
+              Téléchargez les cartes (fonds OpenStreetMap et seamarks OpenSeaMap) pour naviguer hors-ligne.
+            </p>
+            <div id="offline-regions-list" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 320px; overflow-y: auto; padding-right: 0.25rem;">
+              <!-- Regions will be rendered here dynamically -->
+            </div>
+            <div class="storage-info" style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--text-muted);">
+              <span>Stockage navigateur :</span>
+              <span id="storage-status-text">-- MB utilisés</span>
             </div>
           </div>
         </div>
