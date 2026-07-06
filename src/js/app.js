@@ -1,4 +1,8 @@
 // Sirroco Marine Navigation Core Logic - Entry Point & Orchestrator
+import '../css/style.css';
+import 'maplibre-gl/dist/maplibre-gl.css';
+import maplibregl from 'maplibre-gl';
+window.maplibregl = maplibregl;
 
 import { state } from './state.js';
 import { translations, translateUI } from './i18n.js';
@@ -24,40 +28,143 @@ export function updateRecenterButtonUI() {
   }
 }
 
-// Leaflet Map Setup
+import './leafletShim.js';
+
+// MapLibre Map Setup
 export function initMap() {
   // Center on Toulon
-  state.map = L.map('map', {
-    center: [state.currentLat, state.currentLon],
-    zoom: 13,
-    zoomControl: true
+  state.map = new maplibregl.Map({
+    container: 'map',
+    style: {
+      version: 8,
+      sources: {
+        'osm-tiles': {
+          type: 'raster',
+          tiles: [
+            'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          ],
+          tileSize: 256,
+          attribution: '© OpenStreetMap contributors'
+        },
+        'openseamap-tiles': {
+          type: 'raster',
+          tiles: [
+            'https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png'
+          ],
+          tileSize: 256,
+          attribution: '© OpenSeaMap'
+        }
+      },
+      layers: [
+        {
+          id: 'osm-layer',
+          type: 'raster',
+          source: 'osm-tiles',
+          minzoom: 0,
+          maxzoom: 19
+        },
+        {
+          id: 'openseamap-layer',
+          type: 'raster',
+          source: 'openseamap-tiles',
+          minzoom: 0,
+          maxzoom: 19
+        }
+      ]
+    },
+    center: [state.currentLon, state.currentLat],
+    zoom: 12,
+    attributionControl: false
   });
 
-  // Base Layers
-  state.osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap contributors'
-  });
-
-  // Add OSM as default base layer
-  state.osm.addTo(state.map);
-
-  // Overlays
-  state.openseamap = L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
-    attribution: '© OpenSeaMap'
-  });
-  state.openseamap.addTo(state.map);
-
-  // AVURNAV Warnings Overlay via SHOM WMS service
-  state.pingWmsLayer = L.tileLayer.wms('https://services.ping-info-nautique.fr/wms', {
-    layers: 'avurnav_active_zones',
-    format: 'image/png',
-    transparent: true,
-    attribution: '© SHOM - Portail PING'
-  });
-
-  // Harbors group layer
+  // Expose L layers groups
   state.harborsLayer = L.layerGroup().addTo(state.map);
+  state.plannedRouteLayer = L.layerGroup().addTo(state.map);
+  state.pingWarningsLayer = L.layerGroup().addTo(state.map);
+
+  // Setup basic Leaflet compatibility wrapper patches on map instance
+  state.map.invalidateSize = function() { this.resize(); };
+  state.map.setView = function(latlng, zoom) {
+    this.jumpTo({ center: [latlng[1], latlng[0]], zoom: zoom });
+  };
+
+  const nativeFitBounds = state.map.fitBounds.bind(state.map);
+  state.map.fitBounds = function(bounds, options) {
+    let fitTarget = bounds;
+    if (bounds && typeof bounds.getSouthWest === 'function') {
+      const sw = bounds.getSouthWest();
+      const ne = bounds.getNorthEast();
+      fitTarget = [[sw.lng, sw.lat], [ne.lng, ne.lat]];
+    }
+    nativeFitBounds(fitTarget, options);
+  };
+
+  // Monkey-patch event listener registration to map e.lngLat to e.latlng
+  const nativeOn = state.map.on.bind(state.map);
+  state.map.on = function(type, listener) {
+    const wrappedListener = function(e) {
+      if (e && e.lngLat) {
+        e.latlng = { lat: e.lngLat.lat, lng: e.lngLat.lng };
+      }
+      if (e && e.point) {
+        e.containerPoint = { x: e.point.x, y: e.point.y };
+      }
+      listener(e);
+    };
+    listener._wrapped = wrappedListener;
+    nativeOn(type, wrappedListener);
+  };
+
+  state.map.getBounds = function() {
+    const rawBounds = maplibregl.Map.prototype.getBounds.call(this);
+    const sw = rawBounds.getSouthWest();
+    const ne = rawBounds.getNorthEast();
+    
+    return {
+      getSouthWest: () => ({ lat: sw.lat, lng: sw.lng }),
+      getNorthEast: () => ({ lat: ne.lat, lng: ne.lng }),
+      getSouth: () => rawBounds.getSouth(),
+      getWest: () => rawBounds.getWest(),
+      getNorth: () => rawBounds.getNorth(),
+      getEast: () => rawBounds.getEast(),
+      contains: (latlng) => {
+        return rawBounds.contains([latlng[1], latlng[0]]);
+      }
+    };
+  };
+
+  // Recenter control button
+  class RecenterControl {
+    onAdd(map) {
+      this.map = map;
+      this.container = document.createElement('div');
+      this.container.className = 'maplibregl-ctrl maplibregl-ctrl-group';
+      
+      const btn = document.createElement('button');
+      btn.className = 'recenter-control-btn';
+      btn.type = 'button';
+      btn.title = state.currentLang === 'fr' ? 'Centrer sur la position' : 'Recenter to boat position';
+      btn.innerHTML = '📍';
+      
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        state.autoCenter = true;
+        this.map.jumpTo({ center: [state.currentLon, state.currentLat] });
+        updateRecenterButtonUI();
+      });
+      
+      this.container.appendChild(btn);
+      return this.container;
+    }
+    onRemove() {
+      this.container.parentNode.removeChild(this.container);
+      this.map = undefined;
+    }
+  }
+  state.map.addControl(new RecenterControl(), 'top-left');
 
   // Boat/User position marker with SVG icon
   const userIcon = L.divIcon({
@@ -65,54 +172,21 @@ export function initMap() {
     html: `
       <div class="boat-outer-ring">
         <svg id="boat-svg" class="boat-marker-svg" viewBox="0 0 100 100" style="transform: rotate(${state.currentHeading}deg);">
-          <!-- Hull -->
           <path class="boat-hull" d="M50,10 C62,32 64,65 62,85 L38,85 C36,65 38,32 50,10 Z" />
-          <!-- Mast & Boom -->
           <line class="boat-mast" x1="50" y1="45" x2="50" y2="85" />
-          <!-- Mainsail (Grand Voile) -->
           <path id="boat-mainsail" class="boat-sail" d="M50,45 C50,45 28,65 50,80 Z" />
-          <!-- Jib / Genoa (Foc) -->
           <path id="boat-jib" class="boat-sail" d="M50,15 C50,15 32,32 50,43 Z" />
         </svg>
       </div>
-    `,
-    iconSize: [52, 52],
-    iconAnchor: [26, 26]
+    `
   });
 
   state.userMarker = L.marker([state.currentLat, state.currentLon], {
-    icon: userIcon,
-    zIndexOffset: 10000
+    icon: userIcon
   }).addTo(state.map);
 
   // Track drawing line
   state.trackLine = L.polyline([], { color: '#06b6d4', weight: 4, opacity: 0.85 }).addTo(state.map);
-
-  // Recenter control button
-  L.Control.Recenter = L.Control.extend({
-    onAdd: function(m) {
-      const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-      const btn = L.DomUtil.create('a', 'recenter-control-btn', container);
-      btn.href = '#';
-      btn.title = state.currentLang === 'fr' ? 'Centrer sur la position' : 'Recenter to boat position';
-      btn.innerHTML = '📍';
-      
-      L.DomEvent.disableClickPropagation(btn);
-      L.DomEvent.disableScrollPropagation(btn);
-      
-      L.DomEvent.on(btn, 'click', function(e) {
-        L.DomEvent.preventDefault(e);
-        L.DomEvent.stopPropagation(e);
-        state.autoCenter = true;
-        m.setView([state.currentLat, state.currentLon], m.getZoom());
-        updateRecenterButtonUI();
-      });
-      return container;
-    },
-    onRemove: function(m) {}
-  });
-  L.control.recenter = function(opts) { return new L.Control.Recenter(opts); };
-  L.control.recenter({ position: 'topleft' }).addTo(state.map);
 
   // Stop auto-following if the user manually drags/pans the map
   state.map.on('dragstart', () => {

@@ -16,10 +16,7 @@ export function toggleSimulator(active) {
     if (controlsCard) controlsCard.style.display = 'flex';
     if (toggle) toggle.checked = true;
     
-    // Stop Real Geolocation
     stopRealGPS();
-    
-    // Start Simulation Loop
     startSimLoop();
   } else {
     if (statusText) statusText.textContent = translations[state.currentLang].sim_inactive;
@@ -27,8 +24,6 @@ export function toggleSimulator(active) {
     if (toggle) toggle.checked = false;
     
     stopSimLoop();
-    
-    // Start Real Geolocation
     startRealGPS();
   }
 }
@@ -36,17 +31,11 @@ export function toggleSimulator(active) {
 export function startSimLoop() {
   if (state.simTimer) return;
   state.simTimer = setInterval(() => {
-    // Calculate new position based on speed and heading
-    // 1 knot = 1.852 km/h = 0.514444 m/s
-    const dt = 1; // 1 second
+    const dt = 1;
     const speedMs = state.simSpeed * 0.514444;
     const distanceMeters = speedMs * dt;
-    
     const bearingRad = (state.simHeading * Math.PI) / 180;
     
-    // Very simple flat projection for small movement:
-    // 1 degree latitude = 111,111 meters
-    // 1 degree longitude = 111,111 * cos(lat) meters
     const deltaLat = (distanceMeters * Math.cos(bearingRad)) / 111111;
     const deltaLon = (distanceMeters * Math.sin(bearingRad)) / (111111 * Math.cos(state.currentLat * Math.PI / 180));
     
@@ -65,31 +54,51 @@ export function stopSimLoop() {
 }
 
 let realWatchId = null;
+let adaptiveGPSTimeout = null;
+
+function pollGPS() {
+  if (!realWatchId || !navigator.geolocation) return;
+  
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const coords = position.coords;
+      const speedKts = coords.speed ? (coords.speed * 1.94384) : 0;
+      const headingDeg = coords.heading ? coords.heading : 0;
+      updatePosition(coords.latitude, coords.longitude, speedKts, headingDeg);
+      
+      // Calculate next interval adaptively based on speed, alarm state, and visibility
+      let nextDelay = 1000;
+      if (document.hidden) {
+        nextDelay = state.isAnchorAlarmActive ? 5000 : 30000;
+      } else if (speedKts < 1.0 && !state.isAnchorAlarmActive) {
+        nextDelay = 10000;
+      } else if (speedKts < 2.0 && !state.isAnchorAlarmActive) {
+        nextDelay = 5000;
+      }
+      
+      if (realWatchId) {
+        adaptiveGPSTimeout = setTimeout(pollGPS, nextDelay);
+      }
+    },
+    (error) => {
+      console.error("GPS Poll error: ", error);
+      if (realWatchId) {
+        adaptiveGPSTimeout = setTimeout(pollGPS, 5000);
+      }
+    },
+    {
+      enableHighAccuracy: true,
+      timeout: 8000,
+      maximumAge: 0
+    }
+  );
+}
 
 export function startRealGPS() {
+  stopRealGPS();
   if ("geolocation" in navigator) {
-    realWatchId = navigator.geolocation.watchPosition(
-      (position) => {
-        const coords = position.coords;
-        // speed is in m/s, convert to knots
-        const speedKts = coords.speed ? (coords.speed * 1.94384) : 0;
-        const headingDeg = coords.heading ? coords.heading : 0;
-        updatePosition(coords.latitude, coords.longitude, speedKts, headingDeg);
-      },
-      (error) => {
-        console.error("GPS Watch error: ", error);
-        // Fallback to simulation
-        alert("GPS Signal failed. Switched to Simulation Mode.");
-        const toggle = document.getElementById('simulator-toggle-modal');
-        if (toggle) toggle.checked = true;
-        toggleSimulator(true);
-      },
-      {
-        enableHighAccuracy: true,
-        timeout: 10000,
-        maximumAge: 0
-      }
-    );
+    realWatchId = true;
+    pollGPS();
   } else {
     alert("Geolocation API not supported. Switched to Simulation Mode.");
     const toggle = document.getElementById('simulator-toggle-modal');
@@ -99,16 +108,17 @@ export function startRealGPS() {
 }
 
 export function stopRealGPS() {
-  if (realWatchId !== null) {
-    navigator.geolocation.clearWatch(realWatchId);
-    realWatchId = null;
+  realWatchId = null;
+  if (adaptiveGPSTimeout) {
+    clearTimeout(adaptiveGPSTimeout);
+    adaptiveGPSTimeout = null;
   }
 }
 
 export function triggerSimulatorDrift() {
   state.isDrifting = true;
-  state.simSpeed = 8.0; // speed up
-  state.simHeading = 180; // drift south directly away from anchor
+  state.simSpeed = 8.0;
+  state.simHeading = 180;
   
   const speedVal = document.getElementById('sim-speed-val-modal');
   const speedSlider = document.getElementById('sim-speed-slider-modal');
@@ -120,3 +130,23 @@ export function triggerSimulatorDrift() {
   if (headingVal) headingVal.textContent = '180';
   if (headingSlider) headingSlider.value = '180';
 }
+
+// Hibernate tasks when screen is off to conserve battery
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    console.log("App hibernated - conserving CPU/GPS battery.");
+    stopSimLoop();
+    if (realWatchId && adaptiveGPSTimeout) {
+      clearTimeout(adaptiveGPSTimeout);
+      const nextDelay = state.isAnchorAlarmActive ? 5000 : 30000;
+      adaptiveGPSTimeout = setTimeout(pollGPS, nextDelay);
+    }
+  } else {
+    console.log("App active - restoring standard loops.");
+    if (state.isSimulating) {
+      startSimLoop();
+    } else {
+      startRealGPS();
+    }
+  }
+});
