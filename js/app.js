@@ -375,6 +375,19 @@ export function setAppMode(mode) {
     if (hud) hud.style.display = 'flex';
     if (telemetry) telemetry.style.display = 'none';
 
+    // Restore map layers if checked
+    const layerHarbors = document.getElementById('layer-harbors');
+    const layerAllWarnings = document.getElementById('layer-all-warnings');
+    if (state.map) {
+      if (layerHarbors && layerHarbors.checked && state.harborsLayer) {
+        state.harborsLayer.addTo(state.map);
+        fetchHarborsInViewport();
+      }
+      if (layerAllWarnings && layerAllWarnings.checked && state.pingWarningsLayer) {
+        state.pingWarningsLayer.addTo(state.map);
+      }
+    }
+
     // Start auto track
     startRouteTracking();
     
@@ -429,16 +442,22 @@ export function setAppMode(mode) {
     if (telemetry) telemetry.style.display = 'none';
     if (warnBanner) warnBanner.style.display = 'none';
 
+    // Automatically hide map layers for marinas and warnings
+    if (state.map) {
+      if (state.harborsLayer) state.map.removeLayer(state.harborsLayer);
+      if (state.pingWarningsLayer) state.map.removeLayer(state.pingWarningsLayer);
+      clearHarborMarkers();
+    }
+
     // Stop navigation timer
     if (state.navTimerInterval) {
       clearInterval(state.navTimerInterval);
       state.navTimerInterval = null;
     }
 
-    // Immediately trigger weather update for the current map center
+    // Immediately trigger weather update for the user's position
     if (state.map) {
-      const center = state.map.getCenter();
-      updateWeatherAndTides(center.lat, center.lng, true);
+      updateWeatherAndTides(state.currentLat, state.currentLon, true);
       activateGribOverlay();
     }
 
@@ -468,6 +487,19 @@ export function setAppMode(mode) {
     if (hud) hud.style.display = 'none';
     if (telemetry) telemetry.style.display = 'flex';
     if (warnBanner) warnBanner.style.display = 'none';
+
+    // Restore map layers if checked
+    const layerHarbors = document.getElementById('layer-harbors');
+    const layerAllWarnings = document.getElementById('layer-all-warnings');
+    if (state.map) {
+      if (layerHarbors && layerHarbors.checked && state.harborsLayer) {
+        state.harborsLayer.addTo(state.map);
+        fetchHarborsInViewport();
+      }
+      if (layerAllWarnings && layerAllWarnings.checked && state.pingWarningsLayer) {
+        state.pingWarningsLayer.addTo(state.map);
+      }
+    }
 
     // Clear navigation timer
     if (state.navTimerInterval) {
@@ -868,10 +900,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const panel = document.getElementById(targetPanel);
       if (panel) panel.classList.add('active');
       
-      // Fetch fresh weather data when entering the weather panel
-      if (targetPanel === 'panel-weather' && state.map) {
-        const center = state.map.getCenter();
-        updateWeatherAndTides(center.lat, center.lng);
+      // Fetch fresh weather data when entering the weather panel (using user's position)
+      if (targetPanel === 'panel-weather') {
+        updateWeatherAndTides(state.currentLat, state.currentLon);
         setTimeout(() => centerTideChartScroll(), 100);
       }
       

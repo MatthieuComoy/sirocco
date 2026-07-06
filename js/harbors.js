@@ -252,6 +252,12 @@ export function updateCurrentHarborsFromCache(bounds) {
 export async function fetchHarborsInViewport() {
   if (!state.map) return;
 
+  // Do not fetch or display harbors when in weather & tide mode
+  if (state.appMode === 'weather') {
+    clearHarborMarkers();
+    return;
+  }
+
   const layerHarbors = document.getElementById('layer-harbors');
   if (layerHarbors && !layerHarbors.checked) {
     displayHarborMessage(state.currentLang === 'fr' ? "Activez le calque 'Ports de plaisance' pour voir la liste." : "Enable 'Marinas' layer to see the list.");

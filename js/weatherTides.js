@@ -262,8 +262,6 @@ export function onMapMove() {
   if (state.weatherDebounceTimeout) clearTimeout(state.weatherDebounceTimeout);
   state.weatherDebounceTimeout = setTimeout(() => {
     if (state.map) {
-      const center = state.map.getCenter();
-      updateWeatherAndTides(center.lat, center.lng);
       updateGribForCurrentBounds();
     }
   }, 800);
