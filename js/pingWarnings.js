@@ -6,7 +6,7 @@ import { updateRecenterButtonUI } from './app.js';
 
 const SERIES = [
   // NAVAREA
-  { name: 'NAVAREA II', id: 'NAVAREA II', fallbackUrl: './data/navarea2.xml', enabled: true, type: 'navarea' },
+  { name: 'NAVAREA II', id: 'NAVAREA II', fallbackUrl: './data/navarea2.xml', enabled: false, type: 'navarea' },
 
   // Métropole - AVURNAV
   { name: 'AVURNAV Toulon', id: 'AVURNAV TOULON', fallbackUrl: './data/toulon.xml', enabled: true, type: 'avurnav' },
@@ -214,11 +214,14 @@ export async function loadAvurnavWarnings() {
     
     const parser = new DOMParser();
     
-    results.forEach(result => {
-      if (!result) return;
+    for (const result of results) {
+      if (!result) continue;
       
       if (result.source === 'live') liveCount++;
       else localCount++;
+      
+      // Yield execution to the main thread to keep UI interactive
+      await new Promise(resolve => setTimeout(resolve, 0));
       
       const xmlDoc = parser.parseFromString(result.xmlText, "application/xml");
       
@@ -226,7 +229,7 @@ export async function loadAvurnavWarnings() {
       const parseError = xmlDoc.getElementsByTagName("parsererror");
       if (parseError.length > 0) {
         console.error(`XML Parse error in series ${result.series.name}:`, parseError[0].textContent);
-        return;
+        continue;
       }
       
       // Parse Preambles
@@ -307,6 +310,11 @@ export async function loadAvurnavWarnings() {
           }
         }
         
+        if (!geometry && information) {
+          const parsedCoords = parseCoordsFromText(information);
+          geometry = determineGeometry(parsedCoords, information);
+        }
+
         parsedWarnings.push({
           gmlId,
           preamble,
@@ -317,7 +325,14 @@ export async function loadAvurnavWarnings() {
           type: result.series.type
         });
       });
-    });
+    }
+    
+    // Load and append global NAVAREA warnings from NGA API
+    try {
+      await loadNgaWarnings();
+    } catch (ngaErr) {
+      console.error("Failed to load global NAVAREA warnings:", ngaErr);
+    }
     
     // Set source info summary
     const totalActive = activeSeries.length;
@@ -359,17 +374,75 @@ function renderWarningListMessage(msg) {
   }
 }
 
-// Map warning types to emojis
+// Create a custom Leaflet divIcon containing only the raw emoji icon
+function createWarningIcon(emoji, isAvinav) {
+  const html = `
+    <div class="warning-map-marker" style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      font-size: 1.7rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+    ">
+      ${emoji}
+    </div>
+  `;
+  
+  return L.divIcon({
+    html: html,
+    className: 'custom-warning-div-icon',
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+    popupAnchor: [0, -16]
+  });
+}
+
+// Map warning types to emojis based on hazard type and text content
 function getWarningEmoji(hazardType, textInfo = '') {
   const infoLower = textInfo.toLowerCase();
   const hazardLower = (hazardType || '').toLowerCase();
   
-  if (hazardLower.includes('wreck') || infoLower.includes('épave') || infoLower.includes('wreck')) return '💥';
-  if (hazardLower.includes('firing') || infoLower.includes('tir') || infoLower.includes('firing')) return '💣';
-  if (hazardLower.includes('cable') || infoLower.includes('câble') || infoLower.includes('cable')) return '🔌';
-  if (hazardLower.includes('rig') || hazardLower.includes('platform') || infoLower.includes('forage') || infoLower.includes('plateforme')) return '🏗️';
-  if (hazardLower.includes('survey') || infoLower.includes('recherche') || infoLower.includes('scientifique')) return '🔬';
-  if (hazardLower.includes('light') || infoLower.includes('feu éteint') || infoLower.includes('phare')) return '🏮';
+  // Wreck / Epave
+  if (hazardLower.includes('wreck') || infoLower.includes('épave') || infoLower.includes('wreck')) {
+    return '💥';
+  }
+  // Firing / Tirs / Exercices
+  if (hazardLower.includes('firing') || infoLower.includes('tir') || infoLower.includes('firing') || infoLower.includes('exercise') || infoLower.includes('exercice')) {
+    return '💣';
+  }
+  // Cable / Pipeline
+  if (hazardLower.includes('cable') || infoLower.includes('câble') || infoLower.includes('cable') || infoLower.includes('pipeline')) {
+    return '🔌';
+  }
+  // Drilling rig / Platform / Forage
+  if (hazardLower.includes('rig') || hazardLower.includes('platform') || infoLower.includes('forage') || infoLower.includes('plateforme') || infoLower.includes('modu')) {
+    return '🏗️';
+  }
+  // Drifting boat / Drifting object / Vessel / Derelict / Tow
+  if (infoLower.includes('derive') || infoLower.includes('dérive') || infoLower.includes('drifting') || infoLower.includes('derelict') || infoLower.includes('vessel') || infoLower.includes('tow') || infoLower.includes('remorquage')) {
+    return '🚨'; // Flashing siren for drifting/towing danger
+  }
+  // Shoal / Reef / Obstruction / Depth / Haut fond
+  if (infoLower.includes('shoal') || infoLower.includes('reef') || infoLower.includes('haut fond') || infoLower.includes('obstruction') || infoLower.includes('danger') || infoLower.includes('obstruction')) {
+    return '🪨';
+  }
+  // Light / Buoy / Beacon unlit or damaged
+  if (hazardLower.includes('light') || infoLower.includes('feu') || infoLower.includes('phare') || infoLower.includes('buoy') || infoLower.includes('bouée') || infoLower.includes('beacon') || infoLower.includes('balise') || infoLower.includes('unlit') || infoLower.includes('éteint')) {
+    return '🏮';
+  }
+  // Scientific survey / research
+  if (hazardLower.includes('survey') || infoLower.includes('recherche') || infoLower.includes('scientifique') || infoLower.includes('scientific')) {
+    return '🔬';
+  }
+  // Mooring / Anchor / Bouée de mouillage
+  if (infoLower.includes('mooring') || infoLower.includes('corps-mort') || infoLower.includes('mouillage')) {
+    return '⚓';
+  }
+  
   if (hazardLower.includes('bulletin')) return '📋';
   
   return '⚠️';
@@ -399,35 +472,53 @@ function plotWarningsOnMap() {
     
     const p = warn.preamble || {};
     const emoji = getWarningEmoji(warn.hazardTypeDetails || p.hazardTypeGeneral, warn.information);
-    const title = `${p.nameOfSeries || 'NAVAREA II'} - n° ${p.warningNumber || ''}/${p.year || ''}`;
-    const dateStr = p.publicationDate ? new Date(p.publicationDate).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+    const seriesTitle = p.nameOfSeries || 'NAVAREA';
+    const warningNum = `${p.warningNumber || ''}/${p.year || ''}`;
+    
+    let formattedDate = '';
+    if (p.publicationDate) {
+      const pubDate = new Date(p.publicationDate);
+      const day = String(pubDate.getUTCDate()).padStart(2, '0');
+      const hour = String(pubDate.getUTCHours()).padStart(2, '0');
+      const min = String(pubDate.getUTCMinutes()).padStart(2, '0');
+      const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+      const month = months[pubDate.getUTCMonth()];
+      const year = pubDate.getUTCFullYear();
+      formattedDate = `${day}${hour}${min}z UTC ${month} ${year}`;
+    } else {
+      formattedDate = dateStr;
+    }
     
     const isAvinav = warn.type === 'avinav';
-    
     const color = isAvinav ? '#f59e0b' : '#ef4444'; // Yellow-Orange for AVINAV, Red for all AVURNAV and NAVAREA types
     const headerColor = isAvinav ? '#d97706' : '#ef4444';
     
     const popupContent = `
-      <div style="font-family: var(--font-family, sans-serif); line-height: 1.4; color: var(--text-color); max-width: 240px; font-size: 0.75rem;">
-        <strong style="color: ${headerColor}; font-size: 0.85rem;">${emoji} ${title}</strong><br>
-        <span style="font-size: 0.7rem; color: var(--text-muted); font-weight: 600;">📅 Publié le : ${dateStr}</span>
-        <hr style="margin: 4px 0; border-color: var(--border-color);">
-        <div style="font-weight: 700; margin-bottom: 2px;">📍 ${p.generalArea || ''}</div>
-        <div style="font-style: italic; color: var(--text-muted); font-size: 0.7rem; margin-bottom: 4px;">Type: ${warn.hazardTypeDetails || p.hazardTypeGeneral || 'Alerte'}</div>
-        <p style="white-space: pre-wrap; background: rgba(0,0,0,0.03); border: 1px solid var(--border-color); padding: 4px; border-radius: 3px; font-family: monospace; font-size: 0.65rem; max-height: 100px; overflow-y: auto; margin: 4px 0;">${warn.information}</p>
+      <div style="font-family: var(--font-family, sans-serif); line-height: 1.45; color: var(--text-color); font-size: 0.8rem; width: 100%;">
+        <div style="font-size: 1.3rem; font-weight: 500; font-family: 'Outfit', sans-serif; color: var(--text-color); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>${emoji}</span>
+          <span style="letter-spacing: -0.01em;">${seriesTitle}</span>
+        </div>
+        <hr style="margin: 6px 0; border: none; border-top: 1px solid var(--border-color); opacity: 0.4;">
+        <div style="font-family: var(--mono-font), monospace; font-size: 0.78rem; font-weight: 700; color: ${headerColor}; display: flex; flex-direction: column; gap: 0.15rem; margin-bottom: 0.4rem;">
+          <div>${warningNum}</div>
+          <div style="color: var(--text-muted); font-size: 0.72rem; font-weight: 500;">${formattedDate}</div>
+        </div>
+        <hr style="margin: 6px 0; border: none; border-top: 1px solid var(--border-color); opacity: 0.4;">
+        <div style="font-family: var(--mono-font), monospace; font-size: 0.75rem; white-space: pre-wrap; word-break: break-word; color: var(--text-color); line-height: 1.4; max-height: 220px; overflow-y: auto; margin: 6px 0; padding-right: 4px;">${warn.information}</div>
+        <hr style="margin: 6px 0; border: none; border-top: 1px solid var(--border-color); opacity: 0.4;">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--text-muted);">
+          <span>📍 ${p.generalArea || ''}</span>
+          <span style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: ${headerColor}; font-size: 0.65rem;">${warn.hazardTypeDetails || p.hazardTypeGeneral || 'Alerte'}</span>
+        </div>
       </div>
     `;
     
     let mapLayer = null;
     
     if (warn.geometry.type === 'Point') {
-      mapLayer = L.circleMarker(warn.geometry.coordinates, {
-        radius: 7,
-        fillColor: color,
-        color: '#ffffff',
-        weight: 1.5,
-        fillOpacity: 0.85
-      });
+      const icon = createWarningIcon(emoji, isAvinav);
+      mapLayer = L.marker(warn.geometry.coordinates, { icon: icon });
     } else if (warn.geometry.type === 'Polygon') {
       mapLayer = L.polygon(warn.geometry.coordinates, {
         color: color,
@@ -441,10 +532,17 @@ function plotWarningsOnMap() {
         weight: 3,
         opacity: 0.8
       });
+    } else if (warn.geometry.type === 'MultiPoint') {
+      const group = L.featureGroup();
+      const icon = createWarningIcon(emoji, isAvinav);
+      warn.geometry.coordinates.forEach(c => {
+        L.marker(c, { icon: icon }).addTo(group);
+      });
+      mapLayer = group;
     }
     
     if (mapLayer) {
-      mapLayer.bindPopup(popupContent, { maxWidth: 250 });
+      mapLayer.bindPopup(popupContent, { maxWidth: 440, minWidth: 320 });
       
       // Only add to the layer if it's currently marked as visible and not filtered out
       if (warn.visible && !isFilteredOut) {
@@ -556,7 +654,7 @@ export function zoomToWarning(index) {
   if (warn.geometry) {
     if (warn.geometry.type === 'Point') {
       state.map.setView(warn.geometry.coordinates, 10);
-    } else if (warn.geometry.type === 'Polygon' || warn.geometry.type === 'LineString') {
+    } else if (warn.geometry.type === 'Polygon' || warn.geometry.type === 'LineString' || warn.geometry.type === 'MultiPoint') {
       const bounds = L.latLngBounds(warn.geometry.coordinates);
       state.map.fitBounds(bounds, { padding: [40, 40] });
     }
@@ -598,6 +696,194 @@ export function zoomToWarning(index) {
   } else {
     // Bulletin warning with no geography - display content directly
     alert(`Alerte Sans Géographie:\n\n${warn.preamble.nameOfSeries} n° ${warn.preamble.warningNumber}/${warn.preamble.year}\nZone: ${warn.preamble.generalArea}\n\n${warn.information}`);
+  }
+}
+
+// Parse coords from text of a navigation warning (supporting various formats)
+export function parseCoordsFromText(text) {
+  if (!text) return [];
+  const coords = [];
+  
+  // Pattern 1: DD-MM.MMN DDD-MM.MME (or with O/W for west)
+  // e.g. 71-33.88N 072-09.40E, 69-46.60N 134-24.40W
+  const regex1 = /\b(\d{1,2})-(\d{1,2}(?:\.\d+)?)\s*([NSns])\s+(\d{1,3})-(\d{1,2}(?:\.\d+)?)\s*([EOWewoO])\b/g;
+  let match;
+  while ((match = regex1.exec(text)) !== null) {
+    const latDeg = parseInt(match[1], 10);
+    const latMin = parseFloat(match[2]);
+    const latDir = match[3].toUpperCase();
+    
+    const lngDeg = parseInt(match[4], 10);
+    const lngMin = parseFloat(match[5]);
+    const lngDir = match[6].toUpperCase();
+    
+    let lat = latDeg + latMin / 60.0;
+    if (latDir === 'S') lat = -lat;
+    
+    let lng = lngDeg + lngMin / 60.0;
+    if (lngDir === 'W' || lngDir === 'O') lng = -lng;
+    
+    coords.push([lat, lng]);
+  }
+  
+  // Pattern 2: DD MM.MM N DDD MM.MM E
+  const regex2 = /\b(\d{1,2})\s+(\d{1,2}(?:\.\d+)?)\s*([NSns])\s+(\d{1,3})\s+(\d{1,2}(?:\.\d+)?)\s*([EOWewoO])\b/g;
+  while ((match = regex2.exec(text)) !== null) {
+    const latDeg = parseInt(match[1], 10);
+    const latMin = parseFloat(match[2]);
+    const latDir = match[3].toUpperCase();
+    
+    const lngDeg = parseInt(match[4], 10);
+    const lngMin = parseFloat(match[5]);
+    const lngDir = match[6].toUpperCase();
+    
+    let lat = latDeg + latMin / 60.0;
+    if (latDir === 'S') lat = -lat;
+    
+    let lng = lngDeg + lngMin / 60.0;
+    if (lngDir === 'W' || lngDir === 'O') lng = -lng;
+    
+    coords.push([lat, lng]);
+  }
+  
+  // Pattern 3: Simple decimal degrees: "43.123N, 5.456E" or "43.123 N 5.456 E"
+  const regex3 = /\b(\d{1,2}(?:\.\d+)?)\s*([NSns])\b[\s,]*\b(\d{1,3}(?:\.\d+)?)\s*([EOWewoO])\b/g;
+  while ((match = regex3.exec(text)) !== null) {
+    let lat = parseFloat(match[1]);
+    const latDir = match[2].toUpperCase();
+    let lng = parseFloat(match[3]);
+    const lngDir = match[4].toUpperCase();
+    
+    if (latDir === 'S') lat = -lat;
+    if (lngDir === 'W' || lngDir === 'O') lng = -lng;
+    
+    coords.push([lat, lng]);
+  }
+
+  return coords;
+}
+
+// Determine the geometry type based on warning text clues
+function determineGeometry(parsedCoords, text) {
+  if (!parsedCoords || parsedCoords.length === 0) return null;
+  if (parsedCoords.length === 1) {
+    return { type: 'Point', coordinates: parsedCoords[0] };
+  }
+  
+  // Strip 'navarea' substring to avoid matching 'area' within the word 'navarea'
+  const textCleaned = (text || '').toLowerCase().replace(/navarea/g, '');
+  
+  const isLine = textCleaned.includes('line') || 
+                 textCleaned.includes('cable') || 
+                 textCleaned.includes('pipeline') || 
+                 textCleaned.includes('track') || 
+                 textCleaned.includes('tow') || 
+                 textCleaned.includes('towing') || 
+                 textCleaned.includes('transit');
+                 
+  const isArea = textCleaned.includes('area') || 
+                 textCleaned.includes('bound') || 
+                 textCleaned.includes('within') || 
+                 textCleaned.includes('enclosed') || 
+                 textCleaned.includes('polygon') || 
+                 textCleaned.includes('firing') || 
+                 textCleaned.includes('exercice') || 
+                 textCleaned.includes('exercise') || 
+                 textCleaned.includes('danger');
+                 
+  if (parsedCoords.length === 2) {
+    return { type: isLine ? 'LineString' : 'MultiPoint', coordinates: parsedCoords };
+  }
+  
+  if (isArea) {
+    return { type: 'Polygon', coordinates: parsedCoords };
+  } else if (isLine) {
+    return { type: 'LineString', coordinates: parsedCoords };
+  } else {
+    return { type: 'MultiPoint', coordinates: parsedCoords };
+  }
+}
+
+// Convert NGA warning object into unified S-124 Warning structure
+function parseNgaWarning(ngaObj) {
+  const text = ngaObj.text || '';
+  const parsedCoords = parseCoordsFromText(text);
+  const geometry = determineGeometry(parsedCoords, text);
+  
+  const issueDateStr = ngaObj.issueDate || '';
+  let pubDate = new Date();
+  const dateMatch = issueDateStr.match(/(\d{6})Z\s+([A-Z]{3})\s+(\d{4})/i);
+  if (dateMatch) {
+    const months = { JAN: 0, FEB: 1, MAR: 2, APR: 3, MAY: 4, JUN: 5, JUL: 6, AUG: 7, SEP: 8, OCT: 9, NOV: 10, DEC: 11 };
+    const day = parseInt(dateMatch[1].substring(0, 2), 10);
+    const month = months[dateMatch[2].toUpperCase()] || 0;
+    const year = parseInt(dateMatch[3], 10);
+    const hour = parseInt(dateMatch[1].substring(2, 4), 10);
+    const min = parseInt(dateMatch[1].substring(4, 6), 10);
+    pubDate = new Date(Date.UTC(year, month, day, hour, min));
+  }
+
+  let hazardType = 'Alerte';
+  if (text.toLowerCase().includes('wreck') || text.toLowerCase().includes('épave')) hazardType = 'Wreck';
+  else if (text.toLowerCase().includes('firing') || text.toLowerCase().includes('tir')) hazardType = 'Firing';
+  else if (text.toLowerCase().includes('cable') || text.toLowerCase().includes('câble')) hazardType = 'Cable';
+  else if (text.toLowerCase().includes('scientific') || text.toLowerCase().includes('survey')) hazardType = 'Scientific';
+  else if (text.toLowerCase().includes('light') || text.toLowerCase().includes('phare')) hazardType = 'Light';
+
+  return {
+    gmlId: `nga-${ngaObj.msgYear || ngaObj.year || '2026'}-${ngaObj.msgNumber || ngaObj.number || '0'}`,
+    type: 'navarea',
+    preamble: {
+      nameOfSeries: `NAVAREA ${ngaObj.navArea || ngaObj.area || ''}`,
+      warningNumber: ngaObj.msgNumber || ngaObj.number || '',
+      year: ngaObj.msgYear || ngaObj.year || '',
+      publicationDate: pubDate.toISOString(),
+      generalArea: text.split('\n')[0] || `NAVAREA ${ngaObj.navArea || ngaObj.area || ''}`,
+      hazardTypeGeneral: hazardType
+    },
+    hazardTypeDetails: hazardType,
+    information: text,
+    geometry: geometry,
+    visible: true,
+    mapLayer: null
+  };
+}
+
+// Fetch and load global NAVAREA warnings from NGA API (with local fallback)
+async function loadNgaWarnings() {
+  let warningsJson = null;
+  let source = "live";
+  
+  try {
+    const response = await fetch("https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json");
+    if (!response.ok) throw new Error("CORS or Server Error");
+    const data = await response.json();
+    warningsJson = data["broadcast-warn"] || [];
+  } catch (err) {
+    console.warn("Could not fetch live NGA warnings. Falling back to local copy.", err);
+    try {
+      const response = await fetch("./data/nga_warnings.json");
+      if (!response.ok) throw new Error("Local fallback file not found");
+      warningsJson = await response.json();
+      source = "local";
+    } catch (localErr) {
+      console.error("Failed to load local NGA fallback:", localErr);
+    }
+  }
+  
+  if (warningsJson) {
+    let parsedCount = 0;
+    warningsJson.forEach(w => {
+      const parsed = parseNgaWarning(w);
+      if (parsed) {
+        parsedWarnings.push(parsed);
+        parsedCount++;
+      }
+    });
+    console.log(`Loaded ${parsedCount} NAVAREA warnings from NGA (${source}).`);
+    if (source === "live") {
+      lastSourceInfo = "live";
+    }
   }
 }
 

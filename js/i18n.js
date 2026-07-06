@@ -41,7 +41,10 @@ export const translations = {
     weather_wind: "Wind",
     weather_waves: "Waves",
     weather_baro: "Barometer",
-    weather_desc: "GRIB weather interface placeholder. Future capability for sailor route planning.",
+    weather_desc: "Real-time marine forecast data provided by Open-Meteo to optimize your sailing route.",
+    weather_overlay_title: "Weather Overlay (GRIB)",
+    wind_legend_lbl: "Wind Speed (knots):",
+    temp_legend_lbl: "Temperature (°C):",
     clear_alarm_track: "Stop Alarm & Track",
     ping_title: "SHOM PING Portal",
     ping_desc: "Access active navigational warnings (AVURNAVs) and regulation zones directly on the official PING platform.",
@@ -87,7 +90,10 @@ export const translations = {
     weather_wind: "Vent",
     weather_waves: "Vagues",
     weather_baro: "Baromètre",
-    weather_desc: "Interface GRIB météo planifiée. Permettra d'optimiser vos plans de navigation.",
+    weather_desc: "Données de prévision en temps réel fournies par Open-Meteo pour optimiser vos plans de navigation.",
+    weather_overlay_title: "Carte des prévisions (GRIB)",
+    wind_legend_lbl: "Vitesse du vent (nœuds) :",
+    temp_legend_lbl: "Température (°C) :",
     clear_alarm_track: "Arrêter Alarme & Trace",
     ping_title: "Portail PING (SHOM)",
     ping_desc: "Consultez en direct les Avis Urgents aux Navigateurs (AVURNAV) et zones réglementées officielles du SHOM sur la plateforme PING.",
@@ -332,6 +338,7 @@ const newTranslations = {
     settings_general: "Général",
     settings_boat: "Mon Bateau",
     settings_simulator: "Simulateur GPS",
+    settings_enable_simulation: "Options de simulation",
     boat_name: "Nom du Bateau",
     boat_length: "Longueur (m)",
     boat_width: "Largeur (m)",
@@ -344,6 +351,7 @@ const newTranslations = {
     harbors_title: "Ports de plaisance",
     anchorages_view: "Ancre",
     layers_view: "Calques",
+    layers_routes_view: "Calques & Traces",
     depth: "Sondeur",
     nav_duration: "Durée",
     nav_distance: "Distance",
@@ -364,7 +372,8 @@ const newTranslations = {
     harbor_services: "Services",
     harbor_type: "Port de plaisance",
     harbor_no_data: "Aucun port de plaisance trouvé dans cette zone.",
-    harbor_loading: "Chargement des ports..."
+    harbor_loading: "Chargement des ports...",
+    nav_warnings_title: "Alertes à la navigation"
   },
   en: {
     mode_consultation: "Consultation",
@@ -373,6 +382,7 @@ const newTranslations = {
     settings_general: "General",
     settings_boat: "My Boat",
     settings_simulator: "GPS Simulator",
+    settings_enable_simulation: "Simulation options",
     boat_name: "Boat Name",
     boat_length: "Length (m)",
     boat_width: "Beam (m)",
@@ -385,6 +395,7 @@ const newTranslations = {
     harbors_title: "Marinas",
     anchorages_view: "Anchor",
     layers_view: "Layers",
+    layers_routes_view: "Layers & Tracks",
     depth: "Depth",
     nav_duration: "Duration",
     nav_distance: "Distance",
@@ -405,7 +416,8 @@ const newTranslations = {
     harbor_services: "Services",
     harbor_type: "Marina",
     harbor_no_data: "No marinas found in this area.",
-    harbor_loading: "Loading harbors..."
+    harbor_loading: "Loading harbors...",
+    nav_warnings_title: "Navigational Warnings"
   }
 };
 

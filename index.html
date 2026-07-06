@@ -132,15 +132,18 @@
     <!-- Collapsible Sidebar Controls Panel -->
     <aside id="sidebar-drawer" class="sidebar">
       
+      <!-- Sidebar Collapse / Expand Button -->
+      <button id="sidebar-collapse-btn" class="sidebar-collapse-btn" title="Réduire/Agrandir le menu">
+        <svg viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem; fill: currentColor; transition: transform 0.3s ease;">
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+        </svg>
+      </button>
+      
       <!-- Top Navigation Tabs -->
       <nav class="sidebar-tabs">
-        <button class="tab-btn active" data-target="panel-layers">
-          <svg viewBox="0 0 24 24" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          <span data-i18n="layers_view">Calques</span>
-        </button>
-        <button class="tab-btn" data-target="panel-routes">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-          <span data-i18n="routes_view">Traces</span>
+        <button class="tab-btn active" data-target="panel-layers" style="width: 100%; flex-grow: 1; justify-content: center; pointer-events: none; border-bottom-color: var(--accent-color);">
+          <svg viewBox="0 0 24 24" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; width: 1.1rem; height: 1.1rem; vertical-align: middle; margin-right: 0.35rem;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span data-i18n="layers_routes_view" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; color: var(--text-color);">Calques & Traces</span>
         </button>
       </nav>
 
@@ -150,12 +153,12 @@
       <!-- Sidebar Contents Scroll Area -->
       <div class="tab-content">
         
-        <!-- Layers Panel (Calques) -->
+        <!-- Layers & Routes Panel (Merged) -->
         <div id="panel-layers" class="tab-panel active">
-          <h3 data-i18n="layers_view">Calques</h3>
+          <h3 data-i18n="layers_routes_view">Calques & Traces</h3>
           
           <!-- Custom Layer Checkboxes -->
-          <div class="card layers-selector">
+          <div class="card layers-selector" style="margin-bottom: 1.25rem;">
             <div class="layer-section-title">Éléments de carte</div>
             <div class="layer-list-options">
               <!-- Global toggle -->
@@ -189,11 +192,55 @@
             </div>
           </div>
 
-          <!-- Ports de Plaisance List -->
-          <h3 data-i18n="harbors_title">Ports de plaisance</h3>
-          <div id="harbors-list-container" class="history-list" style="margin-bottom: 1.25rem;">
-            <!-- Populated by JS -->
+          <h3 data-i18n="route_planning">Création d'itinéraire</h3>
+          <div class="card route-planning-container" style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.75rem; padding: 0.85rem 1rem !important;">
+            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+              <label for="route-dest-input" style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Destination</label>
+              <div style="display: flex; gap: 0.4rem;">
+                <input type="text" id="route-dest-input" placeholder="Ex: Marseille, Calvi, Cherbourg..." style="flex-grow: 1; padding: 0.45rem 0.6rem; border-radius: 0.35rem; border: 1px solid var(--border-color); background: rgba(0,0,0,0.25); color: var(--text-color); font-size: 0.8rem;">
+                <button id="route-search-btn" class="btn btn-primary" style="padding: 0.45rem 0.75rem; font-size: 0.8rem; min-width: auto; flex-shrink: 0;">Calculer</button>
+              </div>
+            </div>
+            
+            <!-- Route Suggestions dropdown -->
+            <div id="route-suggestions-list" style="display: none; background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 0.35rem; max-height: 140px; overflow-y: auto; font-size: 0.75rem; padding: 0.25rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+              <!-- Suggestions filled by JS -->
+            </div>
+
+            <!-- Route Info and Action Preview Card -->
+            <div id="route-preview-card" style="display: none; background: rgba(6, 182, 212, 0.04); border: 1px solid rgba(6, 182, 212, 0.15); border-radius: 0.5rem; padding: 0.75rem; margin-top: 0.25rem; flex-direction: column; gap: 0.5rem;">
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.05em;">Itinéraire tracé</div>
+              <div style="font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.4rem;">
+                <span style="color: var(--text-muted);">Distance estimée:</span>
+                <strong id="route-preview-distance" style="color: var(--text-color); font-size: 0.9rem;">-- NM</strong>
+              </div>
+              <div style="display: flex; gap: 0.4rem; margin-top: 0.25rem;">
+                <button id="route-start-btn" class="btn btn-primary" style="flex-grow: 1; padding: 0.45rem; font-size: 0.75rem;">Démarrer navigation</button>
+                <button id="route-cancel-btn" class="btn btn-danger" style="padding: 0.45rem 0.6rem; font-size: 0.75rem; min-width: auto;">Annuler</button>
+              </div>
+            </div>
           </div>
+
+          <h3 data-i18n="track_status">Suivi du trajet</h3>
+          <!-- Hidden status elements to prevent JS errors -->
+          <span id="track-status-text" style="display: none;"></span>
+          <span id="track-status-indicator" style="display: none;"></span>
+          <div class="card" style="margin-bottom: 0.75rem;">
+            <button id="start-track-btn" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" style="width: 1.1rem; height: 1.1rem; fill: currentColor;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+              <span data-i18n="start_track">Démarrer trace</span>
+            </button>
+            <button id="stop-track-btn" class="btn btn-danger" style="display: none;">
+              <svg viewBox="0 0 24 24" style="width: 1.1rem; height: 1.1rem; fill: currentColor;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 12c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1V10c0-.55.45-1 1-1h6c.55 0 1 .45 1 1v4z"/></svg>
+              <span data-i18n="stop_track">Arrêter trace</span>
+            </button>
+          </div>
+
+          <h3 data-i18n="routes_view">Traces</h3>
+          <div id="history-list" class="history-list">
+            <!-- Saved tracks will be dynamically inserted here -->
+          </div>
+          <button id="clear-tracks-btn" class="btn" style="margin-top: 0.5rem;" data-i18n="clear_tracks">Effacer l'historique</button>
         </div>
 
         <!-- Weather Panel -->
@@ -260,37 +307,62 @@
             </div>
           </div>
 
+          <!-- Weather Overlay (GRIB) Switcher & Legend -->
+          <div class="card" style="margin-top: 0.75rem; margin-bottom: 0.75rem; padding: 0.75rem !important;">
+            <h4 style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: var(--accent-color); margin: 0 0 0.5rem 0; letter-spacing: 0.05em;" data-i18n="weather_overlay_title">Carte des prévisions (GRIB)</h4>
+            
+            <div class="segment-control" style="display: flex; background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: 0.35rem; padding: 2px; margin-bottom: 0.75rem;">
+              <button id="overlay-wind-btn" class="segment-btn active" style="flex: 1; padding: 0.35rem; font-size: 0.75rem; border: none; background: rgba(6, 182, 212, 0.15); border-radius: 0.25rem; color: var(--text-color); cursor: pointer; transition: background 0.2s; font-weight: 600;" data-i18n="weather_wind">Vent</button>
+              <button id="overlay-temp-btn" class="segment-btn" style="flex: 1; padding: 0.35rem; font-size: 0.75rem; border: none; background: none; border-radius: 0.25rem; color: var(--text-muted); cursor: pointer; transition: background 0.2s; font-weight: 600;" data-i18n="weather_temp">Température</button>
+            </div>
+
+            <!-- Wind Speed Legend -->
+            <div id="legend-wind" class="weather-legend">
+              <div style="font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.25rem;" data-i18n="wind_legend_lbl">Vitesse du vent (nœuds) :</div>
+              <div style="display: flex; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 0.25rem; border: 1px solid rgba(255,255,255,0.05);">
+                <div style="flex: 1; background: rgb(34, 197, 94);" title="0-5 Kts"></div>
+                <div style="flex: 1; background: rgb(163, 230, 53);" title="5-10 Kts"></div>
+                <div style="flex: 1; background: rgb(234, 179, 8);" title="10-15 Kts"></div>
+                <div style="flex: 1; background: rgb(249, 115, 22);" title="15-20 Kts"></div>
+                <div style="flex: 1; background: rgb(239, 68, 68);" title="20-30 Kts"></div>
+                <div style="flex: 1; background: rgb(168, 85, 247);" title=">30 Kts"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.65rem; color: var(--text-muted); font-family: monospace;">
+                <span>0</span>
+                <span>5</span>
+                <span>10</span>
+                <span>15</span>
+                <span>20</span>
+                <span>30+</span>
+              </div>
+            </div>
+
+            <!-- Temperature Legend -->
+            <div id="legend-temp" class="weather-legend" style="display: none;">
+              <div style="font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.25rem;" data-i18n="temp_legend_lbl">Température (°C) :</div>
+              <div style="display: flex; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 0.25rem; border: 1px solid rgba(255,255,255,0.05);">
+                <div style="flex: 1; background: rgb(59, 130, 246);" title="<0 °C"></div>
+                <div style="flex: 1; background: rgb(34, 211, 238);" title="0-10 °C"></div>
+                <div style="flex: 1; background: rgb(34, 197, 94);" title="10-18 °C"></div>
+                <div style="flex: 1; background: rgb(234, 179, 8);" title="18-25 °C"></div>
+                <div style="flex: 1; background: rgb(249, 115, 22);" title="25-32 °C"></div>
+                <div style="flex: 1; background: rgb(239, 68, 68);" title=">32 °C"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.65rem; color: var(--text-muted); font-family: monospace;">
+                <span>&lt;0</span>
+                <span>10</span>
+                <span>18</span>
+                <span>25</span>
+                <span>32</span>
+                <span>32+</span>
+              </div>
+            </div>
+          </div>
+
           <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4; border-left: 2px solid var(--border-color); padding-left: 0.5rem; margin-top: 0.75rem;" data-i18n="weather_desc">
             Données météo réelles fournies en direct par Open-Meteo pour optimiser vos plans de navigation.
           </p>
         </div>
-
-
-
-        <!-- Routes Panel -->
-        <div id="panel-routes" class="tab-panel">
-          <h3 data-i18n="track_status">Suivi du trajet</h3>
-          <!-- Hidden status elements to prevent JS errors -->
-          <span id="track-status-text" style="display: none;"></span>
-          <span id="track-status-indicator" style="display: none;"></span>
-          <div class="card">
-            <button id="start-track-btn" class="btn btn-primary">
-              <svg viewBox="0 0 24 24" style="width: 1.1rem; height: 1.1rem; fill: currentColor;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-              <span data-i18n="start_track">Démarrer trace</span>
-            </button>
-            <button id="stop-track-btn" class="btn btn-danger" style="display: none;">
-              <svg viewBox="0 0 24 24" style="width: 1.1rem; height: 1.1rem; fill: currentColor;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 12c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1V10c0-.55.45-1 1-1h6c.55 0 1 .45 1 1v4z"/></svg>
-              <span data-i18n="stop_track">Arrêter trace</span>
-            </button>
-          </div>
-
-          <h3 data-i18n="routes_view">Traces</h3>
-          <div id="history-list" class="history-list">
-            <!-- Saved tracks will be dynamically inserted here -->
-          </div>
-          <button id="clear-tracks-btn" class="btn" style="margin-top: 0.5rem;" data-i18n="clear_tracks">Effacer l'historique</button>
-        </div>
-
       </div>
 
     </aside>
@@ -300,6 +372,11 @@
       
       <!-- Leaflet Map Container -->
       <div id="map"></div>
+
+      <!-- Map Crosshairs and Coordinates Tooltip -->
+      <div id="crosshair-h" class="map-crosshair horizontal" style="display: none;"></div>
+      <div id="crosshair-v" class="map-crosshair vertical" style="display: none;"></div>
+      <div id="crosshair-coords" class="map-crosshair-coords" style="display: none;"></div>
 
       <!-- Proximity Warning Banner -->
       <div id="danger-warning-banner" class="danger-warning-banner" style="display: none;">
@@ -376,6 +453,20 @@
         <button class="icon-btn" style="background: var(--surface-color); width: 3rem; height: 3rem;" title="Menu">
           <svg viewBox="0 0 24 24" style="width: 1.5rem; height: 1.5rem;"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
         </button>
+      </div>
+      
+      <!-- Floating Weather Timeline Bar -->
+      <div id="weather-timeline-bar" class="weather-timeline-bar" style="display: none;">
+        <button id="timeline-play-btn" class="timeline-play-btn" title="Lecture / Pause">
+          <!-- Play SVG -->
+          <svg id="timeline-play-icon" viewBox="0 0 24 24" style="width: 1.2rem; height: 1.2rem; fill: currentColor;"><path d="M8 5v14l11-7z"/></svg>
+          <!-- Pause SVG -->
+          <svg id="timeline-pause-icon" viewBox="0 0 24 24" style="width: 1.2rem; height: 1.2rem; fill: currentColor; display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <div id="timeline-scroll-container" class="timeline-scroll-container">
+          <!-- Will be dynamically populated with day blocks and hour ticks -->
+        </div>
+        <div id="timeline-current-badge" class="timeline-current-badge">--:--</div>
       </div>
 
     </main>
@@ -499,6 +590,13 @@
               <label data-i18n="siren_test">Tester sirène</label>
               <button id="test-siren-btn-modal" class="btn btn-primary" style="width: 100%;" data-i18n="siren_test">Tester sirène</button>
             </div>
+            <div class="control-row" style="margin-top: 1.5rem; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 1.25rem; display: flex; align-items: center;">
+              <span data-i18n="settings_enable_simulation" style="font-size: 0.9rem; font-weight: 500;">Options de simulation</span>
+              <label class="switch">
+                <input type="checkbox" id="simulation-options-toggle">
+                <span class="slider"></span>
+              </label>
+            </div>
           </div>
 
           <!-- Boat Pane -->
@@ -539,7 +637,7 @@
             <div class="control-row" style="margin-top: 0.5rem; margin-bottom: 1rem;">
               <span id="sim-status-text-modal" data-i18n="sim_active" style="font-weight: 500;">Simulation active</span>
               <label class="switch">
-                <input type="checkbox" id="simulator-toggle-modal" checked>
+                <input type="checkbox" id="simulator-toggle-modal">
                 <span class="slider"></span>
               </label>
             </div>

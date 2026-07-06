@@ -73,6 +73,22 @@ export const state = {
   osm: null,
   openseamap: null,
 
+  // Planned Route / Itinerary State
+  plannedRoute: null,
+  plannedRouteLayer: null,
+  plannedRouteStartMarker: null,
+  plannedRouteEndMarker: null,
+  plannedRouteDistance: 0,
+
   // General App settings
-  currentLang: 'fr' // Default to French
+  currentLang: 'fr', // Default to French
+
+  // Weather GRIB Overlay state
+  weatherOverlayType: 'wind', // 'wind' or 'temp'
+  activeWeatherTimeIndex: 0,   // hourly time step index (0 to 167)
+  gribData: null,              // Array of hourly data fetched for grid points
+  gribBounds: null,            // LatLngBounds of current grid
+  gribPlayInterval: null,      // Timer ID for play mode
+  gribImageOverlay: null,      // Leaflet ImageOverlay object for GRIB heatmap
+  gribBarbsLayer: null         // Leaflet LayerGroup for wind barb markers
 };

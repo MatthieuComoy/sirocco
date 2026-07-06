@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sirroco-nav-v28';
+const CACHE_NAME = 'sirroco-nav-v32';
 const TILE_CACHE_NAME = 'sirroco-tiles-v1';
 const API_CACHE_NAME = 'sirroco-api-v1';
 
@@ -29,6 +29,8 @@ const ASSETS = [
   './js/harbors.js',
   './js/tracking.js',
   './js/pingWarnings.js',
+  './js/routing.js',
+  './js/french_marinas.js',
   './data/navarea2.xml',
   './data/toulon.xml',
   './data/brest.xml',
@@ -60,6 +62,7 @@ const ASSETS = [
   './data/avurnav_local_nouvelle_caledonie.xml',
   './data/avurnav_local_polynesie.xml',
   './data/avurnav_local_st_pierre_miquelon.xml',
+  './data/nga_warnings.json',
   './manifest.json',
   './icons/favicon.ico',
   './icons/favicon-16x16.png',

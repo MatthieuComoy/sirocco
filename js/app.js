@@ -5,10 +5,11 @@ import { translations, translateUI } from './i18n.js';
 import { calculateHaversineDistance, getPointOfSail, getSimulatedDepth } from './utils.js';
 import { updateAnchorLocation, checkAnchorAlarm, deactivateAnchorAlarm } from './anchorAlarm.js';
 import { toggleSimulator, startRealGPS, stopRealGPS } from './gpsSimulator.js';
-import { updateWeatherAndTides, updateBoatSails, onMapMove } from './weatherTides.js';
+import { updateWeatherAndTides, updateBoatSails, onMapMove, initGribOverlay, activateGribOverlay, deactivateGribOverlay } from './weatherTides.js';
 import { fetchHarborsInViewport, clearHarborMarkers, onMapMoveHarbors, renderHarborListAndMarkers, loadHarborsFromLocalStorage } from './harbors.js';
 import { startRouteTracking, stopRouteTracking, clearHistory, renderSavedTracks } from './tracking.js';
 import { initPingWarnings } from './pingWarnings.js';
+import { findRoute, WAYPOINTS } from './routing.js';
 
 // Update recenter button styling based on auto-centering state
 export function updateRecenterButtonUI() {
@@ -126,6 +127,64 @@ export function initMap() {
 
   // Harbors viewport update listener
   state.map.on('moveend', onMapMoveHarbors);
+
+  // Crosshairs & GPS tooltip on mouse hover (only for hover-capable devices)
+  if (window.matchMedia('(hover: hover)').matches) {
+    const crosshairH = document.getElementById('crosshair-h');
+    const crosshairV = document.getElementById('crosshair-v');
+    const crosshairCoords = document.getElementById('crosshair-coords');
+
+    state.map.on('mousemove', (e) => {
+      const containerPoint = e.containerPoint;
+      const latlng = e.latlng;
+
+      if (crosshairH) {
+        crosshairH.style.top = `${containerPoint.y}px`;
+        crosshairH.style.display = 'block';
+      }
+      if (crosshairV) {
+        crosshairV.style.left = `${containerPoint.x}px`;
+        crosshairV.style.display = 'block';
+      }
+
+      if (crosshairCoords) {
+        const lat = latlng.lat;
+        const lng = latlng.lng;
+        const latDir = lat >= 0 ? 'N' : 'S';
+        const lngDir = lng >= 0 ? 'E' : (state.currentLang === 'fr' ? 'O' : 'W');
+        crosshairCoords.textContent = `${Math.abs(lat).toFixed(5)}° ${latDir}, ${Math.abs(lng).toFixed(5)}° ${lngDir}`;
+
+        const offsetX = 15;
+        const offsetY = 15;
+        let left = containerPoint.x + offsetX;
+        let top = containerPoint.y + offsetY;
+
+        // Prevent off-map boundary overflow
+        const mapContainer = state.map.getContainer();
+        const mapWidth = mapContainer.clientWidth;
+        const mapHeight = mapContainer.clientHeight;
+        const boxWidth = 160; // Estimated box width
+        const boxHeight = 25; // Estimated box height
+
+        if (left + boxWidth > mapWidth) {
+          left = containerPoint.x - boxWidth - offsetX;
+        }
+        if (top + boxHeight > mapHeight) {
+          top = containerPoint.y - boxHeight - offsetY;
+        }
+
+        crosshairCoords.style.left = `${left}px`;
+        crosshairCoords.style.top = `${top}px`;
+        crosshairCoords.style.display = 'block';
+      }
+    });
+
+    state.map.on('mouseout', () => {
+      if (crosshairH) crosshairH.style.display = 'none';
+      if (crosshairV) crosshairV.style.display = 'none';
+      if (crosshairCoords) crosshairCoords.style.display = 'none';
+    });
+  }
 }
 
 export function updatePosition(lat, lng, speedKts, headingDeg) {
@@ -256,6 +315,7 @@ export function setAppMode(mode) {
 
   if (mode === 'navigation') {
     if (navBtn) navBtn.classList.add('active');
+    deactivateGribOverlay();
     
     // Auto collapse sidebar
     if (sidebar) sidebar.classList.add('collapsed');
@@ -325,11 +385,13 @@ export function setAppMode(mode) {
     if (state.map) {
       const center = state.map.getCenter();
       updateWeatherAndTides(center.lat, center.lng, true);
+      activateGribOverlay();
     }
 
   } else {
     // Mode Consultation
     if (consBtn) consBtn.classList.add('active');
+    deactivateGribOverlay();
     
     // Expand sidebar if on desktop
     if (sidebar && window.innerWidth > 768) {
@@ -405,7 +467,7 @@ export function saveBoatProfile(profile) {
 }
 
 // Update online/offline UI and status
-export function updateOnlineStatus() {
+export function updateOnlineStatus(e) {
   const offlineBadge = document.getElementById('status-offline-badge');
   if (offlineBadge) {
     if (navigator.onLine) {
@@ -415,11 +477,105 @@ export function updateOnlineStatus() {
     }
   }
   
-  if (navigator.onLine) {
+  // Only trigger automatic refetches if this is a real window 'online' event (not initial page load)
+  if (e && e.type === 'online' && navigator.onLine) {
     if (state.lastFetchedLat !== null && state.lastFetchedLon !== null) {
       updateWeatherAndTides(state.lastFetchedLat, state.lastFetchedLon, true);
     }
     fetchHarborsInViewport();
+  }
+}
+
+// Draw the planned route on the map
+export function drawPlannedRoute(routeData) {
+  clearPlannedRouteLayers();
+
+  if (!routeData || !routeData.coordinates || routeData.coordinates.length === 0) return;
+
+  state.plannedRoute = routeData.coordinates;
+  state.plannedRouteDistance = routeData.distanceNM;
+
+  // Draw dashed purple polyline
+  state.plannedRouteLayer = L.polyline(routeData.coordinates, {
+    color: '#a855f7',
+    weight: 5,
+    dashArray: '10, 10',
+    opacity: 0.85
+  }).addTo(state.map);
+
+  // Add green circle marker at start
+  const startLatLng = routeData.coordinates[0];
+  state.plannedRouteStartMarker = L.circleMarker(startLatLng, {
+    radius: 7,
+    fillColor: '#22c55e',
+    color: '#ffffff',
+    weight: 2,
+    fillOpacity: 1
+  }).addTo(state.map);
+
+  // Add red circle marker at destination
+  const endLatLng = routeData.coordinates[routeData.coordinates.length - 1];
+  state.plannedRouteEndMarker = L.circleMarker(endLatLng, {
+    radius: 7,
+    fillColor: '#ef4444',
+    color: '#ffffff',
+    weight: 2,
+    fillOpacity: 1
+  }).addTo(state.map);
+
+  // Fit bounds and disable autocenter
+  if (state.map) {
+    state.map.fitBounds(state.plannedRouteLayer.getBounds(), { padding: [50, 50] });
+  }
+  state.autoCenter = false;
+  updateRecenterButtonUI();
+
+  // Show preview card and update distance in NM
+  const previewCard = document.getElementById('route-preview-card');
+  const distanceText = document.getElementById('route-preview-distance');
+  if (previewCard) previewCard.style.display = 'flex';
+  if (distanceText) distanceText.textContent = `${routeData.distanceNM.toFixed(1)} NM`;
+}
+
+// Clear all route planning visual layers and state
+export function clearPlannedRoute() {
+  clearPlannedRouteLayers();
+
+  state.plannedRoute = null;
+  state.plannedRouteDistance = 0;
+
+  const previewCard = document.getElementById('route-preview-card');
+  if (previewCard) previewCard.style.display = 'none';
+
+  const destInput = document.getElementById('route-dest-input');
+  if (destInput) destInput.value = '';
+
+  const suggestions = document.getElementById('route-suggestions-list');
+  if (suggestions) suggestions.style.display = 'none';
+}
+
+function clearPlannedRouteLayers() {
+  if (state.plannedRouteLayer && state.map) {
+    state.map.removeLayer(state.plannedRouteLayer);
+  }
+  if (state.plannedRouteStartMarker && state.map) {
+    state.map.removeLayer(state.plannedRouteStartMarker);
+  }
+  if (state.plannedRouteEndMarker && state.map) {
+    state.map.removeLayer(state.plannedRouteEndMarker);
+  }
+  state.plannedRouteLayer = null;
+  state.plannedRouteStartMarker = null;
+  state.plannedRouteEndMarker = null;
+}
+
+// Calculate the route and display on map
+export function calculateAndDrawRoute(destLat, destLon) {
+  const route = findRoute(state.currentLat, state.currentLon, destLat, destLon);
+  if (route) {
+    drawPlannedRoute(route);
+  } else {
+    alert(state.currentLang === 'fr' ? "Impossible de calculer un itinéraire. Trop éloigné du réseau navigable." : "Unable to calculate route. Too far from navigable waterways.");
   }
 }
 
@@ -446,8 +602,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Init Map
   initMap();
   
-  // Init PING warnings
-  initPingWarnings();
+  // Init GRIB
+  initGribOverlay();
   
   // Set Language
   translateUI(cachedLang);
@@ -455,17 +611,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register connection status listeners
   window.addEventListener('online', updateOnlineStatus);
   window.addEventListener('offline', updateOnlineStatus);
-  updateOnlineStatus();
-
-  // Render initial harbors on map and list
-  fetchHarborsInViewport();
+  updateOnlineStatus(); // Sets initial UI badge, no fetch triggered
 
   // Render history list
   renderSavedTracks();
 
+  // Lazy load overlays and heavy APIs to prioritize base map rendering
+  setTimeout(() => {
+    // 1. Weather and tides
+    updateWeatherAndTides(state.currentLat, state.currentLon, true);
+  }, 150);
 
-  // Initial weather and tides fetch for current user position
-  updateWeatherAndTides(state.currentLat, state.currentLon, true);
+  setTimeout(() => {
+    // 2. Harbors
+    fetchHarborsInViewport();
+  }, 450);
+
+  setTimeout(() => {
+    // 3. Init PING warnings (fetches and parses warnings in a non-blocking sequence)
+    initPingWarnings();
+  }, 850);
 
   // Mode Switcher Controls
   document.getElementById('mode-consultation-btn').addEventListener('click', () => {
@@ -487,6 +652,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('stop-nav-btn').addEventListener('click', () => {
     setAppMode('consultation');
     stopRouteTracking();
+    clearPlannedRoute();
   });
 
   // Control Center Settings Modal Toggle
@@ -657,6 +823,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Sidebar Collapse/Expand Toggle (Desktop & General)
+  const sidebarCollapseBtn = document.getElementById('sidebar-collapse-btn');
+  if (sidebarCollapseBtn && sidebar) {
+    sidebarCollapseBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      
+      // Force map layout redraw after transition finishes
+      setTimeout(() => {
+        if (state.map) {
+          state.map.invalidateSize();
+        }
+      }, 300);
+    });
+  }
+
   // Track Buttons
   document.getElementById('start-track-btn').addEventListener('click', startRouteTracking);
   document.getElementById('stop-track-btn').addEventListener('click', stopRouteTracking);
@@ -756,8 +937,187 @@ document.addEventListener("DOMContentLoaded", () => {
     if (state.map) state.map.invalidateSize();
   });
 
-  // Initialize Simulator Active by default
-  toggleSimulator(true);
+  // Route planning destination input autocomplete
+  const destInput = document.getElementById('route-dest-input');
+  const suggestionsList = document.getElementById('route-suggestions-list');
+
+  if (destInput && suggestionsList) {
+    destInput.addEventListener('input', () => {
+      const val = destInput.value.trim().toLowerCase();
+      if (val.length < 2) {
+        suggestionsList.innerHTML = '';
+        suggestionsList.style.display = 'none';
+        return;
+      }
+
+      const matches = [];
+      // Search predefined waypoints
+      for (const key in WAYPOINTS) {
+        const wp = WAYPOINTS[key];
+        if (wp.name.toLowerCase().includes(val)) {
+          matches.push({ name: wp.name, lat: wp.lat, lon: wp.lon, source: 'waypoint' });
+        }
+      }
+
+      // Search cached harbors
+      state.allHarborsCache.forEach(harbor => {
+        if (harbor.name.toLowerCase().includes(val)) {
+          if (!matches.some(m => m.name.toLowerCase() === harbor.name.toLowerCase())) {
+            matches.push({ name: harbor.name, lat: harbor.lat, lon: harbor.lng, source: 'harbor' });
+          }
+        }
+      });
+
+      if (matches.length > 0) {
+        const limitMatches = matches.slice(0, 5);
+        suggestionsList.innerHTML = limitMatches.map(m => `
+          <div class="suggestion-item" data-lat="${m.lat}" data-lon="${m.lon}" data-name="${m.name}" style="padding: 0.45rem 0.6rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.2s;">
+            📍 <strong>${m.name}</strong> <span style="font-size: 0.65rem; color: var(--text-muted); float: right;">${m.source === 'waypoint' ? 'Mer' : 'Port'}</span>
+          </div>
+        `).join('');
+        
+        suggestionsList.style.display = 'block';
+
+        const items = suggestionsList.querySelectorAll('.suggestion-item');
+        items.forEach(item => {
+          item.addEventListener('click', () => {
+            const lat = parseFloat(item.getAttribute('data-lat'));
+            const lon = parseFloat(item.getAttribute('data-lon'));
+            const name = item.getAttribute('data-name');
+
+            destInput.value = name;
+            suggestionsList.style.display = 'none';
+
+            calculateAndDrawRoute(lat, lon);
+          });
+        });
+      } else {
+        suggestionsList.innerHTML = '';
+        suggestionsList.style.display = 'none';
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (e.target !== destInput && e.target !== suggestionsList) {
+        suggestionsList.style.display = 'none';
+      }
+    });
+  }
+
+  // Geocoding Search handler (Nominatim API fallback)
+  async function handleRouteSearch() {
+    if (!destInput) return;
+    const query = destInput.value.trim();
+    if (!query) return;
+
+    if (suggestionsList) suggestionsList.style.display = 'none';
+
+    // 1. Search locally
+    const queryLower = query.toLowerCase();
+    
+    // Check predefined waypoints
+    for (const key in WAYPOINTS) {
+      const wp = WAYPOINTS[key];
+      if (wp.name.toLowerCase().includes(queryLower)) {
+        calculateAndDrawRoute(wp.lat, wp.lon);
+        return;
+      }
+    }
+
+    // Check harbors cache
+    let foundHarbor = null;
+    state.allHarborsCache.forEach(harbor => {
+      if (!foundHarbor && harbor.name.toLowerCase().includes(queryLower)) {
+        foundHarbor = harbor;
+      }
+    });
+
+    if (foundHarbor) {
+      calculateAndDrawRoute(foundHarbor.lat, foundHarbor.lng);
+      return;
+    }
+
+    // 2. Query Nominatim API if online
+    if (navigator.onLine) {
+      try {
+        const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=3`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Search request failed");
+        const results = await res.json();
+        if (results && results.length > 0) {
+          const first = results[0];
+          const lat = parseFloat(first.lat);
+          const lon = parseFloat(first.lon);
+          calculateAndDrawRoute(lat, lon);
+        } else {
+          alert(state.currentLang === 'fr' ? "Aucun résultat trouvé pour cette destination." : "No results found for this destination.");
+        }
+      } catch (err) {
+        console.error("Geocoding failed:", err);
+        alert(state.currentLang === 'fr' ? "Erreur lors de la recherche de la destination." : "Error searching for destination.");
+      }
+    } else {
+      alert(state.currentLang === 'fr' ? "Mode hors-ligne : Destination non trouvée dans la base locale." : "Offline mode: Destination not found in local database.");
+    }
+  }
+
+  const routeSearchBtn = document.getElementById('route-search-btn');
+  if (routeSearchBtn) {
+    routeSearchBtn.addEventListener('click', handleRouteSearch);
+  }
+  if (destInput) {
+    destInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleRouteSearch();
+      }
+    });
+  }
+
+  const routeStartBtn = document.getElementById('route-start-btn');
+  if (routeStartBtn) {
+    routeStartBtn.addEventListener('click', () => {
+      setAppMode('navigation');
+    });
+  }
+
+  const routeCancelBtn = document.getElementById('route-cancel-btn');
+  if (routeCancelBtn) {
+    routeCancelBtn.addEventListener('click', () => {
+      clearPlannedRoute();
+    });
+  }
+
+  // Load and apply simulation options settings
+  const simOptionsEnabled = localStorage.getItem('sirroco_sim_options_enabled') === 'true';
+  const simOptionsToggle = document.getElementById('simulation-options-toggle');
+  const simTabBtn = document.querySelector('.modal-tab-btn[data-tab="tab-simulator"]');
+  
+  if (simOptionsToggle) {
+    simOptionsToggle.checked = simOptionsEnabled;
+  }
+  if (simTabBtn) {
+    simTabBtn.style.display = simOptionsEnabled ? '' : 'none';
+  }
+
+  if (simOptionsToggle) {
+    simOptionsToggle.addEventListener('change', (e) => {
+      const enabled = e.target.checked;
+      localStorage.setItem('sirroco_sim_options_enabled', enabled);
+      if (simTabBtn) {
+        simTabBtn.style.display = enabled ? '' : 'none';
+      }
+      // If we disable simulation options, also force turn off the simulator
+      if (!enabled) {
+        const simToggleModal = document.getElementById('simulator-toggle-modal');
+        if (simToggleModal) simToggleModal.checked = false;
+        toggleSimulator(false);
+      }
+    });
+  }
+
+  // Initialize with Real GPS (mode normal) by default
+  toggleSimulator(false);
 });
 
 // PWA Service Worker Registration

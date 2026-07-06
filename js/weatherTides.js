@@ -264,8 +264,9 @@ export function onMapMove() {
     if (state.map) {
       const center = state.map.getCenter();
       updateWeatherAndTides(center.lat, center.lng);
+      updateGribForCurrentBounds();
     }
-  }, 500);
+  }, 800);
 }
 
 export function drawTideChart(lat, lon, tideData) {
@@ -363,3 +364,449 @@ export function drawTideChart(lat, lon, tideData) {
     </svg>
   `;
 }
+
+// ---------------- GRIB WEATHER OVERLAYS AND TIME SLIDER ----------------
+
+let isPlaying = false;
+
+// Calculate 5x5 grid coordinates covering the current map bounds
+function getGridCoords(bounds) {
+  const sw = bounds.getSouthWest();
+  const ne = bounds.getNorthEast();
+  
+  const minLat = sw.lat;
+  const maxLat = ne.lat;
+  const minLng = sw.lng;
+  const maxLng = ne.lng;
+  
+  const size = 5; // 5x5 grid
+  const coords = [];
+  
+  for (let r = 0; r < size; r++) {
+    const lat = minLat + (r / (size - 1)) * (maxLat - minLat);
+    for (let c = 0; c < size; c++) {
+      const lng = minLng + (c / (size - 1)) * (maxLng - minLng);
+      coords.push({ lat, lng });
+    }
+  }
+  return coords;
+}
+
+// Map a wind speed value to [R, G, B, A] array for canvas interpolation
+function getWindColorArray(speed) {
+  if (speed <= 5) return [34, 197, 94, 90];    // Green
+  if (speed <= 10) return [163, 230, 53, 90];  // Lime
+  if (speed <= 15) return [234, 179, 8, 100];   // Yellow
+  if (speed <= 20) return [249, 115, 22, 110];  // Orange
+  if (speed <= 30) return [239, 68, 68, 120];   // Red
+  return [168, 85, 247, 140];                   // Purple
+}
+
+// Map a temperature value to [R, G, B, A] array for canvas interpolation
+function getTempColorArray(temp) {
+  if (temp <= 0) return [59, 130, 246, 90];    // Blue
+  if (temp <= 10) return [34, 211, 238, 90];   // Cyan
+  if (temp <= 18) return [34, 197, 94, 90];    // Green
+  if (temp <= 25) return [234, 179, 8, 100];    // Yellow
+  if (temp <= 32) return [249, 115, 22, 115];   // Orange
+  return [239, 68, 68, 130];                    // Red
+}
+
+// Performs bilinear interpolation on grid data and draws it to a canvas
+function drawInterpolatedHeatmap(canvas, gridData, width, height, type) {
+  const ctx = canvas.getContext('2d');
+  const imgData = ctx.createImageData(width, height);
+  const size = 5;
+  
+  for (let y = 0; y < height; y++) {
+    // Invert y because canvas (0,0) is top (maxLat) and grid row 0 is bottom (minLat)
+    const gy = ((height - 1 - y) / (height - 1)) * (size - 1);
+    const r0 = Math.floor(gy);
+    const r1 = Math.min(size - 1, r0 + 1);
+    const dy = gy - r0;
+    
+    for (let x = 0; x < width; x++) {
+      const gx = (x / (width - 1)) * (size - 1);
+      const c0 = Math.floor(gx);
+      const c1 = Math.min(size - 1, c0 + 1);
+      const dx = gx - c0;
+      
+      const v00 = gridData[r0 * size + c0];
+      const v10 = gridData[r0 * size + c1];
+      const v01 = gridData[r1 * size + c0];
+      const v11 = gridData[r1 * size + c1];
+      
+      const val = v00 * (1 - dx) * (1 - dy) +
+                  v10 * dx * (1 - dy) +
+                  v01 * (1 - dx) * dy +
+                  v11 * dx * dy;
+                  
+      const colorArr = (type === 'wind') ? getWindColorArray(val) : getTempColorArray(val);
+      const pixelIdx = (y * width + x) * 4;
+      
+      imgData.data[pixelIdx] = colorArr[0];
+      imgData.data[pixelIdx + 1] = colorArr[1];
+      imgData.data[pixelIdx + 2] = colorArr[2];
+      imgData.data[pixelIdx + 3] = colorArr[3];
+    }
+  }
+  ctx.putImageData(imgData, 0, 0);
+}
+
+// Generates SVG wind barb path for a given speed and direction
+function getWindBarbSVG(speed, direction) {
+  let numFlags = Math.floor(speed / 50);
+  let remain = speed % 50;
+  let numLongFeathers = Math.floor(remain / 10);
+  remain = remain % 10;
+  let numShortFeathers = Math.floor(remain / 5);
+  
+  let path = 'M 16 28 L 16 4'; // barb shaft from bottom to top
+  
+  let y = 4;
+  const xLeft = 16;
+  const xRight = 26;
+  
+  // 50 knots flags
+  for (let i = 0; i < numFlags; i++) {
+    path += ` M ${xLeft} ${y} L ${xRight} ${y + 3} L ${xLeft} ${y + 6} Z`;
+    y += 8;
+  }
+  
+  // 10 knots long feathers
+  for (let i = 0; i < numLongFeathers; i++) {
+    path += ` M ${xLeft} ${y} L ${xRight} ${y - 4}`;
+    y += 5;
+  }
+  
+  // 5 knots short feathers
+  for (let i = 0; i < numShortFeathers; i++) {
+    path += ` M ${xLeft} ${y} L ${16 + (xRight - 16) / 2} ${y - 2}`;
+    y += 5;
+  }
+  
+  return `
+    <svg viewBox="0 0 32 32" style="width: 28px; height: 28px; transform: rotate(${direction}deg); overflow: visible; color: var(--text-color);">
+      <circle cx="16" cy="28" r="1.5" fill="currentColor"/>
+      <path d="${path}" stroke="currentColor" stroke-width="2" fill="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `;
+}
+
+// Dynamic GRIB overlay renderer
+export function renderGribOverlay() {
+  if (!state.map || !state.gribData || state.gribData.length === 0) return;
+  
+  const timeIdx = state.activeWeatherTimeIndex;
+  
+  // Create hidden canvas for heatmap interpolation
+  const canvas = document.createElement('canvas');
+  canvas.width = 120;
+  canvas.height = 120;
+  
+  const gridValues = state.gribData.map(loc => {
+    const hourly = loc.hourly;
+    if (state.weatherOverlayType === 'wind') {
+      return hourly.wind_speed_10m[timeIdx] || 0;
+    } else {
+      return hourly.temperature_2m[timeIdx] || 0;
+    }
+  });
+  
+  drawInterpolatedHeatmap(canvas, gridValues, canvas.width, canvas.height, state.weatherOverlayType);
+  const dataUrl = canvas.toDataURL();
+  
+  // Draw or update the ImageOverlay
+  if (state.gribImageOverlay) {
+    state.gribImageOverlay.setUrl(dataUrl);
+    state.gribImageOverlay.setBounds(state.gribBounds);
+  } else {
+    state.gribImageOverlay = L.imageOverlay(dataUrl, state.gribBounds, {
+      opacity: 0.5,
+      interactive: false,
+      zIndex: 350
+    }).addTo(state.map);
+  }
+  
+  // Draw or update the wind barbs markers
+  if (!state.gribBarbsLayer) {
+    state.gribBarbsLayer = L.layerGroup().addTo(state.map);
+  } else {
+    state.gribBarbsLayer.clearLayers();
+  }
+  
+  if (state.weatherOverlayType === 'wind') {
+    const size = 5;
+    const lats = [];
+    const lngs = [];
+    const sw = state.gribBounds.getSouthWest();
+    const ne = state.gribBounds.getNorthEast();
+    
+    for (let i = 0; i < size; i++) {
+      lats.push(sw.lat + (i / (size - 1)) * (ne.lat - sw.lat));
+      lngs.push(sw.lng + (i / (size - 1)) * (ne.lng - sw.lng));
+    }
+    
+    for (let r = 0; r < size; r++) {
+      for (let c = 0; c < size; c++) {
+        const idx = r * size + c;
+        const lat = lats[r];
+        const lng = lngs[c];
+        
+        const speed = state.gribData[idx].hourly.wind_speed_10m[timeIdx] || 0;
+        const dir = state.gribData[idx].hourly.wind_direction_10m[timeIdx] || 0;
+        
+        if (speed < 2) continue; // Skip calm
+        
+        const svgString = getWindBarbSVG(speed, dir);
+        const icon = L.divIcon({
+          html: svgString,
+          className: 'wind-barb-div-icon',
+          iconSize: [28, 28],
+          iconAnchor: [16, 28] // Anchor at the circle base (station location)
+        });
+        
+        L.marker([lat, lng], {
+          icon: icon,
+          interactive: false
+        }).addTo(state.gribBarbsLayer);
+      }
+    }
+  }
+}
+
+// Generate the timeline UI day blocks and hour ticks
+function generateTimeline() {
+  const container = document.getElementById('timeline-scroll-container');
+  if (!container) return;
+  container.innerHTML = '';
+  
+  const monthsFr = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'];
+  const monthsEn = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const months = state.currentLang === 'fr' ? monthsFr : monthsEn;
+  
+  const daysFr = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+  const daysEn = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const days = state.currentLang === 'fr' ? daysFr : daysEn;
+  
+  const baseDate = new Date();
+  
+  for (let d = 0; d < 7; d++) {
+    const date = new Date(baseDate.getTime() + d * 24 * 60 * 60 * 1000);
+    const dayName = `${days[date.getDay()]} ${String(date.getDate()).padStart(2, '0')}`;
+    
+    const dayBlock = document.createElement('div');
+    dayBlock.className = 'timeline-day-block';
+    
+    const dayLabel = document.createElement('div');
+    dayLabel.className = 'timeline-day-name';
+    dayLabel.textContent = dayName;
+    dayBlock.appendChild(dayLabel);
+    
+    const hoursRow = document.createElement('div');
+    hoursRow.className = 'timeline-hours-row';
+    
+    for (let h = 0; h < 24; h += 3) {
+      const tick = document.createElement('div');
+      tick.className = 'timeline-hour-tick';
+      const timeIndex = d * 24 + h;
+      tick.setAttribute('data-index', timeIndex);
+      tick.textContent = `${String(h).padStart(2, '0')}h`;
+      
+      if (timeIndex === state.activeWeatherTimeIndex) {
+        tick.classList.add('active');
+      }
+      
+      tick.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setActiveTimeStep(timeIndex);
+      });
+      
+      hoursRow.appendChild(tick);
+    }
+    dayBlock.appendChild(hoursRow);
+    container.appendChild(dayBlock);
+  }
+  
+  updateCurrentTimeBadge();
+}
+
+// Sets the active time step index and redraws GRIB overlay
+function setActiveTimeStep(index) {
+  state.activeWeatherTimeIndex = index;
+  
+  document.querySelectorAll('.timeline-hour-tick').forEach(tick => {
+    const idx = parseInt(tick.getAttribute('data-index'), 10);
+    if (idx === index) {
+      tick.classList.add('active');
+      tick.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    } else {
+      tick.classList.remove('active');
+    }
+  });
+  
+  updateCurrentTimeBadge();
+  renderGribOverlay();
+}
+
+// Updates time badge (e.g. "02/07 - 15:00")
+function updateCurrentTimeBadge() {
+  const badge = document.getElementById('timeline-current-badge');
+  if (!badge) return;
+  
+  const baseDate = new Date();
+  baseDate.setHours(0, 0, 0, 0); // Today's midnight
+  const targetDate = new Date(baseDate.getTime() + state.activeWeatherTimeIndex * 60 * 60 * 1000);
+  
+  const day = String(targetDate.getDate()).padStart(2, '0');
+  const month = String(targetDate.getMonth() + 1).padStart(2, '0');
+  const hours = String(targetDate.getHours()).padStart(2, '0');
+  
+  badge.textContent = `${day}/${month} - ${hours}:00`;
+}
+
+// Animates playback timeline play/pause
+function togglePlay() {
+  const playIcon = document.getElementById('timeline-play-icon');
+  const pauseIcon = document.getElementById('timeline-pause-icon');
+  
+  if (isPlaying) {
+    isPlaying = false;
+    if (playIcon) playIcon.style.display = 'block';
+    if (pauseIcon) pauseIcon.style.display = 'none';
+    if (state.gribPlayInterval) {
+      clearInterval(state.gribPlayInterval);
+      state.gribPlayInterval = null;
+    }
+  } else {
+    isPlaying = true;
+    if (playIcon) playIcon.style.display = 'none';
+    if (pauseIcon) pauseIcon.style.display = 'block';
+    
+    state.gribPlayInterval = setInterval(() => {
+      let nextIndex = state.activeWeatherTimeIndex + 3;
+      if (nextIndex >= 168) {
+        nextIndex = 0;
+      }
+      setActiveTimeStep(nextIndex);
+    }, 1000);
+  }
+}
+
+// Fetches the grid weather forecast for current map view bounds
+export async function updateGribForCurrentBounds(force = false) {
+  if (state.appMode !== 'weather' || !state.map) return;
+  
+  const bounds = state.map.getBounds();
+  
+  // Avoid redundant fetching if viewport moved less than 5 NM
+  if (!force && state.gribBounds) {
+    const center = state.map.getCenter();
+    const oldCenter = state.gribBounds.getCenter();
+    const dist = calculateHaversineDistance(center.lat, center.lng, oldCenter.lat, oldCenter.lng);
+    if (dist < 5.0) {
+      return;
+    }
+  }
+  
+  state.gribBounds = bounds;
+  const coords = getGridCoords(bounds);
+  
+  const latsStr = coords.map(c => c.lat.toFixed(4)).join(',');
+  const lngsStr = coords.map(c => c.lng.toFixed(4)).join(',');
+  
+  const loadingIndicator = document.getElementById('weather-loading');
+  if (loadingIndicator) loadingIndicator.style.display = 'inline-block';
+  
+  try {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latsStr}&longitude=${lngsStr}&hourly=temperature_2m,wind_speed_10m,wind_direction_10m&wind_speed_unit=kn&timezone=auto`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("GRIB API fetch failed");
+    
+    const data = await res.json();
+    state.gribData = Array.isArray(data) ? data : [data];
+    
+    generateTimeline();
+    renderGribOverlay();
+  } catch (err) {
+    console.error("Failed to fetch GRIB data:", err);
+  } finally {
+    if (loadingIndicator) loadingIndicator.style.display = 'none';
+  }
+}
+
+// Initialize all GRIB UI event listeners
+export function initGribOverlay() {
+  const windBtn = document.getElementById('overlay-wind-btn');
+  const tempBtn = document.getElementById('overlay-temp-btn');
+  const legendWind = document.getElementById('legend-wind');
+  const legendTemp = document.getElementById('legend-temp');
+  
+  if (windBtn && tempBtn) {
+    windBtn.addEventListener('click', () => {
+      state.weatherOverlayType = 'wind';
+      windBtn.classList.add('active');
+      windBtn.style.background = 'rgba(6, 182, 212, 0.15)';
+      tempBtn.classList.remove('active');
+      tempBtn.style.background = 'none';
+      tempBtn.style.color = 'var(--text-muted)';
+      windBtn.style.color = 'var(--text-color)';
+      
+      if (legendWind) legendWind.style.display = 'block';
+      if (legendTemp) legendTemp.style.display = 'none';
+      
+      renderGribOverlay();
+    });
+    
+    tempBtn.addEventListener('click', () => {
+      state.weatherOverlayType = 'temp';
+      tempBtn.classList.add('active');
+      tempBtn.style.background = 'rgba(6, 182, 212, 0.15)';
+      windBtn.classList.remove('active');
+      windBtn.style.background = 'none';
+      windBtn.style.color = 'var(--text-muted)';
+      tempBtn.style.color = 'var(--text-color)';
+      
+      if (legendWind) legendWind.style.display = 'none';
+      if (legendTemp) legendTemp.style.display = 'block';
+      
+      renderGribOverlay();
+    });
+  }
+  
+  const playBtn = document.getElementById('timeline-play-btn');
+  if (playBtn) {
+    playBtn.addEventListener('click', togglePlay);
+  }
+}
+
+// Activates GRIB display
+export function activateGribOverlay() {
+  const timeline = document.getElementById('weather-timeline-bar');
+  if (timeline) timeline.style.display = 'flex';
+  updateGribForCurrentBounds(true);
+}
+
+// Deactivates and cleans up GRIB layers/intervals
+export function deactivateGribOverlay() {
+  const timeline = document.getElementById('weather-timeline-bar');
+  if (timeline) timeline.style.display = 'none';
+  
+  if (isPlaying) {
+    togglePlay();
+  }
+  
+  if (state.gribImageOverlay && state.map) {
+    state.map.removeLayer(state.gribImageOverlay);
+    state.gribImageOverlay = null;
+  }
+  if (state.gribBarbsLayer && state.map) {
+    state.gribBarbsLayer.clearLayers();
+    state.map.removeLayer(state.gribBarbsLayer);
+    state.gribBarbsLayer = null;
+  }
+  
+  state.gribData = null;
+  state.gribBounds = null;
+}
+
