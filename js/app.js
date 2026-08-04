@@ -913,29 +913,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Sidebar Drawer Toggle for Mobile
-  const drawerBtn = document.getElementById('drawer-toggle-btn');
+  // Sidebar Collapse/Expand Toggle - Single button for both mobile and desktop
   const sidebar = document.getElementById('sidebar-drawer');
-  if (drawerBtn && sidebar) {
-    drawerBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('collapsed');
-    });
-  }
-
-  // Sidebar Collapse/Expand Toggle (Desktop & General)
   const sidebarCollapseBtn = document.getElementById('sidebar-collapse-btn');
-  if (sidebarCollapseBtn && sidebar) {
-    sidebarCollapseBtn.addEventListener('click', () => {
+
+  // Use the same toggle function for both mobile and desktop
+  function toggleSidebar() {
+    if (sidebar) {
       sidebar.classList.toggle('collapsed');
-      
+
       // Force map layout redraw after transition finishes
       setTimeout(() => {
         if (state.map) {
           state.map.invalidateSize();
+          // Refresh POI layers
+          if (state.harborsLayer && state.map.hasLayer(state.harborsLayer)) {
+            fetchHarborsInViewport();
+          }
+          if (state.pingWarningsLayer && state.map.hasLayer(state.pingWarningsLayer)) {
+            initPingWarnings();
+          }
         }
       }, 300);
-    });
+    }
   }
+
+  // Set up event listener for the single collapse button
+  if (sidebarCollapseBtn && sidebar) {
+    sidebarCollapseBtn.addEventListener('click', toggleSidebar);
+  }
+
+  // Ensure sidebar is collapsed by default on mobile
+  function handleMobileSidebar() {
+    if (window.innerWidth <= 768) {
+      if (sidebar) {
+        sidebar.classList.add('collapsed');
+      }
+    } else {
+      if (sidebar) {
+        sidebar.classList.remove('collapsed');
+      }
+    }
+  }
+
+  // Initial check
+  handleMobileSidebar();
+
+  // Add resize listener
+  window.addEventListener('resize', handleMobileSidebar);
 
   // Track Buttons
   document.getElementById('start-track-btn').addEventListener('click', startRouteTracking);
