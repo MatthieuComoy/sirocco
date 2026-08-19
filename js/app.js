@@ -6,7 +6,6 @@ import { calculateHaversineDistance, getPointOfSail, getSimulatedDepth } from '.
 import { updateAnchorLocation, checkAnchorAlarm, deactivateAnchorAlarm } from './anchorAlarm.js';
 import { toggleSimulator, startRealGPS, stopRealGPS } from './gpsSimulator.js';
 import { updateWeatherAndTides, updateBoatSails, onMapMove, initGribOverlay, activateGribOverlay, deactivateGribOverlay, centerTideChartScroll, getWeatherDataAtLatLng } from './weatherTides.js';
-import { fetchHarborsInViewport, clearHarborMarkers, onMapMoveHarbors, renderHarborListAndMarkers, loadHarborsFromLocalStorage } from './harbors.js';
 import { startRouteTracking, stopRouteTracking, clearHistory, renderSavedTracks } from './tracking.js';
 import { initPingWarnings } from './pingWarnings.js';
 import { findRoute, WAYPOINTS } from './routing.js';
@@ -55,9 +54,6 @@ export function initMap() {
     transparent: true,
     attribution: '© SHOM - Portail PING'
   });
-
-  // Harbors group layer
-  state.harborsLayer = L.layerGroup().addTo(state.map);
 
   // Boat/User position marker with SVG icon
   const userIcon = L.divIcon({
@@ -125,9 +121,6 @@ export function initMap() {
 
   // Weather & tides scroll update listener
   state.map.on('moveend', onMapMove);
-
-  // Harbors viewport update listener
-  state.map.on('moveend', onMapMoveHarbors);
 
   // Map click listener for weather data popup
   state.map.on('click', (e) => {
@@ -376,13 +369,8 @@ export function setAppMode(mode) {
     if (telemetry) telemetry.style.display = 'none';
 
     // Restore map layers if checked
-    const layerHarbors = document.getElementById('layer-harbors');
     const layerAllWarnings = document.getElementById('layer-all-warnings');
     if (state.map) {
-      if (layerHarbors && layerHarbors.checked && state.harborsLayer) {
-        state.harborsLayer.addTo(state.map);
-        fetchHarborsInViewport();
-      }
       if (layerAllWarnings && layerAllWarnings.checked && state.pingWarningsLayer) {
         state.pingWarningsLayer.addTo(state.map);
       }
@@ -442,11 +430,9 @@ export function setAppMode(mode) {
     if (telemetry) telemetry.style.display = 'none';
     if (warnBanner) warnBanner.style.display = 'none';
 
-    // Automatically hide map layers for marinas and warnings
+    // Automatically hide warning layers
     if (state.map) {
-      if (state.harborsLayer) state.map.removeLayer(state.harborsLayer);
       if (state.pingWarningsLayer) state.map.removeLayer(state.pingWarningsLayer);
-      clearHarborMarkers();
     }
 
     // Stop navigation timer
@@ -489,13 +475,8 @@ export function setAppMode(mode) {
     if (warnBanner) warnBanner.style.display = 'none';
 
     // Restore map layers if checked
-    const layerHarbors = document.getElementById('layer-harbors');
     const layerAllWarnings = document.getElementById('layer-all-warnings');
     if (state.map) {
-      if (layerHarbors && layerHarbors.checked && state.harborsLayer) {
-        state.harborsLayer.addTo(state.map);
-        fetchHarborsInViewport();
-      }
       if (layerAllWarnings && layerAllWarnings.checked && state.pingWarningsLayer) {
         state.pingWarningsLayer.addTo(state.map);
       }
@@ -547,9 +528,6 @@ export function saveBoatProfile(profile) {
   
   const draftDisp = document.getElementById('panel-boat-draft-display');
   if (draftDisp) draftDisp.textContent = state.boatProfile.draft.toFixed(1);
-
-  // Re-evaluate anchorages (now harbors)
-  renderHarborListAndMarkers();
 }
 
 // Update online/offline UI and status
@@ -568,7 +546,6 @@ export function updateOnlineStatus(e) {
     if (state.lastFetchedLat !== null && state.lastFetchedLon !== null) {
       updateWeatherAndTides(state.lastFetchedLat, state.lastFetchedLon, true);
     }
-    fetchHarborsInViewport();
   }
 }
 
@@ -682,9 +659,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Load boat profile settings
   loadBoatProfile();
 
-  // Load persisted harbors cache
-  loadHarborsFromLocalStorage();
-
   // Init Map
   initMap();
   
@@ -722,12 +696,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 150);
 
   setTimeout(() => {
-    // 2. Harbors
-    fetchHarborsInViewport();
-  }, 450);
-
-  setTimeout(() => {
-    // 3. Init PING warnings (fetches and parses warnings in a non-blocking sequence)
+    // 2. Init PING warnings (fetches and parses warnings in a non-blocking sequence)
     initPingWarnings();
   }, 850);
 
@@ -844,30 +813,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (settingsModal) settingsModal.style.display = 'none';
   });
 
-  // Overlays Custom Controls
-
-  const layerHarbors = document.getElementById('layer-harbors');
-  if (layerHarbors) {
-    layerHarbors.addEventListener('change', (e) => {
-      if (!state.harborsLayer || !state.map) return;
-      if (e.target.checked) {
-        state.harborsLayer.addTo(state.map);
-        fetchHarborsInViewport();
-      } else {
-        state.map.removeLayer(state.harborsLayer);
-        clearHarborMarkers();
-        import('./harbors.js').then(({ displayHarborMessage }) => {
-          displayHarborMessage(state.currentLang === 'fr' ? "Activez le calque 'Ports de plaisance' pour voir la liste." : "Enable 'Marinas' layer to see the list.");
-        });
-      }
-    });
-  }
-
   // Language selector inside Modal
   if (modalLangSelector) {
     modalLangSelector.addEventListener('change', (e) => {
       translateUI(e.target.value);
-      renderHarborListAndMarkers(); // Re-render to update harbors list/markers on translation
     });
   }
 
@@ -927,9 +876,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (state.map) {
           state.map.invalidateSize();
           // Refresh POI layers
-          if (state.harborsLayer && state.map.hasLayer(state.harborsLayer)) {
-            fetchHarborsInViewport();
-          }
           if (state.pingWarningsLayer && state.map.hasLayer(state.pingWarningsLayer)) {
             initPingWarnings();
           }
@@ -1079,24 +1025,15 @@ document.addEventListener("DOMContentLoaded", () => {
       for (const key in WAYPOINTS) {
         const wp = WAYPOINTS[key];
         if (wp.name.toLowerCase().includes(val)) {
-          matches.push({ name: wp.name, lat: wp.lat, lon: wp.lon, source: 'waypoint' });
+          matches.push({ name: wp.name, lat: wp.lat, lon: wp.lon });
         }
       }
-
-      // Search cached harbors
-      state.allHarborsCache.forEach(harbor => {
-        if (harbor.name.toLowerCase().includes(val)) {
-          if (!matches.some(m => m.name.toLowerCase() === harbor.name.toLowerCase())) {
-            matches.push({ name: harbor.name, lat: harbor.lat, lon: harbor.lng, source: 'harbor' });
-          }
-        }
-      });
 
       if (matches.length > 0) {
         const limitMatches = matches.slice(0, 5);
         suggestionsList.innerHTML = limitMatches.map(m => `
           <div class="suggestion-item" data-lat="${m.lat}" data-lon="${m.lon}" data-name="${m.name}" style="padding: 0.45rem 0.6rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.2s;">
-            📍 <strong>${m.name}</strong> <span style="font-size: 0.65rem; color: var(--text-muted); float: right;">${m.source === 'waypoint' ? 'Mer' : 'Port'}</span>
+            📍 <strong>${m.name}</strong> <span style="font-size: 0.65rem; color: var(--text-muted); float: right;">Mer</span>
           </div>
         `).join('');
         
@@ -1146,19 +1083,6 @@ document.addEventListener("DOMContentLoaded", () => {
         calculateAndDrawRoute(wp.lat, wp.lon);
         return;
       }
-    }
-
-    // Check harbors cache
-    let foundHarbor = null;
-    state.allHarborsCache.forEach(harbor => {
-      if (!foundHarbor && harbor.name.toLowerCase().includes(queryLower)) {
-        foundHarbor = harbor;
-      }
-    });
-
-    if (foundHarbor) {
-      calculateAndDrawRoute(foundHarbor.lat, foundHarbor.lng);
-      return;
     }
 
     // 2. Query Nominatim API if online

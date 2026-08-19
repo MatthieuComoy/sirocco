@@ -27,14 +27,6 @@ export const state = {
   lastNavLatLng: null,
   navTimerInterval: null,
 
-  // Harbors (Ports de plaisance) dynamic data state
-  currentHarbors: [],
-  harborMarkers: [],
-  harborsLayer: null,
-  allHarborsCache: new Map(),
-  isFetchingHarbors: false,
-  harborsDebounceTimeout: null,
-
   // Anchor Alarm State
   isAnchorAlarmActive: false,
   anchorLatLng: null,
