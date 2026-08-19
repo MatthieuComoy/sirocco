@@ -62,9 +62,6 @@ export function stopRouteTracking() {
     const maxSpeed = Math.max(...speeds, 0);
     const avgSpeed = speeds.length > 0 ? (speeds.reduce((a, b) => a + b, 0) / speeds.length) : 0;
     
-    // Calculate max distance to shelter
-    const maxShelterDist = calculateMaxDistanceToShelter(state.currentTrack);
-
     // Calculate time spent in each point of sail
     const recap = {
       'Bout au vent': 0,
@@ -95,7 +92,6 @@ export function stopRouteTracking() {
       distance: calculateTrackDistance(state.currentTrack),
       avgSpeed: avgSpeed,
       maxSpeed: maxSpeed,
-      maxShelterDist: maxShelterDist,
       pointsOfSailRecap: recap
     };
     state.savedTracks.push(trackGeoJSON);
@@ -120,32 +116,6 @@ export function calculateTrackDistance(coords) {
     totalDist += calculateHaversineDistance(p1.lat, p1.lng, p2.lat, p2.lng);
   }
   return totalDist; // returns meters
-}
-
-export function calculateMaxDistanceToShelter(coords) {
-  if (!state.allHarborsCache || state.allHarborsCache.size === 0) return null;
-  
-  let maxMinDist = 0; // maximum of the minimum distances (meters)
-  const harbors = Array.from(state.allHarborsCache.values());
-  
-  for (let i = 0; i < coords.length; i++) {
-    const p = getCoordLatLng(coords[i]);
-    let minDist = Infinity;
-    
-    for (let j = 0; j < harbors.length; j++) {
-      const h = harbors[j];
-      const dist = calculateHaversineDistance(p.lat, p.lng, h.lat, h.lng);
-      if (dist < minDist) {
-        minDist = dist;
-      }
-    }
-    
-    if (minDist !== Infinity && minDist > maxMinDist) {
-      maxMinDist = minDist;
-    }
-  }
-  
-  return maxMinDist; // returns meters
 }
 
 export function exportTrackToGPX(index) {
@@ -174,9 +144,6 @@ export function exportTrackToGPX(index) {
   }
   if (track.maxSpeed !== undefined) {
     xml += `      <sirroco:maxSpeedKts>${track.maxSpeed.toFixed(2)}</sirroco:maxSpeedKts>\n`;
-  }
-  if (track.maxShelterDist !== undefined && track.maxShelterDist !== null) {
-    xml += `      <sirroco:maxShelterDistNM>${(track.maxShelterDist / 1852).toFixed(2)}</sirroco:maxShelterDistNM>\n`;
   }
   if (track.pointsOfSailRecap) {
     Object.entries(track.pointsOfSailRecap).forEach(([allure, ms]) => {
@@ -257,7 +224,6 @@ export function renderSavedTracks() {
   // Language translation keys fallbacks
   const avgSpeedLabel = translations[state.currentLang].avg_speed || translations['en'].avg_speed;
   const maxSpeedLabel = translations[state.currentLang].max_speed || translations['en'].max_speed;
-  const maxShelterLabel = translations[state.currentLang].max_shelter_dist || translations['en'].max_shelter_dist;
 
   state.savedTracks.forEach((track, index) => {
     const item = document.createElement('div');
@@ -268,13 +234,7 @@ export function renderSavedTracks() {
     // Fallback for speed metrics if they don't exist (e.g. old format tracks)
     const avgSpeed = track.avgSpeed !== undefined ? track.avgSpeed.toFixed(1) : '--';
     const maxSpeed = track.maxSpeed !== undefined ? track.maxSpeed.toFixed(1) : '--';
-    
-    // Fallback for shelter distance
-    let shelterDistStr = '--';
-    if (track.maxShelterDist !== undefined && track.maxShelterDist !== null) {
-      shelterDistStr = `${(track.maxShelterDist / 1852).toFixed(2)} NM`;
-    }
-    
+
     let alluresHtml = '';
     if (track.pointsOfSailRecap) {
       const recap = track.pointsOfSailRecap;
@@ -358,7 +318,6 @@ export function renderSavedTracks() {
           <div>📏 Dist: <span class="metric-val">${distNM} NM</span></div>
           <div>⏱️ ${avgSpeedLabel}: <span class="metric-val">${avgSpeed} kts</span></div>
           <div>⚡ ${maxSpeedLabel}: <span class="metric-val">${maxSpeed} kts</span></div>
-          <div>🛡️ ${maxShelterLabel}: <span class="metric-val">${shelterDistStr}</span></div>
         </div>
         ${alluresHtml}
       </div>

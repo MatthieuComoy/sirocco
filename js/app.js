@@ -6,10 +6,8 @@ import { calculateHaversineDistance, getPointOfSail, getSimulatedDepth } from '.
 import { updateAnchorLocation, checkAnchorAlarm, deactivateAnchorAlarm } from './anchorAlarm.js';
 import { toggleSimulator, startRealGPS, stopRealGPS } from './gpsSimulator.js';
 import { updateWeatherAndTides, updateBoatSails, onMapMove, initGribOverlay, activateGribOverlay, deactivateGribOverlay, centerTideChartScroll, getWeatherDataAtLatLng } from './weatherTides.js';
-import { fetchHarborsInViewport, clearHarborMarkers, onMapMoveHarbors, renderHarborListAndMarkers, loadHarborsFromLocalStorage } from './harbors.js';
 import { startRouteTracking, stopRouteTracking, clearHistory, renderSavedTracks } from './tracking.js';
-import { initPingWarnings } from './pingWarnings.js';
-import { findRoute, WAYPOINTS } from './routing.js';
+import { initPingWarnings, onMapMovePingWarnings } from './pingWarnings.js';
 import { initOfflineMaps } from './offlineMaps.js';
 
 // Update recenter button styling based on auto-centering state
@@ -30,7 +28,10 @@ export function initMap() {
   state.map = L.map('map', {
     center: [state.currentLat, state.currentLon],
     zoom: 13,
-    zoomControl: true
+    zoomControl: true,
+    // Canvas rendering scales far better than SVG once dozens of warning/danger
+    // polygons and polylines are on screen at once (no per-shape DOM node).
+    preferCanvas: true
   });
 
   // Base Layers
@@ -55,9 +56,6 @@ export function initMap() {
     transparent: true,
     attribution: '© SHOM - Portail PING'
   });
-
-  // Harbors group layer
-  state.harborsLayer = L.layerGroup().addTo(state.map);
 
   // Boat/User position marker with SVG icon
   const userIcon = L.divIcon({
@@ -126,8 +124,8 @@ export function initMap() {
   // Weather & tides scroll update listener
   state.map.on('moveend', onMapMove);
 
-  // Harbors viewport update listener
-  state.map.on('moveend', onMapMoveHarbors);
+  // Re-cull navigation warning icons/shapes to the new viewport and zoom level
+  state.map.on('moveend zoomend', onMapMovePingWarnings);
 
   // Map click listener for weather data popup
   state.map.on('click', (e) => {
@@ -376,13 +374,8 @@ export function setAppMode(mode) {
     if (telemetry) telemetry.style.display = 'none';
 
     // Restore map layers if checked
-    const layerHarbors = document.getElementById('layer-harbors');
     const layerAllWarnings = document.getElementById('layer-all-warnings');
     if (state.map) {
-      if (layerHarbors && layerHarbors.checked && state.harborsLayer) {
-        state.harborsLayer.addTo(state.map);
-        fetchHarborsInViewport();
-      }
       if (layerAllWarnings && layerAllWarnings.checked && state.pingWarningsLayer) {
         state.pingWarningsLayer.addTo(state.map);
       }
@@ -442,11 +435,9 @@ export function setAppMode(mode) {
     if (telemetry) telemetry.style.display = 'none';
     if (warnBanner) warnBanner.style.display = 'none';
 
-    // Automatically hide map layers for marinas and warnings
+    // Automatically hide warning layers
     if (state.map) {
-      if (state.harborsLayer) state.map.removeLayer(state.harborsLayer);
       if (state.pingWarningsLayer) state.map.removeLayer(state.pingWarningsLayer);
-      clearHarborMarkers();
     }
 
     // Stop navigation timer
@@ -489,13 +480,8 @@ export function setAppMode(mode) {
     if (warnBanner) warnBanner.style.display = 'none';
 
     // Restore map layers if checked
-    const layerHarbors = document.getElementById('layer-harbors');
     const layerAllWarnings = document.getElementById('layer-all-warnings');
     if (state.map) {
-      if (layerHarbors && layerHarbors.checked && state.harborsLayer) {
-        state.harborsLayer.addTo(state.map);
-        fetchHarborsInViewport();
-      }
       if (layerAllWarnings && layerAllWarnings.checked && state.pingWarningsLayer) {
         state.pingWarningsLayer.addTo(state.map);
       }
@@ -547,9 +533,6 @@ export function saveBoatProfile(profile) {
   
   const draftDisp = document.getElementById('panel-boat-draft-display');
   if (draftDisp) draftDisp.textContent = state.boatProfile.draft.toFixed(1);
-
-  // Re-evaluate anchorages (now harbors)
-  renderHarborListAndMarkers();
 }
 
 // Update online/offline UI and status
@@ -568,100 +551,6 @@ export function updateOnlineStatus(e) {
     if (state.lastFetchedLat !== null && state.lastFetchedLon !== null) {
       updateWeatherAndTides(state.lastFetchedLat, state.lastFetchedLon, true);
     }
-    fetchHarborsInViewport();
-  }
-}
-
-// Draw the planned route on the map
-export function drawPlannedRoute(routeData) {
-  clearPlannedRouteLayers();
-
-  if (!routeData || !routeData.coordinates || routeData.coordinates.length === 0) return;
-
-  state.plannedRoute = routeData.coordinates;
-  state.plannedRouteDistance = routeData.distanceNM;
-
-  // Draw dashed purple polyline
-  state.plannedRouteLayer = L.polyline(routeData.coordinates, {
-    color: '#a855f7',
-    weight: 5,
-    dashArray: '10, 10',
-    opacity: 0.85
-  }).addTo(state.map);
-
-  // Add green circle marker at start
-  const startLatLng = routeData.coordinates[0];
-  state.plannedRouteStartMarker = L.circleMarker(startLatLng, {
-    radius: 7,
-    fillColor: '#22c55e',
-    color: '#ffffff',
-    weight: 2,
-    fillOpacity: 1
-  }).addTo(state.map);
-
-  // Add red circle marker at destination
-  const endLatLng = routeData.coordinates[routeData.coordinates.length - 1];
-  state.plannedRouteEndMarker = L.circleMarker(endLatLng, {
-    radius: 7,
-    fillColor: '#ef4444',
-    color: '#ffffff',
-    weight: 2,
-    fillOpacity: 1
-  }).addTo(state.map);
-
-  // Fit bounds and disable autocenter
-  if (state.map) {
-    state.map.fitBounds(state.plannedRouteLayer.getBounds(), { padding: [50, 50] });
-  }
-  state.autoCenter = false;
-  updateRecenterButtonUI();
-
-  // Show preview card and update distance in NM
-  const previewCard = document.getElementById('route-preview-card');
-  const distanceText = document.getElementById('route-preview-distance');
-  if (previewCard) previewCard.style.display = 'flex';
-  if (distanceText) distanceText.textContent = `${routeData.distanceNM.toFixed(1)} NM`;
-}
-
-// Clear all route planning visual layers and state
-export function clearPlannedRoute() {
-  clearPlannedRouteLayers();
-
-  state.plannedRoute = null;
-  state.plannedRouteDistance = 0;
-
-  const previewCard = document.getElementById('route-preview-card');
-  if (previewCard) previewCard.style.display = 'none';
-
-  const destInput = document.getElementById('route-dest-input');
-  if (destInput) destInput.value = '';
-
-  const suggestions = document.getElementById('route-suggestions-list');
-  if (suggestions) suggestions.style.display = 'none';
-}
-
-function clearPlannedRouteLayers() {
-  if (state.plannedRouteLayer && state.map) {
-    state.map.removeLayer(state.plannedRouteLayer);
-  }
-  if (state.plannedRouteStartMarker && state.map) {
-    state.map.removeLayer(state.plannedRouteStartMarker);
-  }
-  if (state.plannedRouteEndMarker && state.map) {
-    state.map.removeLayer(state.plannedRouteEndMarker);
-  }
-  state.plannedRouteLayer = null;
-  state.plannedRouteStartMarker = null;
-  state.plannedRouteEndMarker = null;
-}
-
-// Calculate the route and display on map
-export function calculateAndDrawRoute(destLat, destLon) {
-  const route = findRoute(state.currentLat, state.currentLon, destLat, destLon);
-  if (route) {
-    drawPlannedRoute(route);
-  } else {
-    alert(state.currentLang === 'fr' ? "Impossible de calculer un itinéraire. Trop éloigné du réseau navigable." : "Unable to calculate route. Too far from navigable waterways.");
   }
 }
 
@@ -681,9 +570,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Load boat profile settings
   loadBoatProfile();
-
-  // Load persisted harbors cache
-  loadHarborsFromLocalStorage();
 
   // Init Map
   initMap();
@@ -722,12 +608,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 150);
 
   setTimeout(() => {
-    // 2. Harbors
-    fetchHarborsInViewport();
-  }, 450);
-
-  setTimeout(() => {
-    // 3. Init PING warnings (fetches and parses warnings in a non-blocking sequence)
+    // 2. Init PING warnings (fetches and parses warnings in a non-blocking sequence)
     initPingWarnings();
   }, 850);
 
@@ -751,7 +632,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('stop-nav-btn').addEventListener('click', () => {
     setAppMode('consultation');
     stopRouteTracking();
-    clearPlannedRoute();
   });
 
   // Control Center Settings Modal Toggle
@@ -844,30 +724,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (settingsModal) settingsModal.style.display = 'none';
   });
 
-  // Overlays Custom Controls
-
-  const layerHarbors = document.getElementById('layer-harbors');
-  if (layerHarbors) {
-    layerHarbors.addEventListener('change', (e) => {
-      if (!state.harborsLayer || !state.map) return;
-      if (e.target.checked) {
-        state.harborsLayer.addTo(state.map);
-        fetchHarborsInViewport();
-      } else {
-        state.map.removeLayer(state.harborsLayer);
-        clearHarborMarkers();
-        import('./harbors.js').then(({ displayHarborMessage }) => {
-          displayHarborMessage(state.currentLang === 'fr' ? "Activez le calque 'Ports de plaisance' pour voir la liste." : "Enable 'Marinas' layer to see the list.");
-        });
-      }
-    });
-  }
-
   // Language selector inside Modal
   if (modalLangSelector) {
     modalLangSelector.addEventListener('change', (e) => {
       translateUI(e.target.value);
-      renderHarborListAndMarkers(); // Re-render to update harbors list/markers on translation
     });
   }
 
@@ -927,9 +787,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (state.map) {
           state.map.invalidateSize();
           // Refresh POI layers
-          if (state.harborsLayer && state.map.hasLayer(state.harborsLayer)) {
-            fetchHarborsInViewport();
-          }
           if (state.pingWarningsLayer && state.map.hasLayer(state.pingWarningsLayer)) {
             initPingWarnings();
           }
@@ -1060,157 +917,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('resize', () => {
     if (state.map) state.map.invalidateSize();
   });
-
-  // Route planning destination input autocomplete
-  const destInput = document.getElementById('route-dest-input');
-  const suggestionsList = document.getElementById('route-suggestions-list');
-
-  if (destInput && suggestionsList) {
-    destInput.addEventListener('input', () => {
-      const val = destInput.value.trim().toLowerCase();
-      if (val.length < 2) {
-        suggestionsList.innerHTML = '';
-        suggestionsList.style.display = 'none';
-        return;
-      }
-
-      const matches = [];
-      // Search predefined waypoints
-      for (const key in WAYPOINTS) {
-        const wp = WAYPOINTS[key];
-        if (wp.name.toLowerCase().includes(val)) {
-          matches.push({ name: wp.name, lat: wp.lat, lon: wp.lon, source: 'waypoint' });
-        }
-      }
-
-      // Search cached harbors
-      state.allHarborsCache.forEach(harbor => {
-        if (harbor.name.toLowerCase().includes(val)) {
-          if (!matches.some(m => m.name.toLowerCase() === harbor.name.toLowerCase())) {
-            matches.push({ name: harbor.name, lat: harbor.lat, lon: harbor.lng, source: 'harbor' });
-          }
-        }
-      });
-
-      if (matches.length > 0) {
-        const limitMatches = matches.slice(0, 5);
-        suggestionsList.innerHTML = limitMatches.map(m => `
-          <div class="suggestion-item" data-lat="${m.lat}" data-lon="${m.lon}" data-name="${m.name}" style="padding: 0.45rem 0.6rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.2s;">
-            📍 <strong>${m.name}</strong> <span style="font-size: 0.65rem; color: var(--text-muted); float: right;">${m.source === 'waypoint' ? 'Mer' : 'Port'}</span>
-          </div>
-        `).join('');
-        
-        suggestionsList.style.display = 'block';
-
-        const items = suggestionsList.querySelectorAll('.suggestion-item');
-        items.forEach(item => {
-          item.addEventListener('click', () => {
-            const lat = parseFloat(item.getAttribute('data-lat'));
-            const lon = parseFloat(item.getAttribute('data-lon'));
-            const name = item.getAttribute('data-name');
-
-            destInput.value = name;
-            suggestionsList.style.display = 'none';
-
-            calculateAndDrawRoute(lat, lon);
-          });
-        });
-      } else {
-        suggestionsList.innerHTML = '';
-        suggestionsList.style.display = 'none';
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (e.target !== destInput && e.target !== suggestionsList) {
-        suggestionsList.style.display = 'none';
-      }
-    });
-  }
-
-  // Geocoding Search handler (Nominatim API fallback)
-  async function handleRouteSearch() {
-    if (!destInput) return;
-    const query = destInput.value.trim();
-    if (!query) return;
-
-    if (suggestionsList) suggestionsList.style.display = 'none';
-
-    // 1. Search locally
-    const queryLower = query.toLowerCase();
-    
-    // Check predefined waypoints
-    for (const key in WAYPOINTS) {
-      const wp = WAYPOINTS[key];
-      if (wp.name.toLowerCase().includes(queryLower)) {
-        calculateAndDrawRoute(wp.lat, wp.lon);
-        return;
-      }
-    }
-
-    // Check harbors cache
-    let foundHarbor = null;
-    state.allHarborsCache.forEach(harbor => {
-      if (!foundHarbor && harbor.name.toLowerCase().includes(queryLower)) {
-        foundHarbor = harbor;
-      }
-    });
-
-    if (foundHarbor) {
-      calculateAndDrawRoute(foundHarbor.lat, foundHarbor.lng);
-      return;
-    }
-
-    // 2. Query Nominatim API if online
-    if (navigator.onLine) {
-      try {
-        const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=3`;
-        const res = await fetch(url);
-        if (!res.ok) throw new Error("Search request failed");
-        const results = await res.json();
-        if (results && results.length > 0) {
-          const first = results[0];
-          const lat = parseFloat(first.lat);
-          const lon = parseFloat(first.lon);
-          calculateAndDrawRoute(lat, lon);
-        } else {
-          alert(state.currentLang === 'fr' ? "Aucun résultat trouvé pour cette destination." : "No results found for this destination.");
-        }
-      } catch (err) {
-        console.error("Geocoding failed:", err);
-        alert(state.currentLang === 'fr' ? "Erreur lors de la recherche de la destination." : "Error searching for destination.");
-      }
-    } else {
-      alert(state.currentLang === 'fr' ? "Mode hors-ligne : Destination non trouvée dans la base locale." : "Offline mode: Destination not found in local database.");
-    }
-  }
-
-  const routeSearchBtn = document.getElementById('route-search-btn');
-  if (routeSearchBtn) {
-    routeSearchBtn.addEventListener('click', handleRouteSearch);
-  }
-  if (destInput) {
-    destInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        handleRouteSearch();
-      }
-    });
-  }
-
-  const routeStartBtn = document.getElementById('route-start-btn');
-  if (routeStartBtn) {
-    routeStartBtn.addEventListener('click', () => {
-      setAppMode('navigation');
-    });
-  }
-
-  const routeCancelBtn = document.getElementById('route-cancel-btn');
-  if (routeCancelBtn) {
-    routeCancelBtn.addEventListener('click', () => {
-      clearPlannedRoute();
-    });
-  }
 
   // Load and apply simulation options settings
   const simOptionsEnabled = localStorage.getItem('sirroco_sim_options_enabled') === 'true';
