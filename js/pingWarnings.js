@@ -485,8 +485,6 @@ function plotWarningsOnMap() {
       const month = months[pubDate.getUTCMonth()];
       const year = pubDate.getUTCFullYear();
       formattedDate = `${day}${hour}${min}z UTC ${month} ${year}`;
-    } else {
-      formattedDate = dateStr;
     }
     
     const isAvinav = warn.type === 'avinav';
