@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sirroco-nav-v35';
+const CACHE_NAME = 'sirroco-nav-v36';
 const TILE_CACHE_NAME = 'sirroco-tiles-v1';
 const OFFLINE_TILE_CACHE = 'sirroco-offline-tiles-v1';
 const API_CACHE_NAME = 'sirroco-api-v1';
@@ -29,7 +29,6 @@ const ASSETS = [
   './js/weatherTides.js',
   './js/tracking.js',
   './js/pingWarnings.js',
-  './js/routing.js',
   './data/navarea2.xml',
   './data/toulon.xml',
   './data/brest.xml',

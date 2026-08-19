@@ -66,13 +66,6 @@ export const state = {
   osm: null,
   openseamap: null,
 
-  // Planned Route / Itinerary State
-  plannedRoute: null,
-  plannedRouteLayer: null,
-  plannedRouteStartMarker: null,
-  plannedRouteEndMarker: null,
-  plannedRouteDistance: 0,
-
   // General App settings
   currentLang: 'fr', // Default to French
 
