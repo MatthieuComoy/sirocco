@@ -1,0 +1,13 @@
+{
+  "name": "sirroco-marine-navigation",
+  "version": "1.0.0",
+  "description": "PWA de navigation pour voiliers - cartographie offline, meteo, marees, alarme de mouillage.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint js/*.js"
+  },
+  "devDependencies": {
+    "eslint": "^9.9.0"
+  }
+}
