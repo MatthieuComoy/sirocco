@@ -62,6 +62,7 @@ export const state = {
   avurnavNotices: [],
   pingWmsLayer: null,
   pingWarningsLayer: null,
+  pingWarningsDebounceTimeout: null,
   osm: null,
   openseamap: null,
 

@@ -112,6 +112,33 @@ function getElementValue(parent, localName, defaultValue = '') {
 let parsedWarnings = [];
 let lastSourceInfo = "mixed";
 
+// Below this zoom level, individual point-warning icons are skipped: at low zoom
+// the app has hundreds of markers loaded across all French territories worldwide,
+// and rendering them all at once is what tanks map performance when zoomed out.
+const MIN_ZOOM_FOR_POINT_ICONS = 8;
+
+// Bounding box for a warning's geometry, used to skip anything outside the current viewport
+function getGeometryBounds(geometry) {
+  if (!geometry) return null;
+  if (geometry.type === 'Point') {
+    return L.latLngBounds([geometry.coordinates, geometry.coordinates]);
+  }
+  if (Array.isArray(geometry.coordinates) && geometry.coordinates.length > 0) {
+    return L.latLngBounds(geometry.coordinates);
+  }
+  return null;
+}
+
+// Debounced re-plot on pan/zoom so the visible warning set follows the viewport
+export function onMapMovePingWarnings() {
+  if (state.pingWarningsDebounceTimeout) clearTimeout(state.pingWarningsDebounceTimeout);
+  state.pingWarningsDebounceTimeout = setTimeout(() => {
+    if (state.map && state.pingWarningsLayer) {
+      plotWarningsOnMap();
+    }
+  }, 250);
+}
+
 // Toggle WMS and vector layers visibility based on checkbox status
 export function updatePingLayersVisibility() {
   if (!state.map) return;
@@ -448,20 +475,67 @@ function getWarningEmoji(hazardType, textInfo = '') {
   return '⚠️';
 }
 
-// Plot warnings on the Leaflet map
+// Build the (fairly heavy) popup HTML for a single warning - called lazily by Leaflet
+// only when the user actually opens the popup, not up front for every marker.
+function buildWarningPopupHtml(warn, emoji, headerColor) {
+  const p = warn.preamble || {};
+  const seriesTitle = p.nameOfSeries || 'NAVAREA';
+  const warningNum = `${p.warningNumber || ''}/${p.year || ''}`;
+
+  let formattedDate = '';
+  if (p.publicationDate) {
+    const pubDate = new Date(p.publicationDate);
+    const day = String(pubDate.getUTCDate()).padStart(2, '0');
+    const hour = String(pubDate.getUTCHours()).padStart(2, '0');
+    const min = String(pubDate.getUTCMinutes()).padStart(2, '0');
+    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const month = months[pubDate.getUTCMonth()];
+    const year = pubDate.getUTCFullYear();
+    formattedDate = `${day}${hour}${min}z UTC ${month} ${year}`;
+  }
+
+  return `
+    <div style="font-family: var(--font-family, sans-serif); line-height: 1.45; color: var(--text-color); font-size: 0.8rem; width: 100%;">
+      <div style="font-size: 1.3rem; font-weight: 500; font-family: 'Outfit', sans-serif; color: var(--text-color); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span>${emoji}</span>
+        <span style="letter-spacing: -0.01em;">${seriesTitle}</span>
+      </div>
+      <hr style="margin: 6px 0; border: none; border-top: 1px solid var(--border-color); opacity: 0.4;">
+      <div style="font-family: var(--mono-font), monospace; font-size: 0.78rem; font-weight: 700; color: ${headerColor}; display: flex; flex-direction: column; gap: 0.15rem; margin-bottom: 0.4rem;">
+        <div>${warningNum}</div>
+        <div style="color: var(--text-muted); font-size: 0.72rem; font-weight: 500;">${formattedDate}</div>
+      </div>
+      <hr style="margin: 6px 0; border: none; border-top: 1px solid var(--border-color); opacity: 0.4;">
+      <div style="font-family: var(--mono-font), monospace; font-size: 0.75rem; white-space: pre-wrap; word-break: break-word; color: var(--text-color); line-height: 1.4; max-height: 220px; overflow-y: auto; margin: 6px 0; padding-right: 4px;">${warn.information}</div>
+      <hr style="margin: 6px 0; border: none; border-top: 1px solid var(--border-color); opacity: 0.4;">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--text-muted);">
+        <span>📍 ${p.generalArea || ''}</span>
+        <span style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: ${headerColor}; font-size: 0.65rem;">${warn.hazardTypeDetails || p.hazardTypeGeneral || 'Alerte'}</span>
+      </div>
+    </div>
+  `;
+}
+
+// Plot warnings on the Leaflet map, culled to what's actually useful to render:
+// only warnings inside the current viewport, and point icons only above a minimum
+// zoom (otherwise every French territory's markers pile up on screen at once).
 function plotWarningsOnMap() {
   if (!state.map || !state.pingWarningsLayer) return;
-  
+
   state.pingWarningsLayer.clearLayers();
-  
+
   const showAll = document.getElementById('layer-all-warnings')?.checked ?? true;
   const showAvurnav = document.getElementById('layer-avurnav')?.checked ?? true;
   const showAvurnavLocal = document.getElementById('layer-avurnav-local')?.checked ?? true;
   const showAvinav = document.getElementById('layer-avinav')?.checked ?? true;
-  
+
+  const zoom = state.map.getZoom();
+  const viewBounds = state.map.getBounds().pad(0.5);
+  const showPointIcons = zoom >= MIN_ZOOM_FOR_POINT_ICONS;
+
   parsedWarnings.forEach(warn => {
-    if (!warn.geometry) return;
-    
+    if (!warn.geometry) { warn.mapLayer = null; return; }
+
     // Check filter status
     let isFilteredOut = !showAll;
     if (!isFilteredOut) {
@@ -469,51 +543,23 @@ function plotWarningsOnMap() {
       if (warn.type === 'avurnav_local' && !showAvurnavLocal) isFilteredOut = true;
       if ((warn.type === 'avurnav' || warn.type === 'navarea') && !showAvurnav) isFilteredOut = true;
     }
-    
+
+    if (isFilteredOut || !warn.visible) { warn.mapLayer = null; return; }
+
+    const isPointType = warn.geometry.type === 'Point' || warn.geometry.type === 'MultiPoint';
+    if (isPointType && !showPointIcons) { warn.mapLayer = null; return; }
+
+    const geomBounds = getGeometryBounds(warn.geometry);
+    if (geomBounds && !viewBounds.intersects(geomBounds)) { warn.mapLayer = null; return; }
+
     const p = warn.preamble || {};
     const emoji = getWarningEmoji(warn.hazardTypeDetails || p.hazardTypeGeneral, warn.information);
-    const seriesTitle = p.nameOfSeries || 'NAVAREA';
-    const warningNum = `${p.warningNumber || ''}/${p.year || ''}`;
-    
-    let formattedDate = '';
-    if (p.publicationDate) {
-      const pubDate = new Date(p.publicationDate);
-      const day = String(pubDate.getUTCDate()).padStart(2, '0');
-      const hour = String(pubDate.getUTCHours()).padStart(2, '0');
-      const min = String(pubDate.getUTCMinutes()).padStart(2, '0');
-      const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-      const month = months[pubDate.getUTCMonth()];
-      const year = pubDate.getUTCFullYear();
-      formattedDate = `${day}${hour}${min}z UTC ${month} ${year}`;
-    }
-    
     const isAvinav = warn.type === 'avinav';
     const color = isAvinav ? '#f59e0b' : '#ef4444'; // Yellow-Orange for AVINAV, Red for all AVURNAV and NAVAREA types
     const headerColor = isAvinav ? '#d97706' : '#ef4444';
-    
-    const popupContent = `
-      <div style="font-family: var(--font-family, sans-serif); line-height: 1.45; color: var(--text-color); font-size: 0.8rem; width: 100%;">
-        <div style="font-size: 1.3rem; font-weight: 500; font-family: 'Outfit', sans-serif; color: var(--text-color); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
-          <span>${emoji}</span>
-          <span style="letter-spacing: -0.01em;">${seriesTitle}</span>
-        </div>
-        <hr style="margin: 6px 0; border: none; border-top: 1px solid var(--border-color); opacity: 0.4;">
-        <div style="font-family: var(--mono-font), monospace; font-size: 0.78rem; font-weight: 700; color: ${headerColor}; display: flex; flex-direction: column; gap: 0.15rem; margin-bottom: 0.4rem;">
-          <div>${warningNum}</div>
-          <div style="color: var(--text-muted); font-size: 0.72rem; font-weight: 500;">${formattedDate}</div>
-        </div>
-        <hr style="margin: 6px 0; border: none; border-top: 1px solid var(--border-color); opacity: 0.4;">
-        <div style="font-family: var(--mono-font), monospace; font-size: 0.75rem; white-space: pre-wrap; word-break: break-word; color: var(--text-color); line-height: 1.4; max-height: 220px; overflow-y: auto; margin: 6px 0; padding-right: 4px;">${warn.information}</div>
-        <hr style="margin: 6px 0; border: none; border-top: 1px solid var(--border-color); opacity: 0.4;">
-        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--text-muted);">
-          <span>📍 ${p.generalArea || ''}</span>
-          <span style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: ${headerColor}; font-size: 0.65rem;">${warn.hazardTypeDetails || p.hazardTypeGeneral || 'Alerte'}</span>
-        </div>
-      </div>
-    `;
-    
+
     let mapLayer = null;
-    
+
     if (warn.geometry.type === 'Point') {
       const icon = createWarningIcon(emoji, isAvinav);
       mapLayer = L.marker(warn.geometry.coordinates, { icon: icon });
@@ -538,15 +584,11 @@ function plotWarningsOnMap() {
       });
       mapLayer = group;
     }
-    
+
     if (mapLayer) {
-      mapLayer.bindPopup(popupContent, { maxWidth: 440, minWidth: 320 });
-      
-      // Only add to the layer if it's currently marked as visible and not filtered out
-      if (warn.visible && !isFilteredOut) {
-        state.pingWarningsLayer.addLayer(mapLayer);
-      }
-      
+      // Popup HTML is built lazily on open, not up front for every marker
+      mapLayer.bindPopup(() => buildWarningPopupHtml(warn, emoji, headerColor), { maxWidth: 440, minWidth: 320 });
+      state.pingWarningsLayer.addLayer(mapLayer);
       warn.mapLayer = mapLayer;
     }
   });
@@ -622,15 +664,11 @@ export function toggleSingleWarningVisibility(event, index) {
   if (!warn || !state.pingWarningsLayer) return;
   
   warn.visible = !warn.visible;
-  
-  if (warn.mapLayer) {
-    if (warn.visible) {
-      state.pingWarningsLayer.addLayer(warn.mapLayer);
-    } else {
-      state.pingWarningsLayer.removeLayer(warn.mapLayer);
-    }
-  }
-  
+
+  // Full re-plot (not just add/removeLayer) since warn.mapLayer may be null
+  // if it was culled by the current viewport/zoom filtering.
+  plotWarningsOnMap();
+
   // Redraw the list in the sidebar drawer to reflect opacity/icon updates
   renderWarningList();
 }
@@ -655,42 +693,39 @@ export function zoomToWarning(index) {
     } else if (warn.geometry.type === 'Polygon' || warn.geometry.type === 'LineString' || warn.geometry.type === 'MultiPoint') {
       const bounds = L.latLngBounds(warn.geometry.coordinates);
       state.map.fitBounds(bounds, { padding: [40, 40] });
+      // MultiPoint warnings render as individual icons, which are hidden below
+      // MIN_ZOOM_FOR_POINT_ICONS - make sure the one the user picked stays visible.
+      if (warn.geometry.type === 'MultiPoint' && state.map.getZoom() < MIN_ZOOM_FOR_POINT_ICONS) {
+        state.map.setZoom(MIN_ZOOM_FOR_POINT_ICONS);
+      }
     }
     
     state.autoCenter = false;
     updateRecenterButtonUI();
-    
-    // Open Leaflet popup
-    if (warn.mapLayer) {
-      // Ensure the correct checkbox and master checkbox are checked so the layer is visible
-      let checkboxId = 'layer-avurnav';
-      if (warn.type === 'avinav') {
-        checkboxId = 'layer-avinav';
-      } else if (warn.type === 'avurnav_local') {
-        checkboxId = 'layer-avurnav-local';
-      }
-      const toggleCheckbox = document.getElementById(checkboxId);
-      const toggleAll = document.getElementById('layer-all-warnings');
-      
-      let needsUpdate = false;
-      if (toggleCheckbox && !toggleCheckbox.checked) {
-        toggleCheckbox.checked = true;
-        needsUpdate = true;
-      }
-      if (toggleAll && !toggleAll.checked) {
-        toggleAll.checked = true;
-        needsUpdate = true;
-      }
-      
-      if (needsUpdate) {
-        state.pingWarningsLayer.addTo(state.map);
-        updatePingLayersVisibility();
-      }
-      
-      setTimeout(() => {
-        warn.mapLayer.openPopup();
-      }, 300);
+
+    // Ensure the correct checkbox and master checkbox are checked so the layer is visible
+    let checkboxId = 'layer-avurnav';
+    if (warn.type === 'avinav') {
+      checkboxId = 'layer-avinav';
+    } else if (warn.type === 'avurnav_local') {
+      checkboxId = 'layer-avurnav-local';
     }
+    const toggleCheckbox = document.getElementById(checkboxId);
+    const toggleAll = document.getElementById('layer-all-warnings');
+    if (toggleCheckbox) toggleCheckbox.checked = true;
+    if (toggleAll) toggleAll.checked = true;
+    if (state.pingWarningsLayer && state.map && !state.map.hasLayer(state.pingWarningsLayer)) {
+      state.pingWarningsLayer.addTo(state.map);
+    }
+
+    // Force a synchronous re-plot: the map was just panned/zoomed to this warning,
+    // and its marker may currently be null if it was previously culled by the
+    // viewport/zoom filtering in plotWarningsOnMap().
+    plotWarningsOnMap();
+
+    setTimeout(() => {
+      if (warn.mapLayer) warn.mapLayer.openPopup();
+    }, 300);
   } else {
     // Bulletin warning with no geography - display content directly
     alert(`Alerte Sans Géographie:\n\n${warn.preamble.nameOfSeries} n° ${warn.preamble.warningNumber}/${warn.preamble.year}\nZone: ${warn.preamble.generalArea}\n\n${warn.information}`);

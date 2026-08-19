@@ -7,7 +7,7 @@ import { updateAnchorLocation, checkAnchorAlarm, deactivateAnchorAlarm } from '.
 import { toggleSimulator, startRealGPS, stopRealGPS } from './gpsSimulator.js';
 import { updateWeatherAndTides, updateBoatSails, onMapMove, initGribOverlay, activateGribOverlay, deactivateGribOverlay, centerTideChartScroll, getWeatherDataAtLatLng } from './weatherTides.js';
 import { startRouteTracking, stopRouteTracking, clearHistory, renderSavedTracks } from './tracking.js';
-import { initPingWarnings } from './pingWarnings.js';
+import { initPingWarnings, onMapMovePingWarnings } from './pingWarnings.js';
 import { findRoute, WAYPOINTS } from './routing.js';
 import { initOfflineMaps } from './offlineMaps.js';
 
@@ -29,7 +29,10 @@ export function initMap() {
   state.map = L.map('map', {
     center: [state.currentLat, state.currentLon],
     zoom: 13,
-    zoomControl: true
+    zoomControl: true,
+    // Canvas rendering scales far better than SVG once dozens of warning/danger
+    // polygons and polylines are on screen at once (no per-shape DOM node).
+    preferCanvas: true
   });
 
   // Base Layers
@@ -121,6 +124,9 @@ export function initMap() {
 
   // Weather & tides scroll update listener
   state.map.on('moveend', onMapMove);
+
+  // Re-cull navigation warning icons/shapes to the new viewport and zoom level
+  state.map.on('moveend zoomend', onMapMovePingWarnings);
 
   // Map click listener for weather data popup
   state.map.on('click', (e) => {
