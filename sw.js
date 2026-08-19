@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sirroco-nav-v33';
+const CACHE_NAME = 'sirroco-nav-v34';
 const TILE_CACHE_NAME = 'sirroco-tiles-v1';
 const OFFLINE_TILE_CACHE = 'sirroco-offline-tiles-v1';
 const API_CACHE_NAME = 'sirroco-api-v1';
@@ -31,7 +31,7 @@ const ASSETS = [
   './js/tracking.js',
   './js/pingWarnings.js',
   './js/routing.js',
-  './js/french_marinas.js',
+  './data/french_marinas.json',
   './data/navarea2.xml',
   './data/toulon.xml',
   './data/brest.xml',
@@ -74,8 +74,13 @@ const ASSETS = [
   './browserconfig.xml',
   './icons/icon-192.png',
   './icons/icon-512.png',
-  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
-  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
+  './vendor/leaflet/leaflet.css',
+  './vendor/leaflet/leaflet.js',
+  './vendor/leaflet/images/marker-icon.png',
+  './vendor/leaflet/images/marker-icon-2x.png',
+  './vendor/leaflet/images/marker-shadow.png',
+  './vendor/leaflet/images/layers.png',
+  './vendor/leaflet/images/layers-2x.png'
 ];
 
 

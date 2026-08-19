@@ -2,9 +2,14 @@ import { state } from './state.js';
 import { translations } from './i18n.js';
 import { calculateHaversineDistance } from './utils.js';
 import { updateRecenterButtonUI } from './app.js';
-import { FRENCH_MARINAS } from './french_marinas.js';
 
-const HARBOR_FALLBACKS = FRENCH_MARINAS;
+let HARBOR_FALLBACKS = [];
+// Kicked off immediately so the fetch overlaps with the first Overpass round-trip
+// instead of blocking it; parseAndCacheHarbors() only needs the result once fetched.
+const harborFallbacksLoaded = fetch('./data/french_marinas.json')
+  .then(res => res.json())
+  .then(data => { HARBOR_FALLBACKS = data; })
+  .catch(() => { HARBOR_FALLBACKS = []; });
 
 export function displayHarborMessage(msg) {
   const container = document.getElementById('harbors-list-container');
@@ -314,6 +319,7 @@ out body center;`;
     const res = await fetch(url);
     if (!res.ok) throw new Error("Overpass request failed");
     const data = await res.json();
+    await harborFallbacksLoaded;
 
     parseAndCacheHarbors(data.elements);
     updateCurrentHarborsFromCache(bounds);

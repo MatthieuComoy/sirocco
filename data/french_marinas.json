@@ -1,7 +1,4 @@
-// Sirroco Marine Navigation - French Marinas Database
-// Exported list of ALL French marinas with curated real navigation data.
-
-export const FRENCH_MARINAS = [
+[
   {
     "name": "Port de Toulon (Vieille Darse)",
     "lat": 43.12,
@@ -22786,4 +22783,4 @@ export const FRENCH_MARINAS = [
     "info_fr": "Port de plaisance français situé sur la côte.",
     "info_en": "French pleasure port located on the coast."
   }
-];
+]
