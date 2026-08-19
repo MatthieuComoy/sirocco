@@ -2606,3 +2606,32 @@ input[type="text"]:focus-visible {
 .modal-sidebar::-webkit-scrollbar-thumb:hover {
   background: rgba(34, 211, 238, 0.4);
 }
+
+/* Fix: the collapse button reused the mobile "grab handle" positioning
+   (top-center, rotated 90deg) on desktop too, where the sidebar instead
+   slides horizontally. Two problems that fixes: the button sat centered
+   over the sidebar's top edge instead of the sidebar/map boundary, and -
+   worse - collapsing the sidebar on desktop carried the button off-screen
+   with it via the inherited translateX(-100%), making it unreachable to
+   expand again. Repositioning it to the sidebar's right edge means the
+   same inherited transform now lands it right at the viewport edge when
+   collapsed, instead of off-screen. */
+@media (min-width: 769px) {
+  .sidebar-collapse-btn {
+    top: 50%;
+    left: auto;
+    right: -1.75rem;
+    transform: translateY(-50%);
+    width: 1.75rem;
+    height: 3.5rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  .sidebar.collapsed .sidebar-collapse-btn {
+    transform: translateY(-50%);
+  }
+
+  .sidebar.collapsed .sidebar-collapse-btn svg {
+    transform: rotate(180deg);
+  }
+}
