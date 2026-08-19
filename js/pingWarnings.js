@@ -129,11 +129,29 @@ function getGeometryBounds(geometry) {
   return null;
 }
 
+// Whether any warning currently has its popup open - re-plotting clears and rebuilds
+// every marker, which would destroy the open popup's marker out from under it. A popup
+// open() call itself triggers a 'moveend' via Leaflet's autoPan, so without this guard
+// the popup opens and then immediately gets torn down by the debounced re-plot below.
+function isAnyPingPopupOpen() {
+  if (!state.pingWarningsLayer) return false;
+  let open = false;
+  state.pingWarningsLayer.eachLayer(layer => {
+    if (layer.isPopupOpen && layer.isPopupOpen()) open = true;
+    if (layer.eachLayer) {
+      layer.eachLayer(sub => {
+        if (sub.isPopupOpen && sub.isPopupOpen()) open = true;
+      });
+    }
+  });
+  return open;
+}
+
 // Debounced re-plot on pan/zoom so the visible warning set follows the viewport
 export function onMapMovePingWarnings() {
   if (state.pingWarningsDebounceTimeout) clearTimeout(state.pingWarningsDebounceTimeout);
   state.pingWarningsDebounceTimeout = setTimeout(() => {
-    if (state.map && state.pingWarningsLayer) {
+    if (state.map && state.pingWarningsLayer && !isAnyPingPopupOpen()) {
       plotWarningsOnMap();
     }
   }, 250);
