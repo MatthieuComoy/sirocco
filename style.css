@@ -2554,3 +2554,55 @@ input[type="text"]:focus-visible {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Subtle glass sheen layered onto the existing translucent backgrounds via
+   background-image (not a pseudo-element), so it needs no extra positioning
+   and can't clip elements like the sidebar's collapse button that sit
+   outside its box. */
+.sidebar,
+.modal-content,
+.navigation-hud,
+.telemetry-overlay,
+.weather-timeline-bar {
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 45%);
+}
+
+/* Coherent slim scrollbars everywhere content overflows, matching the
+   accent color already used for the tide chart's scrollbar. */
+.tab-content,
+.modal-pane-container,
+.history-list,
+.modal-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 211, 238, 0.25) transparent;
+}
+
+.tab-content::-webkit-scrollbar,
+.modal-pane-container::-webkit-scrollbar,
+.history-list::-webkit-scrollbar,
+.modal-sidebar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.tab-content::-webkit-scrollbar-track,
+.modal-pane-container::-webkit-scrollbar-track,
+.history-list::-webkit-scrollbar-track,
+.modal-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tab-content::-webkit-scrollbar-thumb,
+.modal-pane-container::-webkit-scrollbar-thumb,
+.history-list::-webkit-scrollbar-thumb,
+.modal-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.2);
+  border-radius: 3px;
+}
+
+.tab-content::-webkit-scrollbar-thumb:hover,
+.modal-pane-container::-webkit-scrollbar-thumb:hover,
+.history-list::-webkit-scrollbar-thumb:hover,
+.modal-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.4);
+}
