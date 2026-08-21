@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+/* ---------------------------------------------------------------------- */
+/* 1. Primitives — raw palette, no semantic meaning                       */
+/* ---------------------------------------------------------------------- */
+:root {
+  --cyan-400: #22d3ee;
+  --cyan-500: #06b6d4;
+  --cyan-600: #0e7490;
+  --cyan-700-dark-accent: #0891b2;
+
+  --slate-950: #0b0f19;
+  --slate-900: #161e31;
+  --slate-400: #94a3b8;
+  --slate-50: #f8fafc;
+
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --amber-500: #f59e0b;
+  --amber-600: #d97706;
+
+  --white: #ffffff;
+  --slate-100: #f1f5f9;
+  --slate-800: #0f172a;
+  --slate-500: #64748b;
+
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'Share Tech Mono', ui-monospace, monospace;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 2. Semantic tokens — dark theme is the default (marine / night use)    */
+/* ---------------------------------------------------------------------- */
+:root {
+  --color-bg: var(--slate-950);
+  --color-text: var(--slate-50);
+  --color-text-muted: var(--slate-400);
+
+  /* 3 surface levels: panels, nested cards, near-opaque overlays/modals */
+  --surface-1: rgba(22, 30, 49, 0.72);
+  --surface-2: rgba(22, 30, 49, 0.5);
+  --surface-overlay: rgba(11, 15, 25, 0.94);
+  --surface-opaque: var(--slate-900);
+  --glass-blur: blur(14px);
+  --glass-blur-soft: blur(8px);
+
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-shadow: rgba(0, 0, 0, 0.4);
+
+  --color-accent: var(--cyan-400);
+  --color-accent-hover: var(--cyan-500);
+  --color-accent-bg: rgba(34, 211, 238, 0.1);
+
+  --color-danger: var(--red-500);
+  --color-danger-bg: rgba(239, 68, 68, 0.15);
+  --color-success: var(--emerald-500);
+  --color-success-bg: rgba(16, 185, 129, 0.15);
+  --color-warning: var(--amber-500);
+
+  /* Points of sail (used by the boat trim animation) */
+  --color-pres: #a78bfa;
+  --color-bon-plein: #3b82f6;
+  --color-travers: var(--emerald-500);
+  --color-largue: #eab308;
+  --color-grand-largue: #f97316;
+  --color-vent-arriere: var(--red-500);
+
+  /* Radius scale */
+  --radius-sm: 0.35rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+
+  /* Space scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.85rem;
+  --text-base: 1rem;
+  --text-lg: 1.15rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 400ms;
+}
+
+[data-theme='light'] {
+  --color-bg: var(--slate-100);
+  --color-text: var(--slate-800);
+  --color-text-muted: var(--slate-500);
+
+  --surface-1: rgba(255, 255, 255, 0.78);
+  --surface-2: rgba(255, 255, 255, 0.55);
+  --surface-overlay: rgba(255, 255, 255, 0.96);
+  --surface-opaque: var(--white);
+
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-shadow: rgba(15, 23, 42, 0.08);
+
+  --color-accent: var(--cyan-700-dark-accent);
+  --color-accent-hover: var(--cyan-600);
+  --color-accent-bg: rgba(8, 145, 178, 0.1);
+
+  --color-danger: var(--red-600);
+  --color-danger-bg: rgba(220, 38, 38, 0.12);
+  --color-success: var(--emerald-600);
+  --color-success-bg: rgba(5, 150, 105, 0.12);
+  --color-warning: var(--amber-600);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --color-bg: var(--slate-100);
+    --color-text: var(--slate-800);
+    --color-text-muted: var(--slate-500);
+    --surface-1: rgba(255, 255, 255, 0.78);
+    --surface-2: rgba(255, 255, 255, 0.55);
+    --surface-overlay: rgba(255, 255, 255, 0.96);
+    --surface-opaque: var(--white);
+    --color-border: rgba(0, 0, 0, 0.08);
+    --color-shadow: rgba(15, 23, 42, 0.08);
+    --color-accent: var(--cyan-700-dark-accent);
+    --color-accent-hover: var(--cyan-600);
+    --color-accent-bg: rgba(8, 145, 178, 0.1);
+    --color-danger: var(--red-600);
+    --color-danger-bg: rgba(220, 38, 38, 0.12);
+    --color-success: var(--emerald-600);
+    --color-success-bg: rgba(5, 150, 105, 0.12);
+    --color-warning: var(--amber-600);
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* 3. Reset                                                                */
+/* ---------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  transition: background-color var(--dur-base) var(--ease-standard), color var(--dur-base) var(--ease-standard);
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  color: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}

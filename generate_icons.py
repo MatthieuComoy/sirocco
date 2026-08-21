@@ -15,8 +15,8 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-SRC_DIR = os.path.join(ROOT, "icons", "src")
-OUT_DIR = os.path.join(ROOT, "icons")
+SRC_DIR = os.path.join(ROOT, "public", "icons", "src")
+OUT_DIR = os.path.join(ROOT, "public", "icons")
 
 MASTER = os.path.join(SRC_DIR, "icon-master.svg")        # solid brand background
 MASKABLE = os.path.join(SRC_DIR, "icon-maskable.svg")     # same art, shrunk to the safe zone
