@@ -1,30 +1,62 @@
 <script lang="ts">
-  // Phase 0 scaffold placeholder — replaced by the real responsive shell in Phase 1.
+  import { density } from './lib/stores/viewport';
+  import MapCanvas from './lib/map/MapCanvas.svelte';
+  import Header from './lib/components/layout/Header.svelte';
+  import Sidebar from './lib/components/layout/Sidebar.svelte';
+  import BottomSheet from './lib/components/ui/BottomSheet.svelte';
+
+  let sidebarOpen = $state(true);
+  let sheetValue = $state<'closed' | 'half' | 'full'>('closed');
 </script>
 
-<main class="boot-screen">
-  <h1>Sirroco</h1>
-  <p>Refonte en cours — scaffold Vite + Svelte opérationnel.</p>
-</main>
+<div class="app-shell">
+  <Header />
+
+  <div class="main-area">
+    {#if $density !== 'mobile'}
+      <Sidebar bind:open={sidebarOpen}>
+        <div class="panel-placeholder">
+          <p>Panneaux Calques &amp; Météo — Phase 3</p>
+        </div>
+      </Sidebar>
+    {/if}
+
+    <div class="map-area">
+      <MapCanvas />
+
+      {#if $density === 'mobile'}
+        <BottomSheet bind:value={sheetValue} title="Sirroco">
+          <div class="panel-placeholder">
+            <p>Panneaux Calques &amp; Météo — Phase 3</p>
+          </div>
+        </BottomSheet>
+      {/if}
+    </div>
+  </div>
+</div>
 
 <style>
-  .boot-screen {
-    height: 100%;
+  .app-shell {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
-    text-align: center;
+    height: 100%;
   }
 
-  h1 {
-    font-size: var(--text-2xl);
-    font-weight: 600;
-    color: var(--color-accent);
+  .main-area {
+    position: relative;
+    flex: 1;
+    display: flex;
+    min-height: 0;
   }
 
-  p {
+  .map-area {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .panel-placeholder {
+    padding: var(--space-4);
     color: var(--color-text-muted);
     font-size: var(--text-sm);
   }
