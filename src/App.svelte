@@ -1,12 +1,19 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { density } from './lib/stores/viewport';
   import MapCanvas from './lib/map/MapCanvas.svelte';
+  import BoatMarker from './lib/map/layers/BoatMarker.svelte';
   import Header from './lib/components/layout/Header.svelte';
   import Sidebar from './lib/components/layout/Sidebar.svelte';
   import BottomSheet from './lib/components/ui/BottomSheet.svelte';
+  import { initPositionTracking } from './lib/services/positionOrchestrator';
 
   let sidebarOpen = $state(true);
   let sheetValue = $state<'closed' | 'half' | 'full'>('closed');
+
+  onMount(() => {
+    initPositionTracking();
+  });
 </script>
 
 <div class="app-shell">
@@ -22,7 +29,9 @@
     {/if}
 
     <div class="map-area">
-      <MapCanvas />
+      <MapCanvas>
+        <BoatMarker />
+      </MapCanvas>
 
       {#if $density === 'mobile'}
         <BottomSheet bind:value={sheetValue} title="Sirroco">
