@@ -1,9 +1,11 @@
 <script lang="ts">
   import { isAlarmTriggered, driftDistanceNm } from '../../stores/anchor';
   import { deactivateAnchor } from '../../services/anchorAlarm';
+  import { stopRouteTracking } from '../../services/tracking';
 
   function stopAlarm() {
     deactivateAnchor();
+    stopRouteTracking();
   }
 </script>
 

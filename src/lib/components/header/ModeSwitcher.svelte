@@ -2,6 +2,7 @@
   import { appMode, type AppMode } from '../../stores/appMode';
   import { switchAppMode } from '../../services/appModeController';
   import { density } from '../../stores/viewport';
+  import { isTracking } from '../../stores/tracking';
 
   const MODES: { id: AppMode; label: string; icon: string }[] = [
     {
@@ -39,6 +40,12 @@
         {/if}
       </svg>
       {#if $density !== 'mobile'}<span>{m.label}</span>{/if}
+      {#if m.id === 'navigation' && $isTracking}
+        <span class="rec-indicator">
+          <span class="rec-dot"></span>
+          {#if $density !== 'mobile'}REC{/if}
+        </span>
+      {/if}
     </button>
   {/each}
 </div>
@@ -75,5 +82,29 @@
   .mode-btn.active {
     background: var(--color-accent-bg);
     color: var(--color-accent);
+  }
+
+  .rec-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--color-danger);
+  }
+
+  .rec-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--color-danger);
+    box-shadow: 0 0 6px var(--color-danger);
+    animation: pulse-scale 1.2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-scale {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
   }
 </style>

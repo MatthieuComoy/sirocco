@@ -11,6 +11,8 @@ import { boatProfile } from '../stores/boatProfile';
 import { advanceNavigationDistance, navigationSession } from '../stores/navigationSession';
 import { dangerWarning } from '../stores/dangerWarning';
 import { calculateHaversineDistance, getSimulatedDepth } from './utils';
+import { isTracking } from '../stores/tracking';
+import { pushTrackPoint } from './tracking';
 
 let started = false;
 
@@ -21,6 +23,8 @@ export function initPositionTracking() {
   setGpsMode(get(gpsMode));
 
   telemetry.subscribe((t) => {
+    if (get(isTracking)) pushTrackPoint();
+
     if (get(appMode) !== 'navigation') {
       if (get(dangerWarning) !== null) dangerWarning.set(null);
       return;

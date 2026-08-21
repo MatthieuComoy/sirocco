@@ -4,6 +4,7 @@ import { telemetry } from '../stores/telemetry';
 import { startNavigationSession, stopNavigationSession } from '../stores/navigationSession';
 import { autoCenter } from '../stores/autoCenter';
 import { dangerWarning } from '../stores/dangerWarning';
+import { startRouteTracking } from './tracking';
 
 /** Single entry point for changing app mode — centralizes the cross-store
  *  side effects the legacy app.js::setAppMode() used to do via ~25 direct
@@ -18,6 +19,7 @@ export function switchAppMode(mode: AppMode) {
     const t = get(telemetry);
     startNavigationSession({ lat: t.lat, lon: t.lon });
     autoCenter.set(true);
+    startRouteTracking();
   } else if (previous === 'navigation') {
     stopNavigationSession();
     dangerWarning.set(null);
