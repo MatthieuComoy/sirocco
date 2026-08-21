@@ -9,14 +9,19 @@
   import Sidebar from './lib/components/layout/Sidebar.svelte';
   import BottomSheet from './lib/components/ui/BottomSheet.svelte';
   import ModeSwitcher from './lib/components/header/ModeSwitcher.svelte';
+  import AnchorControl from './lib/components/header/AnchorControl.svelte';
   import MapOverlays from './lib/components/hud/MapOverlays.svelte';
+  import AnchorLayer from './lib/map/layers/AnchorLayer.svelte';
+  import AlarmModal from './lib/components/modals/AlarmModal.svelte';
   import { initPositionTracking } from './lib/services/positionOrchestrator';
+  import { initAnchorAlarm } from './lib/services/anchorAlarm';
 
   let sidebarOpen = $state(true);
   let sheetValue = $state<'closed' | 'half' | 'full'>('closed');
 
   onMount(() => {
     initPositionTracking();
+    initAnchorAlarm();
   });
 
   // Mirrors the legacy setAppMode(): auto-collapse on entering navigation,
@@ -38,6 +43,7 @@
 <div class="app-shell">
   <Header>
     <ModeSwitcher />
+    <AnchorControl />
   </Header>
 
   <div class="main-area">
@@ -53,9 +59,11 @@
       <MapCanvas>
         <BoatMarker />
         <NavigationMapEffects />
+        <AnchorLayer />
       </MapCanvas>
 
       <MapOverlays />
+      <AlarmModal />
 
       {#if $density === 'mobile'}
         <BottomSheet bind:value={sheetValue} title="Sirroco">
