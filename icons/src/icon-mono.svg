@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sirroco brand mark — flat single-colour silhouette, used for favicons where
+     gradient/fine detail would just read as noise at small sizes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <path d="M115.7,347.5
+           C158.4,353.6 188.9,408.5 256,414.6
+           C323.1,408.5 353.6,353.6 396.3,347.5
+           Z"
+        fill="#22d3ee"/>
+  <line x1="256" y1="60.8" x2="256" y2="347.5" stroke="#22d3ee" stroke-width="14" stroke-linecap="round"/>
+  <path d="M256,79.1
+           C371.9,130 426.8,260 256,341.4
+           Z"
+        fill="#22d3ee"/>
+</svg>
