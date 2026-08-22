@@ -25,6 +25,8 @@
   import WeatherMapEffects from './lib/map/layers/WeatherMapEffects.svelte';
   import GribControls from './lib/components/weather/GribControls.svelte';
   import GribTimeline from './lib/components/weather/GribTimeline.svelte';
+  import WarningsLayer from './lib/map/layers/WarningsLayer.svelte';
+  import { loadAllWarnings } from './lib/services/pingWarnings';
 
   let sidebarOpen = $state(true);
   let sheetValue = $state<'closed' | 'half' | 'full'>('closed');
@@ -32,10 +34,18 @@
   onMount(() => {
     initPositionTracking();
     initAnchorAlarm();
-    // Fetch current wind once at boot so the nav HUD / sail trim have real
-    // data even if the user never opens the weather panel/mode.
-    const t = get(telemetry);
-    fetchWeatherAndTides(t.lat, t.lon);
+
+    // Lazy-load overlays/heavy APIs to prioritize the base map render first —
+    // same stagger as the legacy app (js/app.js DOMContentLoaded: 150ms then
+    // 850ms) so the map still paints immediately on slow connections.
+    setTimeout(() => {
+      const t = get(telemetry);
+      fetchWeatherAndTides(t.lat, t.lon);
+    }, 150);
+
+    setTimeout(() => {
+      loadAllWarnings();
+    }, 850);
   });
 
   // Mirrors the legacy setAppMode(): auto-collapse on entering navigation,
@@ -85,6 +95,7 @@
         <TrackPreviewLayer />
         <GribOverlay />
         <WeatherMapEffects />
+        <WarningsLayer />
       </MapCanvas>
 
       <MapOverlays />

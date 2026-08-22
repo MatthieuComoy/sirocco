@@ -1,7 +1,7 @@
 <script lang="ts">
   import { get } from 'svelte/store';
   import Tabs from '../ui/Tabs.svelte';
-  import TrackingPanel from './TrackingPanel.svelte';
+  import LayersPanel from './LayersPanel.svelte';
   import WeatherPanel from '../weather/WeatherPanel.svelte';
   import { telemetry } from '../../stores/telemetry';
   import { fetchWeatherAndTides } from '../../services/weather';
@@ -37,7 +37,7 @@
 
   <div class="panel">
     {#if active === 'layers'}
-      <TrackingPanel />
+      <LayersPanel />
     {:else}
       <WeatherPanel />
     {/if}
