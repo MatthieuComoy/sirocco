@@ -5,6 +5,7 @@ import { startNavigationSession, stopNavigationSession } from '../stores/navigat
 import { autoCenter } from '../stores/autoCenter';
 import { dangerWarning } from '../stores/dangerWarning';
 import { startRouteTracking } from './tracking';
+import { fetchWeatherAndTides } from './weather';
 
 /** Single entry point for changing app mode — centralizes the cross-store
  *  side effects the legacy app.js::setAppMode() used to do via ~25 direct
@@ -23,6 +24,11 @@ export function switchAppMode(mode: AppMode) {
   } else if (previous === 'navigation') {
     stopNavigationSession();
     dangerWarning.set(null);
+  }
+
+  if (mode === 'weather') {
+    const t = get(telemetry);
+    fetchWeatherAndTides(t.lat, t.lon, true);
   }
 
   appMode.set(mode);

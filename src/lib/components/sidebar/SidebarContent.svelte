@@ -1,8 +1,29 @@
 <script lang="ts">
+  import { get } from 'svelte/store';
   import Tabs from '../ui/Tabs.svelte';
   import TrackingPanel from './TrackingPanel.svelte';
+  import WeatherPanel from '../weather/WeatherPanel.svelte';
+  import { telemetry } from '../../stores/telemetry';
+  import { fetchWeatherAndTides } from '../../services/weather';
+  import { appMode } from '../../stores/appMode';
 
-  let active = $state('layers');
+  let active = $state($appMode === 'weather' ? 'weather' : 'layers');
+  let previousActive: string | null = null;
+
+  // Weather app mode forces this tab open too (legacy: setAppMode('weather')
+  // shows panel-weather regardless of which sidebar tab was last active).
+  $effect(() => {
+    if ($appMode === 'weather') active = 'weather';
+  });
+
+  $effect(() => {
+    const current = active;
+    if (current === 'weather' && previousActive !== 'weather') {
+      const t = get(telemetry);
+      fetchWeatherAndTides(t.lat, t.lon);
+    }
+    previousActive = current;
+  });
 </script>
 
 <div class="sidebar-content">
@@ -18,9 +39,7 @@
     {#if active === 'layers'}
       <TrackingPanel />
     {:else}
-      <div class="placeholder">
-        <p>Prévisions météo, marées et alertes de navigation — Phase 6/7.</p>
-      </div>
+      <WeatherPanel />
     {/if}
   </div>
 </div>
@@ -35,11 +54,5 @@
   .panel {
     flex: 1;
     overflow-y: auto;
-  }
-
-  .placeholder {
-    padding: var(--space-4);
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
   }
 </style>

@@ -6,8 +6,7 @@
   import { MAP_CONTEXT_KEY } from '../context';
   import { telemetry } from '../../stores/telemetry';
 
-  // Ported 1:1 from legacy/js/app.js::initMap() — sail trim (updateBoatSails)
-  // is wired up in Phase 6 once wind data exists.
+  // Ported 1:1 from legacy/js/app.js::initMap().
   const BOAT_ICON = L.divIcon({
     className: 'boat-marker-container',
     html: `
@@ -28,6 +27,56 @@
 
   let marker: L.Marker | null = null;
   let svgEl: SVGElement | null = null;
+  let mainsailEl: SVGElement | null = null;
+  let jibEl: SVGElement | null = null;
+
+  // Dynamic sail trimming simulator based on heading and apparent wind angle
+  // — ported from legacy/js/weatherTides.js::updateBoatSails().
+  function updateSails(heading: number, windDir: number | null) {
+    if (!mainsailEl || !jibEl) return;
+
+    if (windDir === null || Number.isNaN(windDir)) {
+      mainsailEl.style.transform = 'scaleX(1) rotate(55deg)';
+      jibEl.style.transform = 'scaleX(1) rotate(60deg)';
+      mainsailEl.classList.remove('sail-flutter');
+      jibEl.classList.remove('sail-flutter');
+      return;
+    }
+
+    let alpha = (windDir - heading) % 360;
+    if (alpha > 180) alpha -= 360;
+    if (alpha < -180) alpha += 360;
+
+    const absAlpha = Math.abs(alpha);
+    const side = alpha >= 0 ? 1 : -1;
+
+    let mainAngle = 0;
+    let jibAngle = 0;
+    let isFluttering = false;
+    let jibSideMultiplier = 1;
+
+    if (absAlpha < 30) {
+      isFluttering = true;
+    } else if (absAlpha < 55) {
+      mainAngle = 5;
+      jibAngle = 8;
+    } else if (absAlpha < 110) {
+      mainAngle = 35;
+      jibAngle = 40;
+    } else if (absAlpha < 155) {
+      mainAngle = 60;
+      jibAngle = 65;
+    } else {
+      mainAngle = 80;
+      jibAngle = 80;
+      jibSideMultiplier = -1; // wing-on-wing
+    }
+
+    mainsailEl.style.transform = `scaleX(${side}) rotate(${mainAngle}deg)`;
+    jibEl.style.transform = `scaleX(${side * jibSideMultiplier}) rotate(${jibAngle}deg)`;
+    mainsailEl.classList.toggle('sail-flutter', isFluttering);
+    jibEl.classList.toggle('sail-flutter', isFluttering);
+  }
 
   const unsubMap = mapStore.subscribe((map) => {
     if (!map || marker) return;
@@ -36,7 +85,11 @@
       icon: BOAT_ICON,
       zIndexOffset: 10000,
     }).addTo(map);
-    svgEl = marker.getElement()?.querySelector('#boat-svg') ?? null;
+    const el = marker.getElement();
+    svgEl = el?.querySelector('#boat-svg') ?? null;
+    mainsailEl = el?.querySelector('#boat-mainsail') ?? null;
+    jibEl = el?.querySelector('#boat-jib') ?? null;
+    updateSails(initial.headingDeg, initial.windDirectionDeg);
   });
 
   const unsubTelemetry = telemetry.subscribe((t) => {
@@ -45,6 +98,7 @@
     if (svgEl) {
       (svgEl as unknown as SVGElement).style.transform = `rotate(${t.headingDeg}deg)`;
     }
+    updateSails(t.headingDeg, t.windDirectionDeg);
   });
 
   onDestroy(() => {
@@ -83,5 +137,19 @@
     fill: rgba(248, 250, 252, 0.85);
     stroke: var(--surface-opaque);
     stroke-width: 1;
+    transform-origin: 50px 45px;
+    transition: transform var(--dur-base) ease-out;
+  }
+
+  :global(.sail-flutter) {
+    animation: sail-shake 0.12s linear infinite;
+  }
+
+  @keyframes sail-shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-2.5deg); }
+    50% { transform: rotate(2deg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
   }
 </style>

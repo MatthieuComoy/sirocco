@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { get } from 'svelte/store';
   import { density } from './lib/stores/viewport';
   import { appMode } from './lib/stores/appMode';
   import MapCanvas from './lib/map/MapCanvas.svelte';
@@ -18,6 +19,12 @@
   import SidebarContent from './lib/components/sidebar/SidebarContent.svelte';
   import { initPositionTracking } from './lib/services/positionOrchestrator';
   import { initAnchorAlarm } from './lib/services/anchorAlarm';
+  import { fetchWeatherAndTides } from './lib/services/weather';
+  import { telemetry } from './lib/stores/telemetry';
+  import GribOverlay from './lib/map/layers/GribOverlay.svelte';
+  import WeatherMapEffects from './lib/map/layers/WeatherMapEffects.svelte';
+  import GribControls from './lib/components/weather/GribControls.svelte';
+  import GribTimeline from './lib/components/weather/GribTimeline.svelte';
 
   let sidebarOpen = $state(true);
   let sheetValue = $state<'closed' | 'half' | 'full'>('closed');
@@ -25,11 +32,14 @@
   onMount(() => {
     initPositionTracking();
     initAnchorAlarm();
+    // Fetch current wind once at boot so the nav HUD / sail trim have real
+    // data even if the user never opens the weather panel/mode.
+    const t = get(telemetry);
+    fetchWeatherAndTides(t.lat, t.lon);
   });
 
   // Mirrors the legacy setAppMode(): auto-collapse on entering navigation,
-  // auto-expand on desktop when back to consultation (weather forces its own
-  // wide panel once the real weather content lands in Phase 6).
+  // auto-expand for consultation/weather.
   let previousMode = $appMode;
   $effect(() => {
     const mode = $appMode;
@@ -38,6 +48,12 @@
       sidebarOpen = false;
     } else if (mode === 'consultation' && $density === 'desktop') {
       sidebarOpen = true;
+    } else if (mode === 'weather') {
+      if ($density === 'mobile') {
+        if (sheetValue === 'closed') sheetValue = 'half';
+      } else {
+        sidebarOpen = true;
+      }
     }
     previousMode = mode;
   });
@@ -67,10 +83,19 @@
         <AnchorLayer />
         <TrackLine />
         <TrackPreviewLayer />
+        <GribOverlay />
+        <WeatherMapEffects />
       </MapCanvas>
 
       <MapOverlays />
       <AlarmModal />
+
+      {#if $appMode === 'weather'}
+        <div class="weather-floating" class:mobile={$density === 'mobile'}>
+          <GribControls />
+          <GribTimeline />
+        </div>
+      {/if}
 
       {#if $density === 'mobile'}
         <BottomSheet bind:value={sheetValue} title="Sirroco">
@@ -99,5 +124,26 @@
     position: relative;
     flex: 1;
     min-width: 0;
+  }
+
+  .weather-floating {
+    position: absolute;
+    left: var(--space-3);
+    right: var(--space-3);
+    bottom: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+    z-index: 700;
+    pointer-events: none;
+  }
+
+  .weather-floating :global(> *) {
+    pointer-events: auto;
+  }
+
+  .weather-floating.mobile {
+    bottom: calc(2.75rem + var(--space-2));
   }
 </style>

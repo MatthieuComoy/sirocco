@@ -39,17 +39,35 @@
     dragHandlerAttached = true;
   }
 
+  // `mapStore` and `appMode` can each fire before the other is ready (the map
+  // is created in MapCanvas's onMount, which runs after this component's
+  // top-level subscriptions are set up) — track both explicitly instead of
+  // reading a `get()` snapshot of the other store from inside one
+  // subscription, which would silently miss the transition if it lands
+  // before the map exists (see architecture plan §8 risk #5 in spirit).
+  let currentMap: L.Map | null = null;
+  let previousMode = get(appMode);
+  let didEnterNavForMap = false;
+
+  function enterNavigationView(map: L.Map) {
+    const t = get(telemetry);
+    map.setView([t.lat, t.lon], 15);
+  }
+
   const unsubMap = mapStore.subscribe((map) => {
-    if (!map || dragHandlerAttached) return;
-    addRecenterControl(map);
+    currentMap = map;
+    if (!map) return;
+    if (!dragHandlerAttached) addRecenterControl(map);
+    if (get(appMode) === 'navigation' && !didEnterNavForMap) {
+      didEnterNavForMap = true;
+      enterNavigationView(map);
+    }
   });
 
-  let previousMode = get(appMode);
   const unsubMode = appMode.subscribe((mode) => {
-    const map = get(mapStore);
-    if (map && mode === 'navigation' && previousMode !== 'navigation') {
-      const t = get(telemetry);
-      map.setView([t.lat, t.lon], 15);
+    if (currentMap && mode === 'navigation' && previousMode !== 'navigation') {
+      didEnterNavForMap = true;
+      enterNavigationView(currentMap);
     }
     previousMode = mode;
   });

@@ -2,6 +2,7 @@
   import { telemetry } from '../../stores/telemetry';
   import { boatProfile } from '../../stores/boatProfile';
   import { navigationSession, navigationDurationStr } from '../../stores/navigationSession';
+  import { weather } from '../../stores/weather';
   import { density } from '../../stores/viewport';
   import { getSimulatedDepth } from '../../services/utils';
   import { switchAppMode } from '../../services/appModeController';
@@ -13,11 +14,12 @@
   const distanceNm = $derived($navigationSession.distanceMeters / 1852);
   const cogStr = $derived(Math.round($telemetry.headingDeg).toString().padStart(3, '0'));
 
-  // Wind is a fixed placeholder until Phase 6 wires real weather data — matches
-  // the legacy HUD, which hardcoded "12 kts" / 290° until then too.
-  const WIND_SPEED_KTS = 12;
-  const WIND_FROM_DEG = 290;
-  const relativeWindDeg = $derived(WIND_FROM_DEG - $telemetry.headingDeg);
+  // Legacy hardcoded "12 kts" / 290° here permanently (weather was only ever
+  // fetched from the weather panel/mode, never on nav start) — now that a
+  // weather fetch happens on boot (App.svelte), we can show the real reading.
+  const windSpeedKts = $derived($weather.conditions?.windSpeedKts ?? null);
+  const windFromDeg = $derived($telemetry.windDirectionDeg ?? null);
+  const relativeWindDeg = $derived((windFromDeg ?? 0) - $telemetry.headingDeg);
 </script>
 
 <div class="hud">
@@ -37,7 +39,7 @@
           <svg viewBox="0 0 24 24" width="16" height="16" style="transform: rotate({relativeWindDeg}deg)">
             <path d="M12 2L5 21l7-4 7 4z" fill="var(--color-accent)" />
           </svg>
-          <span class="value">{WIND_SPEED_KTS}<span class="unit">kn</span></span>
+          <span class="value">{windSpeedKts != null ? Math.round(windSpeedKts) : '--'}<span class="unit">kn</span></span>
         </div>
       </div>
     {/if}
