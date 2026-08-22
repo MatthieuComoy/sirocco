@@ -27,13 +27,21 @@
   import GribTimeline from './lib/components/weather/GribTimeline.svelte';
   import WarningsLayer from './lib/map/layers/WarningsLayer.svelte';
   import { loadAllWarnings } from './lib/services/pingWarnings';
+  import SettingsControl from './lib/components/header/SettingsControl.svelte';
+  import { theme } from './lib/stores/theme';
+  import { initSimOptionsSync } from './lib/services/gpsSimulator';
 
   let sidebarOpen = $state(true);
   let sheetValue = $state<'closed' | 'half' | 'full'>('closed');
 
+  $effect(() => {
+    document.body.setAttribute('data-theme', $theme);
+  });
+
   onMount(() => {
     initPositionTracking();
     initAnchorAlarm();
+    initSimOptionsSync();
 
     // Lazy-load overlays/heavy APIs to prioritize the base map render first —
     // same stagger as the legacy app (js/app.js DOMContentLoaded: 150ms then
@@ -76,6 +84,7 @@
     {/snippet}
     {#snippet actions()}
       <AnchorControl />
+      <SettingsControl />
     {/snippet}
   </Header>
 

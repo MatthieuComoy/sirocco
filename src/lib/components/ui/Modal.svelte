@@ -4,11 +4,15 @@
   let {
     open = $bindable(false),
     title,
+    size = 'md',
+    noBodyPadding = false,
     onClose,
     children,
   }: {
     open?: boolean;
     title?: string;
+    size?: 'md' | 'lg';
+    noBodyPadding?: boolean;
     onClose?: () => void;
     children?: Snippet;
   } = $props();
@@ -49,6 +53,7 @@
   <div class="modal-overlay" use:portal onclick={onOverlayClick} role="presentation">
     <div
       class="modal-content"
+      class:lg={size === 'lg'}
       role="dialog"
       aria-modal="true"
       aria-label={title}
@@ -61,7 +66,7 @@
           </svg>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" class:no-padding={noBodyPadding}>
         {@render children?.()}
       </div>
     </div>
@@ -92,6 +97,10 @@
     border-radius: var(--radius-xl);
     box-shadow: 0 12px 40px var(--color-shadow);
     animation: pop-in var(--dur-slow) var(--ease-spring);
+  }
+
+  .modal-content.lg {
+    width: min(46rem, 100%);
   }
 
   .modal-header {
@@ -127,6 +136,12 @@
   .modal-body {
     padding: var(--space-4);
     overflow-y: auto;
+  }
+
+  .modal-body.no-padding {
+    padding: 0;
+    display: flex;
+    min-height: 0;
   }
 
   @keyframes fade-in {

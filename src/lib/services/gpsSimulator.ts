@@ -2,6 +2,7 @@
 import { get } from 'svelte/store';
 import { telemetry } from '../stores/telemetry';
 import { gpsMode, simulatorSettings, type GpsMode } from '../stores/gpsMode';
+import { simOptionsEnabled } from '../stores/settings';
 
 let simTimer: ReturnType<typeof setInterval> | null = null;
 let realWatchId: number | null = null;
@@ -95,4 +96,25 @@ export function setGpsMode(mode: GpsMode) {
 
 export function triggerSimulatorDrift() {
   simulatorSettings.set({ speedKts: 8.0, headingDeg: 180, isDrifting: true });
+}
+
+let simOptionsSyncStarted = false;
+
+/** Disabling "simulation options" also forces real GPS, same as legacy —
+ *  but only in reaction to the user actually flipping the toggle, not on
+ *  the initial subscribe (the app defaults to the simulator regardless of
+ *  this setting, matching legacy js/state.js: isSimulating = true). */
+export function initSimOptionsSync() {
+  if (simOptionsSyncStarted) return;
+  simOptionsSyncStarted = true;
+  let first = true;
+  simOptionsEnabled.subscribe((enabled) => {
+    if (first) {
+      first = false;
+      return;
+    }
+    if (!enabled && get(gpsMode) === 'simulated') {
+      setGpsMode('real');
+    }
+  });
 }
