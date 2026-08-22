@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
 
-  let { children }: { children?: Snippet } = $props();
+  let { center, actions }: { center?: Snippet; actions?: Snippet } = $props();
 </script>
 
 <header class="app-header">
@@ -12,16 +12,20 @@
     <span class="brand-name">Sirroco</span>
   </div>
 
-  <div class="header-slot">
-    {@render children?.()}
+  <div class="header-center">
+    {@render center?.()}
+  </div>
+
+  <div class="header-actions">
+    {@render actions?.()}
   </div>
 </header>
 
 <style>
   .app-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
     gap: var(--space-4);
     height: 3.25rem;
     padding: 0 var(--space-4);
@@ -37,6 +41,8 @@
     align-items: center;
     gap: var(--space-2);
     color: var(--color-accent);
+    justify-self: start;
+    min-width: 0;
   }
 
   .brand-name {
@@ -44,14 +50,22 @@
     font-weight: 600;
     color: var(--color-text);
     letter-spacing: 0.02em;
+    white-space: nowrap;
   }
 
-  .header-slot {
+  .header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    min-width: 0;
+  }
+
+  .header-actions {
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    flex: 1;
-    justify-content: flex-end;
+    justify-self: end;
     min-width: 0;
   }
 

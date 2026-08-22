@@ -45,8 +45,12 @@
 
 <div class="app-shell">
   <Header>
-    <ModeSwitcher />
-    <AnchorControl />
+    {#snippet center()}
+      <ModeSwitcher />
+    {/snippet}
+    {#snippet actions()}
+      <AnchorControl />
+    {/snippet}
   </Header>
 
   <div class="main-area">
