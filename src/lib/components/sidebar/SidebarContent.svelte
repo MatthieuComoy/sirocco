@@ -1,5 +1,6 @@
 <script lang="ts">
   import { get } from 'svelte/store';
+  import { _ } from 'svelte-i18n';
   import Tabs from '../ui/Tabs.svelte';
   import LayersPanel from './LayersPanel.svelte';
   import WeatherPanel from '../weather/WeatherPanel.svelte';
@@ -29,8 +30,8 @@
 <div class="sidebar-content">
   <Tabs
     tabs={[
-      { id: 'layers', label: 'Calques & Traces' },
-      { id: 'weather', label: 'Météo' },
+      { id: 'layers', label: $_('layers_routes_view') },
+      { id: 'weather', label: $_('mode_weather') },
     ]}
     bind:active
   />

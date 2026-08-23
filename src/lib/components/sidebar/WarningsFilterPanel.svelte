@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { warnings } from '../../stores/warnings';
   import { setWarningsFilter } from '../../services/pingWarnings';
   import Toggle from '../ui/Toggle.svelte';
@@ -6,8 +7,8 @@
 
   const activeCount = $derived($warnings.list.filter((w) => w.visible).length);
   const sourceBadge = $derived.by(() => {
-    if ($warnings.loading) return { text: 'Chargement…', color: 'var(--color-text-muted)' };
-    if ($warnings.sourceInfo === 'local') return { text: 'Hors-ligne', color: 'var(--color-warning)' };
+    if ($warnings.loading) return { text: $_('loading_lbl') + '…', color: 'var(--color-text-muted)' };
+    if ($warnings.sourceInfo === 'local') return { text: $_('offline_badge'), color: 'var(--color-warning)' };
     if ($warnings.sourceInfo.includes('offline')) return { text: 'Mixte', color: 'var(--color-accent)' };
     if ($warnings.sourceInfo === 'live') return { text: 'Direct', color: 'var(--color-success)' };
     return null;
@@ -17,10 +18,10 @@
 <div class="warnings-panel">
   <div class="row master">
     <div class="label">
-      <span>Alertes de navigation</span>
-      <span class="count">{activeCount} actives{#if sourceBadge} · <span style:color={sourceBadge.color}>{sourceBadge.text}</span>{/if}</span>
+      <span>{$_('nav_warnings_title')}</span>
+      <span class="count">{activeCount} {$_('active_count_lbl')}{#if sourceBadge} · <span style:color={sourceBadge.color}>{sourceBadge.text}</span>{/if}</span>
     </div>
-    <Toggle checked={$warnings.filter.showAll} label="Afficher toutes les alertes" onchange={(v) => setWarningsFilter({ showAll: v })} />
+    <Toggle checked={$warnings.filter.showAll} label={$_('nav_warnings_title')} onchange={(v) => setWarningsFilter({ showAll: v })} />
   </div>
 
   <Collapsible title="Catégories">

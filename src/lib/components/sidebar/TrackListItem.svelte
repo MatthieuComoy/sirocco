@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import type { SavedTrack } from '../../stores/tracking';
   import { deleteTrack, exportTrackToGPX } from '../../services/tracking';
   import { formatDurationShort } from '../../services/utils';
@@ -18,13 +19,13 @@
   <div class="track-header">
     <span class="track-name">{track.name}</span>
     <div class="track-actions">
-      <button class="icon-btn" title="Afficher sur la carte" aria-label="Afficher sur la carte" onclick={() => onShowOnMap(track)}>
+      <button class="icon-btn" title={$_('show_on_map')} aria-label={$_('show_on_map')} onclick={() => onShowOnMap(track)}>
         <svg viewBox="0 0 24 24" width="15" height="15"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor" /></svg>
       </button>
       <button class="icon-btn" title="Export GPX" aria-label="Export GPX" onclick={() => exportTrackToGPX(track)}>
         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" /></svg>
       </button>
-      <button class="icon-btn danger" title="Supprimer" aria-label="Supprimer" onclick={() => deleteTrack(index)}>
+      <button class="icon-btn danger" title={$_('delete_btn')} aria-label={$_('delete_btn')} onclick={() => deleteTrack(index)}>
         <svg viewBox="0 0 24 24" width="15" height="15"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="currentColor" /></svg>
       </button>
     </div>

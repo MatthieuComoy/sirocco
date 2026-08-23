@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { _ } from 'svelte-i18n';
   import { offlineMaps } from '../../stores/offlineMaps';
   import {
     OFFLINE_REGIONS,
@@ -15,7 +16,9 @@
   });
 
   const storageText = $derived(
-    $offlineMaps.storageUsedMB !== null ? `${$offlineMaps.storageUsedMB.toFixed(1)} MB utilisés` : 'Indisponible'
+    $offlineMaps.storageUsedMB !== null
+      ? $_('storage_used', { values: { n: $offlineMaps.storageUsedMB.toFixed(1) } })
+      : $_('storage_unavailable')
   );
 </script>
 
@@ -33,7 +36,7 @@
           <p class="region-desc">{region.desc}</p>
         </div>
         <span class="status" class:installed={isInstalled} class:downloading={!!download}>
-          {#if download}Téléchargement… ({pct}%){:else if isInstalled}Installée{:else}Non installée{/if}
+          {#if download}{$_('downloading_pct', { values: { pct } })}{:else if isInstalled}{$_('status_installed')}{:else}{$_('status_not_installed')}{/if}
         </span>
       </div>
 
@@ -42,13 +45,13 @@
       {/if}
 
       <div class="region-footer">
-        <span class="meta">Taille estimée : <strong>{estimateRegionSizeMB(region).toFixed(1)} MB</strong></span>
+        <span class="meta">{$_('estimated_size')} : <strong>{estimateRegionSizeMB(region).toFixed(1)} MB</strong></span>
         {#if download}
-          <button class="action-btn cancel" onclick={() => cancelOfflineDownload(region.id)}>Annuler</button>
+          <button class="action-btn cancel" onclick={() => cancelOfflineDownload(region.id)}>{$_('cancel_btn')}</button>
         {:else if isInstalled}
-          <button class="action-btn delete" onclick={() => deleteOfflineRegion(region.id)}>🗑️ Supprimer</button>
+          <button class="action-btn delete" onclick={() => deleteOfflineRegion(region.id)}>🗑️ {$_('delete_btn')}</button>
         {:else}
-          <button class="action-btn download" onclick={() => startOfflineDownload(region.id)}>📥 Télécharger</button>
+          <button class="action-btn download" onclick={() => startOfflineDownload(region.id)}>📥 {$_('download_btn')}</button>
         {/if}
       </div>
     </div>

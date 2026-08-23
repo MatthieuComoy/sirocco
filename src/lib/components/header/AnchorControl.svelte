@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { anchor } from '../../stores/anchor';
   import AnchorModal from '../modals/AnchorModal.svelte';
 
@@ -9,8 +10,8 @@
   class="icon-btn"
   class:active={$anchor.active}
   onclick={() => (modalOpen = true)}
-  aria-label="Alarme de mouillage"
-  title="Alarme de mouillage"
+  aria-label={$_('anchor_status')}
+  title={$_('anchor_status')}
 >
   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="5" r="2.5" />

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { isAlarmTriggered, driftDistanceNm } from '../../stores/anchor';
   import { deactivateAnchor } from '../../services/anchorAlarm';
   import { stopRouteTracking } from '../../services/tracking';
@@ -10,12 +11,12 @@
 </script>
 
 {#if $isAlarmTriggered}
-  <div class="alarm-overlay" role="alertdialog" aria-label="Alarme de mouillage">
+  <div class="alarm-overlay" role="alertdialog" aria-label={$_('alarm_alert')}>
     <div class="alarm-icon">⚓</div>
-    <h1>Alarme de mouillage</h1>
-    <p>Le bateau a dérivé au-delà du rayon de sécurité de l'ancre !</p>
+    <h1>{$_('alarm_alert')}</h1>
+    <p>{$_('alarm_msg')}</p>
     <div class="distance">{$driftDistanceNm.toFixed(3)} NM</div>
-    <button class="stop-btn" onclick={stopAlarm}>Arrêter Alarme &amp; Trace</button>
+    <button class="stop-btn" onclick={stopAlarm}>{$_('clear_alarm_track')}</button>
   </div>
 {/if}
 

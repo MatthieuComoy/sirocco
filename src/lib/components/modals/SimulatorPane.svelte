@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { gpsMode, simulatorSettings } from '../../stores/gpsMode';
   import { setGpsMode, triggerSimulatorDrift } from '../../services/gpsSimulator';
   import Toggle from '../ui/Toggle.svelte';
@@ -12,17 +13,17 @@
 </script>
 
 <div class="simulator-pane">
-  <h3>Simulateur GPS</h3>
+  <h3>{$_('simulator_lbl')}</h3>
 
   <div class="row">
-    <span>{isSimulating ? 'Simulation active' : 'Simulation inactive'}</span>
-    <Toggle checked={isSimulating} label="Simulateur GPS" onchange={onToggle} />
+    <span>{isSimulating ? $_('sim_active') : $_('sim_inactive_status')}</span>
+    <Toggle checked={isSimulating} label={$_('simulator_lbl')} onchange={onToggle} />
   </div>
 
   {#if isSimulating}
     <div class="controls">
       <Slider
-        label="Vitesse"
+        label={$_('speed')}
         min={0}
         max={15}
         step={0.5}
@@ -31,7 +32,7 @@
         oninput={(v) => simulatorSettings.update((s) => ({ ...s, speedKts: v }))}
       />
       <Slider
-        label="Cap"
+        label={$_('cog')}
         min={0}
         max={359}
         step={5}
@@ -39,7 +40,7 @@
         formatValue={(v) => `${Math.round(v)}°`}
         oninput={(v) => simulatorSettings.update((s) => ({ ...s, headingDeg: v }))}
       />
-      <button class="drift-btn" onclick={triggerSimulatorDrift}>⚠️ Simuler dérive (déclencher l'alarme)</button>
+      <button class="drift-btn" onclick={triggerSimulatorDrift}>{$_('drift_simulate_btn')}</button>
     </div>
   {/if}
 </div>

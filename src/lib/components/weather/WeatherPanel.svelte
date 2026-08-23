@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { weather, tideData } from '../../stores/weather';
   import { density } from '../../stores/viewport';
   import { getWindCardinal } from '../../services/utils';
@@ -11,12 +12,12 @@
 
 <div class="weather-panel">
   <div class="location-row">
-    <span class="location-name">{$weather.locationName ?? 'Position inconnue'}</span>
-    {#if $weather.loading}<span class="spinner" aria-label="Chargement"></span>{/if}
+    <span class="location-name">{$weather.locationName ?? $_('unknown_location')}</span>
+    {#if $weather.loading}<span class="spinner" aria-label={$_('loading_lbl')}></span>{/if}
   </div>
 
   <div class="instruments" class:compact>
-    <InstrumentCard title="Vent" {compact}>
+    <InstrumentCard title={$_('weather_wind')} {compact}>
       {#if c?.windSpeedKts != null}
         <div class="primary-value">{Math.round(c.windSpeedKts)}<span class="unit">kn</span></div>
         {#if c.windDirDeg != null}
@@ -27,13 +28,13 @@
             <span>{getWindCardinal(c.windDirDeg)} ({Math.round(c.windDirDeg)}°)</span>
           </div>
         {/if}
-        {#if c.windGustsKts != null}<div class="sub-row muted">Rafales : {Math.round(c.windGustsKts)} kn</div>{/if}
+        {#if c.windGustsKts != null}<div class="sub-row muted">{$_('weather_wind_gusts')} : {Math.round(c.windGustsKts)} kn</div>{/if}
       {:else}
         <div class="primary-value muted">--</div>
       {/if}
     </InstrumentCard>
 
-    <InstrumentCard title="État de la mer" {compact}>
+    <InstrumentCard title={$_('weather_waves')} {compact}>
       {#if c?.waveHeightM != null}
         <div class="primary-value">{c.waveHeightM.toFixed(2)}<span class="unit">m</span></div>
         {#if c.waveDirDeg != null}
@@ -44,13 +45,13 @@
             <span>{getWindCardinal(c.waveDirDeg)} ({Math.round(c.waveDirDeg)}°)</span>
           </div>
         {/if}
-        {#if c.wavePeriodS != null}<div class="sub-row muted">Période : {Math.round(c.wavePeriodS)} s</div>{/if}
+        {#if c.wavePeriodS != null}<div class="sub-row muted">{$_('weather_wave_period')} : {Math.round(c.wavePeriodS)} s</div>{/if}
       {:else}
         <div class="primary-value muted">--</div>
       {/if}
     </InstrumentCard>
 
-    <InstrumentCard title="Atmosphère" {compact}>
+    <InstrumentCard title={$_('weather_atmosphere')} {compact}>
       {#if c?.tempC != null}
         <div class="primary-value">{c.tempC.toFixed(1)}<span class="unit">°C</span></div>
       {:else}
@@ -64,7 +65,7 @@
     <TideChart data={$tideData} />
   {/if}
 
-  <p class="attribution">Données météo : Open-Meteo · Géocodage : OpenStreetMap Nominatim</p>
+  <p class="attribution">{$_('weather_attribution')}</p>
 </div>
 
 <style>

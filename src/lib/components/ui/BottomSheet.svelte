@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import { _ } from 'svelte-i18n';
 
   type SheetState = 'closed' | 'half' | 'full';
 
@@ -90,7 +91,7 @@
   <div
     class="handle"
     role="slider"
-    aria-label={title ?? 'Panneau'}
+    aria-label={title ?? $_('panel_lbl')}
     aria-valuemin={0}
     aria-valuemax={100}
     aria-valuenow={Math.round(currentFraction * 100)}

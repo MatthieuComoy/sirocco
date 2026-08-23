@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { isTracking, savedTracks, type SavedTrack } from '../../stores/tracking';
   import { startRouteTracking, stopRouteTracking, clearHistory } from '../../services/tracking';
   import { trackPreviewRequest } from '../../stores/trackPreview';
@@ -12,22 +13,22 @@
 <div class="tracking-panel">
   <div class="track-controls">
     {#if $isTracking}
-      <button class="btn btn-danger" onclick={stopRouteTracking}>Arrêter la trace</button>
+      <button class="btn btn-danger" onclick={stopRouteTracking}>{$_('stop_track')}</button>
     {:else}
-      <button class="btn btn-primary" onclick={startRouteTracking}>Démarrer une trace</button>
+      <button class="btn btn-primary" onclick={startRouteTracking}>{$_('start_track')}</button>
     {/if}
   </div>
 
   <div class="history-header">
-    <h3>Traces enregistrées</h3>
+    <h3>{$_('routes_view')}</h3>
     {#if $savedTracks.length > 0}
-      <button class="clear-btn" onclick={clearHistory}>Tout effacer</button>
+      <button class="clear-btn" onclick={clearHistory}>{$_('clear_tracks')}</button>
     {/if}
   </div>
 
   <div class="history-list">
     {#if $savedTracks.length === 0}
-      <p class="empty">Aucune trace enregistrée pour l'instant.</p>
+      <p class="empty">{$_('no_tracks')}</p>
     {:else}
       {#each $savedTracks as track, index (track.date)}
         <TrackListItem {track} {index} onShowOnMap={showOnMap} />

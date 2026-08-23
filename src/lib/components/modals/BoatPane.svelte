@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { boatProfile } from '../../stores/boatProfile';
 
   let form = $state({ ...$boatProfile });
@@ -13,36 +14,36 @@
 </script>
 
 <form class="boat-pane" onsubmit={submit}>
-  <h3>Mon Bateau</h3>
+  <h3>{$_('settings_boat')}</h3>
 
   <div class="field">
-    <label for="boat-name">Nom du Bateau</label>
+    <label for="boat-name">{$_('boat_name')}</label>
     <input id="boat-name" type="text" bind:value={form.name} required />
   </div>
 
   <div class="field-row">
     <div class="field">
-      <label for="boat-length">Longueur (m)</label>
+      <label for="boat-length">{$_('boat_length')}</label>
       <input id="boat-length" type="number" step="0.1" min="1" bind:value={form.length} required />
     </div>
     <div class="field">
-      <label for="boat-width">Largeur (m)</label>
+      <label for="boat-width">{$_('boat_width')}</label>
       <input id="boat-width" type="number" step="0.1" min="0.5" bind:value={form.width} required />
     </div>
   </div>
 
   <div class="field-row">
     <div class="field">
-      <label for="boat-draft">Tirant d'eau (m)</label>
+      <label for="boat-draft">{$_('boat_draft')}</label>
       <input id="boat-draft" type="number" step="0.1" min="0.1" bind:value={form.draft} required />
     </div>
     <div class="field">
-      <label for="boat-clearance">Pied de pilote (m)</label>
+      <label for="boat-clearance">{$_('boat_clearance')}</label>
       <input id="boat-clearance" type="number" step="0.1" min="0" bind:value={form.clearance} required />
     </div>
   </div>
 
-  <button type="submit" class="save-btn">{saved ? '✓ Profil enregistré' : 'Enregistrer le Profil'}</button>
+  <button type="submit" class="save-btn">{saved ? $_('profile_saved') : $_('save_boat')}</button>
 </form>
 
 <style>

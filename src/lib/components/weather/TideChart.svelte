@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import type { TideData } from '../../services/tides';
 
   let { data }: { data: TideData } = $props();
@@ -70,7 +71,7 @@
     const hr = Math.floor(hour) % 24;
     const min = Math.round((hour % 1) * 60);
     const timeStr = `${hr.toString().padStart(2, '0')}:${min.toString().padStart(2, '0')}`;
-    const dayLabel = hour >= 24 ? 'Demain' : "Aujourd'hui";
+    const dayLabel = hour >= 24 ? $_('tomorrow_lbl') : $_('today_lbl');
 
     selector = { x, y, timeStr, dayLabel, height: closest.height, rising };
   }
@@ -93,16 +94,16 @@
 
 <div class="tide-chart">
   <div class="tide-header">
-    <span class="tide-title">Marée</span>
-    <span class="tide-badge">Marnage : {data.range.toFixed(2)}m | Coef : {data.coefficient}</span>
-    <button class="recenter-btn" onclick={centerOnNow}>Maintenant</button>
+    <span class="tide-title">{$_('tide_short_lbl')}</span>
+    <span class="tide-badge">{$_('tide_range_lbl')} : {data.range.toFixed(2)}m | {$_('tide_coef_lbl')} : {data.coefficient}</span>
+    <button class="recenter-btn" onclick={centerOnNow}>{$_('now_btn')}</button>
   </div>
 
   <div class="tide-scroll-wrapper" bind:this={scrollWrapper}>
     <svg
       bind:this={svgEl}
       role="img"
-      aria-label="Courbe de marée sur 48 heures, glisser pour lire la hauteur à une heure donnée"
+      aria-label={$_('tide_chart_aria')}
       width={SVG_WIDTH}
       height={SVG_HEIGHT}
       viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}"
@@ -120,8 +121,8 @@
         </linearGradient>
       </defs>
 
-      <text x="250" y="15" fill="var(--color-accent)" font-size="10" font-weight="700" text-anchor="middle" opacity="0.85">Aujourd'hui</text>
-      <text x="710" y="15" fill="var(--color-accent)" font-size="10" font-weight="700" text-anchor="middle" opacity="0.85">Demain</text>
+      <text x="250" y="15" fill="var(--color-accent)" font-size="10" font-weight="700" text-anchor="middle" opacity="0.85">{$_('today_lbl')}</text>
+      <text x="710" y="15" fill="var(--color-accent)" font-size="10" font-weight="700" text-anchor="middle" opacity="0.85">{$_('tomorrow_lbl')}</text>
 
       <line x1="20" y1="115" x2="940" y2="115" stroke="var(--color-border)" stroke-width="1.5" />
       <text x="20" y="127" fill="var(--color-text-muted)" font-size="7" text-anchor="middle">0h</text>
@@ -146,7 +147,7 @@
         {@const isHigh = e.type === 'high'}
         <circle cx={x} cy={y} r="4" fill={isHigh ? 'var(--color-warning)' : 'var(--color-text-muted)'} stroke="rgba(255,255,255,0.15)" stroke-width="1" />
         <text x={x} y={y + (isHigh ? -10 : 13)} fill="var(--color-text)" font-size="7.5" font-weight="600" text-anchor="middle">
-          {isHigh ? 'PM' : 'BM'}: {e.height.toFixed(2)}m ({e.timeStr})
+          {isHigh ? $_('high_tide_abbr') : $_('low_tide_abbr')}: {e.height.toFixed(2)}m ({e.timeStr})
         </text>
       {/each}
 
@@ -163,7 +164,7 @@
       <div class="tide-tooltip">
         <strong>{selector.dayLabel} {selector.timeStr}</strong> : {selector.height.toFixed(2)} m
         <span class="trend" class:rising={selector.rising}>
-          {selector.rising ? '↗ Montante' : '↘ Descendante'}
+          {selector.rising ? `↗ ${$_('tide_rising_lbl')}` : `↘ ${$_('tide_falling_lbl')}`}
         </span>
       </div>
     {/if}
@@ -172,7 +173,7 @@
   <div class="tide-schedule">
     {#each data.extremes as e (e.hour)}
       <div class="schedule-item" class:high={e.type === 'high'}>
-        <span>{e.type === 'high' ? 'Pleine mer' : 'Basse mer'} {e.isTomorrow ? '(Demain)' : '(Auj.)'}</span>
+        <span>{e.type === 'high' ? $_('high_tide_lbl') : $_('low_tide_lbl')} {e.isTomorrow ? `(${$_('tomorrow_short')})` : `(${$_('today_short')})`}</span>
         <span class="mono">{e.timeStr}</span>
         <span class="mono">{e.height.toFixed(2)} m</span>
       </div>

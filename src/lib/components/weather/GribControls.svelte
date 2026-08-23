@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { grib } from '../../stores/grib';
   import { setOverlayType } from '../../services/grib';
 
@@ -25,8 +26,8 @@
 
 <div class="grib-controls">
   <div class="segmented">
-    <button class:active={$grib.overlayType === 'wind'} onclick={() => setOverlayType('wind')}>Vent</button>
-    <button class:active={$grib.overlayType === 'temp'} onclick={() => setOverlayType('temp')}>Température</button>
+    <button class:active={$grib.overlayType === 'wind'} onclick={() => setOverlayType('wind')}>{$_('weather_wind')}</button>
+    <button class:active={$grib.overlayType === 'temp'} onclick={() => setOverlayType('temp')}>{$_('weather_temp')}</button>
   </div>
 
   <div class="legend">

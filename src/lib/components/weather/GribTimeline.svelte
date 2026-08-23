@@ -1,9 +1,10 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { grib } from '../../stores/grib';
   import { setActiveTimeStep, togglePlay } from '../../services/grib';
   import { density } from '../../stores/viewport';
 
-  const DAYS = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+  const DAYS = $derived($_('day_abbr_csv').split(','));
 
   let scrollContainer: HTMLDivElement;
 
@@ -46,7 +47,7 @@
 </script>
 
 <div class="grib-timeline">
-  <button class="play-btn" onclick={togglePlay} aria-label={$grib.isPlaying ? 'Pause' : 'Lecture'}>
+  <button class="play-btn" onclick={togglePlay} aria-label={$grib.isPlaying ? $_('pause_lbl') : $_('play_lbl')}>
     {#if $grib.isPlaying}
       <svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor" /></svg>
     {:else}

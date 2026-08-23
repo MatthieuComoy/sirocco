@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { telemetry } from '../../stores/telemetry';
   import { boatProfile } from '../../stores/boatProfile';
   import { navigationSession, navigationDurationStr } from '../../stores/navigationSession';
@@ -28,13 +29,13 @@
   <div class="hud-metrics">
     <HudMetric label="SOG" value={$telemetry.speedKts.toFixed(1)} unit="kn" />
     <HudMetric label="COG" value={cogStr} unit="°" />
-    <HudMetric label="Sondeur" value={depth.toFixed(1)} unit="m" />
+    <HudMetric label={$_('depth')} value={depth.toFixed(1)} unit="m" />
 
     {#if $density !== 'mobile' || showDetails}
-      <HudMetric label="Distance" value={distanceNm.toFixed(2)} unit="NM" />
-      <HudMetric label="Durée" value={$navigationDurationStr} />
+      <HudMetric label={$_('nav_distance')} value={distanceNm.toFixed(2)} unit="NM" />
+      <HudMetric label={$_('nav_duration')} value={$navigationDurationStr} />
       <div class="metric wind-metric">
-        <span class="label">Vent</span>
+        <span class="label">{$_('wind')}</span>
         <div class="wind-value">
           <svg viewBox="0 0 24 24" width="16" height="16" style="transform: rotate({relativeWindDeg}deg)">
             <path d="M12 2L5 21l7-4 7 4z" fill="var(--color-accent)" />
@@ -45,7 +46,7 @@
     {/if}
 
     {#if $density === 'mobile'}
-      <button class="details-toggle" onclick={() => (showDetails = !showDetails)} aria-label="Plus de mesures">
+      <button class="details-toggle" onclick={() => (showDetails = !showDetails)} aria-label={$_('details_toggle_label')}>
         <svg viewBox="0 0 24 24" width="16" height="16" style="transform: rotate({showDetails ? 180 : 0}deg)">
           <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
@@ -53,7 +54,7 @@
     {/if}
   </div>
 
-  <button class="stop-btn" onclick={() => switchAppMode('consultation')}>Stop</button>
+  <button class="stop-btn" onclick={() => switchAppMode('consultation')}>{$_('stop_navigation')}</button>
 </div>
 
 <style>

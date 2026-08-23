@@ -28,8 +28,10 @@
   import WarningsLayer from './lib/map/layers/WarningsLayer.svelte';
   import { loadAllWarnings } from './lib/services/pingWarnings';
   import SettingsControl from './lib/components/header/SettingsControl.svelte';
+  import ConnectivityBadge from './lib/components/header/ConnectivityBadge.svelte';
   import { theme } from './lib/stores/theme';
   import { initSimOptionsSync } from './lib/services/gpsSimulator';
+  import { initConnectivity } from './lib/services/connectivity';
 
   let sidebarOpen = $state(true);
   let sheetValue = $state<'closed' | 'half' | 'full'>('closed');
@@ -42,6 +44,7 @@
     initPositionTracking();
     initAnchorAlarm();
     initSimOptionsSync();
+    initConnectivity();
 
     // Lazy-load overlays/heavy APIs to prioritize the base map render first —
     // same stagger as the legacy app (js/app.js DOMContentLoaded: 150ms then
@@ -83,6 +86,7 @@
       <ModeSwitcher />
     {/snippet}
     {#snippet actions()}
+      <ConnectivityBadge />
       <AnchorControl />
       <SettingsControl />
     {/snippet}

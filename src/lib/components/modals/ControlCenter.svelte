@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import Modal from '../ui/Modal.svelte';
   import GeneralPane from './GeneralPane.svelte';
   import BoatPane from './BoatPane.svelte';
@@ -11,11 +12,11 @@
   type TabId = 'general' | 'boat' | 'simulator' | 'offline';
   let active = $state<TabId>('general');
 
-  const TABS: { id: TabId; label: string; icon: string }[] = [
-    { id: 'general', label: 'Général', icon: '⚙️' },
-    { id: 'boat', label: 'Mon Bateau', icon: '⛵' },
-    { id: 'simulator', label: 'Simulateur GPS', icon: '🎮' },
-    { id: 'offline', label: 'Cartes Hors-ligne', icon: '🗺️' },
+  const TABS: { id: TabId; labelKey: string; icon: string }[] = [
+    { id: 'general', labelKey: 'settings_general', icon: '⚙️' },
+    { id: 'boat', labelKey: 'settings_boat', icon: '⛵' },
+    { id: 'simulator', labelKey: 'settings_simulator', icon: '🎮' },
+    { id: 'offline', labelKey: 'settings_offline_maps', icon: '🗺️' },
   ];
 
   // Disabling simulation options while that tab is open bounces you back to
@@ -25,14 +26,14 @@
   });
 </script>
 
-<Modal bind:open title="Centre de Contrôle" size="lg" noBodyPadding>
+<Modal bind:open title={$_('control_center')} size="lg" noBodyPadding>
   <div class="control-center">
     <div class="tabs-sidebar">
       {#each TABS as tab (tab.id)}
         {#if tab.id !== 'simulator' || $simOptionsEnabled}
           <button class="tab-btn" class:active={active === tab.id} onclick={() => (active = tab.id)}>
             <span>{tab.icon}</span>
-            <span>{tab.label}</span>
+            <span>{$_(tab.labelKey)}</span>
           </button>
         {/if}
       {/each}

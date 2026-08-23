@@ -1,8 +1,11 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { theme, toggleTheme } from '../../stores/theme';
   import { simOptionsEnabled } from '../../stores/settings';
   import Toggle from '../ui/Toggle.svelte';
   import { playAlarmSound, stopAlarmSound } from '../../services/anchorAlarm';
+  import { LANGS, LANG_NAMES, setLanguage, type Lang } from '../../i18n';
+  import { locale } from 'svelte-i18n';
 
   let sirenTesting = $state(false);
 
@@ -11,30 +14,43 @@
     if (sirenTesting) playAlarmSound();
     else stopAlarmSound();
   }
+
+  function onLangChange(e: Event) {
+    setLanguage((e.target as HTMLSelectElement).value as Lang);
+  }
 </script>
 
 <div class="general-pane">
-  <h3>Général</h3>
+  <h3>{$_('settings_general')}</h3>
 
   <div class="field">
-    <span class="field-label">Thème</span>
+    <span class="field-label">{$_('lang_lbl')}</span>
+    <select class="select" value={$locale} onchange={onLangChange}>
+      {#each LANGS as lang (lang)}
+        <option value={lang}>{LANG_NAMES[lang]}</option>
+      {/each}
+    </select>
+  </div>
+
+  <div class="field">
+    <span class="field-label">{$_('theme_lbl')}</span>
     <button class="btn" onclick={toggleTheme}>
-      🌓 Passer en thème {$theme === 'dark' ? 'clair' : 'sombre'}
+      {$theme === 'dark' ? $_('theme_toggle_light') : $_('theme_toggle_dark')}
     </button>
   </div>
 
   <div class="field">
-    <span class="field-label">Sirène</span>
+    <span class="field-label">{$_('siren_test')}</span>
     <button class="btn" class:danger={sirenTesting} onclick={toggleSirenTest}>
-      {sirenTesting ? '⏹ Arrêter le test' : '🔊 Tester la sirène'}
+      {sirenTesting ? $_('stop_siren_test') : `🔊 ${$_('siren_test')}`}
     </button>
   </div>
 
   <div class="row">
-    <span>Options de simulation</span>
-    <Toggle checked={$simOptionsEnabled} label="Options de simulation" onchange={(v) => simOptionsEnabled.set(v)} />
+    <span>{$_('settings_enable_simulation')}</span>
+    <Toggle checked={$simOptionsEnabled} label={$_('settings_enable_simulation')} onchange={(v) => simOptionsEnabled.set(v)} />
   </div>
-  <p class="hint">Affiche l'onglet Simulateur GPS pour tester l'application sans être en mer.</p>
+  <p class="hint">{$_('sim_options_hint')}</p>
 </div>
 
 <style>
@@ -80,6 +96,18 @@
     background: var(--color-danger-bg);
     color: var(--color-danger);
     border-color: var(--color-danger);
+  }
+
+  .select {
+    width: 100%;
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--surface-2);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    cursor: pointer;
   }
 
   .row {

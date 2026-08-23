@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import Modal from '../ui/Modal.svelte';
   import Toggle from '../ui/Toggle.svelte';
   import Slider from '../ui/Slider.svelte';
@@ -13,18 +14,18 @@
   }
 </script>
 
-<Modal bind:open title="Alarme de mouillage">
+<Modal bind:open title={$_('anchor_status')}>
   <div class="anchor-modal">
     <div class="row">
       <div class="status">
         <span class="dot" class:active={$anchor.active}></span>
-        <span>{$anchor.active ? 'Active' : 'Inactive'}</span>
+        <span>{$anchor.active ? $_('active') : $_('inactive')}</span>
       </div>
-      <Toggle checked={$anchor.active} label="Activer l'alarme de mouillage" onchange={onToggle} />
+      <Toggle checked={$anchor.active} label={$_('anchor_status')} onchange={onToggle} />
     </div>
 
     <Slider
-      label="Rayon"
+      label={$_('radius')}
       min={0.005}
       max={0.2}
       step={0.005}
@@ -35,20 +36,20 @@
 
     <div class="readout">
       <div class="readout-row">
-        <span>Ancre — Lat</span>
+        <span>{$_('anchor_lat_lbl')}</span>
         <span class="mono">{$anchor.latLng ? $anchor.latLng.lat.toFixed(5) : '--'}</span>
       </div>
       <div class="readout-row">
-        <span>Ancre — Lon</span>
+        <span>{$_('anchor_lon_lbl')}</span>
         <span class="mono">{$anchor.latLng ? $anchor.latLng.lon.toFixed(5) : '--'}</span>
       </div>
       <div class="readout-row strong">
-        <span>Distance de dérive</span>
+        <span>{$_('drift_dist')}</span>
         <span class="mono danger">{$anchor.active ? `${$driftDistanceNm.toFixed(3)} NM` : '--'}</span>
       </div>
     </div>
 
-    <p class="hint">💡 Lorsque l'alarme est activée, vous pouvez faire glisser le repère rouge de l'ancre sur la carte pour affiner son positionnement.</p>
+    <p class="hint">💡 {$_('anchor_hint')}</p>
   </div>
 </Modal>
 

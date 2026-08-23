@@ -1,23 +1,24 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
   import { appMode, type AppMode } from '../../stores/appMode';
   import { switchAppMode } from '../../services/appModeController';
   import { density } from '../../stores/viewport';
   import { isTracking } from '../../stores/tracking';
 
-  const MODES: { id: AppMode; label: string; icon: string }[] = [
+  const MODES: { id: AppMode; labelKey: string; icon: string }[] = [
     {
       id: 'consultation',
-      label: 'Consultation',
+      labelKey: 'mode_consultation',
       icon: 'M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',
     },
     {
       id: 'navigation',
-      label: 'Navigation',
+      labelKey: 'mode_navigation',
       icon: 'M12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z',
     },
     {
       id: 'weather',
-      label: 'Météo',
+      labelKey: 'mode_weather',
       icon: 'M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z',
     },
   ];
@@ -39,7 +40,7 @@
           <path d={m.icon} fill="currentColor" />
         {/if}
       </svg>
-      {#if $density !== 'mobile'}<span>{m.label}</span>{/if}
+      {#if $density !== 'mobile'}<span>{$_(m.labelKey)}</span>{/if}
       {#if m.id === 'navigation' && $isTracking}
         <span class="rec-indicator">
           <span class="rec-dot"></span>
