@@ -2,11 +2,14 @@
   import L from 'leaflet';
   import 'leaflet/dist/leaflet.css';
   import { onMount, onDestroy, setContext, type Snippet } from 'svelte';
-  import { writable } from 'svelte/store';
+  import { writable, get } from 'svelte/store';
   import { MAP_CONTEXT_KEY, type MapStore } from './context';
+  import { telemetry } from '../stores/telemetry';
 
-  // Toulon — same default the legacy app used (js/state.js: currentLat/currentLon).
-  const DEFAULT_CENTER: L.LatLngExpression = [43.1167, 5.9333];
+  // Read once at mount rather than hardcoding a separate copy of the
+  // fallback coordinates — a real GPS fix that lands before the map exists
+  // (or a future change to the telemetry default) shouldn't require keeping
+  // two coordinate pairs in sync.
   const DEFAULT_ZOOM = 13;
 
   let { children }: { children?: Snippet } = $props();
@@ -18,8 +21,9 @@
   let resizeObserver: ResizeObserver | undefined;
 
   onMount(() => {
+    const t = get(telemetry);
     const map = L.map(container, {
-      center: DEFAULT_CENTER,
+      center: [t.lat, t.lon],
       zoom: DEFAULT_ZOOM,
       zoomControl: true,
       // Canvas rendering scales far better than SVG once dozens of warning/danger

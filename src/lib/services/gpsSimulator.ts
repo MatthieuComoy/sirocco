@@ -41,10 +41,23 @@ function stopSimLoop() {
   }
 }
 
+// Falling back to the moving demo simulator on GPS failure would make the
+// app feel permanently stuck in "demo mode" for anyone who simply denies
+// the location prompt or has no GPS — that's now an opt-in fallback, only
+// taken if the user has actually turned on simulation options. Otherwise
+// the map just stays put at the last/default position (see telemetry.ts).
+function handleRealGpsUnavailable(message: string) {
+  if (get(simOptionsEnabled)) {
+    alert(`${message} Switched to Simulation Mode.`);
+    setGpsMode('simulated');
+  } else {
+    console.warn(message);
+  }
+}
+
 function startRealGPS() {
   if (!('geolocation' in navigator)) {
-    alert('Geolocation API not supported. Switched to Simulation Mode.');
-    setGpsMode('simulated');
+    handleRealGpsUnavailable('Geolocation API not supported.');
     return;
   }
 
@@ -63,8 +76,7 @@ function startRealGPS() {
     },
     (error) => {
       console.error('GPS Watch error: ', error);
-      alert('GPS Signal failed. Switched to Simulation Mode.');
-      setGpsMode('simulated');
+      handleRealGpsUnavailable('GPS Signal failed.');
     },
     { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
   );

@@ -19,7 +19,7 @@ let started = false;
 export function initPositionTracking() {
   if (started) return;
   started = true;
-  // Legacy default (js/state.js: isSimulating = true).
+  // Starts whichever source gpsMode currently mirrors — 'real' by default.
   setGpsMode(get(gpsMode));
 
   telemetry.subscribe((t) => {

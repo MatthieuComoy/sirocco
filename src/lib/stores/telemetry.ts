@@ -8,10 +8,12 @@ export interface Telemetry {
   windDirectionDeg: number | null;
 }
 
-// Toulon — same default the legacy app used (js/state.js: currentLat/currentLon).
+// Îles Glénan — sensible fallback shown until/unless real GPS is available
+// (the app defaults to following the user's actual position; this is just
+// where the map centers before that first fix arrives, or if it never does).
 export const telemetry = writable<Telemetry>({
-  lat: 43.1167,
-  lon: 5.9333,
+  lat: 47.7167,
+  lon: -4.0167,
   speedKts: 0,
   headingDeg: 0,
   windDirectionDeg: null,
