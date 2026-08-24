@@ -5,13 +5,11 @@
   import { navigationSession, navigationDurationStr } from '../../stores/navigationSession';
   import { weather } from '../../stores/weather';
   import { density } from '../../stores/viewport';
-  import { getSimulatedDepth } from '../../services/utils';
   import { switchAppMode } from '../../services/appModeController';
   import HudMetric from './HudMetric.svelte';
 
   let showDetails = $state(false);
 
-  const depth = $derived(getSimulatedDepth($telemetry.lat, $telemetry.lon));
   const distanceNm = $derived($navigationSession.distanceMeters / 1852);
   const cogStr = $derived(Math.round($telemetry.headingDeg).toString().padStart(3, '0'));
 
@@ -29,7 +27,6 @@
   <div class="hud-metrics">
     <HudMetric label="SOG" value={$telemetry.speedKts.toFixed(1)} unit="kn" />
     <HudMetric label="COG" value={cogStr} unit="°" />
-    <HudMetric label={$_('depth')} value={depth.toFixed(1)} unit="m" />
 
     {#if $density !== 'mobile' || showDetails}
       <HudMetric label={$_('nav_distance')} value={distanceNm.toFixed(2)} unit="NM" />
@@ -60,7 +57,13 @@
 <style>
   .hud {
     display: flex;
-    align-items: center;
+    /* flex-start, not center: .hud-metrics wraps to a 2nd row once its
+       content doesn't fit one line (e.g. a real wind reading widens it past
+       the "2kn" placeholder width) — centering against a sibling that can
+       silently grow taller made the boat name and stop button visually
+       drift into the middle of the wrapped block instead of staying
+       pinned to the top of the bar. */
+    align-items: flex-start;
     gap: var(--space-4);
     background: var(--surface-overlay);
     backdrop-filter: var(--glass-blur);
