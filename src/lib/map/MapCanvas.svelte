@@ -75,4 +75,33 @@
     background: var(--surface-2);
     color: var(--color-accent);
   }
+
+  .map-canvas :global(.leaflet-bar) {
+    border: 1px solid var(--color-border) !important;
+    box-shadow: 0 4px 15px var(--color-shadow) !important;
+  }
+
+  .map-canvas :global(.leaflet-container) {
+    background: var(--color-bg);
+  }
+
+  /* Warning/danger popups (bound in WarningsLayer.svelte etc.) inherit
+     var(--color-text) for their own content, which is near-white in dark
+     theme — Leaflet's default white popup chrome left that text illegible
+     until it was themed here too. */
+  .map-canvas :global(.leaflet-popup-content-wrapper) {
+    background: var(--surface-opaque);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 25px var(--color-shadow);
+  }
+
+  .map-canvas :global(.leaflet-popup-tip) {
+    background: var(--surface-opaque);
+  }
+
+  .map-canvas :global(.leaflet-popup-close-button) {
+    color: var(--color-text-muted) !important;
+  }
 </style>
