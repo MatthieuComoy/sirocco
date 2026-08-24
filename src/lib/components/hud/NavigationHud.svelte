@@ -1,54 +1,25 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n';
   import { telemetry } from '../../stores/telemetry';
-  import { boatProfile } from '../../stores/boatProfile';
   import { navigationSession, navigationDurationStr } from '../../stores/navigationSession';
-  import { weather } from '../../stores/weather';
-  import { density } from '../../stores/viewport';
   import { switchAppMode } from '../../services/appModeController';
   import HudMetric from './HudMetric.svelte';
 
-  let showDetails = $state(false);
-
   const distanceNm = $derived($navigationSession.distanceMeters / 1852);
   const cogStr = $derived(Math.round($telemetry.headingDeg).toString().padStart(3, '0'));
-
-  // Legacy hardcoded "12 kts" / 290° here permanently (weather was only ever
-  // fetched from the weather panel/mode, never on nav start) — now that a
-  // weather fetch happens on boot (App.svelte), we can show the real reading.
-  const windSpeedKts = $derived($weather.conditions?.windSpeedKts ?? null);
-  const windFromDeg = $derived($telemetry.windDirectionDeg ?? null);
-  const relativeWindDeg = $derived((windFromDeg ?? 0) - $telemetry.headingDeg);
 </script>
 
 <div class="hud">
-  <div class="hud-boat-name">{$boatProfile.name}</div>
+  <div class="duration-primary">{$navigationDurationStr}</div>
 
-  <div class="hud-metrics">
+  <div class="hud-row">
     <HudMetric label="SOG" value={$telemetry.speedKts.toFixed(1)} unit="kn" />
     <HudMetric label="COG" value={cogStr} unit="°" />
+  </div>
 
-    {#if $density !== 'mobile' || showDetails}
-      <HudMetric label={$_('nav_distance')} value={distanceNm.toFixed(2)} unit="NM" />
-      <HudMetric label={$_('nav_duration')} value={$navigationDurationStr} />
-      <div class="metric wind-metric">
-        <span class="label">{$_('wind')}</span>
-        <div class="wind-value">
-          <svg viewBox="0 0 24 24" width="16" height="16" style="transform: rotate({relativeWindDeg}deg)">
-            <path d="M12 2L5 21l7-4 7 4z" fill="var(--color-accent)" />
-          </svg>
-          <span class="value">{windSpeedKts != null ? Math.round(windSpeedKts) : '--'}<span class="unit">kn</span></span>
-        </div>
-      </div>
-    {/if}
-
-    {#if $density === 'mobile'}
-      <button class="details-toggle" onclick={() => (showDetails = !showDetails)} aria-label={$_('details_toggle_label')}>
-        <svg viewBox="0 0 24 24" width="16" height="16" style="transform: rotate({showDetails ? 180 : 0}deg)">
-          <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </button>
-    {/if}
+  <div class="hud-row">
+    <HudMetric label={$_('nav_distance')} value={distanceNm.toFixed(2)} unit="NM" />
+    <HudMetric label={$_('nav_duration')} value={$navigationDurationStr} />
   </div>
 
   <button class="stop-btn" onclick={() => switchAppMode('consultation')}>{$_('stop_navigation')}</button>
@@ -57,82 +28,31 @@
 <style>
   .hud {
     display: flex;
-    /* flex-start, not center: .hud-metrics wraps to a 2nd row once its
-       content doesn't fit one line (e.g. a real wind reading widens it past
-       the "2kn" placeholder width) — centering against a sibling that can
-       silently grow taller made the boat name and stop button visually
-       drift into the middle of the wrapped block instead of staying
-       pinned to the top of the bar. */
-    align-items: flex-start;
-    gap: var(--space-4);
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+    width: 14rem;
     background: var(--surface-overlay);
     backdrop-filter: var(--glass-blur);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-3) var(--space-4);
     box-shadow: 0 4px 20px var(--color-shadow);
     z-index: 700;
     max-width: calc(100vw - 2 * var(--space-3));
   }
 
-  .hud-boat-name {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-accent);
-    padding-right: var(--space-2);
-    border-right: 1px solid var(--color-border);
-    white-space: nowrap;
-  }
-
-  .hud-metrics {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
-    flex-wrap: wrap;
-  }
-
-  .wind-metric {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.1rem;
-  }
-
-  .wind-metric .label {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--color-text-muted);
-  }
-
-  .wind-value {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  .wind-value .value {
+  .duration-primary {
+    align-self: center;
     font-family: var(--font-mono);
-    font-size: var(--text-lg);
-    font-weight: 600;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-text);
   }
 
-  .wind-value .unit {
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-  }
-
-  .details-toggle {
+  .hud-row {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.75rem;
-    height: 1.75rem;
-    border: none;
-    border-radius: var(--radius-md);
-    background: var(--surface-2);
-    color: var(--color-text-muted);
-    cursor: pointer;
+    justify-content: space-around;
   }
 
   .stop-btn {
@@ -142,31 +62,7 @@
     color: var(--color-danger);
     font-weight: 600;
     font-size: var(--text-sm);
-    padding: 0.45rem 0.9rem;
+    padding: 0.5rem 0.9rem;
     cursor: pointer;
-    white-space: nowrap;
-  }
-
-  @media (max-width: 639.98px) {
-    .hud {
-      flex-direction: column;
-      align-items: stretch;
-      gap: var(--space-2);
-      padding: var(--space-2) var(--space-3);
-    }
-
-    .hud-metrics {
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      overflow-x: auto;
-    }
-
-    .stop-btn {
-      width: 100%;
-    }
-
-    .hud-boat-name {
-      display: none;
-    }
   }
 </style>
