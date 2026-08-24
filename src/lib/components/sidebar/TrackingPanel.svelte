@@ -57,7 +57,7 @@
 
   .btn-primary {
     background: var(--color-accent);
-    color: var(--slate-950, #0b0f19);
+    color: var(--slate-950);
   }
 
   .btn-danger {

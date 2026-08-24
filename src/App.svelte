@@ -108,7 +108,9 @@
         <TrackPreviewLayer />
         <GribOverlay />
         <WeatherMapEffects />
-        <WarningsLayer />
+        {#if $appMode !== 'weather'}
+          <WarningsLayer />
+        {/if}
       </MapCanvas>
 
       <MapOverlays />

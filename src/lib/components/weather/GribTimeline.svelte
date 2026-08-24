@@ -101,7 +101,7 @@
     border: none;
     border-radius: 50%;
     background: var(--color-accent);
-    color: var(--slate-950, #0b0f19);
+    color: var(--slate-950);
     cursor: pointer;
   }
 
@@ -154,7 +154,7 @@
 
   .hour-tick.active {
     background: var(--color-accent);
-    color: var(--slate-950, #0b0f19);
+    color: var(--slate-950);
     font-weight: 700;
   }
 </style>

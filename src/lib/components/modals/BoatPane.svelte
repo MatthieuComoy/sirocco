@@ -94,7 +94,7 @@
     border: none;
     border-radius: var(--radius-lg);
     background: var(--color-accent);
-    color: var(--slate-950, #0b0f19);
+    color: var(--slate-950);
     font-weight: 600;
     font-size: var(--text-sm);
     padding: var(--space-3);

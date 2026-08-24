@@ -155,6 +155,7 @@
     .hud-metrics {
       flex-wrap: nowrap;
       justify-content: space-between;
+      overflow-x: auto;
     }
 
     .stop-btn {

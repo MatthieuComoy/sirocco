@@ -18,7 +18,10 @@ i18nReady.then(start).catch((err) => {
   start();
 });
 
-if ('serviceWorker' in navigator) {
+// /sw.js only exists in a production build (vite-plugin-pwa's injectManifest
+// output) — registering it under `vite dev` 404s into index.html and fails
+// with an "unsupported MIME type" error.
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').catch((err) => {
       console.error('Service worker registration failed', err);

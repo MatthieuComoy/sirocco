@@ -49,7 +49,7 @@
     width: 1.25rem;
     height: 1.25rem;
     border-radius: 50%;
-    background: var(--slate-50, #f8fafc);
+    background: var(--slate-50);
     box-shadow: 0 1px 3px var(--color-shadow);
     transition: transform var(--dur-base) var(--ease-spring);
   }
