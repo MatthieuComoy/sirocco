@@ -124,5 +124,7 @@
   "storage_unavailable": "Indisponible",
   "downloading_pct": "Téléchargement… ({pct}%)",
   "day_abbr_csv": "Dim,Lun,Mar,Mer,Jeu,Ven,Sam",
-  "active_count_lbl": "actives"
+  "active_count_lbl": "actives",
+  "speed_short": "Vitesse",
+  "cog_short": "Cap"
 }
