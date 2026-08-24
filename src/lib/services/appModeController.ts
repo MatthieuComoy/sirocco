@@ -4,7 +4,7 @@ import { telemetry } from '../stores/telemetry';
 import { startNavigationSession, stopNavigationSession } from '../stores/navigationSession';
 import { autoCenter } from '../stores/autoCenter';
 import { dangerWarning } from '../stores/dangerWarning';
-import { startRouteTracking } from './tracking';
+import { startRouteTracking, stopRouteTracking } from './tracking';
 import { fetchWeatherAndTides } from './weather';
 
 /** Single entry point for changing app mode — centralizes the cross-store
@@ -23,6 +23,7 @@ export function switchAppMode(mode: AppMode) {
     startRouteTracking();
   } else if (previous === 'navigation') {
     stopNavigationSession();
+    stopRouteTracking();
     dangerWarning.set(null);
   }
 
