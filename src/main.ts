@@ -5,10 +5,17 @@ import App from './App.svelte';
 
 let app: ReturnType<typeof mount>;
 
-i18nReady.then(() => {
+function start() {
   app = mount(App, {
     target: document.getElementById('app')!,
   });
+}
+
+// Don't let a failed/stalled locale fetch (flaky network, ad-blocker, CDN
+// hiccup) leave the app permanently unmounted — fall back and start anyway.
+i18nReady.then(start).catch((err) => {
+  console.error('i18n init failed, starting without it', err);
+  start();
 });
 
 if ('serviceWorker' in navigator) {
