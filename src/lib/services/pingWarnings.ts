@@ -85,6 +85,10 @@ function parseGmlCoordinates(coordStr: string | undefined): [number, number][] {
   return coords;
 }
 
+function todayIsoDate(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
 function getElements(parent: Element | Document, localName: string): Element[] {
   let elms = parent.getElementsByTagName('S124:' + localName);
   if (elms.length === 0) elms = parent.getElementsByTagName(localName);
@@ -230,6 +234,14 @@ function parseSeriesXml(xmlDoc: Document, seriesFallbackName: string, seriesType
 
     if (preamble?.hazardTypeGeneral === 'IN_FORCE_BULLETIN') return;
 
+    const dateRangeEl = getElements(part, 'fixedDateRange')[0];
+    const dateEndEl = dateRangeEl ? getElements(dateRangeEl, 'dateEnd')[0] : undefined;
+    const dateEnd = dateEndEl ? getElementValue(dateEndEl, 'date') || null : null;
+    // Local snapshot data can go stale between downloads — a warning whose
+    // dateEnd has already passed is no longer in force and shouldn't be
+    // shown as if it were (open-ended notices with no dateEnd are kept).
+    if (dateEnd && dateEnd < todayIsoDate()) return;
+
     const warnInfo = getElements(part, 'warningInformation')[0];
     const hazardTypeDetails = warnInfo ? getElementValue(warnInfo, 'warningHazardTypeDetails') : '';
     const information = warnInfo ? getElementValue(warnInfo, 'information') : getElementValue(part, 'information');
@@ -254,7 +266,7 @@ function parseSeriesXml(xmlDoc: Document, seriesFallbackName: string, seriesType
       geometry = determineGeometry(parseCoordsFromText(information), information);
     }
 
-    out.push({ gmlId, preamble, hazardTypeDetails, information, geometry, visible: true, type: seriesType });
+    out.push({ gmlId, preamble, hazardTypeDetails, information, geometry, visible: true, type: seriesType, dateEnd });
   });
 
   return out;
@@ -311,6 +323,7 @@ function parseNgaWarning(ngaObj: NgaWarningRaw): Warning {
     information: text,
     geometry,
     visible: true,
+    dateEnd: null,
   };
 }
 
@@ -405,6 +418,12 @@ export function buildWarningPopupHtml(warn: Warning, emoji: string, headerColor:
     formattedDate = `${day}${hour}${min}z UTC ${months[pubDate.getUTCMonth()]} ${pubDate.getUTCFullYear()}`;
   }
 
+  let validityLine = '';
+  if (warn.dateEnd) {
+    const [y, m, d] = warn.dateEnd.split('-');
+    validityLine = `<div style="font-size: 0.7rem; color: var(--color-warning); margin-top: 0.3rem;">⏳ En vigueur jusqu'au ${d}/${m}/${y}</div>`;
+  }
+
   return `
     <div style="font-family: var(--font-sans), sans-serif; line-height: 1.45; color: var(--color-text); font-size: 0.8rem; width: 100%;">
       <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
@@ -415,6 +434,7 @@ export function buildWarningPopupHtml(warn: Warning, emoji: string, headerColor:
       <div style="font-family: var(--font-mono), monospace; font-size: 0.78rem; font-weight: 700; color: ${headerColor}; display: flex; flex-direction: column; gap: 0.15rem; margin-bottom: 0.4rem;">
         <div>${warningNum}</div>
         <div style="color: var(--color-text-muted); font-size: 0.72rem; font-weight: 500;">${formattedDate}</div>
+        ${validityLine}
       </div>
       <hr style="margin: 6px 0; border: none; border-top: 1px solid var(--color-border); opacity: 0.4;">
       <div style="font-family: var(--font-mono), monospace; font-size: 0.75rem; white-space: pre-wrap; word-break: break-word; line-height: 1.4; max-height: 220px; overflow-y: auto; margin: 6px 0; padding-right: 4px;">${warn.information}</div>

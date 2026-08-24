@@ -25,6 +25,10 @@ export interface Warning {
   information: string;
   geometry: WarningGeometry | null;
   visible: boolean;
+  /** ISO date (YYYY-MM-DD) the warning stops being in force, or null for an
+   *  open-ended notice. Warnings past this date are filtered out at load
+   *  time rather than kept in the list (see pingWarnings.ts::parseSeriesXml). */
+  dateEnd: string | null;
 }
 
 export interface WarningsFilter {
