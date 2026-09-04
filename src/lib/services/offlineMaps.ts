@@ -19,64 +19,68 @@ export const OFFLINE_REGIONS: OfflineRegion[] = [
   {
     id: 'europe',
     name: 'Toute l’Europe (Vue générale)',
-    desc: 'Idéal pour la navigation générale. Zoom 4 à 8 (grandes échelles).',
+    desc: 'Idéal pour la navigation générale. Zoom 4 à 10 (grandes échelles).',
     bounds: [{ minLat: 34.0, maxLat: 70.0, minLng: -25.0, maxLng: 35.0 }],
     minZoom: 4,
-    maxZoom: 8,
+    maxZoom: 10,
   },
   {
     id: 'france',
     name: 'Côtes de France',
-    desc: 'Manche, Atlantique, Méditerranée & Corse. Zoom 5 à 10.',
+    desc: 'Manche, Atlantique, Méditerranée & Corse. Zoom 5 à 12.',
     bounds: [
       { minLat: 43.0, maxLat: 51.2, minLng: -6.0, maxLng: 3.0 },
       { minLat: 41.3, maxLat: 44.0, minLng: 2.5, maxLng: 7.8 },
       { minLat: 41.3, maxLat: 43.1, minLng: 8.5, maxLng: 9.6 },
     ],
     minZoom: 5,
-    maxZoom: 10,
+    maxZoom: 12,
   },
   {
     id: 'uk_ireland',
     name: 'Côtes R.-U. & Irlande',
-    desc: 'Angleterre, Écosse, Pays de Galles & Irlande. Zoom 5 à 10.',
+    desc: 'Angleterre, Écosse, Pays de Galles & Irlande. Zoom 5 à 12.',
     bounds: [{ minLat: 49.8, maxLat: 61.0, minLng: -11.0, maxLng: 2.0 }],
     minZoom: 5,
-    maxZoom: 10,
+    maxZoom: 12,
   },
   {
     id: 'spain_portugal',
     name: 'Côtes Espagne & Portugal',
-    desc: 'Péninsule Ibérique et Îles Baléares. Zoom 5 à 10.',
+    desc: 'Péninsule Ibérique et Îles Baléares. Zoom 5 à 12.',
     bounds: [{ minLat: 35.8, maxLat: 44.0, minLng: -10.0, maxLng: 4.5 }],
     minZoom: 5,
-    maxZoom: 10,
+    maxZoom: 12,
   },
   {
     id: 'italy',
     name: 'Côtes d’Italie',
-    desc: 'Italie continentale, Sicile et Sardaigne. Zoom 5 à 10.',
+    desc: 'Italie continentale, Sicile et Sardaigne. Zoom 5 à 12.',
     bounds: [{ minLat: 35.2, maxLat: 45.8, minLng: 6.5, maxLng: 19.0 }],
     minZoom: 5,
-    maxZoom: 10,
+    maxZoom: 12,
   },
   {
     id: 'greece',
     name: 'Côtes de Grèce & Égée',
-    desc: 'Mer Égée, mer Ionienne, Crète et Cyclades. Zoom 5 à 10.',
+    desc: 'Mer Égée, mer Ionienne, Crète et Cyclades. Zoom 5 à 13.',
     bounds: [{ minLat: 34.5, maxLat: 42.0, minLng: 19.0, maxLng: 28.5 }],
     minZoom: 5,
-    maxZoom: 10,
+    maxZoom: 13,
   },
   {
     id: 'north_sea_baltic',
     name: 'Mer du Nord & Baltique (Sud)',
-    desc: 'Belgique, Pays-Bas, Allemagne et Danemark. Zoom 5 à 10.',
+    desc: 'Belgique, Pays-Bas, Allemagne et Danemark. Zoom 5 à 12.',
     bounds: [{ minLat: 53.0, maxLat: 58.0, minLng: 2.5, maxLng: 15.0 }],
     minZoom: 5,
-    maxZoom: 10,
+    maxZoom: 12,
   },
 ];
+
+// Each region's maxZoom above is picked so estimateRegionSizeMB() stays
+// comfortably under a 3GB-per-pack budget (checked with ~20% headroom,
+// since the 18KB/tile figure is an average and real tiles vary in size).
 
 const CACHE_NAME = 'sirroco-offline-tiles-v1';
 
@@ -116,6 +120,30 @@ export function generateTileUrlsForRegion(region: OfflineRegion): string[] {
 
 export function estimateRegionSizeMB(region: OfflineRegion): number {
   return (generateTileUrlsForRegion(region).length * 18) / 1024; // ~18KB/tile average
+}
+
+function isPointInRegion(lat: number, lng: number, region: OfflineRegion): boolean {
+  return region.bounds.some(
+    (b) => lat >= b.minLat && lat <= b.maxLat && lng >= b.minLng && lng <= b.maxLng
+  );
+}
+
+/**
+ * Highest zoom level actually cached for a given position, based on the
+ * offline packs currently installed there — or null if nothing covers it.
+ * Used to cap the live map zoom so users can't zoom into blank/black tiles
+ * while offline.
+ */
+export function getInstalledMaxZoomAt(lat: number, lng: number): number | null {
+  const { installed } = get(offlineMaps);
+  let max: number | null = null;
+  for (const region of OFFLINE_REGIONS) {
+    if (!installed[region.id]) continue;
+    if (isPointInRegion(lat, lng, region)) {
+      max = max === null ? region.maxZoom : Math.max(max, region.maxZoom);
+    }
+  }
+  return max;
 }
 
 export function initOfflineMaps() {

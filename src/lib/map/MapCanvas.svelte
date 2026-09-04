@@ -5,12 +5,16 @@
   import { writable, get } from 'svelte/store';
   import { MAP_CONTEXT_KEY, type MapStore } from './context';
   import { telemetry } from '../stores/telemetry';
+  import { online } from '../stores/connectivity';
+  import { offlineMaps } from '../stores/offlineMaps';
+  import { getInstalledMaxZoomAt } from '../services/offlineMaps';
 
   // Read once at mount rather than hardcoding a separate copy of the
   // fallback coordinates — a real GPS fix that lands before the map exists
   // (or a future change to the telemetry default) shouldn't require keeping
   // two coordinate pairs in sync.
   const DEFAULT_ZOOM = 13;
+  const ONLINE_MAX_ZOOM = 19;
 
   let { children }: { children?: Snippet } = $props();
 
@@ -19,6 +23,8 @@
   setContext(MAP_CONTEXT_KEY, mapStore);
 
   let resizeObserver: ResizeObserver | undefined;
+  let unsubOnline: (() => void) | undefined;
+  let unsubOfflineMaps: (() => void) | undefined;
 
   onMount(() => {
     const t = get(telemetry);
@@ -47,10 +53,32 @@
     // close, orientation change, virtual keyboard) instead of guessing a delay.
     resizeObserver = new ResizeObserver(() => map.invalidateSize());
     resizeObserver.observe(container);
+
+    // Offline, tiles only exist up to whatever zoom was actually downloaded
+    // for this spot — zooming further just shows blank/black tiles since the
+    // network fetch has nothing to fall back to. Capping the map's own max
+    // zoom (rather than just the UI control) blocks scroll/pinch zoom too.
+    const clampMaxZoom = () => {
+      if (get(online)) {
+        map.setMaxZoom(ONLINE_MAX_ZOOM);
+        return;
+      }
+      const center = map.getCenter();
+      const cachedMaxZoom = getInstalledMaxZoomAt(center.lat, center.lng);
+      // No installed pack covers this spot: freeze at the current zoom
+      // instead of guessing, so the user can still zoom back out.
+      map.setMaxZoom(cachedMaxZoom ?? Math.min(map.getZoom(), ONLINE_MAX_ZOOM));
+    };
+
+    map.on('moveend', clampMaxZoom);
+    unsubOnline = online.subscribe(clampMaxZoom);
+    unsubOfflineMaps = offlineMaps.subscribe(clampMaxZoom);
   });
 
   onDestroy(() => {
     resizeObserver?.disconnect();
+    unsubOnline?.();
+    unsubOfflineMaps?.();
     mapStore.subscribe((map) => map?.remove())();
   });
 </script>
