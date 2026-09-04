@@ -75,6 +75,17 @@ function startRealGPS() {
       }));
     },
     (error) => {
+      // The 10s timeout starts ticking the moment watchPosition is called —
+      // including however long the permission prompt sits unanswered. That's
+      // not a real failure, just retry the watch so a slow "Allow" tap still
+      // gets picked up, instead of giving up on GPS for the rest of the
+      // session. Only a hard failure (denied, or no position source at all)
+      // should fall through to the unavailable/simulator fallback.
+      if (error.code === error.TIMEOUT) {
+        stopRealGPS();
+        startRealGPS();
+        return;
+      }
       console.error('GPS Watch error: ', error);
       handleRealGpsUnavailable('GPS Signal failed.');
     },
