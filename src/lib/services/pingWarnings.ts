@@ -62,9 +62,14 @@ const SERIES: SeriesDef[] = [
   { name: 'AVURNAV Local St Pierre et Miquelon', id: 'AVURNAV LOCAL ST PIERRE ET MIQUELON', fallbackUrl: '/data/avurnav_local_st_pierre_miquelon.xml', enabled: false, type: 'avurnav_local' },
 ];
 
+// Routed through our own Netlify Function (netlify/functions/nw-proxy.mts)
+// rather than the upstream API directly — services.ping-info-nautique.fr
+// sends no CORS headers at all, so a direct browser fetch always fails and
+// the app was permanently stuck falling back to the bundled snapshot. The
+// function makes the same request server-side, where CORS doesn't apply.
 for (const s of SERIES) {
   if (s.enabled) {
-    s.liveUrl = `https://services.ping-info-nautique.fr/nw/v1/Get_NW_Messages?nameOfSeries=${encodeURIComponent(s.id)}&lang=fr`;
+    s.liveUrl = `/api/nw-proxy?series=${encodeURIComponent(s.id)}`;
   }
 }
 
@@ -417,7 +422,9 @@ async function loadNgaWarnings(): Promise<{ items: Warning[]; source: 'live' | '
   let source: 'live' | 'local' = 'live';
 
   try {
-    const response = await fetch('https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json');
+    // Routed through netlify/functions/nga-proxy.mts — see the comment by
+    // the AVURNAV/AVINAV liveUrl construction above for why.
+    const response = await fetch('/api/nga-proxy');
     if (!response.ok) throw new Error('CORS or Server Error');
     const data = await response.json();
     raw = data['broadcast-warn'] || [];
