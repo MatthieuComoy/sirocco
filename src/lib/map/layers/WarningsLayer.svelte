@@ -102,6 +102,15 @@
 
       if (mapLayer) {
         mapLayer.bindPopup(() => buildWarningPopupHtml(warn, emoji, headerColor), { maxWidth: 440, minWidth: 320 });
+        // For an area/line warning, Leaflet's default autoPan only nudges the
+        // view just enough to fit the popup — clicking near the edge of a
+        // large zone can leave most of it off-screen. Recentering on the
+        // geometry's own bounds instead keeps the whole shape oriented
+        // around where the user's attention now is.
+        if (geomBounds) {
+          const center = geomBounds.getCenter();
+          mapLayer.on('popupopen', () => get(mapStore)?.panTo(center));
+        }
         layerGroup.addLayer(mapLayer);
       }
     }
