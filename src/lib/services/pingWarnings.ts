@@ -89,6 +89,27 @@ function todayIsoDate(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
+// A notice with no discoverable end date at all is treated as stale once
+// it's this many days old — see isWarningExpired() below for why.
+const MAX_UNDATED_WARNING_AGE_DAYS = 60;
+
+/**
+ * A warning is expired if its (structured or text-derived) end date has
+ * passed, or — when there's no end date to go on at all — if it's simply
+ * old. Most notices are never explicitly cancelled in this data, only
+ * superseded, which we have no way to detect; a notice unrenewed for two
+ * months is far more likely to have quietly lapsed than to still be in
+ * force. This mainly matters for bundled/cached offline snapshots, which
+ * only get as fresh as their last fetch and have been seen carrying
+ * warnings literally years old.
+ */
+function isWarningExpired(dateEnd: string | null, publicationDate: string | undefined): boolean {
+  if (dateEnd) return dateEnd < todayIsoDate();
+  if (!publicationDate) return false;
+  const ageDays = (Date.now() - new Date(publicationDate).getTime()) / 86400000;
+  return ageDays > MAX_UNDATED_WARNING_AGE_DAYS;
+}
+
 const MONTHS_FR: Record<string, number> = {
   janvier: 0,
   fevrier: 1,
@@ -300,10 +321,7 @@ function parseSeriesXml(xmlDoc: Document, seriesFallbackName: string, seriesType
     // out so these still expire instead of lingering as "open-ended".
     if (!dateEnd) dateEnd = extractTextDateRangeEnd(information, preamble?.publicationDate);
 
-    // Local snapshot data can go stale between downloads — a warning whose
-    // dateEnd has already passed is no longer in force and shouldn't be
-    // shown as if it were (open-ended notices with no dateEnd are kept).
-    if (dateEnd && dateEnd < todayIsoDate()) return;
+    if (isWarningExpired(dateEnd, preamble?.publicationDate)) return;
 
     let geometry: WarningGeometry | null = null;
     const pointElms = getElements(part, 'Point');
@@ -408,7 +426,13 @@ async function loadNgaWarnings(): Promise<{ items: Warning[]; source: 'live' | '
     }
   }
 
-  return { items: (raw ?? []).map(parseNgaWarning), source };
+  // NGA's live feed already asks for status=active, but the bundled local
+  // fallback is a frozen dump (seen carrying multi-year-old warnings) with
+  // no server-side filtering at all — apply the same staleness rule here.
+  const items = (raw ?? [])
+    .map(parseNgaWarning)
+    .filter((w) => !isWarningExpired(w.dateEnd, w.preamble?.publicationDate));
+  return { items, source };
 }
 
 export async function loadAllWarnings() {
