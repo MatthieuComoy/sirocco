@@ -75,21 +75,20 @@ function startRealGPS() {
       }));
     },
     (error) => {
-      // The 10s timeout starts ticking the moment watchPosition is called —
-      // including however long the permission prompt sits unanswered. That's
-      // not a real failure, just retry the watch so a slow "Allow" tap still
-      // gets picked up, instead of giving up on GPS for the rest of the
-      // session. Only a hard failure (denied, or no position source at all)
-      // should fall through to the unavailable/simulator fallback.
-      if (error.code === error.TIMEOUT) {
-        stopRealGPS();
-        startRealGPS();
-        return;
-      }
+      // A TIMEOUT here doesn't mean the watch is dead — watchPosition keeps
+      // trying in the background and can still fire a success callback once
+      // a fix is available, so there's nothing to recover from. Tearing the
+      // watch down and recreating it on every timeout (an earlier version of
+      // this) was actively harmful: on a real device, acquiring a first GPS
+      // fix — permission prompt included — routinely takes longer than the
+      // timeout below, so restarting the watch each time it fired kept
+      // cancelling the acquisition just before it could succeed, and could
+      // even reset the pending permission prompt itself.
+      if (error.code === error.TIMEOUT) return;
       console.error('GPS Watch error: ', error);
       handleRealGpsUnavailable('GPS Signal failed.');
     },
-    { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+    { enableHighAccuracy: true, timeout: 30000, maximumAge: 0 }
   );
 }
 
