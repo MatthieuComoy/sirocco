@@ -15,6 +15,7 @@
   // two coordinate pairs in sync.
   const DEFAULT_ZOOM = 13;
   const ONLINE_MAX_ZOOM = 19;
+  const FIRST_FIX_ZOOM = 15;
 
   let { children }: { children?: Snippet } = $props();
 
@@ -25,6 +26,7 @@
   let resizeObserver: ResizeObserver | undefined;
   let unsubOnline: (() => void) | undefined;
   let unsubOfflineMaps: (() => void) | undefined;
+  let unsubFirstFix: (() => void) | undefined;
 
   onMount(() => {
     const t = get(telemetry);
@@ -73,12 +75,29 @@
     map.on('moveend', clampMaxZoom);
     unsubOnline = online.subscribe(clampMaxZoom);
     unsubOfflineMaps = offlineMaps.subscribe(clampMaxZoom);
+
+    // The map opens on the Glénans fallback (see telemetry.ts) since a real
+    // GPS fix isn't available synchronously at mount. Snap to the user's
+    // actual position the first time it arrives — once only, so this is a
+    // one-shot "welcome centering" rather than a permanent follow lock
+    // (that's `autoCenter` + navigation mode's job).
+    let skippedInitialTelemetry = false;
+    unsubFirstFix = telemetry.subscribe((fix) => {
+      if (!skippedInitialTelemetry) {
+        skippedInitialTelemetry = true;
+        return;
+      }
+      map.setView([fix.lat, fix.lon], FIRST_FIX_ZOOM);
+      unsubFirstFix?.();
+      unsubFirstFix = undefined;
+    });
   });
 
   onDestroy(() => {
     resizeObserver?.disconnect();
     unsubOnline?.();
     unsubOfflineMaps?.();
+    unsubFirstFix?.();
     mapStore.subscribe((map) => map?.remove())();
   });
 </script>
