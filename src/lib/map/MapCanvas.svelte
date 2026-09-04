@@ -8,6 +8,7 @@
   import { online } from '../stores/connectivity';
   import { offlineMaps } from '../stores/offlineMaps';
   import { getInstalledMaxZoomAt } from '../services/offlineMaps';
+  import { enableTapDragZoom } from './tapDragZoom';
 
   // Read once at mount rather than hardcoding a separate copy of the
   // fallback coordinates — a real GPS fix that lands before the map exists
@@ -27,6 +28,7 @@
   let unsubOnline: (() => void) | undefined;
   let unsubOfflineMaps: (() => void) | undefined;
   let unsubFirstFix: (() => void) | undefined;
+  let disableTapDragZoom: (() => void) | undefined;
 
   onMount(() => {
     const t = get(telemetry);
@@ -49,6 +51,7 @@
     }).addTo(map);
 
     mapStore.set(map);
+    disableTapDragZoom = enableTapDragZoom(map);
 
     // Replaces the legacy app's magic setTimeout(0/100/350) chain after sidebar
     // toggles: this reacts to the actual end of any layout change (sidebar open/
@@ -98,6 +101,7 @@
     unsubOnline?.();
     unsubOfflineMaps?.();
     unsubFirstFix?.();
+    disableTapDragZoom?.();
     mapStore.subscribe((map) => map?.remove())();
   });
 </script>
