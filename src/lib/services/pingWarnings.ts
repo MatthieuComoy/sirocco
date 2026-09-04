@@ -89,6 +89,53 @@ function todayIsoDate(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
+const MONTHS_FR: Record<string, number> = {
+  janvier: 0,
+  fevrier: 1,
+  mars: 2,
+  avril: 3,
+  mai: 4,
+  juin: 5,
+  juillet: 6,
+  aout: 7,
+  septembre: 8,
+  octobre: 9,
+  novembre: 10,
+  decembre: 11,
+};
+
+const FR_WEEKDAY_PREFIX = '(?:lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\\s+';
+const TEXT_DATE_RANGE_RE = new RegExp(
+  `\\bdu\\s+(?:${FR_WEEKDAY_PREFIX})?\\d{1,2}\\s+au\\s+(?:${FR_WEEKDAY_PREFIX})?(\\d{1,2})\\s+([a-zà-ÿ]+)(?:\\s+(\\d{4}))?\\b`,
+  'i'
+);
+
+/**
+ * Best-effort recovery of a warning's end date from its free-text body, for
+ * notices that carry no structured `fixedDateRange` at all (seen in some
+ * AVURNAV LOCAL messages, e.g. regatta announcements) — without this they
+ * read as "open-ended" and never expire. Matches the common French
+ * "Du [jour] X au [jour] Y <mois> [année]" construction; when the year is
+ * omitted (as it usually is), it's taken from the warning's publication date.
+ */
+export function extractTextDateRangeEnd(text: string | undefined, publicationDate: string | undefined): string | null {
+  if (!text) return null;
+  const match = TEXT_DATE_RANGE_RE.exec(text);
+  if (!match) return null;
+
+  const endDay = parseInt(match[1], 10);
+  const monthKey = match[2]
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '');
+  const month = MONTHS_FR[monthKey];
+  if (month === undefined || Number.isNaN(endDay)) return null;
+
+  const year = match[3] ? parseInt(match[3], 10) : new Date(publicationDate || Date.now()).getUTCFullYear();
+
+  return new Date(Date.UTC(year, month, endDay)).toISOString().slice(0, 10);
+}
+
 function getElements(parent: Element | Document, localName: string): Element[] {
   let elms = parent.getElementsByTagName('S124:' + localName);
   if (elms.length === 0) elms = parent.getElementsByTagName(localName);
@@ -234,17 +281,29 @@ function parseSeriesXml(xmlDoc: Document, seriesFallbackName: string, seriesType
 
     if (preamble?.hazardTypeGeneral === 'IN_FORCE_BULLETIN') return;
 
-    const dateRangeEl = getElements(part, 'fixedDateRange')[0];
-    const dateEndEl = dateRangeEl ? getElements(dateRangeEl, 'dateEnd')[0] : undefined;
-    const dateEnd = dateEndEl ? getElementValue(dateEndEl, 'date') || null : null;
+    const warnInfo = getElements(part, 'warningInformation')[0];
+    const hazardTypeDetails = warnInfo ? getElementValue(warnInfo, 'warningHazardTypeDetails') : '';
+    const information = warnInfo ? getElementValue(warnInfo, 'information') : getElementValue(part, 'information');
+
+    // A notice can carry several fixedDateRange blocks (e.g. a multi-day
+    // firing exercise, one block per day) — the warning is in force until
+    // the latest of them, not just whichever happens to come first in the
+    // XML.
+    let dateEnd: string | null = null;
+    for (const range of getElements(part, 'fixedDateRange')) {
+      const endEl = getElements(range, 'dateEnd')[0];
+      const end = endEl ? getElementValue(endEl, 'date') : '';
+      if (end && (!dateEnd || end > dateEnd)) dateEnd = end;
+    }
+    // Some notices (e.g. regatta announcements) give their date range only
+    // in free text, with no fixedDateRange at all — fall back to parsing it
+    // out so these still expire instead of lingering as "open-ended".
+    if (!dateEnd) dateEnd = extractTextDateRangeEnd(information, preamble?.publicationDate);
+
     // Local snapshot data can go stale between downloads — a warning whose
     // dateEnd has already passed is no longer in force and shouldn't be
     // shown as if it were (open-ended notices with no dateEnd are kept).
     if (dateEnd && dateEnd < todayIsoDate()) return;
-
-    const warnInfo = getElements(part, 'warningInformation')[0];
-    const hazardTypeDetails = warnInfo ? getElementValue(warnInfo, 'warningHazardTypeDetails') : '';
-    const information = warnInfo ? getElementValue(warnInfo, 'information') : getElementValue(part, 'information');
 
     let geometry: WarningGeometry | null = null;
     const pointElms = getElements(part, 'Point');
