@@ -1,5 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <S124:DataSet>
-  </S124:DataSet>
-</S124:ExchangeSet>
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LA_REUNION.50.2026"><id>NW.AVURNAV_LA_REUNION.50.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>50</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-31T04:50:43.516941Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE SUD-OUEST</text></locationName></generalArea><locality><locationName><text>Saint Gilles</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LA_REUNION.50.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LA_REUNION.50.2026.1"><id>NW.AVURNAV_LA_REUNION.50.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        6132345.195558,-2453099.56254192 6116993.68118015,-2407253.06750434 6053398.86602521,-2424067.93347094 6071335.86834297,-2482908.006195 6132345.195558,-2453099.56254192 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>06:00:00</timeOfDayStart><dateStart><date>2026-09-05</date></dateStart><dateEnd><date>2026-09-09</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FIRING_EXERCISE</warningHazardTypeDetails><warningHazardTypeDetails>MILITARY_EXERCISE</warningHazardTypeDetails><information>zone FMD50 A1/A2 délimitée par : 
+21-30.75S 055-05.27E
+21-07.73S 054-56.99E
+21-16.18S 054-22.72E
+21-45.69S 054-32.38E
+Dangereux pour la navigation
+Veille VHF 16</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LA_REUNION.50.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LA_REUNION.51.2026"><id>NW.AVURNAV_LA_REUNION.51.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>51</warningNumber><warningType>COASTAL_IN_FORCE_BULLETIN</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-09-01T12:11:56.443523Z</publicationDate><generalArea><locationName><text>LA REUNION - AMSTERDAM</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - BASSAS DA INDIA</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - COMORES</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - CROZET</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - EUROPA</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - GLORIEUSES</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - JUAN DE NOVA</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - KERGUELEN</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - TERRE-ADELIE</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - TROMELIN</text></locationName></generalArea><generalArea><locationName><text>LA REUNION</text></locationName></generalArea><warningHazardTypeGeneral>IN_FORCE_BULLETIN</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LA_REUNION.51.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LA_REUNION.51.2026.1"><id>NW.AVURNAV_LA_REUNION.51.2026.1</id><S124:warningInformation><information>AVURNAV LA REUNION en vigueur le 011200 UTC SEP 26 :
+48/26, 50/26 et ce MSG</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LA_REUNION.51.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LA_REUNION.52.2026"><id>NW.AVURNAV_LA_REUNION.52.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>52</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-09-04T12:56:38.425279Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE SUD-OUEST</text></locationName></generalArea><locality><locationName><text>Saint Gilles</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LA_REUNION.52.2026.1"/><theWarningPart xlink:href="#NW.AVURNAV_LA_REUNION.52.2026.2"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LA_REUNION.52.2026.1"><id>NW.AVURNAV_LA_REUNION.52.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        6132345.195558,-2453099.56254192 6116993.68118015,-2407253.06750434 6053398.86602521,-2424067.93347094 6071335.86834297,-2482908.006195 6132345.195558,-2453099.56254192 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>04:00:00</timeOfDayStart><timeOfDayEnd>14:00:00</timeOfDayEnd><dateStart><date>2026-09-06</date></dateStart><dateEnd><date>2026-09-06</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FIRING_EXERCISE</warningHazardTypeDetails><warningHazardTypeDetails>MILITARY_EXERCISE</warningHazardTypeDetails><information>zone FMD50 A1/A2 délimitée par : 
+21-30.75S 055-05.27E
+21-07.73S 054-56.99E
+21-16.18S 054-22.72E
+21-45.69S 054-32.38E
+Dangereux pour la navigation
+Veillez VHF16</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LA_REUNION.52.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LA_REUNION.52.2026.2"><id>NW.AVURNAV_LA_REUNION.52.2026.2</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        6053398.86602521,-2424067.93347094 6071335.86834297,-2482908.006195 6011242.08209555,-2512005.88959044 5989482.33754187,-2440719.10800343 6053398.86602521,-2424067.93347094 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>04:00:00</timeOfDayStart><timeOfDayEnd>14:00:00</timeOfDayEnd><dateStart><date>2026-09-06</date></dateStart><dateEnd><date>2026-09-06</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FIRING_EXERCISE</warningHazardTypeDetails><information>zone FMD50 B1/B2 délimitée par : 
+21-16.18S 054-22.72E
+21-45.69S 054-32.38E
+22-00.24S 053-59.99E
+21-24.54S 053-48.27E
+Dangereux pour la navigation
+Veuillez VHF16</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LA_REUNION.52.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet></S124:ExchangeSet>

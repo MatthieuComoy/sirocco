@@ -29,29 +29,37 @@ const SERIES: SeriesDef[] = [
   { name: 'AVURNAV Local Brest', id: 'AVURNAV LOCAL BREST', fallbackUrl: '/data/avurnav_local_brest.xml', enabled: true, type: 'avurnav_local' },
   { name: 'AVURNAV Local Cherbourg', id: 'AVURNAV LOCAL CHERBOURG', fallbackUrl: '/data/avurnav_local_cherbourg.xml', enabled: true, type: 'avurnav_local' },
 
-  { name: 'AVURNAV Antilles', id: 'AVURNAV ANTILLES', fallbackUrl: '/data/antilles.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV Guyane', id: 'AVURNAV GUYANE', fallbackUrl: '/data/guyane.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV Réunion', id: 'AVURNAV REUNION', fallbackUrl: '/data/reunion.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV Mayotte', id: 'AVURNAV MAYOTTE', fallbackUrl: '/data/mayotte.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV Nouvelle Calédonie', id: 'AVURNAV NOUVELLE CALEDONIE', fallbackUrl: '/data/nouvelle_caledonie.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV Polynésie', id: 'AVURNAV POLYNESIE', fallbackUrl: '/data/polynesie.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV St Pierre et Miquelon', id: 'AVURNAV ST PIERRE ET MIQUELON', fallbackUrl: '/data/st_pierre_miquelon.xml', enabled: true, type: 'avurnav' },
+  // The overseas series aren't named after the territory on this API but
+  // after the maritime rescue center (MRCC) that issues them — verified
+  // against the live API (see scripts/refresh-warnings-data.mjs). Mayotte,
+  // Nouvelle Calédonie and St Pierre et Miquelon are left disabled: no
+  // working series name was found for them (their fallback files have
+  // always been empty stubs, never real captured data), so there's nothing
+  // live to fall back from — surfacing them as "always empty" would be
+  // more misleading than just not listing them.
+  { name: 'AVURNAV Antilles', id: 'AVURNAV FORT DE FRANCE', fallbackUrl: '/data/antilles.xml', enabled: true, type: 'avurnav' },
+  { name: 'AVURNAV Guyane', id: 'AVURNAV CAYENNE', fallbackUrl: '/data/guyane.xml', enabled: true, type: 'avurnav' },
+  { name: 'AVURNAV Réunion', id: 'AVURNAV LA REUNION', fallbackUrl: '/data/reunion.xml', enabled: true, type: 'avurnav' },
+  { name: 'AVURNAV Mayotte', id: 'AVURNAV MAYOTTE', fallbackUrl: '/data/mayotte.xml', enabled: false, type: 'avurnav' },
+  { name: 'AVURNAV Nouvelle Calédonie', id: 'AVURNAV NOUVELLE CALEDONIE', fallbackUrl: '/data/nouvelle_caledonie.xml', enabled: false, type: 'avurnav' },
+  { name: 'AVURNAV Polynésie', id: 'AVURNAV PAPEETE', fallbackUrl: '/data/polynesie.xml', enabled: true, type: 'avurnav' },
+  { name: 'AVURNAV St Pierre et Miquelon', id: 'AVURNAV ST PIERRE ET MIQUELON', fallbackUrl: '/data/st_pierre_miquelon.xml', enabled: false, type: 'avurnav' },
 
-  { name: 'AVINAV Antilles', id: 'AVINAV ANTILLES', fallbackUrl: '/data/avinav_antilles.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV Guyane', id: 'AVINAV GUYANE', fallbackUrl: '/data/avinav_guyane.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV Réunion', id: 'AVINAV REUNION', fallbackUrl: '/data/avinav_reunion.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV Mayotte', id: 'AVINAV MAYOTTE', fallbackUrl: '/data/avinav_mayotte.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV Nouvelle Calédonie', id: 'AVINAV NOUVELLE CALEDONIE', fallbackUrl: '/data/avinav_nouvelle_caledonie.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV Polynésie', id: 'AVINAV POLYNESIE', fallbackUrl: '/data/avinav_polynesie.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV St Pierre et Miquelon', id: 'AVINAV ST PIERRE ET MIQUELON', fallbackUrl: '/data/avinav_st_pierre_miquelon.xml', enabled: true, type: 'avinav' },
+  { name: 'AVINAV Antilles', id: 'AVINAV FORT DE FRANCE', fallbackUrl: '/data/avinav_antilles.xml', enabled: true, type: 'avinav' },
+  { name: 'AVINAV Guyane', id: 'AVINAV CAYENNE', fallbackUrl: '/data/avinav_guyane.xml', enabled: true, type: 'avinav' },
+  { name: 'AVINAV Réunion', id: 'AVINAV LA REUNION', fallbackUrl: '/data/avinav_reunion.xml', enabled: true, type: 'avinav' },
+  { name: 'AVINAV Mayotte', id: 'AVINAV MAYOTTE', fallbackUrl: '/data/avinav_mayotte.xml', enabled: false, type: 'avinav' },
+  { name: 'AVINAV Nouvelle Calédonie', id: 'AVINAV NOUVELLE CALEDONIE', fallbackUrl: '/data/avinav_nouvelle_caledonie.xml', enabled: false, type: 'avinav' },
+  { name: 'AVINAV Polynésie', id: 'AVINAV PAPEETE', fallbackUrl: '/data/avinav_polynesie.xml', enabled: true, type: 'avinav' },
+  { name: 'AVINAV St Pierre et Miquelon', id: 'AVINAV ST PIERRE ET MIQUELON', fallbackUrl: '/data/avinav_st_pierre_miquelon.xml', enabled: false, type: 'avinav' },
 
-  { name: 'AVURNAV Local Antilles', id: 'AVURNAV LOCAL ANTILLES', fallbackUrl: '/data/avurnav_local_antilles.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local Guyane', id: 'AVURNAV LOCAL GUYANE', fallbackUrl: '/data/avurnav_local_guyane.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local Réunion', id: 'AVURNAV LOCAL REUNION', fallbackUrl: '/data/avurnav_local_reunion.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local Mayotte', id: 'AVURNAV LOCAL MAYOTTE', fallbackUrl: '/data/avurnav_local_mayotte.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local Nouvelle Calédonie', id: 'AVURNAV LOCAL NOUVELLE CALEDONIE', fallbackUrl: '/data/avurnav_local_nouvelle_caledonie.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local Polynésie', id: 'AVURNAV LOCAL POLYNESIE', fallbackUrl: '/data/avurnav_local_polynesie.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local St Pierre et Miquelon', id: 'AVURNAV LOCAL ST PIERRE ET MIQUELON', fallbackUrl: '/data/avurnav_local_st_pierre_miquelon.xml', enabled: true, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Antilles', id: 'AVURNAV LOCAL FORT DE FRANCE', fallbackUrl: '/data/avurnav_local_antilles.xml', enabled: true, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Guyane', id: 'AVURNAV LOCAL CAYENNE', fallbackUrl: '/data/avurnav_local_guyane.xml', enabled: true, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Réunion', id: 'AVURNAV LOCAL LA REUNION', fallbackUrl: '/data/avurnav_local_reunion.xml', enabled: true, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Mayotte', id: 'AVURNAV LOCAL MAYOTTE', fallbackUrl: '/data/avurnav_local_mayotte.xml', enabled: false, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Nouvelle Calédonie', id: 'AVURNAV LOCAL NOUVELLE CALEDONIE', fallbackUrl: '/data/avurnav_local_nouvelle_caledonie.xml', enabled: false, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Polynésie', id: 'AVURNAV LOCAL PAPEETE', fallbackUrl: '/data/avurnav_local_polynesie.xml', enabled: true, type: 'avurnav_local' },
+  { name: 'AVURNAV Local St Pierre et Miquelon', id: 'AVURNAV LOCAL ST PIERRE ET MIQUELON', fallbackUrl: '/data/avurnav_local_st_pierre_miquelon.xml', enabled: false, type: 'avurnav_local' },
 ];
 
 for (const s of SERIES) {
@@ -87,6 +95,74 @@ function parseGmlCoordinates(coordStr: string | undefined): [number, number][] {
 
 function todayIsoDate(): string {
   return new Date().toISOString().slice(0, 10);
+}
+
+// A notice with no discoverable end date at all is treated as stale once
+// it's this many days old — see isWarningExpired() below for why.
+const MAX_UNDATED_WARNING_AGE_DAYS = 60;
+
+/**
+ * A warning is expired if its (structured or text-derived) end date has
+ * passed, or — when there's no end date to go on at all — if it's simply
+ * old. Most notices are never explicitly cancelled in this data, only
+ * superseded, which we have no way to detect; a notice unrenewed for two
+ * months is far more likely to have quietly lapsed than to still be in
+ * force. This mainly matters for bundled/cached offline snapshots, which
+ * only get as fresh as their last fetch and have been seen carrying
+ * warnings literally years old.
+ */
+function isWarningExpired(dateEnd: string | null, publicationDate: string | undefined): boolean {
+  if (dateEnd) return dateEnd < todayIsoDate();
+  if (!publicationDate) return false;
+  const ageDays = (Date.now() - new Date(publicationDate).getTime()) / 86400000;
+  return ageDays > MAX_UNDATED_WARNING_AGE_DAYS;
+}
+
+const MONTHS_FR: Record<string, number> = {
+  janvier: 0,
+  fevrier: 1,
+  mars: 2,
+  avril: 3,
+  mai: 4,
+  juin: 5,
+  juillet: 6,
+  aout: 7,
+  septembre: 8,
+  octobre: 9,
+  novembre: 10,
+  decembre: 11,
+};
+
+const FR_WEEKDAY_PREFIX = '(?:lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\\s+';
+const TEXT_DATE_RANGE_RE = new RegExp(
+  `\\bdu\\s+(?:${FR_WEEKDAY_PREFIX})?\\d{1,2}\\s+au\\s+(?:${FR_WEEKDAY_PREFIX})?(\\d{1,2})\\s+([a-zà-ÿ]+)(?:\\s+(\\d{4}))?\\b`,
+  'i'
+);
+
+/**
+ * Best-effort recovery of a warning's end date from its free-text body, for
+ * notices that carry no structured `fixedDateRange` at all (seen in some
+ * AVURNAV LOCAL messages, e.g. regatta announcements) — without this they
+ * read as "open-ended" and never expire. Matches the common French
+ * "Du [jour] X au [jour] Y <mois> [année]" construction; when the year is
+ * omitted (as it usually is), it's taken from the warning's publication date.
+ */
+export function extractTextDateRangeEnd(text: string | undefined, publicationDate: string | undefined): string | null {
+  if (!text) return null;
+  const match = TEXT_DATE_RANGE_RE.exec(text);
+  if (!match) return null;
+
+  const endDay = parseInt(match[1], 10);
+  const monthKey = match[2]
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '');
+  const month = MONTHS_FR[monthKey];
+  if (month === undefined || Number.isNaN(endDay)) return null;
+
+  const year = match[3] ? parseInt(match[3], 10) : new Date(publicationDate || Date.now()).getUTCFullYear();
+
+  return new Date(Date.UTC(year, month, endDay)).toISOString().slice(0, 10);
 }
 
 function getElements(parent: Element | Document, localName: string): Element[] {
@@ -234,17 +310,26 @@ function parseSeriesXml(xmlDoc: Document, seriesFallbackName: string, seriesType
 
     if (preamble?.hazardTypeGeneral === 'IN_FORCE_BULLETIN') return;
 
-    const dateRangeEl = getElements(part, 'fixedDateRange')[0];
-    const dateEndEl = dateRangeEl ? getElements(dateRangeEl, 'dateEnd')[0] : undefined;
-    const dateEnd = dateEndEl ? getElementValue(dateEndEl, 'date') || null : null;
-    // Local snapshot data can go stale between downloads — a warning whose
-    // dateEnd has already passed is no longer in force and shouldn't be
-    // shown as if it were (open-ended notices with no dateEnd are kept).
-    if (dateEnd && dateEnd < todayIsoDate()) return;
-
     const warnInfo = getElements(part, 'warningInformation')[0];
     const hazardTypeDetails = warnInfo ? getElementValue(warnInfo, 'warningHazardTypeDetails') : '';
     const information = warnInfo ? getElementValue(warnInfo, 'information') : getElementValue(part, 'information');
+
+    // A notice can carry several fixedDateRange blocks (e.g. a multi-day
+    // firing exercise, one block per day) — the warning is in force until
+    // the latest of them, not just whichever happens to come first in the
+    // XML.
+    let dateEnd: string | null = null;
+    for (const range of getElements(part, 'fixedDateRange')) {
+      const endEl = getElements(range, 'dateEnd')[0];
+      const end = endEl ? getElementValue(endEl, 'date') : '';
+      if (end && (!dateEnd || end > dateEnd)) dateEnd = end;
+    }
+    // Some notices (e.g. regatta announcements) give their date range only
+    // in free text, with no fixedDateRange at all — fall back to parsing it
+    // out so these still expire instead of lingering as "open-ended".
+    if (!dateEnd) dateEnd = extractTextDateRangeEnd(information, preamble?.publicationDate);
+
+    if (isWarningExpired(dateEnd, preamble?.publicationDate)) return;
 
     let geometry: WarningGeometry | null = null;
     const pointElms = getElements(part, 'Point');
@@ -349,7 +434,15 @@ async function loadNgaWarnings(): Promise<{ items: Warning[]; source: 'live' | '
     }
   }
 
-  return { items: (raw ?? []).map(parseNgaWarning), source };
+  const parsed = (raw ?? []).map(parseNgaWarning);
+  // NGA's live feed already asks for status=active — that's NGA's own
+  // authoritative call and can include genuinely long-standing NAVAREA
+  // notices, so it's trusted as-is. The bundled local fallback is just a
+  // frozen dump with no such filtering (seen carrying warnings 2+ years
+  // old), so the staleness rule only applies there.
+  const items =
+    source === 'local' ? parsed.filter((w) => !isWarningExpired(w.dateEnd, w.preamble?.publicationDate)) : parsed;
+  return { items, source };
 }
 
 export async function loadAllWarnings() {

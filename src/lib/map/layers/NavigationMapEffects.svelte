@@ -10,6 +10,8 @@
 
   const mapStore = getContext<MapStore>(MAP_CONTEXT_KEY);
 
+  const RECENTER_MIN_ZOOM = 15;
+
   let recenterControl: L.Control | null = null;
   let dragHandlerAttached = false;
 
@@ -27,7 +29,9 @@
           L.DomEvent.preventDefault(e);
           autoCenter.set(true);
           const t = get(telemetry);
-          map.setView([t.lat, t.lon], map.getZoom());
+          // Recenter should bring the boat into view up close, not just
+          // re-pan at whatever wide zoom the user had drifted out to.
+          map.setView([t.lat, t.lon], Math.max(map.getZoom(), RECENTER_MIN_ZOOM));
         });
         return container;
       },
@@ -51,7 +55,7 @@
 
   function enterNavigationView(map: L.Map) {
     const t = get(telemetry);
-    map.setView([t.lat, t.lon], 15);
+    map.setView([t.lat, t.lon], RECENTER_MIN_ZOOM);
   }
 
   const unsubMap = mapStore.subscribe((map) => {

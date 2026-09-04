@@ -32,6 +32,7 @@
   import { theme } from './lib/stores/theme';
   import { initSimOptionsSync } from './lib/services/gpsSimulator';
   import { initConnectivity } from './lib/services/connectivity';
+  import { initOfflineMaps } from './lib/services/offlineMaps';
 
   let sidebarOpen = $state(true);
   let sheetValue = $state<'closed' | 'half' | 'full'>('closed');
@@ -45,6 +46,10 @@
     initAnchorAlarm();
     initSimOptionsSync();
     initConnectivity();
+    // Needed globally (not just when the offline-maps panel is open) so the
+    // live map can cap zoom to what's actually cached as soon as the app
+    // goes offline, even if the user never opened that panel this session.
+    initOfflineMaps();
 
     // Lazy-load overlays/heavy APIs to prioritize the base map render first —
     // same stagger as the legacy app (js/app.js DOMContentLoaded: 150ms then

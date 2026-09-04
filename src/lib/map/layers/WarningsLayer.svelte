@@ -37,6 +37,27 @@
     return null;
   }
 
+  /**
+   * Pans the map so the popup itself — not the marker/zone it's attached to
+   * — ends up centered on screen. Leaflet's default autoPan only nudges the
+   * view just enough to fit the popup at an edge, which for a large area/
+   * line warning can leave the popup (and the zone) barely on screen.
+   * Popups reposition purely off their anchor's LatLng and the current view,
+   * so panning to whatever LatLng currently renders at the popup's own
+   * on-screen center lands it dead center once the pan settles.
+   */
+  function centerOnPopup(map: L.Map, popup: L.Popup) {
+    const popupEl = popup.getElement();
+    if (!popupEl) return;
+    const popupRect = popupEl.getBoundingClientRect();
+    const mapRect = map.getContainer().getBoundingClientRect();
+    const popupCenterPoint = L.point(
+      popupRect.left + popupRect.width / 2 - mapRect.left,
+      popupRect.top + popupRect.height / 2 - mapRect.top
+    );
+    map.panTo(map.containerPointToLatLng(popupCenterPoint));
+  }
+
   function isAnyPopupOpen(): boolean {
     if (!layerGroup) return false;
     let open = false;
@@ -102,6 +123,10 @@
 
       if (mapLayer) {
         mapLayer.bindPopup(() => buildWarningPopupHtml(warn, emoji, headerColor), { maxWidth: 440, minWidth: 320 });
+        mapLayer.on('popupopen', (e) => {
+          const openMap = get(mapStore);
+          if (openMap) centerOnPopup(openMap, e.popup);
+        });
         layerGroup.addLayer(mapLayer);
       }
     }

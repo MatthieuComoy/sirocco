@@ -1,5 +1,194 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <S124:DataSet>
-  </S124:DataSet>
-</S124:ExchangeSet>
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1084.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1084.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1084</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-06T04:24:19.793320Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><locality><locationName><text>Zone Est</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1084.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1084.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1084.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5039489.00795689,-1433505.45811079 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>AMER DES BADAMIERS 12-46.22S 045-16.23E
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1084.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1085.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1085.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1085</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-06T05:00:35.265049Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><locality><locationName><text>Passe de M'tsamboro - port de Longoni</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1085.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1085.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1085.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5027566.690492932,-1426836.4753680048 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_ESTABLISHMENT</warningHazardTypeDetails><information>Création d'une bouée à titre provisoire en 12-42.71S 045-09.80E
+N° 97600030 FEU DU PLATIER OUEST DE L'ILE BLANCHE
+Marque : Cardinale Ouest à 9 scintillements toutes les 15 s
+Portée : 3 NM
+Fonction principale : Danger/Obstruction
+N° livre des feux : 36340 - D.6893.6
+avis de réalisation : mise en place le 05 août 2026 à 07Z
+Jusqu'à nouvel avis</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1085.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1075.2025"><id>NW.AVURNAV_LOCAL_LA_REUNION.1075.2025</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1075</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2026-01-12T08:44:18.072294Z</publicationDate><generalArea><locationName><text>LA REUNION - PORT OUEST</text></locationName></generalArea><locality><locationName><text>RIVIÈRE DES GALETS</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1075.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1075.2025.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1075.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6153459.441675487,-2386156.0202398044 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>Embarcation 6.37 mètres
+20-57.12S 055-16.65E
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1075.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1007.2025"><id>NW.AVURNAV_LOCAL_LA_REUNION.1007.2025</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1007</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2026-01-12T08:45:04.971784Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1007.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1007.2025.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1007.2025.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        5040546.54311943,-1433086.93704095 5040546.54311943,-1434989.35446842 5035351.63354907,-1434989.35446842 5035351.63354907,-1433086.93704095 5040546.54311943,-1433086.93704095 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>Nombreuses épaves et obstructions
+zone délimitée par : 
+12-46.00S 045-16.80E
+12-47.00S 045-16.80E
+12-47.00S 045-14.00E
+12-46.00S 045-14.00E
+Se rapprocher des autorités locales pour plus d'informations
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1007.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1011.2025"><id>NW.AVURNAV_LOCAL_LA_REUNION.1011.2025</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1011</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2026-01-12T08:46:03.259908Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><warningHazardTypeGeneral>DRIFTING_HAZARDS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1011.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1011.2025.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1011.2025.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        5035166.101064419,-1428902.0598046063 5039062.283242184,-1433467.4104899876 5039618.8806961505,-1432706.468607289 5036279.295972352,-1428331.4416419133 5035166.101064419,-1428902.0598046063 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:warningInformation><warningHazardTypeDetails>OBJECT_ADRIFT</warningHazardTypeDetails><information>Chenal d'accès à Dzaoudzi
+zone délimitée par : 
+12-43.80S 045-13.90E
+12-46.20S 045-16.00E
+12-45.80S 045-16.30E
+12-43.50S 045-14.50E
+Se rapprocher des autorités locales pour plus d'informations
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1011.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1023.2025"><id>NW.AVURNAV_LOCAL_LA_REUNION.1023.2025</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1023</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2026-01-12T08:47:12.784803Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE EST</text></locationName></generalArea><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1023.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1023.2025.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1023.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6210132.194438342,-2406821.582725917 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>Feu du musoir du port de Sainte Rose
+21-07.52S 055-47.19E
+Livre des feux : 40680-D7085
+Mise en place d'un feu provisoire rouge visible tout horizon
+Rythme inchangé, portée réduite
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1023.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1067.2025"><id>NW.AVURNAV_LOCAL_LA_REUNION.1067.2025</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1067</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2026-01-12T08:51:23.232294Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE NORD-OUEST</text></locationName></generalArea><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1067.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1067.2025.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1067.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6151811.542146778,-2385778.3556607785 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBSURFACE_MOORING</warningHazardTypeDetails><information>Ligne de mouillage
+20-56.93S 055-15.76E
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1067.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1080.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1080.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1080</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-03T07:20:25.033871Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><locality><locationName><text>Secteur nord-est - Koungou</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1080.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1080.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1080.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5035221.76080982,-1428959.12223952 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_CHANGE</warningHazardTypeDetails><information>BOUEE EN 12-43.83S 045-13.93E
+N° 97600027 KONGO TD - KONGO
+Marque : Cardinale Nord
+Fonction principale : Chenalage/Alignement
+N° livre des feux : 36400
+Nom modifié en : KONGO Td
+Caractère modifié en : Tribord vert
+Rythme modifié en : 2 éclats / 6s
+Portée augmentée à : 04 NM
+Bouée en position le : 03/08/2026 à 09h00 LT
+Jusqu'à nouvel avis</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1080.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1061.2025"><id>NW.AVURNAV_LOCAL_LA_REUNION.1061.2025</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1061</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2026-01-12T08:48:23.375149Z</publicationDate><generalArea><locationName><text>LA REUNION - PORT EST</text></locationName></generalArea><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1061.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1061.2025.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1061.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6159487.3921019435,-2383170.284408079 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>Feu latéral bâbord du port de pêche de la possession
+20-55.62S 055-19.90E
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1061.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1064.2025"><id>NW.AVURNAV_LOCAL_LA_REUNION.1064.2025</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1064</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2026-01-12T08:49:08.763108Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1064.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1064.2025.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1064.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5002753.575995112,-1441991.3332088166 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBMERGED_FISH_NET</warningHazardTypeDetails><information>12-50.68S 044-56.43E
+Longueur 10 mètres, immergé à environ 1,5 mètres de profondeur</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1064.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1086.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1086.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1086</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-11T06:22:01.157642Z</publicationDate><generalArea><locationName><text>LA REUNION - KERGUELEN</text></locationName></generalArea><locality><locationName><text>pointe Molloy</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1086.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1086.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1086.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    7801604.08861916,-6337615.85718758 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHTED_BEACON_LIGHT_UNLIT</warningHazardTypeDetails><information>Feux Pointe Molloy en 49-22.11S 070-04.98E
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1086.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1048.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1048.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1048</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-11T05:52:17.758281Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><locality><locationName><text>Passe en "S" du récif de Pamandzi</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1048.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1048.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1048.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5038398.076947117,-1441504.1838208367 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_MISSING</warningHazardTypeDetails><information>suite au passage du cyclone CHIDO, la bouée d'entrée Nord de la passe, en 12-50.42S 045-15.64E, est toujours absente. 
+Naviguer avec prudence et à vitesse réduite</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1048.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1023.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1023.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1023</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-02-24T11:07:25.856676Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><locality><locationName><text>île de Juan de Nova</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1023.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1023.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1023.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    4754461.01775525,-1926496.68442662 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>phare de l'île de Juan de Nova 17-02.92S 042-42.60E
+numéro livre des feux FR: 36660-D.7033
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1023.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1030.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1030.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1030</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-16T10:19:37.275199Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE EST</text></locationName></generalArea><locality><locationName><text>Pointe du Tremblet</text></locationName></locality><warningHazardTypeGeneral>HAZARD_OTHER</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1030.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1030.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1030.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:CircleByCenterPoint srsName="EPSG:3857" numArc="1"><gml:Pos> 6212147.077221701,-2426153.2698023864 </gml:Pos><gml:radius uom="m"> 1852 </gml:radius></gml:CircleByCenterPoint></S100:Surface></S100:surfaceProperty></geometry><S124:warningInformation><information>zone épave tresta star d'un rayon de 1 NM autour de 21-17.23S 055-48.28E.
+Respecter les termes de l'arrêté préfectoral
+Interdiction provisoire de la circulation maritime, le stationnement, le mouillage, 
+la pratique des activités nautiques, aquatiques ou sportives et les mises à l’eau d’embarcations
+référence arrêté préfectoral n°217/2022 du 09 février 2022</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1030.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1081.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1081.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1081</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-03T07:26:48.781711Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><locality><locationName><text>Passe de M'tsamboro - port de Longoni</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1081.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1081.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1081.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5027796.7507739,-1426545.47945025 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_CHANGE</warningHazardTypeDetails><information>bouée île blanche 12-42.56S 045-09.93E
+N° 97600037 ILE BLANCHE
+Marque : Latérale tribord
+Fonction principale : Chenalage/Alignement
+Avis de réalisation : portée augmentée à 4NM
+N° livre des feux : 36320
+Jusqu'à nouvel avis</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1081.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1071.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1071.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1071</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-16T11:56:33.332622Z</publicationDate><generalArea><locationName><text>LA REUNION - PORT OUEST</text></locationName></generalArea><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1071.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1071.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1071.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6154550.372685262,-2383754.2812670213 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>FEU DE GUIDAGE 20-55.91S 055-17.24E
+N° 97400046 FEU DE GUIDAGE À 9° DU PERTUIS DE PORT OUEST.
+Marque : Eaux saines
+Fonction principale : Chenalage/Alignement
+N° livre des feux : 40200-D.7082.3
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1071.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1070.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1070.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1070</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-15T07:54:07.378688Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><locality><locationName><text>Petite Terre</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1070.2026.1"/><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1070.2026.2"/><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1070.2026.3"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1070.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1070.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5038116.06757044,-1434837.15645589 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_TEMPORARY_CHANGE</warningHazardTypeDetails><information>N° 97600011 FEU DE LA JETÉE EST DZAOUDZI (ISSOUFALY) 12-46.92S 045-15.49E
+Fonction principale : Danger/Obstruction
+N° livre des feux : 36280 - D.6897
+Modification rythme et couleur du feu , passage en feu blanc 2 éclats 6 secondes
+En cours</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1070.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1070.2026.2"><id>NW.AVURNAV_LOCAL_LA_REUNION.1070.2026.2</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5037652.2363588,-1434951.30488995 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_TEMPORARY_CHANGE</warningHazardTypeDetails><information>N° 97600010 FEU DE LA JETÉE OUEST (QUAI BALLOU) - DZAOUDZI 12-46.98S 045-15.24E
+Fonction principale : Danger/Obstruction
+N° livre des feux : 36240 - D.6896
+Modification rythme et couleur du feu , passage en feu blanc 3 éclats 12 secondes
+En cours</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1070.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1070.2026.3"><id>NW.AVURNAV_LOCAL_LA_REUNION.1070.2026.3</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5035258.8673067475,-1434380.567238963 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_TEMPORARY_CHANGE</warningHazardTypeDetails><information>N° 97600014 FEU DE MAMOUDZOU 12°46,680'S - 045°13,950'E
+Fonction principale : Danger/Obstruction
+N° livre des feux : 36300 - D.6898
+Modification rythme et couleur du feu , passage en feu blanc 1 éclat (4s)
+En cours</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1070.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1082.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1082.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1082</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-03T09:05:35.030327Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><locality><locationName><text>Secteur nord-est - Koungou</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1082.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1082.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1082.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5035576.12785551,-1428525.45055533 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_CHANGE</warningHazardTypeDetails><information>BOUEE KONGO BD 12-43.60S 045-14.12E
+N° 97600015 BOUEE KONGO BABORD - KONGO
+Marque : Latérale bâbord
+Fonction principale : Chenalage/Alignement
+N° livre des feux : Non renseigné
+Avis de réalisation : portée augmentée à 4 NM
+Jusqu'à nouvel avis</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1082.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1088.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1088.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1088</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-12T14:48:49.473168Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><locality><locationName><text>Récif Pamandzi</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1088.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1088.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1088.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5040101.26515625,-1442657.37114849 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_DAMAGED</warningHazardTypeDetails><information>Marque spéciale 12-51.03S 045-16.56E
+Marque spéciale renversée sur le platier au niveau de la "passe en S"
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1088.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1097.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1097.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1097</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-09-01T13:10:33.921522Z</publicationDate><generalArea><locationName><text>LA REUNION</text></locationName></generalArea><locality><locationName><text>Etang-Salé</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1097.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1097.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1097.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:CircleByCenterPoint srsName="EPSG:3857" numArc="1"><gml:Pos> 6161186.869661387,-2425695.30487774 </gml:Pos><gml:radius uom="m"> 3704 </gml:radius></gml:CircleByCenterPoint></S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>02:30:00</timeOfDayStart><timeOfDayEnd>07:00:00</timeOfDayEnd><dateStart><date>2026-09-14</date></dateStart><dateEnd><date>2026-09-14</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>02:30:00</timeOfDayStart><timeOfDayEnd>07:00:00</timeOfDayEnd><dateStart><date>2026-09-15</date></dateStart><dateEnd><date>2026-09-15</date></dateEnd></S124:fixedDateRange><S124:fixedDateRange><timeOfDayStart>02:30:00</timeOfDayStart><dateStart><date>2026-09-16</date></dateStart><dateEnd><date>2026-09-16</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>MILITARY_EXERCISE</warningHazardTypeDetails><information>zone d'un rayon de 2 NM autour de 21-17.00S 055-20.81E.
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1097.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_LA_REUNION.1096.2026"><id>NW.AVURNAV_LOCAL_LA_REUNION.1096.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1096</warningNumber><warningType>LOCAL_IN_FORCE_BULLETIN</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-09-01T12:13:51.658010Z</publicationDate><generalArea><locationName><text>LA REUNION</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - AMSTERDAM</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - BASSAS DA INDIA</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - COMORES</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - CROZET</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - EUROPA</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - GLORIEUSES</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - JUAN DE NOVA</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - KERGUELEN</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - TERRE-ADELIE</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - TROMELIN</text></locationName></generalArea><warningHazardTypeGeneral>IN_FORCE_BULLETIN</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_LA_REUNION.1096.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_LA_REUNION.1096.2026.1"><id>NW.AVURNAV_LOCAL_LA_REUNION.1096.2026.1</id><S124:warningInformation><information>AVURNAV LOCAL LA REUNION en vigueur le 011200 UTC SEP 26 :
+1007/25, 1011/25, 1023/25, 1061/25, 1064/25, 1067/25, 1075/25, 1023/26, 1030/26, 1048/26, 1070/26, 1071/26, 1080/26, 1081/26, 1082/26, 1084/26, 1085/26, 1086/26, 1088/26 et ce MSG</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_LA_REUNION.1096.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet></S124:ExchangeSet>

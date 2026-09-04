@@ -1,5 +1,73 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <S124:DataSet>
-  </S124:DataSet>
-</S124:ExchangeSet>
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_FORT_DE_FRANCE.2.2026"><id>NW.AVINAV_FORT_DE_FRANCE.2.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV FORT DE FRANCE</nameOfSeries><productionAgency>CZM ANTILLES</productionAgency><warningNumber>2</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-27T18:35:17.046698Z</publicationDate><generalArea><locationName><text>GUADELOUPE</text></locationName></generalArea><generalArea><locationName><text>MARIE GALANTE</text></locationName></generalArea><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_FORT_DE_FRANCE.2.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_FORT_DE_FRANCE.2.2026.1"><id>NW.AVINAV_FORT_DE_FRANCE.2.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -6815056.33570793,1791984.219704 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>15-53.40N 061-13.24W
+AVINAV FORT DE FRANCE en vigueur le 271823 UTC AOU 26 :
+LES USAGERS DE LA MER SONT INFORMES QUE LE FEU DE LA DIGUE DE CAPESTERRE MARIE-GALANTE EST SIGNALE ETEINT
+CARTE FR 7208
+2/14, 1/25 et ce MSG</information></S124:warningInformation><header xlink:href="#PR.AVINAV_FORT_DE_FRANCE.2.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_FORT_DE_FRANCE.1.2025"><id>NW.AVINAV_FORT_DE_FRANCE.1.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV FORT DE FRANCE</nameOfSeries><productionAgency>CZM ANTILLES</productionAgency><warningNumber>1</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-04-17T11:35:07.587803Z</publicationDate><generalArea><locationName><text>GUADELOUPE - GRANDE TERRE</text></locationName></generalArea><locality><locationName><text>POINTE A PITRE</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_FORT_DE_FRANCE.1.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_FORT_DE_FRANCE.1.2025.1"><id>NW.AVINAV_FORT_DE_FRANCE.1.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -6851603.338835196,1834118.8990072266 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>WORKS_IN_PROGRESS</warningHazardTypeDetails><information>Les usagers de la mer sont informés que les travaux de désamiantage et de renforcement des
+piles et culées du pont de la Gabarre de la Rivière Salée sont en cours.
+Moyens techniques mis en place : échafaudages avec isolation thermo rétractable, ponton
+flottant.
+Moyens nautiques utilisés : une barge, un bateau et un chaland.
+Signalisation en place : bouées marque spéciale jaunes sphériques DN400, panneaux
+d’interdiction, éclairages de chantier.
+Durée des travaux estimée à 18 mois
+Il est demandé aux navigateurs de ralentir franchement à l’approche de cette zone et de
+respecter la signalisation et les déviations en place
+CARTE FR 7100
+16-15.22N 061-32.94W
+Jusqu’à nouvel avis</information></S124:warningInformation><header xlink:href="#PR.AVINAV_FORT_DE_FRANCE.1.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_FORT_DE_FRANCE.2.2014"><id>NW.AVINAV_FORT_DE_FRANCE.2.2014</id><messageSeriesIdentifier><nameOfSeries>AVINAV FORT DE FRANCE</nameOfSeries><productionAgency>CZM ANTILLES</productionAgency><warningNumber>2</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2014</year></messageSeriesIdentifier><publicationDate>2025-04-17T11:46:03.481369Z</publicationDate><generalArea><locationName><text>GUADELOUPE - BASSE TERRE</text></locationName></generalArea><locality><locationName><text>GRAND CUL DE SAC MARIN</text></locationName></locality><warningHazardTypeGeneral>ROUTING_INFORMATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_FORT_DE_FRANCE.2.2014.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_FORT_DE_FRANCE.2.2014.1"><id>NW.AVINAV_FORT_DE_FRANCE.2.2014.1</id><S124:warningInformation><warningHazardTypeDetails>RESTRICTED_AREA</warningHazardTypeDetails><information>Suite à un état de dégradation avancé des appareils servant aux manœuvres d'ouverture des trois ouvrages mobiles de franchissement de la rivière salée , signalons leurs interruptions pour une durée indeterminée.
+CARTE FR 7100
+Jusqu’à nouvel avis.</information></S124:warningInformation><header xlink:href="#PR.AVINAV_FORT_DE_FRANCE.2.2014"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_FORT_DE_FRANCE.3.2026"><id>NW.AVINAV_FORT_DE_FRANCE.3.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV FORT DE FRANCE</nameOfSeries><productionAgency>CZM ANTILLES</productionAgency><warningNumber>3</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-27T18:52:46.925237Z</publicationDate><generalArea><locationName><text>GUADELOUPE - GRANDE TERRE</text></locationName></generalArea><locality><locationName><text>POINTE A PITRE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_FORT_DE_FRANCE.3.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_FORT_DE_FRANCE.3.2026.1"><id>NW.AVINAV_FORT_DE_FRANCE.3.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -6850076.40648648,1831238.20508194 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_ESTABLISHMENT</warningHazardTypeDetails><information>Les usagers de la mer sont informés de la mise en place d'une nouvelle bouée N°7 BIS,
+Les caractéristiques sont les suivantes :
+Position : 16°13,730 N / 61°32,117 W (WGS84)
+Marque : latérale tribord
+Rythme : VQ
+Portée : 3M
+Plan focal : 3.2m
+CARTE FR 7100
+BOUEE 7 BIS 16-13.73N 061-32.12W
+Jusqu'à nouvel avis</information></S124:warningInformation><header xlink:href="#PR.AVINAV_FORT_DE_FRANCE.3.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_FORT_DE_FRANCE.6.2026"><id>NW.AVINAV_FORT_DE_FRANCE.6.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV FORT DE FRANCE</nameOfSeries><productionAgency>CZM ANTILLES</productionAgency><warningNumber>6</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-27T19:47:41.066054Z</publicationDate><generalArea><locationName><text>MARTINIQUE</text></locationName></generalArea><warningHazardTypeGeneral>HAZARD_OTHER</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_FORT_DE_FRANCE.6.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_FORT_DE_FRANCE.6.2026.1"><id>NW.AVINAV_FORT_DE_FRANCE.6.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -6773172.57315518,1639246.186704752 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>14-33.97N 060-50.67W
+BATEAU BLEU ET BLANC SIGNALE EN 14-33.97N 060-50.68W
+IMMERSION PARTIELLE - 2MATS VISIBLES AU DESSUS DE LA SURFACE DE L'EAU
+CARTE FR 6738
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVINAV_FORT_DE_FRANCE.6.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_FORT_DE_FRANCE.4.2026"><id>NW.AVINAV_FORT_DE_FRANCE.4.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV FORT DE FRANCE</nameOfSeries><productionAgency>CZM ANTILLES</productionAgency><warningNumber>4</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-27T19:05:59.054010Z</publicationDate><generalArea><locationName><text>MARTINIQUE - PARTIE NORD</text></locationName></generalArea><locality><locationName><text>FORT DE FRANCE</text></locationName></locality><warningHazardTypeGeneral>SCIENTIFIC_INSTRUMENTS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_FORT_DE_FRANCE.4.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_FORT_DE_FRANCE.4.2026.1"><id>NW.AVINAV_FORT_DE_FRANCE.4.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -6796461.22907075,1641758.14012747 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_BUOY_APPARATUS</warningHazardTypeDetails><information>Une bouée de mesure scientifique SOFAR a été fixée ce jour à la bouée GS pour une
+durée de 24 mois. Elle est de couleur jaune et noire, avec un diamètre 42cm et une
+hauteur 31cm, possède un feu jaune qui porte à 1 M avec comme rythme Fl 2.5S . Elle
+pourra se déplacer dans un cercle de 5m de rayon centré sur la bouée. Navigation
+prudente aux abords de la bouée GS.
+CARTE FR 6892
+BOUEE GS 14-35.28N 061-03.22W
+Naviguer avec prudence et à vitesse réduite</information></S124:warningInformation><header xlink:href="#PR.AVINAV_FORT_DE_FRANCE.4.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_FORT_DE_FRANCE.5.2026"><id>NW.AVINAV_FORT_DE_FRANCE.5.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV FORT DE FRANCE</nameOfSeries><productionAgency>CZM ANTILLES</productionAgency><warningNumber>5</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-27T19:10:06.629914Z</publicationDate><generalArea><locationName><text>MARTINIQUE - PARTIE SUD</text></locationName></generalArea><locality><locationName><text>TROIS ILETS</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_FORT_DE_FRANCE.5.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_FORT_DE_FRANCE.5.2026.1"><id>NW.AVINAV_FORT_DE_FRANCE.5.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -6793661.5438773,1637048.19195644 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>UN BATEAU EST SIGNALE SEMI IMMERGE
+CARTE FR 6892
+BATEAU COULE 14-32.82N 061-01.71W
+Naviguer avec prudence
+Jusqu'à nouvel avis</information></S124:warningInformation><header xlink:href="#PR.AVINAV_FORT_DE_FRANCE.5.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet></S124:ExchangeSet>

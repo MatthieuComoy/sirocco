@@ -1,5 +1,522 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <S124:DataSet>
-  </S124:DataSet>
-</S124:ExchangeSet>
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.1.2026"><id>NW.AVINAV_LA_REUNION.1.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-01-08T09:25:53.160850Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE NORD-OUEST</text></locationName></generalArea><locality><locationName><text>Saint Gilles et l'Hermitage</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.1.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.1.2026.1"><id>NW.AVINAV_LA_REUNION.1.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6146134.61918129,-2400624.95555277 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6146320.15166595,-2401817.9759301 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBMERGED_OBJECT</warningHazardTypeDetails><information>Deux bouées jaunes immergées de la réserve marine
+21-04.40S 055-12.70E
+21-05.00S 055-12.80E
+Dangereux pour la navigation
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.1.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.2.2026"><id>NW.AVINAV_LA_REUNION.2.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>2</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-01-08T09:26:41.884697Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE NORD-OUEST</text></locationName></generalArea><locality><locationName><text>Réserve naturelle marine</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.2.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.2.2026.1"><id>NW.AVINAV_LA_REUNION.2.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6149036.16170882,-2404540.35138462 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6146169.87035337,-2400704.48774797 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_MISSING</warningHazardTypeDetails><information>BS1 : 21-04.44S 055-12.72E
+BS4 : 21-06.37S 055-14.26E
+Livre des feux 41340 - 41280</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.2.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.3.2026"><id>NW.AVINAV_LA_REUNION.3.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>3</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-01-08T09:27:16.881162Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE NORD-OUEST</text></locationName></generalArea><locality><locationName><text>Saint Gilles</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.3.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.3.2026.1"><id>NW.AVINAV_LA_REUNION.3.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6145785.81811014,-2399239.16428121 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBMERGED_OBJECT</warningHazardTypeDetails><information>Bouée jaune semi-immergée
+21-03.70S 055-12.51E
+Dangereux pour la navigation
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.3.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.4.2026"><id>NW.AVINAV_LA_REUNION.4.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>4</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-01-08T09:29:15.062349Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE NORD-OUEST</text></locationName></generalArea><locality><locationName><text>Saint Gilles</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.4.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.4.2026.1"><id>NW.AVINAV_LA_REUNION.4.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6145785.70082128,-2399947.37283407 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBSURFACE_MOORING</warningHazardTypeDetails><information>Coffre d'amarrage DD23 Pierre aux platax instable
+21-04.06S 055-12.51E
+Amarrage impossible</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.4.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.1.2023"><id>NW.AVINAV_LA_REUNION.1.2023</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>1</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2023</year></messageSeriesIdentifier><publicationDate>2026-01-15T10:19:18.534528Z</publicationDate><generalArea><locationName><text>LA REUNION - GLORIEUSES</text></locationName></generalArea><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.1.2023.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.1.2023.1"><id>NW.AVINAV_LA_REUNION.1.2023.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5263723.568911476,-1296242.0373014081 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBSURFACE_MOORING</warningHazardTypeDetails><information>Ligne de mouillage composée d'une ancre et 3 maillons
+11-33.90S 047-17.09E
+Marquée par deux bouées de couleur orange
+Naviguer avec prudence et à vitesse réduite</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.1.2023"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.10.2016"><id>NW.AVINAV_LA_REUNION.10.2016</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>10</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2016</year></messageSeriesIdentifier><publicationDate>2026-01-15T10:11:31.342601Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE NORD-OUEST</text></locationName></generalArea><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.10.2016.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.10.2016.1"><id>NW.AVINAV_LA_REUNION.10.2016.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        6160340.09940142,-2382848.299750458 6160319.319763139,-2382373.179384128 6161033.248764092,-2381956.466321968 6161523.425588552,-2381114.5290245446 6162358.692834471,-2380634.290979047 6163099.5240457,-2379978.900074027 6163543.3177489955,-2379477.641547992 6164253.721632741,-2379169.426165852 6164860.041792596,-2378568.500881024 6165596.605756678,-2377810.3232261175 
+        6166360.814060973,-2377204.0822279956 6167279.570924987,-2376903.2529329173 6168246.380702527,-2376620.100736791 6169239.165027917,-2376306.1763631487 6170244.008964811,-2376286.9161601765 6170972.223967085,-2376654.650624602 6171815.840174813,-2376812.508718984 6171932.169042692,-2377068.6587776816 6160340.09940142,-2382848.299750458 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:warningInformation><warningHazardTypeDetails>WORKS_IN_PROGRESS</warningHazardTypeDetails><information>Chantier de la nouvelle route littorale
+zone réglementée délimitée par : 
+20-55.45S 055-20.36E
+20-55.22S 055-20.35E
+20-55.01S 055-20.73E
+20-54.58S 055-20.99E
+20-54.34S 055-21.44E
+20-54.01S 055-21.84E
+20-53.76S 055-22.08E
+20-53.60S 055-22.47E
+20-53.30S 055-22.79E
+20-52.92S 055-23.19E
+20-52.61S 055-23.60E
+20-52.46S 055-24.10E
+20-52.32S 055-24.62E
+20-52.16S 055-25.15E
+20-52.15S 055-25.69E
+20-52.34S 055-26.09E
+20-52.42S 055-26.54E
+20-52.54S 055-26.60E
+Carte Shom 7183
+Optique lumineuse de couleur ambre
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.10.2016"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.7.2020"><id>NW.AVINAV_LA_REUNION.7.2020</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>7</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2020</year></messageSeriesIdentifier><publicationDate>2026-01-15T10:14:02.326569Z</publicationDate><generalArea><locationName><text>LA REUNION - PORT DE SAINT LEU</text></locationName></generalArea><warningHazardTypeGeneral>SCIENTIFIC_INSTRUMENTS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.7.2020.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.7.2020.1"><id>NW.AVINAV_LA_REUNION.7.2020.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6154253.520709813,-2411374.98049545 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_BUOY_APPARATUS</warningHazardTypeDetails><information>Trépied d'appareils de mesures scientifiques
+21-09.80S 055-17.08E
+profondeur 10 mètres</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.7.2020"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.2.2025"><id>NW.AVINAV_LA_REUNION.2.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>2</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2026-01-15T10:20:23.580539Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE NORD-OUEST</text></locationName></generalArea><locality><locationName><text>Pointe des aigrettes</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.2.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.2.2025.1"><id>NW.AVINAV_LA_REUNION.2.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6145578.0217273235,-2396589.1645959793 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_BUOY_LIGHT_UNLIT</warningHazardTypeDetails><information>Bouée réserve marine BGR3
+21-02.37S 055-12.40E
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.2.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.3.2025"><id>NW.AVINAV_LA_REUNION.3.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>3</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2026-02-23T14:36:34.342322Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE NORD-OUEST</text></locationName></generalArea><locality><locationName><text>Baie de la possession</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.3.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.3.2025.1"><id>NW.AVINAV_LA_REUNION.3.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6160717.472475208,-2382580.3477892075 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6160550.493239019,-2382600.2106580217 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6160457.726996691,-2382679.662354162 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_ESTABLISHMENT</warningHazardTypeDetails><information>Pose de 3 corps morts
+20-55.37S 055-20.42E
+20-55.32S 055-20.56E
+20-55.33S 055-20.47E
+Naviguer avec prudence et à vitesse réduite</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.3.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.4.2025"><id>NW.AVINAV_LA_REUNION.4.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>4</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2026-02-23T14:41:41.595924Z</publicationDate><generalArea><locationName><text>LA REUNION - ZONE NORD-OUEST</text></locationName></generalArea><locality><locationName><text>Pointe des aigrettes</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.4.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.4.2025.1"><id>NW.AVINAV_LA_REUNION.4.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6145559.4684788585,-2396469.894089144 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBMERGED_OBJECT</warningHazardTypeDetails><information>Bouée ronde, 40 cm, semi immergée
+21-02.31S 055-12.39E
+Naviguer avec prudence et à vitesse réduite</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.4.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.13.2025"><id>NW.AVINAV_LA_REUNION.13.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>13</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2026-02-27T07:23:20.728404Z</publicationDate><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><warningHazardTypeGeneral>AQUACULTURE_AND_FISHING_INSTALLATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.1"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.2"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.3"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.4"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.5"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.6"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.7"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.8"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.9"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.10"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.11"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.12"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.13"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.14"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.15"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.13.2025.16"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.1"><id>NW.AVINAV_LA_REUNION.13.2025.1</id><S124:warningInformation><warningHazardTypeDetails>FISH_AGGREGATING_DEVICE_FAD</warningHazardTypeDetails><information>Référence : Préfecture de la Région Mayotte, arrêté 20218-601 du 28 juin 2018. 
+Des dispositifs de concentration de poissons sont mouillés autour de Mayotte. 
+Ils sont munis d'une ligne de flotteurs de couleur blanche et d'un réflecteur radar. 
+La liste suivante actualise leur état de présence (En place, Absent ou Non encore posé) : 
+Nom, Latitude, Longitude, État, Observation</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.2"><id>NW.AVINAV_LA_REUNION.13.2025.2</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5032689.98452421,-1413535.42270509 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Longoni 
+12-35.72S 045-12.57E En place, *Chapelet de bouée émerge uniquement à faible courant</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.3"><id>NW.AVINAV_LA_REUNION.13.2025.3</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5048740.39977175,-1426693.06917157 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Majicavo 3 
+12-42.64S 045-21.22E, Absent, Néant</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.4"><id>NW.AVINAV_LA_REUNION.13.2025.4</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5044225.28122518,-1449501.33253442 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Bandrélé
+12-54.63S 045-18.78E, En place, Dispositif lumineux inopérant</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.5"><id>NW.AVINAV_LA_REUNION.13.2025.5</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5041012.22965591,-1454846.70117236 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Bambo
+12-57.43S 045-17.05E *Absent, Néant</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.6"><id>NW.AVINAV_LA_REUNION.13.2025.6</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5043118.02335675,-1460901.43028354 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Saziley 3
+13-00.61S 045-18.19E Absent, Néant</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.7"><id>NW.AVINAV_LA_REUNION.13.2025.7</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5001337.96313719,-1438178.08773828 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Tsingoni 2
+12-48.68S 044-55.67E En place, *Chapelet de bouée détérioré, Réflecteur radar et dispositif lumineux inopérants</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.8"><id>NW.AVINAV_LA_REUNION.13.2025.8</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5003018.88744817,-1430758.54875123 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Acoua 2
+12-44.78S 044-56.57E En place, Réflecteur radar et dispositif lumineux inopérants</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.9"><id>NW.AVINAV_LA_REUNION.13.2025.9</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5002293.45543317,-1424480.06292283 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Morne
+12-41.47S 044-56.18E En place, Réflecteur radar et dispositif lumineux inopérants</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.10"><id>NW.AVINAV_LA_REUNION.13.2025.10</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5049841.349535697,-1430956.1881489672 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Vigie 3
+12-44.88S 044-21.81E *Absent, Néant</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.11"><id>NW.AVINAV_LA_REUNION.13.2025.11</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5069062.88601097,-1441001.81967479 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Vigie 10
+12-50.16S 045-32.17E *Absent, Néant</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.12"><id>NW.AVINAV_LA_REUNION.13.2025.12</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5035221.76080982,-1468530.70862361 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Dapani 2
+13-04.62S 045-13.93E Absent, Néant</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.13"><id>NW.AVINAV_LA_REUNION.13.2025.13</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5051363.08697484,-1476074.411565 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Dapani 10
+13-08.58S 045-22.63E *Absent, Néant</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.14"><id>NW.AVINAV_LA_REUNION.13.2025.14</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5051570.88335765,-1403362.63446499 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Longoni 10
+12-30.37S 045-22.74E *Absent, Néant</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.15"><id>NW.AVINAV_LA_REUNION.13.2025.15</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    5002252.63828654,-1403018.66113731 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Iris
+12-30.19S 044-56.16E *Absent, Néant</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.13.2025.16"><id>NW.AVINAV_LA_REUNION.13.2025.16</id><S124:warningInformation><information>Suivant les conditions météorologiques les DCP peuvent être immergés temporairement. 
+Il est conseillé de naviguer à plus d'un mille d'un DCP, compte tenu du rayon d'évitage observé. L'arrêté préfectoral 2018-601 du 28 juin 2018 définit les restrictions nautiques à l'approche de ces dispositifs. 
+Prudence à la navigation. 
+* : Nouvelle entrée ou modification. 
+(POSITIONS : WGS84)</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.13.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.39.2026"><id>NW.AVINAV_LA_REUNION.39.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>39</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-30T11:25:35.495296Z</publicationDate><generalArea><locationName><text>LA REUNION</text></locationName></generalArea><warningHazardTypeGeneral>AQUACULTURE_AND_FISHING_INSTALLATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.1"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.2"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.3"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.4"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.5"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.6"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.7"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.8"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.9"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.10"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.11"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.12"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.13"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.14"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.15"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.16"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.17"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.18"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.19"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.20"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.21"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.22"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.23"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.24"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.25"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.26"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.27"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.28"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.29"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.30"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.31"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.32"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.33"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.34"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.35"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.36"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.37"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.38"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.39"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.40"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.41"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.42"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.43"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.44"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.45"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.46"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.47"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.48"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.49"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.50"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.51"/><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.39.2026.52"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.1"><id>NW.AVINAV_LA_REUNION.39.2026.1</id><S124:warningInformation><warningHazardTypeDetails>FISH_AGGREGATING_DEVICE_FAD</warningHazardTypeDetails><information>Référence : Avis 26 30-T-08
+Des dispositifs de concentration de poissons sont mouillés autour de l'île de La Réunion. 
+Ils sont munis d'une ligne de flotteurs de couleur orange, rouge ou jaune et d'un réflecteur radar. La liste suivante actualise leur état de présence (En place, Absent ou Dégradé).</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.2"><id>NW.AVINAV_LA_REUNION.39.2026.2</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6140858.07531769,-2380048.01289074 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Le Port 
+20-54.05S 055-09.86E - En place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.3"><id>NW.AVINAV_LA_REUNION.39.2026.3</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6137947.07063344,-2374918.89906398 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Pichette 
+20-51.46S 055-08.29E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.4"><id>NW.AVINAV_LA_REUNION.39.2026.4</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6146605.87169231,-2372022.38320624 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>La Pointe 
+20-50.00S 055-12.95E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.5"><id>NW.AVINAV_LA_REUNION.39.2026.5</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6154106.95004693,-2364831.75425814 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Cap Noir 
+20-46.38S 055-17.00E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.6"><id>NW.AVINAV_LA_REUNION.39.2026.6</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6160589.4550608,-2373572.82456463 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Grande Chaloupe 
+20-50.78S 055-20.49E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.7"><id>NW.AVINAV_LA_REUNION.39.2026.7</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6163303.79531131,-2366726.87943811 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Potences 
+20-47.33S 055-21.95E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.8"><id>NW.AVINAV_LA_REUNION.39.2026.8</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6171389.30099259,-2368826.63370324 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Cap Bernard 
+20-48.39S 055-26.31E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.9"><id>NW.AVINAV_LA_REUNION.39.2026.9</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6172487.65330175,-2362395.17470081 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Butor 
+20-45.15S 055-26.90E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.10"><id>NW.AVINAV_LA_REUNION.39.2026.10</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6182563.92254339,-2370609.03745614 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Sainte-Marie 
+20-49.29S 055-32.33E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.11"><id>NW.AVINAV_LA_REUNION.39.2026.11</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6194187.53270705,-2371222.39995485 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>*Sainte-Suzanne 
+20-49.60S 055-38.60E - *absent</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.12"><id>NW.AVINAV_LA_REUNION.39.2026.12</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6196816.52801462,-2364615.46471261 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Bagatelle 
+20-46.27S 055-40.02E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.13"><id>NW.AVINAV_LA_REUNION.39.2026.13</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6198953.86223785,-2375188.92028627 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Bois-Rouge 
+20-51.60S 055-41.17E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.14"><id>NW.AVINAV_LA_REUNION.39.2026.14</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6203889.02632969,-2378993.4756941 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Champ Borne 
+20-53.51S 055-43.83E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.15"><id>NW.AVINAV_LA_REUNION.39.2026.15</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6207518.04172955,-2388073.27310308 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Bourbier Saint-Benoît 
+20-58.09S 055-45.78E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.16"><id>NW.AVINAV_LA_REUNION.39.2026.16</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6209054.25070249,-2397793.84160767 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Sainte-Anne 
+21-02.98S 055-46.61E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.17"><id>NW.AVINAV_LA_REUNION.39.2026.17</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6215987.59965407,-2398903.17093324 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Rivière de l'Est 
+21-03.53S 055-50.35E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.18"><id>NW.AVINAV_LA_REUNION.39.2026.18</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6222759.53534399,-2406193.07117082 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Sainte-Rose 
+21-07.20S 055-54.00E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.19"><id>NW.AVINAV_LA_REUNION.39.2026.19</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6219596.20648062,-2410535.42797953 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>*Lacroix 
+21-09.38S 055-52.29E - *absent</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.20"><id>NW.AVINAV_LA_REUNION.39.2026.20</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6221531.31029557,-2416743.48979441 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Cascades 
+21-12.50S 055-53.34E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.21"><id>NW.AVINAV_LA_REUNION.39.2026.21</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6220765.06113395,-2422888.04154184 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Grand Brûlé 
+21-15.59S 055-52.92E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.22"><id>NW.AVINAV_LA_REUNION.39.2026.22</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6208909.53536446,-2443528.93078911 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>*Saint-Philippe 
+*21-25.95S *055-46.53E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.23"><id>NW.AVINAV_LA_REUNION.39.2026.23</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6200632.93122398,-2443728.24737738 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Cap Méchant 
+21-26.05S 055-42.07E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.24"><id>NW.AVINAV_LA_REUNION.39.2026.24</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6195452.8642524,-2446664.44453751 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Cap Jaune 
+21-27.52S 055-39.28E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.25"><id>NW.AVINAV_LA_REUNION.39.2026.25</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6189671.67203054,-2449264.17908636 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Piton Babet 
+21-28.83S 055-36.17E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.26"><id>NW.AVINAV_LA_REUNION.39.2026.26</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6189298.75173638,-2441804.93726676 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Cayenne 
+21-25.09S 055-35.96E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.27"><id>NW.AVINAV_LA_REUNION.39.2026.27</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6184354.31102031,-2443381.43797906 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Manapany 
+21-25.88S 055-33.30E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.28"><id>NW.AVINAV_LA_REUNION.39.2026.28</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6178608.36997053,-2447599.42710567 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>*Grands-Bois 
+*21-27.99S *055-30.20E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.29"><id>NW.AVINAV_LA_REUNION.39.2026.29</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6170849.40146224,-2444172.73156708 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>*Saint-Pierre 
+*21-26.27S *055-26.02E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.30"><id>NW.AVINAV_LA_REUNION.39.2026.30</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6172385.61043519,-2437341.28208356 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Ravine Blanche 
+21-22.85S 055-26.85E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.31"><id>NW.AVINAV_LA_REUNION.39.2026.31</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6165298.26952135,-2437757.70885619 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Pierrefonds 
+21-23.06S 055-23.03E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.32"><id>NW.AVINAV_LA_REUNION.39.2026.32</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6158750.82813786,-2436849.1541308 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Saint-Étienne 
+21-22.60S 055-19.50E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.33"><id>NW.AVINAV_LA_REUNION.39.2026.33</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6161719.34789235,-2432665.62904 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Saint-Louis 
+21-20.50S 055-21.10E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.34"><id>NW.AVINAV_LA_REUNION.39.2026.34</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6157639.48855477,-2428710.12820158 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Le Gouffre 
+21-18.51S 055-18.90E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.35"><id>NW.AVINAV_LA_REUNION.39.2026.35</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6148685.6908453,-2432253.30708561 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Ruisseau 
+21-20.29S 055-14.08E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.36"><id>NW.AVINAV_LA_REUNION.39.2026.36</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6151160.69419061,-2426308.58235707 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Étang-Salé 
+21-17.31S 055-15.41E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.37"><id>NW.AVINAV_LA_REUNION.39.2026.37</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6150390.73437929,-2420925.21435877 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Vouve 
+21-14.60S 055-14.99E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.38"><id>NW.AVINAV_LA_REUNION.39.2026.38</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6136581.55154638,-2421783.17780524 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Stella 
+21-15.04S 055-07.55E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.39"><id>NW.AVINAV_LA_REUNION.39.2026.39</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6143945.33586236,-2421713.50403926 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Portail 
+21-15.00S 055-11.52E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.40"><id>NW.AVINAV_LA_REUNION.39.2026.40</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6139060.26554138,-2429206.01067543 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Du Trou 
+21-18.76S 055-08.89E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.41"><id>NW.AVINAV_LA_REUNION.39.2026.41</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6147106.80940088,-2417151.46777883 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Roches tendres 
+21-12.71S 055-13.22E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.42"><id>NW.AVINAV_LA_REUNION.39.2026.42</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6136115.8650099,-2413155.68009952 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Grand Étang 
+21-10.70S 055-07.30E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.43"><id>NW.AVINAV_LA_REUNION.39.2026.43</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6149314.64596828,-2412019.59291515 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>La Nouvelle 
+21-10.13S 055-14.41E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.44"><id>NW.AVINAV_LA_REUNION.39.2026.44</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6141331.18315356,-2410191.26276456 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Saint-Leu 
+21-09.21S 055-10.11E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.45"><id>NW.AVINAV_LA_REUNION.39.2026.45</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6134817.13761731,-2407187.56176223 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Ermitage 
+21-07.70S 055-06.60E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.46"><id>NW.AVINAV_LA_REUNION.39.2026.46</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6136794.91390373,-2398203.37088626 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>*Saint-Gilles 
+*21-03.18S *055-07.67E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.47"><id>NW.AVINAV_LA_REUNION.39.2026.47</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6131292.02040885,-2396052.45362025 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Boucan Canot 
+21-02.10S 055-04.70E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.48"><id>NW.AVINAV_LA_REUNION.39.2026.48</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6149437.09740816,-2388381.24485581 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Baie de Saint-Paul 
+20-58.24S 055-14.48E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.49"><id>NW.AVINAV_LA_REUNION.39.2026.49</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6130920.95543954,-2386990.44692612 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Cap La Houssaye 
+20-57.54S 055-04.50E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.50"><id>NW.AVINAV_LA_REUNION.39.2026.50</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6139023.15904445,-2386009.00624962 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Saint-Paul 
+20-57.05S 055-08.87E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.51"><id>NW.AVINAV_LA_REUNION.39.2026.51</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    6145299.72300034,-2385528.23922804 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>Omega 
+20-56.80S 055-12.25E - en place</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.39.2026.52"><id>NW.AVINAV_LA_REUNION.39.2026.52</id><S124:warningInformation><information>Suivant les conditions météorologiques les DCP peuvent être immergés temporairement.
+Il est conseillé de naviguer à plus d'un mille d'un DCP, compte tenu du rayon d'évitage observé.
+L'arrêté préfectoral 2008-1742 consolidé le 25 mai 2021 définit les restrictions nautiques à l'approche de ces dispositifs.
+* : Nouvelle entrée ou modification.
+(POSITIONS : WGS84)
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.39.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_LA_REUNION.45.2026"><id>NW.AVINAV_LA_REUNION.45.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV LA REUNION</nameOfSeries><productionAgency>CZM SOI</productionAgency><warningNumber>45</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER_IN_FORCE_BULLETIN</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-09-01T12:10:16.338883Z</publicationDate><generalArea><locationName><text>LA REUNION</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - AMSTERDAM</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - BASSAS DA INDIA</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - COMORES</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - CROZET</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - EUROPA</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - GLORIEUSES</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - JUAN DE NOVA</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - KERGUELEN</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - MAYOTTE</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - TERRE-ADELIE</text></locationName></generalArea><generalArea><locationName><text>LA REUNION - TROMELIN</text></locationName></generalArea><warningHazardTypeGeneral>IN_FORCE_BULLETIN</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_LA_REUNION.45.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_LA_REUNION.45.2026.1"><id>NW.AVINAV_LA_REUNION.45.2026.1</id><S124:warningInformation><information>AVINAV LA REUNION en vigueur le 011200 UTC SEP 26 :
+10/16, 7/20, 1/23, 2/25, 3/25, 4/25, 13/25, 1/26, 2/26, 3/26, 4/26, 39/26 et ce MSG</information></S124:warningInformation><header xlink:href="#PR.AVINAV_LA_REUNION.45.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet></S124:ExchangeSet>

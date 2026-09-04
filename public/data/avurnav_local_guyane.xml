@@ -1,5 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <S124:DataSet>
-  </S124:DataSet>
-</S124:ExchangeSet>
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_CAYENNE.1046.2026"><id>NW.AVURNAV_LOCAL_CAYENNE.1046.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL CAYENNE</nameOfSeries><productionAgency>CZM GUYANE</productionAgency><warningNumber>1046</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-26T12:45:46.609409Z</publicationDate><generalArea><locationName><text>GUYANE</text></locationName></generalArea><locality><locationName><text>Chenal du MAHURY</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_CAYENNE.1046.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_CAYENNE.1046.2026.1"><id>NW.AVURNAV_LOCAL_CAYENNE.1046.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -5816153.963272481,540588.2762793462 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>Tour D20, le feu directionnel de guidage du chenal du Mahury est signalé éteint
+04-51.02N 052-14.84W
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_CAYENNE.1046.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_CAYENNE.1034.2026"><id>NW.AVURNAV_LOCAL_CAYENNE.1034.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL CAYENNE</nameOfSeries><productionAgency>CZM GUYANE</productionAgency><warningNumber>1034</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-27T11:39:48.751915Z</publicationDate><generalArea><locationName><text>GUYANE</text></locationName></generalArea><locality><locationName><text>Chenal de Cayenne</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_CAYENNE.1034.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_CAYENNE.1034.2026.1"><id>NW.AVURNAV_LOCAL_CAYENNE.1034.2026.1</id><S124:warningInformation><warningHazardTypeDetails>LIGHT_BUOY_LIGHT_UNLIT</warningHazardTypeDetails><information>Il a été signalé le dysfonctionnement des feux suivants : 
+Bouée latérale rouge 'L1' a la position : 04°54.6309' N 052°21.9089'W
+Bouée latérale verte 'L2' a la position : 04°54.5969' N 052°21.8949'W
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_CAYENNE.1034.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_CAYENNE.1036.2026"><id>NW.AVURNAV_LOCAL_CAYENNE.1036.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL CAYENNE</nameOfSeries><productionAgency>CZM GUYANE</productionAgency><warningNumber>1036</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-10T17:03:42.629518Z</publicationDate><generalArea><locationName><text>GUYANE</text></locationName></generalArea><locality><locationName><text>Chenal de KOUROU</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_CAYENNE.1036.2026.1"/><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_CAYENNE.1036.2026.2"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_CAYENNE.1036.2026.1"><id>NW.AVURNAV_LOCAL_CAYENNE.1036.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -5855405.21572619,582502.5052640162 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_ESTABLISHMENT</warningHazardTypeDetails><information>Nouvelle bouée Latérale tribord k1a a la position :
+05-13.53N 052-36.07W</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_CAYENNE.1036.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_CAYENNE.1036.2026.2"><id>NW.AVURNAV_LOCAL_CAYENNE.1036.2026.2</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -5855368.109229259,582452.2024548186 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_ESTABLISHMENT</warningHazardTypeDetails><information>NOUVELLE BOUEE Latérale bâbord K2A A LA POSITION :
+05-13.50N 052-35.98W</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_CAYENNE.1036.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_CAYENNE.1050.2026"><id>NW.AVURNAV_LOCAL_CAYENNE.1050.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL CAYENNE</nameOfSeries><productionAgency>CZM GUYANE</productionAgency><warningNumber>1050</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-09-04T17:22:29.301676Z</publicationDate><generalArea><locationName><text>GUYANE</text></locationName></generalArea><locality><locationName><text>Centre Spatial</text></locationName></locality><warningHazardTypeGeneral>HAZARD_OTHER</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_CAYENNE.1050.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_CAYENNE.1050.2026.1"><id>NW.AVURNAV_LOCAL_CAYENNE.1050.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        -5888429.99799486,601010.82776316 -5881045.80510557,611559.44635457 -5855405.21572619,593035.22360176 -5854811.51177529,584445.71183965 -5858002.67051137,576118.06230714 -5869320.15207535,582452.20245482 -5888429.99799486,601010.82776316 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayStart>16:45:00</timeOfDayStart><timeOfDayEnd>01:00:00</timeOfDayEnd><dateStart><date>2026-09-05</date></dateStart><dateEnd><date>2026-09-06</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>HAZARDOUS_AREA</warningHazardTypeDetails><information>Respecter les termes de l'arrêté préfectoral R03-2026-09-04-00003 du 04 septembre 2026.
+Les navires sont priés de se tenir à l'écart de
+la zone délimitée par : 
+05-23.46N 052-53.80W
+05-29.12N 052-49.82W
+05-19.18N 052-36.00W
+05-14.57N 052-35.68W
+05-10.10N 052-37.40W
+05-13.50N 052-43.50W</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_CAYENNE.1050.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet></S124:ExchangeSet>

@@ -58,6 +58,7 @@
   --color-success: var(--emerald-500);
   --color-success-bg: rgba(16, 185, 129, 0.15);
   --color-warning: var(--amber-500);
+  --color-warning-bg: rgba(245, 158, 11, 0.15);
 
   /* Points of sail (used by the boat trim animation) */
   --color-pres: #a78bfa;
@@ -122,6 +123,7 @@
   --color-success: var(--emerald-600);
   --color-success-bg: rgba(5, 150, 105, 0.12);
   --color-warning: var(--amber-600);
+  --color-warning-bg: rgba(217, 119, 6, 0.12);
 }
 
 @media (prefers-color-scheme: light) {
@@ -143,6 +145,7 @@
     --color-success: var(--emerald-600);
     --color-success-bg: rgba(5, 150, 105, 0.12);
     --color-warning: var(--amber-600);
+    --color-warning-bg: rgba(217, 119, 6, 0.12);
   }
 }
 
