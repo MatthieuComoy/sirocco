@@ -1,5 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <S124:DataSet>
-  </S124:DataSet>
-</S124:ExchangeSet>
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_CAYENNE.67.2026"><id>NW.AVURNAV_CAYENNE.67.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV CAYENNE</nameOfSeries><productionAgency>CZM GUYANE</productionAgency><warningNumber>67</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-09-01T18:05:52.528532Z</publicationDate><generalArea><locationName><text>GUYANE</text></locationName></generalArea><locality><locationName><text>Centre Spatial</text></locationName></locality><warningHazardTypeGeneral>HAZARD_OTHER</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_CAYENNE.67.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_CAYENNE.67.2026.1"><id>NW.AVURNAV_CAYENNE.67.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        -5888429.99799486,601010.82776316 -5888801.06296417,646758.583284 -5837594.09719927,651514.18563196 -5864644.73346203,580775.46280239 -5888429.99799486,601010.82776316 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><dateStart><date>2026-09-15</date></dateStart><dateEnd><date>2026-10-15</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>FALLOUT_HAZARD</warningHazardTypeDetails><information>chaque jours de 0111 utc à 0151 utc
+les navires sont pries de se tenir a l'ecart de la zone délimitée par : 
+05-23.46N 052-53.80W
+05-48.00N 052-54.00W
+05-50.55N 052-26.40W
+05-12.60N 052-40.98W</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_CAYENNE.67.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_CAYENNE.65.2026"><id>NW.AVURNAV_CAYENNE.65.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV CAYENNE</nameOfSeries><productionAgency>CZM GUYANE</productionAgency><warningNumber>65</warningNumber><warningType>COASTAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-26T10:46:19.044844Z</publicationDate><generalArea><locationName><text>GUYANE</text></locationName></generalArea><locality><locationName><text>MANA</text></locationName></locality><warningHazardTypeGeneral>RADIO_SERVICES</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_CAYENNE.65.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_CAYENNE.65.2026.1"><id>NW.AVURNAV_CAYENNE.65.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -5986868.4342247415,639825.8840308597 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>VHF_SERVICE</warningHazardTypeDetails><information>L'ANTENNE VHF COUVRANT LA ZONE DE MANA N'EST PLUS EN MESURE DE DIFFUSER LES BULLETINS METEOROLOGIQUEs
+DE METEO FRANCE AINSI QUE LES AVIS URGENTS AUX NAVIGATEURS. PAS DE DATE DE RETOUR A LA NORMALE PRÉVU. LES DIFFUSIONS DES BULLETINS METEOROLOGIQUEs ET DES AVURNAV CE FERA SUR L'EMETTEUR D'IRACOUBO
+LE CANAL 16 DE LA VHF AINSI QUE LES APPELS DE DÉTRESSE ASN SONT TOUJOUrS VEILLE DEPUIS L'EMeTTEUR
+MANA.</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_CAYENNE.65.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_CAYENNE.66.2026"><id>NW.AVURNAV_CAYENNE.66.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV CAYENNE</nameOfSeries><productionAgency>CZM GUYANE</productionAgency><warningNumber>66</warningNumber><warningType>COASTAL_IN_FORCE_BULLETIN</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-28T11:48:10.554954Z</publicationDate><generalArea><locationName><text>GUYANE</text></locationName></generalArea><warningHazardTypeGeneral>IN_FORCE_BULLETIN</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_CAYENNE.66.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_CAYENNE.66.2026.1"><id>NW.AVURNAV_CAYENNE.66.2026.1</id><S124:warningInformation><information>AVURNAV CAYENNE en vigueur le 281147 UTC AOU 26 :
+65/26 et ce MSG</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_CAYENNE.66.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet></S124:ExchangeSet>

@@ -1,5 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <S124:DataSet>
-  </S124:DataSet>
-</S124:ExchangeSet>
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_FORT_DE_FRANCE.1092.2026"><id>NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1092.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL FORT DE FRANCE</nameOfSeries><productionAgency>CZM ANTILLES</productionAgency><warningNumber>1092</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-11T14:52:50.822209Z</publicationDate><generalArea><locationName><text>GUADELOUPE</text></locationName></generalArea><locality><locationName><text>Désirade - Petite Terre </text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1092.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1092.2026.1"><id>NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1092.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -6790488.93838969,1843364.8197011 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_BUOY_LIGHT_UNLIT</warningHazardTypeDetails><information>16-20.00N 061-00.00W
+AVURNAV LOCAL FORT DE FRANCE en vigueur le 111448 UTC AOU 26 :
+Feu de jalonnement phare de la Desirade signalé éteint
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_FORT_DE_FRANCE.1092.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_FORT_DE_FRANCE.1097.2026"><id>NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1097.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL FORT DE FRANCE</nameOfSeries><productionAgency>CZM ANTILLES</productionAgency><warningNumber>1097</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-18T19:50:42.992524Z</publicationDate><generalArea><locationName><text>MARTINIQUE - PARTIE SUD</text></locationName></generalArea><locality><locationName><text>SAINTE ANNE</text></locationName></locality><warningHazardTypeGeneral>HAZARD_OTHER</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1097.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1097.2026.1"><id>NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1097.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -6768525.602856175,1624877.6774058912 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><information>PRÉSENCE D'UNE BOUÉE DE MESURE DE LA HOULE AU LARGE DE LA COMMUNE DE SAINTE ANNE
+BOUÉE DE MESURE DE HOULE 14-26.47N 060-48.16W
+CARTE FR 6738
+Naviguer avec prudence</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_FORT_DE_FRANCE.1097.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVURNAV_LOCAL_FORT_DE_FRANCE.1096.2026"><id>NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1096.2026</id><messageSeriesIdentifier><nameOfSeries>AVURNAV LOCAL FORT DE FRANCE</nameOfSeries><productionAgency>CZM ANTILLES</productionAgency><warningNumber>1096</warningNumber><warningType>LOCAL_NAVIGATIONAL_WARNING</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-13T21:29:41.216827Z</publicationDate><generalArea><locationName><text>MARIE GALANTE</text></locationName></generalArea><warningHazardTypeGeneral>RADIO_SERVICES</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1096.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1096.2026.1"><id>NW.AVURNAV_LOCAL_FORT_DE_FRANCE.1096.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    -6820645.107850077,1796992.2191761814 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>VHF_SERVICE</warningHazardTypeDetails><information>L'ANTENNE VHF COUVRANT LA ZONE DE MARIE-GALANTE EST HORS SERVICE. PAS DE DATE DE RETOUR A LA NORMALE PRÉVU.
+LE CANAL 16 DE LA VHF AINSI QUE LES APPELS DE DÉTRESSE ASN EST VEILLE EN MODE DÉGRADÉ.
+MERCI DE RAPPORTER AU CROSS ANTILLES-GUYANE TOUTE DÉTRESSE PAR TÉLÉPHONE AU 196 OU VIA WHATSAPP AU +596 696 82 09 97.
+IL EST DEMANDÉ A TOUS LES NAVIRES D'EXERCER UNE VEILLE ATTENTIVE ET DE NAVIGUER AVEC PRUDENCE.
+
+15-55.99N 061-16.25W
+Jusqu'à nouvel avis</information></S124:warningInformation><header xlink:href="#PR.AVURNAV_LOCAL_FORT_DE_FRANCE.1096.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet></S124:ExchangeSet>

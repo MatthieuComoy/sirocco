@@ -1,4 +1,24 @@
-<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.35.2026"><id>NW.AVINAV_TOULON.35.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>35</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-02T08:40:00.194713Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>EMBOUCHURE DE L'AUDE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.35.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.35.2026.1"><id>NW.AVINAV_TOULON.35.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+<?xml version='1.0' encoding='UTF-8'?><S124:ExchangeSet xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:S100="http://www.iho.int/s100gml/1.0" xmlns:S124="http://www.iho.int/S124/gml/cs0/0.1" xmlns:xlink="http://www.w3.org/1999/xlink"><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.91.2026"><id>NW.AVINAV_TOULON.91.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>91</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-23T08:02:02.265355Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>RADE DE VILLEFRANCHE</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.91.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.91.2026.1"><id>NW.AVINAV_TOULON.91.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    814357.73489819,5419287.23651016 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>VOILIER COULÉ A LA POSITION :
+43-42.06N 007-18.93E
+(CARTE FR7200)
+NE PAS PECHER, CHALUTER, DRAGUER, MOUILLER ET PLONGER DANS CETTE ZONE
+REMPLACE AVURNAV LOCAL TOULON 3033/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.91.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.95.2026"><id>NW.AVINAV_TOULON.95.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>95</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-27T09:29:27.175083Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GOLFE DE SAINT TROPEZ</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.95.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.95.2026.1"><id>NW.AVINAV_TOULON.95.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    741962.77385315,5354585.83011115 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SEASONAL_RECOMMISSIONING_COMPLETE</warningHazardTypeDetails><information>COFFRE D'AMARRAGE DU CAP SAINT-PIERRE MIS EN PLACE POUR LA SAISON ESTIVALE
+A LA POSITION :
+43-16.76N 006-39.91E
+Fl(6)Y.15s 2M
+LIVRE DES FEUX L1 : 60070
+NAVIGUER AVEC PRUDENCE
+REMPLACE AVURNAV LOCAL TOULON 3060/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.95.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.35.2026"><id>NW.AVINAV_TOULON.35.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>35</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-02T08:40:00.194713Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>EMBOUCHURE DE L'AUDE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.35.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.35.2026.1"><id>NW.AVINAV_TOULON.35.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     360526.72418248,5344041.72039404 
   </gml:coordinates>
@@ -11,19 +31,7 @@ A LA POSITION :
 Fl(2)R.4s
 NAVIGUER AVEC PRUDENCE
 (CARTE FR6844)
-REMPLACE AVURNAV LOCAL TOULON 2160/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.35.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.130.2025"><id>NW.AVINAV_TOULON.130.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>130</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-09-22T13:37:14.980593Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>PORT DE PORTO-VECCHIO</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.130.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.130.2025.1"><id>NW.AVINAV_TOULON.130.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    1033694.23825787,5099829.63013982 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:fixedDateRange><timeOfDayStart>06:00:00</timeOfDayStart><dateStart><date>2025-09-03</date></dateStart><dateEnd/></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_ESTABLISHMENT</warningHazardTypeDetails><information>DANS LE CADRE DES TRAVAUX DE L'EXTENSION DU PORT DE PLAISANCE 
-DE PORTO-VECCHIO, LE FEU TRIBORD D'ACCES AU PORT EST REMPLACE 
-PAR UNE BOUEE PROVISOIRE DONT LES CARACTERISTIQUES SONT  :
-MARQUE : LATERALE TRIBORD
-HAUTEUR PLAN FOCAL : 1.5 METRE
-RYTHME : FL(4) G 15S
-NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL TOULON 3286/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.130.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.90.2025"><id>NW.AVINAV_TOULON.90.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>90</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-06-30T07:37:12.207870Z</publicationDate><generalArea><locationName><text>CORSE</text></locationName></generalArea><locality><locationName><text>BAIE D'AJACCIO</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.90.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.90.2025.1"><id>NW.AVINAV_TOULON.90.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 2160/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.35.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.90.2025"><id>NW.AVINAV_TOULON.90.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>90</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-06-30T07:37:12.207870Z</publicationDate><generalArea><locationName><text>CORSE</text></locationName></generalArea><locality><locationName><text>BAIE D'AJACCIO</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.90.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.90.2025.1"><id>NW.AVINAV_TOULON.90.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     974757.54117997,5148974.34819082 
   </gml:coordinates>
@@ -105,18 +113,7 @@ NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInfor
 L’AVARIE DES FEUX DE SIGNALISATION DES AVIS DE VENT FORT. 
 43-12.04N 006-40.49E
 NAVIGUER AVEC PRUDENCE.	
-(INFORMATION TOUJOURS EN VIGUEUR LE 27/01/2023).</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.21.2016"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.1.2025"><id>NW.AVINAV_TOULON.1.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>1</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-01-02T10:15:34.656132Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS CAP COURONNE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.1.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.1.2025.1"><id>NW.AVINAV_TOULON.1.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    562392.90954942,5362851.238864 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>COLONNE DES FEUX METEOROLOGIQUES DU SEMAPHORE DE COURONNE
-PARTIELLEMENT HORS-SERVICE A LA POSITION :
-43-20.00N 005-03.12E
-AFFICHAGE GRAND FRAIS - FEU VERT INDISPONIBLE 
-AFFICHAGE COUP DE VENT NW ET NE - FEU ROUGE SUPERIEUR INDISPONIBLE
-NAVIGUER AVEC PRUDENCE
-ANNULE ET REMPLACE AVURNAV LOCAL TOULON 3702/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.1.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.25.2025"><id>NW.AVINAV_TOULON.25.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>25</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-02-18T14:41:05.842763Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>BAIE DE BEAULIEU</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.25.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.25.2025.1"><id>NW.AVINAV_TOULON.25.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+(INFORMATION TOUJOURS EN VIGUEUR LE 27/01/2023).</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.21.2016"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.25.2025"><id>NW.AVINAV_TOULON.25.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>25</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-02-18T14:41:05.842763Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>BAIE DE BEAULIEU</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.25.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.25.2025.1"><id>NW.AVINAV_TOULON.25.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     818858.93850842,5421512.74974067 
   </gml:coordinates>
@@ -174,7 +171,16 @@ DIMENSIONS : 80CM X 15CM
 COULEUR : ROUILLE
 PROFONDEUR : 72 METRES
 NE PAS PECHER, CHALUTER, DRAGUER, MOUILLER ET PLONGER DANS CETTE ZONE
-REMPLACE AVURNAV LOCAL TOULON 2009/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.17.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.40.2026"><id>NW.AVINAV_TOULON.40.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>40</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-03T08:10:18.139157Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>SETE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.40.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.40.2026.1"><id>NW.AVINAV_TOULON.40.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 2009/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.17.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.104.2026"><id>NW.AVINAV_TOULON.104.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>104</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-14T11:38:23.582662Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>RADE DE MARSEILLE</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.104.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.104.2026.1"><id>NW.AVINAV_TOULON.104.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    584408.77341622,5357899.91857013 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>VEDETTE BLEUE/BLANCHE (NOM/IMMATRICULATION NON LISIBLE) COULÉE, AVANT VISIBLE SECTEUR LARGE FRIOUL A LA POSITION :
+43°18.06N 005°14.99E
+(CARTE FR7392)
+DANGEREUX POUR LA NAVIGATION
+REMPLACE AVURNAV LOCAL TOULON 3159/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.104.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.40.2026"><id>NW.AVINAV_TOULON.40.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>40</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-03T08:10:18.139157Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>SETE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.40.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.40.2026.1"><id>NW.AVINAV_TOULON.40.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     406846.76430156,5371086.914683 
   </gml:coordinates>
@@ -196,20 +202,19 @@ PAR FAIBLE FONDS A LA POSITION:
 43-16.88N 005-17.76E    
 LONGUEUR: 7.01 METRES   
 COULEUR: BLANC ET BLEU    
-DANGEREUX POUR LA NAVIGATION  </information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.67.2023"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.41.2026"><id>NW.AVINAV_TOULON.41.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>41</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-03T08:16:59.062918Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS DE MENTON</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.41.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.41.2026.1"><id>NW.AVINAV_TOULON.41.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+DANGEREUX POUR LA NAVIGATION  </information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.67.2023"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.108.2026"><id>NW.AVINAV_TOULON.108.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>108</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-24T09:18:28.160758Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>RADE D'HYERES - ABORDS PLAGE DE LA BADINE</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.108.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.108.2026.1"><id>NW.AVINAV_TOULON.108.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
-    836323.11128904,5431421.26939694 
+    685523.97755344,5317427.6370907 
   </gml:coordinates>
 </gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:fixedDateRange><timeOfDayEnd>16:00:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-06-30</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_ESTABLISHMENT</warningHazardTypeDetails><information>BOUEE SCIENTIFIQUE SADO DE TYPE WIMO 100L ENTOUREE DE 
-2 BOUEES SPHERIQUES JAUNE PASSIVES A LA POSITION :
-43-46.79N 007-30.77E
-(CARTE FR7409)
-FORME CYLINDRIQUE
-COULEUR JAUNE
-PASSIVE
-NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL TOULON 2151/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.41.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.108.2025"><id>NW.AVINAV_TOULON.108.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>108</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-07-15T08:29:06.215983Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>PORT DE PLAISANCE DU CAP D'AGDE  </text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.108.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.108.2025.1"><id>NW.AVINAV_TOULON.108.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>VEDETTE "BERNIQUE" SEMI-IMMERGEE REPORTÉE LE 232057 UTC JUL 26 A LA POSITION :
+43-02.15N 006-09.49E
+(CARTE FR7282)
+LONGUEUR : 10.55 METRES
+COQUE BLANCHE
+NE PAS PLONGER DANS CETTE ZONE -  DANGEREUX POUR LA NAVIGATION
+RESPECTER LES TERMES DE L'AP A PARAITRE
+REMPLACE AVURNAV LOCAL TOULON 3214/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.108.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.108.2025"><id>NW.AVINAV_TOULON.108.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>108</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-07-15T08:29:06.215983Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>PORT DE PLAISANCE DU CAP D'AGDE  </text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.108.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.108.2025.1"><id>NW.AVINAV_TOULON.108.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     390457.01013958,5353613.13656757 
   </gml:coordinates>
@@ -231,7 +236,20 @@ REMPLACE AVURNAV LOCAL TOULON 2948/25</information></S124:warningInformation><he
 </S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>VEDETTE "PATCORAX" DE 14.5 METRES DE LONG COULÉE A LA POSITION :
 42-25.44N 008-39.04E
 IL EST RECOMMANDE DE NE PAS PECHER, CHALUTER, DRAGUER, MOUILLER ET PLONGER DANS CETTE ZONE
--REMPLACE AVURNAV LOCAL TOULON 3224/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.94.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.43.2026"><id>NW.AVINAV_TOULON.43.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>43</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-06T09:50:02.753740Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>LARGE CAMARGUE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.43.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.43.2026.1"><id>NW.AVINAV_TOULON.43.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+-REMPLACE AVURNAV LOCAL TOULON 3224/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.94.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.100.2026"><id>NW.AVINAV_TOULON.100.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>100</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-04T07:26:49.410137Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.100.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.100.2026.1"><id>NW.AVINAV_TOULON.100.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    380976.30017369,5286028.53879612 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_REMOVAL</warningHazardTypeDetails><information>PLATEFORME SCIENTIFIQUE BLUE ORACLE RELEVÉE DE LA POSITION :
+42-49.76N 003-25.34E
+(CARTE FR7008)
+Mo(U) 10M
+LF L1 : 49010 
+ODAS
+LE MOUILLAGE DEMEURE EN PLACE PROVISOIREMENT, MARQUE PAR UNE BOUEE 
+SUBSURFACE
+REMPLACE AVURNAV TOULON 0437/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.100.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.43.2026"><id>NW.AVINAV_TOULON.43.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>43</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-06T09:50:02.753740Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>LARGE CAMARGUE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.43.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.43.2026.1"><id>NW.AVINAV_TOULON.43.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     477560.61550314,5315777.87634762 
   </gml:coordinates>
@@ -258,7 +276,19 @@ MARQUE SPECIALE
 LIVRE DES FEUX L1 : 56340
 FL(5)Y.20S
 NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL TOULON 2047/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.21.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.69.2026"><id>NW.AVINAV_TOULON.69.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>69</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-13T08:38:13.586607Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORD DE SETE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.69.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.69.2026.1"><id>NW.AVINAV_TOULON.69.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 2047/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.21.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.83.2026"><id>NW.AVINAV_TOULON.83.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>83</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-29T07:17:12.013552Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILE DU LEVANT</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.83.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.83.2026.1"><id>NW.AVINAV_TOULON.83.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    718752.84555524,5316285.46402444 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SECTOR_LIGHT_SECTOR_OBSCURED</warningHazardTypeDetails><information>PORT DE L'AVIS - FEU DE GUIDAGE A LA POSITION :
+43-01.70N 006-27.40E
+(CARTE FR6615)
+N° LIVRE DES FEUX L1 : 58840
+LEGENDE LF: Fl.G.4S8M 6M
+SECTEUR VERT DU FEU DE GUIDAGE ETEINT
+DANGEREUX POUR LA NAVIGATION
+REMPLACE AVURNAV LOCAL TOULON 2828/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.83.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.69.2026"><id>NW.AVINAV_TOULON.69.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>69</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-13T08:38:13.586607Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORD DE SETE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.69.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.69.2026.1"><id>NW.AVINAV_TOULON.69.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     406846.76430156,5371086.914683 
   </gml:coordinates>
@@ -312,7 +342,26 @@ MARQUE : LATERALE BABORD
 FONCTION PRINCIPALE : CHENALAGE - ALIGNEMENT
 LF L1 NON RENSEIGNE
 NAVIGUER AVEC PRUDENCE
-REMPLACE AVINAV TOULON 073/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.74.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.56.2026"><id>NW.AVINAV_TOULON.56.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>56</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-27T07:32:39.738387Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>PORT DE PORTO-VECCHIO</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.56.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.56.2026.1"><id>NW.AVINAV_TOULON.56.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVINAV TOULON 073/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.74.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.102.2026"><id>NW.AVINAV_TOULON.102.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>102</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-10T06:56:24.839740Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS DE MENTON</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.102.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.102.2026.1"><id>NW.AVINAV_TOULON.102.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    836323.11128904,5431421.26939694 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:fixedDateRange><timeOfDayEnd>07:00:00</timeOfDayEnd><dateStart/><dateEnd><date>2027-01-01</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_ESTABLISHMENT</warningHazardTypeDetails><information>POUR SUIVI DE TRAVAUX MARITIMES AU DROIT DE LA PLAGE DES SABLETTES
+MISE EN PLACE D'UNE BOUEE SCIENTIFIQUE SADO DE TYPE WIMO 100L A LA POSITION :
+43-46.78N 007-30.77E
+FORME CYLINDRIQUE - PAS DE CROIX DE ST-ANDRE
+COULEUR JAUNE
+PASSIVE
+ENTOUREE DE 2 BOUEES AUX POSITIONS :
+43-46.79N 007-30.76E
+43-46.79N 007-30.77E
+(CARTE FR7442)
+FORME SPHERIQUE
+COULEUR JAUNE
+PASSIVE
+NAVIGUER AVEC PRUDENCE
+REMPLACE AVURNAV LOCAL TOULON 3132/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.102.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.56.2026"><id>NW.AVINAV_TOULON.56.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>56</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-27T07:32:39.738387Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>PORT DE PORTO-VECCHIO</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.56.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.56.2026.1"><id>NW.AVINAV_TOULON.56.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     1033620.02526401,5099796.88516466 
   </gml:coordinates>
@@ -327,21 +376,7 @@ MARQUE : LATÉRALE BÂBORD
 FONCTION PRINCIPALE : CHENALAGE/ALIGNEMENT
 N° LIVRE DES FEUX L1 : 68240
 NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL TOULON 2295/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.56.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.33.2026"><id>NW.AVINAV_TOULON.33.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>33</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-02-27T07:55:39.169766Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS DE MENTON</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.33.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.33.2026.1"><id>NW.AVINAV_TOULON.33.2026.1</id><geometry><S100:curveProperty><S100:Curve><gml:LineString srsName='EPSG:3857'>
-  <gml:coordinates>
-    836274.87284303,5431552.32426187 836265.59621879,5431475.23293921 836222.92374732,5431423.83908226 836159.84270254,5431416.13002843 
-  </gml:coordinates>
-</gml:LineString>
-</S100:Curve></S100:curveProperty></geometry><S124:fixedDateRange><timeOfDayStart>07:00:00</timeOfDayStart><timeOfDayEnd>16:00:00</timeOfDayEnd><dateStart><date>2026-01-27</date></dateStart><dateEnd><date>2026-06-30</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>WORKS_IN_PROGRESS</warningHazardTypeDetails><warningHazardTypeDetails>UNDERWATER_OPERATIONS</warningHazardTypeDetails><information>POSE DE TAPIS ANTI-AFFOUILLEMENTS EN GÉOTEXTILE ET CREATION DIGUE SOUS-MARINE AU DROIT 
-DE LA PLAGE DES SABLETTES. 
-MISE EN PLACE DE FILETS MES ANTIPOLLUTION SUR LA LIGNE JOIGNANT LES POSITIONS :
-43-46.84N 007-30.74E, 
-43-46.81N 007-30.74E, 
-43-46.79N 007-30.72E, 
-43-46.78N 007-30.68E.
-NON LUMINEUX
-NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR
-REMPLACE AVURNAV LOCAL TOULON 2125/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.33.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.30.2025"><id>NW.AVINAV_TOULON.30.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>30</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-02-28T10:24:28.529810Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>RADE DES SALINS-HYERES</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.30.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.30.2025.1"><id>NW.AVINAV_TOULON.30.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 2295/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.56.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.30.2025"><id>NW.AVINAV_TOULON.30.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>30</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-02-28T10:24:28.529810Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>RADE DES SALINS-HYERES</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.30.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.30.2025.1"><id>NW.AVINAV_TOULON.30.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     688937.96080359,5326280.65888348 
   </gml:coordinates>
@@ -393,19 +428,50 @@ NOM « L'ULTIME »
 NAVIRE POLYVALENT / PAVILLON FRA
 IMMAT 924419 / MMSI 227012140 / C/S FGG4240 
 IL EST RECOMMANDE DE NE PAS MOUILLER, PECHER, CHALUTER, DRAGUER ET PLONGER DANS CETTE ZONE.
-ANNULE ET REMPLACE AVURNAV LOCAL TOULON 3572/24.</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.6.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.75.2026"><id>NW.AVINAV_TOULON.75.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>75</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-22T07:38:39.124045Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>PORT DE CARTEAU</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.75.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.75.2026.1"><id>NW.AVINAV_TOULON.75.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    540062.79893387,5369601.19847958 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_BUOY_LIGHT_UNLIT</warningHazardTypeDetails><information>CHENAL D'ACCES AU PORT - BOUEE N12 A LA POSITION : 
-43-22.65N 004-51.09E
-(CARTE FR6767)
-MARQUE: LATERALE BABORD 
-FONCTION PRINCIPALE : CHENALAGE/ALIGNEMENT 
-N° LIVRE DES FEUX L1 : NON RENSEIGNÉ 
-NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL TOULON 2574/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.75.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.11.2026"><id>NW.AVINAV_TOULON.11.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>11</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-01-27T14:14:37.500111Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS SAINT-RAPHAEL</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.11.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.11.2026.1"><id>NW.AVINAV_TOULON.11.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 3572/24.</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.6.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.96.2026"><id>NW.AVINAV_TOULON.96.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>96</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-29T07:36:42.193233Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>PORT DE SETE</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.96.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.96.2026.1"><id>NW.AVINAV_TOULON.96.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        414334.40392275,5374409.50880323 414427.70330072,5374375.39935322 414393.59385071,5374426.56352823 414334.40392275,5374409.50880323 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        413979.264355,5374240.96799142 413934.1194947,5374209.86819876 413925.09052263,5374222.91004729 413969.23216382,5374254.00983995 413979.264355,5374240.96799142 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        414301.41353714,5374438.78454665 414328.12753975,5374405.63939526 414114.69893592,5374252.00340171 414087.61201974,5374287.11607084 414301.41353714,5374438.78454665 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>16:00:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-12-31</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>WORKS_IN_PROGRESS</warningHazardTypeDetails><information>ALTERNANCE DE TRAVAUX, DATES ET HORAIRES TRANSMISES PAR LA CAPITAINERIE DU PORT
+TRAVAUX DE RÉPARATION DE LA POUTRE DU QUAI I3 DANS LES ZONES SUIVANTES.
+ZONE DE TRAVAUX DÉLIMITÉE PAR : 
+43-24.54N 003-43.30E/43-24.53N 003-43.32E
+43-24.47N 003-43.20E/43-24.48N 003-43.19E
+
+ZONE DE STOCKAGE 1 DÉLIMITÉE PAR : 
+43-24.53N 003-43.32E/43-24.52N 003-43.37E
+43-24.54N 003-43.35E
+
+ZONE DE STOCKAGE 2 DÉLIMITÉE PAR : 
+43-24.46N 003-43.13E/43-24.45N 003-43.11E
+43-24.46N 003-43.10E/43-24.47N 003-43.12E
+(CARTE FR7434)
+DÉPOSE DE DÉFENSES, TRAVAUX PAR HYDRO-DÉMOLITION, MISE EN PLACE DE BARRAGES, PRESENCE DE MATÉRIAUX
+VEILLE PERMANENTE VHF 12
+NAVIGUER A VITESSE RÉDUITE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.96.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.11.2026"><id>NW.AVINAV_TOULON.11.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>11</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-01-27T14:14:37.500111Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS SAINT-RAPHAEL</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.11.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.11.2026.1"><id>NW.AVINAV_TOULON.11.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     750812.8589037,5374894.19026417 
   </gml:coordinates>
@@ -414,7 +480,16 @@ REMPLACE AVURNAV LOCAL TOULON 2574/26</information></S124:warningInformation><he
 43-24.72N 006-44.68E
 (CARTE FR6838)
 PROUE DEPASSANT DE 0.3 METRE AU DESSUS DE LA SURFACE
-DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.11.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.73.2026"><id>NW.AVINAV_TOULON.73.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>73</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-21T07:32:02.668067Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>PORT LA NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.73.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.73.2026.1"><id>NW.AVINAV_TOULON.73.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.11.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.88.2026"><id>NW.AVINAV_TOULON.88.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>88</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-15T08:42:39.072435Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS DE PORT-LA-NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.88.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.88.2026.1"><id>NW.AVINAV_TOULON.88.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    365797.70207154,5315907.3085871 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBMERGED_OBJECT</warningHazardTypeDetails><warningHazardTypeDetails>SUBSURFACE_MOORING</warningHazardTypeDetails><information>ABORDS SITE OFFSHORE EOLMED
+PRESENCE DE CORPS MORT A LA POSITION :
+43-01.55N 003-17.16E
+(CARTE FR7054)
+RISQUE DE CROCHE</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.88.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.73.2026"><id>NW.AVINAV_TOULON.73.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>73</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-21T07:32:02.668067Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>PORT LA NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.73.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.73.2026.1"><id>NW.AVINAV_TOULON.73.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     337165.79907624,5315720.76017562 
   </gml:coordinates>
@@ -471,7 +546,16 @@ EP
 Z2C 
 43-08,35N 004-23,79E
 
-PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.13.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.72.2026"><id>NW.AVINAV_TOULON.72.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>72</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-20T11:40:36.352897Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>PORT DE PORTO-VECCHIO</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.72.2026.1"/><theWarningPart xlink:href="#NW.AVINAV_TOULON.72.2026.2"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.72.2026.1"><id>NW.AVINAV_TOULON.72.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.13.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.97.2026"><id>NW.AVINAV_TOULON.97.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>97</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-31T12:40:08.233597Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>RADE D'HYERES</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.97.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.97.2026.1"><id>NW.AVINAV_TOULON.97.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    696710.08865034,5329452.18721309 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>VEDETTE COULÉE A UNE PROFONDEUR DE 6 MÈTRES SUITE A UN INCENDIE A LA POSITION :
+43-06.88N 006-15.52E
+(CARTE FR7282)
+BALISAGE EFFECTUE AVEC DEUX BOUÉES JAUNES NON LUMINEUSES
+NE PAS PECHER, CHALUTER, DRAGUER, MOUILLER ET PLONGER DANS CETTE ZONE</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.97.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.72.2026"><id>NW.AVINAV_TOULON.72.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>72</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-20T11:40:36.352897Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>PORT DE PORTO-VECCHIO</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.72.2026.1"/><theWarningPart xlink:href="#NW.AVINAV_TOULON.72.2026.2"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.72.2026.1"><id>NW.AVINAV_TOULON.72.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
   <gml:outerBoundaryIs>
     <gml:LinearRing>
       <gml:coordinates>
@@ -481,7 +565,7 @@ PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href=
     </gml:LinearRing>
   </gml:outerBoundaryIs>
 </gml:Polygon>
-</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>17:00:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-12-31</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>WORKS_IN_PROGRESS</warningHazardTypeDetails><warningHazardTypeDetails>BREAKWATER_CONSTRUCTION</warningHazardTypeDetails><warningHazardTypeDetails>DREDGING_OPERATION</warningHazardTypeDetails><warningHazardTypeDetails>WHARF_CONSTRUCTION</warningHazardTypeDetails><information>TOUS LES JOURS DE 06H00 UTC A 17H00 UTC
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>17:00:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-12-31</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>DREDGING_OPERATION</warningHazardTypeDetails><warningHazardTypeDetails>WORKS_IN_PROGRESS</warningHazardTypeDetails><warningHazardTypeDetails>WHARF_CONSTRUCTION</warningHazardTypeDetails><warningHazardTypeDetails>BREAKWATER_CONSTRUCTION</warningHazardTypeDetails><information>TOUS LES JOURS DE 06H00 UTC A 17H00 UTC
 AGRANDISSEMENT DU PORT DE PORTO-VECCHIO DANS LA ZONE DELIMITEE PAR :
 41-35.62N 009-17.07E/41-35.61N 009-17.20E
 41-35.70N 009-17.39E/41-35.56N 009-17.50E
@@ -564,50 +648,52 @@ ANNULE ET REMPLACE AVURNAV LOCAL TOULON 3619/24</information></S124:warningInfor
 43-23.59N 003-42.04E
 IL EST DEMANDE AUX NAVIGATEURS DE NE PAS PASSER ENTRE CETTE POSITION ET 
 L'EXTREMITE DE L’ÉPI DE L'OUEST DE LA PASSE OUEST (MARQUE TRIBORD FL.G.4S).
-DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.69.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.58.2026"><id>NW.AVINAV_TOULON.58.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>58</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-04-10T06:57:48.351837Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS SETE</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.58.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.58.2026.1"><id>NW.AVINAV_TOULON.58.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.69.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.90.2026"><id>NW.AVINAV_TOULON.90.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>90</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-20T12:16:43.873479Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS DE SETE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.90.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.90.2026.1"><id>NW.AVINAV_TOULON.90.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
-    414680.1313362,5352227.0264762 
+    404388.71862536,5368830.60872792 
   </gml:coordinates>
 </gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>EPAVE DU CHALUTIER "AARON" COULÉ LE 091727 UTC MAR 26 A LA POSITION :
-43-15.83N 003-43.51E
-(CARTE FR7054)
-LONGUEUR : 25 METRES
-NE PAS PECHER, CHALUTER, DRAGUER, MOUILLER ET
-RESPECTER LES TERMES DE L'AP 079/26 REGLEMENTANT UNE ZONE DE 100 METRES AUTOUR DE CETTE POSITION.</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.58.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.31.2026"><id>NW.AVINAV_TOULON.31.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>31</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-02-23T09:05:45.593015Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>PORT DE PORTO-VECCHIO</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.31.2026.1"/><theWarningPart xlink:href="#NW.AVINAV_TOULON.31.2026.2"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.31.2026.1"><id>NW.AVINAV_TOULON.31.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    1033661.17838779,5099794.88986885 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_TEMPORARY_REMOVAL</warningHazardTypeDetails><information>TRAVAUX DE DEMOLITION DE L'EPI SUD (QUAI DES PECHEURS) 
-FEU DE PORTO-VECCHIO BABORD TEMPORAIREMENT SUPPRIME A LA POSITION :
-41-35.41N 009-17.13E
-MARQUE : LATERALE BABORD
-FONCTION PRINCIPALE : CHENALAGE/ALIGNEMENT
-LIVRE DES FEUX  L1 : 68240
-REMPLACE AVURNAV LOCAL TOULON 2086/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.31.2026"/></S124:NavigationalWarningFeaturePart></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.31.2026.2"><id>NW.AVINAV_TOULON.31.2026.2</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    1033662.14113803,5099814.74604637 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_ESTABLISHMENT</warningHazardTypeDetails><information>DANS LE CADRE DES TRAVAUX
-FEU BABORD D'ACCES AU PORT REMPLACE PAR BOUÉE PROVISOIRE A LA POSITION :
-41-35.42N 009-17.13E
-MARQUE : LATÉRALE BABORD
-HAUTEUR PLAN FOCAL : 1.5M
-RYTHME : FL(4) R 15S
-NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.31.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.112.2025"><id>NW.AVINAV_TOULON.112.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>112</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-07-18T08:55:21.647546Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>BASSIN DE THAU</text></locationName></locality><locality><locationName><text>PORT DE SETE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.112.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.112.2025.1"><id>NW.AVINAV_TOULON.112.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    410852.59617776,5375711.77080044 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_MISSING</warningHazardTypeDetails><information>1ERE BALISE TRIBORD DU CHENAL MARITIME 
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_MISSING</warningHazardTypeDetails><information>ATTENUATEUR DE HOULE SUD 
 A LA POSITION :
-43-25.040N 003-41.445E
-LF L1 : NON RENSEIGNE
-MARQUE LATERALE TRIBORD
+43-22.34N 003-37.96E
+(CARTE FR6839)
+LF L1 : 51440
+Q(6)+LFl.W.15s
+MARQUE CARDINALE SUD
 NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL TOULON 2984/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.112.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.100.2023"><id>NW.AVINAV_TOULON.100.2023</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>100</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2023</year></messageSeriesIdentifier><publicationDate>2023-11-06T12:52:13.655701Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS VALRAS</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.100.2023.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.100.2023.1"><id>NW.AVINAV_TOULON.100.2023.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 3007/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.90.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.101.2026"><id>NW.AVINAV_TOULON.101.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>101</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-07T07:13:27.343668Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>PETITE RADE DU PORT DE TOULON</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.101.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.101.2026.1"><id>NW.AVINAV_TOULON.101.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    656556.25267998,5328574.73212041 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    656835.64604863,5329192.78321661 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_ESTABLISHMENT</warningHazardTypeDetails><information>LE 031000 UTC JUL 26 POUR UNE DURÉE D'UN AN DANS LE CADRE DU SUIVI DE 
+LA TEMPÉRATURE DE L'EAU AUX POSITIONS SUIVANTES :
+A 43-06.78N 005-54.03E
+B 43-06.54N 005-53.88E
+(CARTE FR7093)
+BOUÉES BICONIQUES JAUNE
+PAS DE MARQUE
+FL(5).Y.20s 2M
+DIAMÈTRE : 0.8 METRE
+HAUTEUR : ENVIRON 2 MÈTRES
+NAVIGUER AVEC PRUDENCE
+REMPLACE AVURNAV LOCAL TOULON 3120/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.101.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.98.2026"><id>NW.AVINAV_TOULON.98.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>98</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-03T08:55:57.855447Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GOLFE DE SAINT TROPEZ</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.98.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.98.2026.1"><id>NW.AVINAV_TOULON.98.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    737157.66803306,5353159.31565891 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SUBSURFACE_MOORING</warningHazardTypeDetails><information>LIGNE DE MOUILLAGE LARGUEE PAR YACHT REPORTEE LE 231413 UTC JUL 26
+A LA POSITION :
+43-16.20N 006-37.32E
+(CARTE FR7267)
+CHAINE BALISEE PAR DES BOUEES PARE-BATTAGE BLANCHE
+NAVIGUER AVEC PRUDENCE
+REMPLACE AVURNAV LOCAL TOULON 3215/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.98.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.100.2023"><id>NW.AVINAV_TOULON.100.2023</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>100</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2023</year></messageSeriesIdentifier><publicationDate>2023-11-06T12:52:13.655701Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS VALRAS</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.100.2023.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.100.2023.1"><id>NW.AVINAV_TOULON.100.2023.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     362719.90368359,5345515.97543058 
   </gml:coordinates>
@@ -638,35 +724,7 @@ VOILIER DEMATE DEPOLLUE TOTALEMENT IMMERGE
 LONGUEUR 11.5 METRES 
 IL EST RECOMMANDE DE NE PAS MOUILLER AUX ABORDS DE CETTE POSITION
 DANGEREUX POUR LA NAVIGATION
-REMPLACE AVURNAV LOCAL TOULON 2925/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.104.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.55.2026"><id>NW.AVINAV_TOULON.55.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>55</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-26T07:43:30.624854Z</publicationDate><generalArea><locationName><text>ELBE</text></locationName></generalArea><locality><locationName><text>ABORDS ALISTRO</text></locationName></locality><warningHazardTypeGeneral>SCIENTIFIC_INSTRUMENTS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.55.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.55.2026.1"><id>NW.AVINAV_TOULON.55.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    1067266.48978227,5204788.12877861 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    1067247.8994273,5196473.14739663 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    1067336.73238096,5197753.95991893 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    1067244.00324513,5196647.41073933 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:fixedDateRange><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-06-30</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>ACOUSTIC_RECORDER</warningHazardTypeDetails><information>PRESENCE D'HYDROPHONES AU PROFIT D'ANDROMEDE OCEANOLOGIE DANS LE CADRE D'UNE ETUDE 
-SCIENTIFIQUE AUX POSITIONS :
-42-14.70N 009-35.28E
-42-14.26N 009-35.23E
-42-17.51N 009-35.25E
-42-14.19N 009-35.24E
-(CARTE FR6713)
-NE PAS PECHER, CHALUTER, DRAGUER, MOUILLER ET PLONGER DANS CETTE ZONE
-REMPLACE AVURNAV LOCAL TOULON 2289/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.55.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.4.2026"><id>NW.AVINAV_TOULON.4.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>4</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-01-08T12:21:09.080614Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GOLFE DE SAINT TROPEZ</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.4.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.4.2026.1"><id>NW.AVINAV_TOULON.4.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 2925/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.104.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.4.2026"><id>NW.AVINAV_TOULON.4.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>4</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-01-08T12:21:09.080614Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GOLFE DE SAINT TROPEZ</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.4.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.4.2026.1"><id>NW.AVINAV_TOULON.4.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     740629.90317243,5353913.42312795 
   </gml:coordinates>
@@ -676,7 +734,22 @@ A LA POSITION :
 43-16.50N 006-39.19E
 Q.Bu
 LIVRE DES FEUX L1 : NON RENSEIGNE
-NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.4.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.62.2026"><id>NW.AVINAV_TOULON.62.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>62</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-04-24T06:48:17.878024Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS GOLFE DE FOS</text></locationName></locality><warningHazardTypeGeneral>SCIENTIFIC_INSTRUMENTS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.62.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.62.2026.1"><id>NW.AVINAV_TOULON.62.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.4.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.99.2026"><id>NW.AVINAV_TOULON.99.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>99</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-03T09:02:50.735643Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS DE MENTON</text></locationName></locality><warningHazardTypeGeneral>SPECIAL_OPERATIONS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.99.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.99.2026.1"><id>NW.AVINAV_TOULON.99.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
+  <gml:outerBoundaryIs>
+    <gml:LinearRing>
+      <gml:coordinates>
+        838057.2767492,5432469.18724042 840073.81915749,5424617.09202756 835785.53715594,5425235.17662402 832298.74704219,5428470.53822979 838057.2767492,5432469.18724042 
+      </gml:coordinates>
+    </gml:LinearRing>
+  </gml:outerBoundaryIs>
+</gml:Polygon>
+</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>23:59:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-12-31</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>SCIENTIFIC_SURVEY</warningHazardTypeDetails><information>MISE EN OEUVRE DE ROV PAR SEMI-RIGIDE VAILLANT - ASSOCIATION A.D.E MEDITERRANEE
+DANS LA ZONE DELIMITEE PAR :
+43-47.19N 007-31.70E/43-44.14N 007-32.79E
+43-44.38N 007-30.48E/43-45.64N 007-28.60E
+(CARTE FR7442)
+PRENDRE UN LARGE TOUR
+REMPLACE AVURNAV LOCAL TOULON 3057/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.99.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.62.2026"><id>NW.AVINAV_TOULON.62.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>62</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-04-24T06:48:17.878024Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS GOLFE DE FOS</text></locationName></locality><warningHazardTypeGeneral>SCIENTIFIC_INSTRUMENTS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.62.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.62.2026.1"><id>NW.AVINAV_TOULON.62.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     541972.3103979,5336824.17585341 
   </gml:coordinates>
@@ -760,16 +833,7 @@ REMPLACE AVURNAV LOCAL TOULON 2440/26</information></S124:warningInformation><he
 43-32.76N 007-00.99E
 (CARTE FR7205)
 NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL TOULON 2548/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.65.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.124.2024"><id>NW.AVINAV_TOULON.124.2024</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>124</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2024</year></messageSeriesIdentifier><publicationDate>2024-12-20T08:51:42.046683Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS CAP D'ANTIBES</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.124.2024.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.124.2024.1"><id>NW.AVINAV_TOULON.124.2024.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    794067.23346621,5398289.2945543 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>A COMPTER DU 251040 UTC NOV 24 COLONNE DES FEUX DE SIGNAUX METEOROLOGIQUES ET FEUX DE TETE DE MAT
-INDISPONIBLES AU SEMAPHORE DE LA GAROUPE POUR UNE DUREE INDETERMINEE A LA POSITION:
-43-33.87N 007-07.99E
-NAVIGUER AVEC PRUDENCE
-ANNULE ET REMPLACE AVURNAV LOCAL TOULON 3652/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.124.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.16.2025"><id>NW.AVINAV_TOULON.16.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>16</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-01-31T09:08:04.596999Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>BOUCHES DE BONIFACIO</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.16.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.16.2025.1"><id>NW.AVINAV_TOULON.16.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 2548/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.65.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.16.2025"><id>NW.AVINAV_TOULON.16.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>16</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-01-31T09:08:04.596999Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>BOUCHES DE BONIFACIO</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.16.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.16.2025.1"><id>NW.AVINAV_TOULON.16.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     1027701.72453599,5057458.663285 
   </gml:coordinates>
@@ -780,7 +844,13 @@ DIMENSIONS : 50CM X 15CM
 COULEUR : ROUILLE
 PROFONDEUR : 74 MÈTRES
 NE PAS PÊCHER, CHALUTER, DRAGUER, MOUILLER ET PLONGER DANS CETTE ZONE.
-REMPLACE AVURNAV LOCAL TOULON 2008/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.16.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.77.2026"><id>NW.AVINAV_TOULON.77.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>77</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-01T11:02:55.981570Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS DE SETE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.77.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.77.2026.1"><id>NW.AVINAV_TOULON.77.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 2008/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.16.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.106.2026"><id>NW.AVINAV_TOULON.106.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>106</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-21T06:42:14.362358Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>BAIE DES LECQUES</text></locationName></locality><warningHazardTypeGeneral>ROUTING_INFORMATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.106.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.106.2026.1"><id>NW.AVINAV_TOULON.106.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:CircleByCenterPoint srsName="EPSG:3857" numArc="1"><gml:Pos> 631140.8811837251,5337550.492733935 </gml:Pos><gml:radius uom="m"> 300.1 </gml:radius></gml:CircleByCenterPoint></S100:Surface></S100:surfaceProperty></geometry><S124:warningInformation><warningHazardTypeDetails>EXCLUSION_ZONES</warningHazardTypeDetails><warningHazardTypeDetails>REGULATION</warningHazardTypeDetails><information>NOUVELLE ZONE REGLEMENTEE INTERDISANT LE MOUILLAGE ET LA PLONGEE 
+SOUS-MARINE AUX ABORDS D'UNE EPAVE HISTORIQUE D'UN RAYON DE 300
+METRES AUTOUR DE :
+43-10.07N 005-40.18E
+(CARTE FR6612)
+NAVIGUER AVEC PRUDENCE ET RESPECTER LES TERMES DE L'AP 285/2026
+REMPLACE AVURNAV LOCAL TOULON 3197/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.106.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.77.2026"><id>NW.AVINAV_TOULON.77.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>77</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-01T11:02:55.981570Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS DE SETE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.77.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.77.2026.1"><id>NW.AVINAV_TOULON.77.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     404388.71862536,5368830.60872792 
   </gml:coordinates>
@@ -804,7 +874,22 @@ MARQUE : LATERALE BABORD
 FONCTION PRINCIPALE : JALONNEMENT
 LIVRE DES FEUX  L1 : 55300 
 NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL TOULON 2573/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.67.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.8.2022"><id>NW.AVINAV_TOULON.8.2022</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>8</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2022</year></messageSeriesIdentifier><publicationDate>2023-05-31T11:14:06.113294Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ETANG DE BERRE</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.8.2022.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.8.2022.1"><id>NW.AVINAV_TOULON.8.2022.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 2573/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.67.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.84.2026"><id>NW.AVINAV_TOULON.84.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>84</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-29T07:36:41.018817Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS EMBOUCHURE DU RHONE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.84.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.84.2026.1"><id>NW.AVINAV_TOULON.84.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    539268.71989955,5359557.15077035 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_CHANGE</warningHazardTypeDetails><information>DEPLACEMENT DE LA BALISE A FLOTTEUR ROUSTAN SUD A LA POSITION :
+43-18.69N 004-50.82E
+VERS LA NOUVELLE POSITION :
+43-18.71N 004-50.66E
+(CARTE FR6684)
+N° DE LIVRE DES FEUX L1 : 52960 E.0600.3
+MARQUE : CARDINALE SUD
+FONCTION PRINCIPALE : JALONNEMENT
+Q(6)+LFL.W.15S
+NAVIGUER AVEC PRUDENCE
+REMPLACE AVURNAV LOCAL TOULON 2844/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.84.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.8.2022"><id>NW.AVINAV_TOULON.8.2022</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>8</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2022</year></messageSeriesIdentifier><publicationDate>2023-05-31T11:14:06.113294Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ETANG DE BERRE</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.8.2022.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.8.2022.1"><id>NW.AVINAV_TOULON.8.2022.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     569584.7278922497,5390947.373943886 
   </gml:coordinates>
@@ -863,7 +948,17 @@ ZONE INTERDITE A LA NAVIGATION DELIMITEE PAR DES BOUEES JAUNE EQUIPEES DE FLASH-
 43-32.82N 007-01.07E/43-32.85N 007-01.08E
 43-32.90N 007-01.07E
 DUREE DES TRAVAUX ESTIMEE A TROIS ANS
-PRENDRE UN LARGE TOUR ET RESPECTER LES TERMES DE L’ARRÊTE MUNICIPAL N°1514/25.</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.50.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.96.2018"><id>NW.AVINAV_TOULON.96.2018</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>96</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2018</year></messageSeriesIdentifier><publicationDate>2023-05-30T12:43:04.807988Z</publicationDate><generalArea><locationName><text>ELBE</text></locationName></generalArea><locality><locationName><text>SAGRO</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.96.2018.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.96.2018.1"><id>NW.AVINAV_TOULON.96.2018.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+PRENDRE UN LARGE TOUR ET RESPECTER LES TERMES DE L’ARRÊTE MUNICIPAL N°1514/25.</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.50.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.82.2026"><id>NW.AVINAV_TOULON.82.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>82</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-29T06:55:04.993180Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS ILES DE LERINS</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.82.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.82.2026.1"><id>NW.AVINAV_TOULON.82.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    785136.36856496,5388619.47299887 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>VOILIER COULÉ ENTRE DEUX EAUX REPORTÉ LE 251604 UTC AVR 26 A LA POSITION :
+43-30.09N 007-03.18E
+(CARTE FR7205) 
+LONGEUR : 8 METRES 
+DANGEUREUX POUR LA NAVIGATION
+REMPLACE AVURNAV LOCAL TOULON 2819/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.82.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.96.2018"><id>NW.AVINAV_TOULON.96.2018</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>96</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2018</year></messageSeriesIdentifier><publicationDate>2023-05-30T12:43:04.807988Z</publicationDate><generalArea><locationName><text>ELBE</text></locationName></generalArea><locality><locationName><text>SAGRO</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.96.2018.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.96.2018.1"><id>NW.AVINAV_TOULON.96.2018.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     1056273.5416404419,5281275.754957799 
   </gml:coordinates>
@@ -892,41 +987,7 @@ REMPLACE AVURNAV LOCAL TOULON 2156/26</information></S124:warningInformation><he
 </S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>EPAVE DECOUVRANTE DU YACHT "MANTA" COULE A LA POSITION :
 41-33.466N 008-47.086E
 COQUE AU TROIS QUART IMMERGEE ET INSTABLE
-DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.83.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.63.2026"><id>NW.AVINAV_TOULON.63.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>63</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-04-30T12:44:14.840991Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ILE DU LEVANT - PORT DE L'AYGUADE</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.63.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.63.2026.1"><id>NW.AVINAV_TOULON.63.2026.1</id><geometry><S100:surfaceProperty><S100:Surface><gml:Polygon srsName='EPSG:3857'>
-  <gml:outerBoundaryIs>
-    <gml:LinearRing>
-      <gml:coordinates>
-        716232.91635383,5314419.90847559 716010.46631501,5314326.3580906 716118.92628762,5314140.54797161 716322.66163703,5314242.35623934 716328.32801935,5314323.71186169 716232.91635383,5314419.90847559 
-      </gml:coordinates>
-    </gml:LinearRing>
-  </gml:outerBoundaryIs>
-</gml:Polygon>
-</S100:Surface></S100:surfaceProperty></geometry><S124:fixedDateRange><timeOfDayEnd>17:00:00</timeOfDayEnd><dateStart/><dateEnd><date>2026-07-03</date></dateEnd></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>WORKS_IN_PROGRESS</warningHazardTypeDetails><warningHazardTypeDetails>WHARF_CONSTRUCTION</warningHazardTypeDetails><information>CONSTRUCTION D'UN APPONTEMENT ET D'UN QUAI RORO 
-DANS LA ZONE DELIMITEE PAR : 
-43-00.96N 006-26.04E
-43-00.93N 006-25.92E
-43-00.85N 006-25.98E
-43-00.89N 006-26.09E
-43-00.93N 006-26.09E
-TRAVAUX DE JOUR
-MOYENS NAUTIQUES ENGAGES :
--NAVIRE DE CHARGE MULTICAT 
--BARGE AVEC GRUE
-VEILLE RADIO PERMANENTE VHF 09 OU 12
-NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR
-REMPLACE AVURNAV LOCAL TOULON 3869/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.63.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.60.2026"><id>NW.AVINAV_TOULON.60.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>60</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-04-20T07:56:25.419517Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS ILES DE LERINS</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.60.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.60.2026.1"><id>NW.AVINAV_TOULON.60.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    784897.03165975,5390003.35239285 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_MISSING</warningHazardTypeDetails><information>BOUEE L PASSIVE DU CHENAL DES ILES A LA POSITION :
-43-30.63N 007-03.05E
-(CARTE FR7205)
-MARQUE : LATERALE TRIBORD
-FONCTION PRINCIPALE : CHENALAGE/ALIGNEMENT
-N  LIVRE DES FEUX : NON RENSEIGNE
-NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL TOULON 2443/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.60.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.59.2026"><id>NW.AVINAV_TOULON.59.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>59</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-04-13T07:39:13.113018Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS BANDOL</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.59.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.59.2026.1"><id>NW.AVINAV_TOULON.59.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.83.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.59.2026"><id>NW.AVINAV_TOULON.59.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>59</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-04-13T07:39:13.113018Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS BANDOL</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.59.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.59.2026.1"><id>NW.AVINAV_TOULON.59.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     641642.01981522,5329385.94052085 
   </gml:coordinates>
@@ -937,34 +998,7 @@ MISE EN PLACE BOUEE DE TRAVAUX EST A LA POSITION :
 FL.Y 2.5S 2M
 LF NON RENSEIGNE
 IL EST DEMANDE AUX NAVIGATEURS D'ADAPTER LEUR VITESSE ET DE PRENDRE UN LARGE TOUR
-REMPLACE AVURNAV LOCAL TOULON 2366/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.59.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.24.2026"><id>NW.AVINAV_TOULON.24.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>24</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-02-13T13:37:03.866819Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS PORT LA NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.24.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.24.2026.1"><id>NW.AVINAV_TOULON.24.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    342717.64651289,5313364.92768559 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_MOVE</warningHazardTypeDetails><information>BOUEE N°4 ANCIENNEMENT A LA POSITION :
-43-00,55N 003-04,80E
-DEPLACEE TEMPORAIREMENT SUITE TRAVAUX A LA POSITION :
-43-00.52N 003-04.72E
-(CARTE FR7434)
-MARQUE LATERALE BABORD
-LF L1 : 49915
-FL(2).R.6S
-NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL TOULON 2060/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.24.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.19.2026"><id>NW.AVINAV_TOULON.19.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>19</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-02-12T08:05:28.879592Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS CAP DE L'AIGLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.19.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.19.2026.1"><id>NW.AVINAV_TOULON.19.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    620519.9223425,5338612.50711911 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_UNLIT</warningHazardTypeDetails><information>COLONNE DES FEUX METEOROLOGIQUES DU SEMAPHORE DU BEC DE L'AIGLE PARTIELLEMENT HORS-SERVICE
-A LA POSITION :
-43-10.49N 005-34.45E
-(CARTE FR6612)
-FEU ROUGE HORS-SERVICE
-IMPOSSIBILITE D'AFFICHER LES SIGNAUX LUMINEUX POUR LES COUPS DE VENT 
-VENANT DU SUD-EST OU DU NORD-OUEST
-NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL 2048/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.19.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.92.2024"><id>NW.AVINAV_TOULON.92.2024</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>92</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2024</year></messageSeriesIdentifier><publicationDate>2024-10-08T11:47:54.759996Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>RADE DE MARSEILLE</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.92.2024.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.92.2024.1"><id>NW.AVINAV_TOULON.92.2024.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 2366/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.59.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.92.2024"><id>NW.AVINAV_TOULON.92.2024</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>92</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2024</year></messageSeriesIdentifier><publicationDate>2024-10-08T11:47:54.759996Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>RADE DE MARSEILLE</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.92.2024.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.92.2024.1"><id>NW.AVINAV_TOULON.92.2024.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     588607.55907646,5366041.29701033 
   </gml:coordinates>
@@ -1015,7 +1049,19 @@ FL(2+1).Y.10S 5M
 FONCTION PRINCIPALE : STRUCTURE ARTIFICIELLE EN MER
 LIVRE DES FEUX : NON RENSEIGNE
 NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAUX 5216/25 ET 5217/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.12.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.57.2025"><id>NW.AVINAV_TOULON.57.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>57</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-04-25T06:41:26.389647Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>PORT D'ANTIBES</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.57.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.57.2025.1"><id>NW.AVINAV_TOULON.57.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAUX 5216/25 ET 5217/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.12.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.92.2026"><id>NW.AVINAV_TOULON.92.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>92</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-24T11:18:47.179108Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS PORT LA NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.92.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.92.2026.1"><id>NW.AVINAV_TOULON.92.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    341938.22454485,5313397.911533 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_ESTABLISHMENT</warningHazardTypeDetails><information>BOUEE N°7 A LA POSITION :
+43-00.56N 003-04.30E
+(CARTE FR7434)
+MARQUE : CHENAL PRÉFÉRÉ TRIBORD
+LIVRE DES FEUX L1 : NON RENSEIGNE
+FL(2+1).R.2M
+NAVIGUER AVEC PRUDENCE
+REMPLACE AVURNAV LOCAL TOULON 2961/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.92.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.57.2025"><id>NW.AVINAV_TOULON.57.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>57</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-04-25T06:41:26.389647Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>PORT D'ANTIBES</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.57.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.57.2025.1"><id>NW.AVINAV_TOULON.57.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     793769.38060846,5402311.58003141 
   </gml:coordinates>
@@ -1036,7 +1082,21 @@ NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href
 LONGUEUR : 7.90 METRES
 COULEUR : BLANCHE
 IL EST RECOMMANDE DE NE PAS PECHER, CHALUTER, DRAGUER, MOUILLER ET PLONGER DANS CETTE ZONE.
-ANNULE ET REMPLACE AVURNAV LOCAL TOULON 3237/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.100.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.12.2024"><id>NW.AVINAV_TOULON.12.2024</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>12</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2024</year></messageSeriesIdentifier><publicationDate>2024-02-12T07:44:52.044126Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>BOUCHES DE BONIFACIO</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.12.2024.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.12.2024.1"><id>NW.AVINAV_TOULON.12.2024.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 3237/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.100.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.105.2026"><id>NW.AVINAV_TOULON.105.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>105</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-17T07:13:59.975345Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>PORT DE SAINT-TROPEZ</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.105.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.105.2026.1"><id>NW.AVINAV_TOULON.105.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    738328.37801123,5353574.65903436 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_TEMPORARY_CHANGE</warningHazardTypeDetails><information>A L'EXTREMITE DU MOLE JEAN REVEILLE
+TOUR DU FEU DE LA JETEE NORD RECOUVERTE D'UN HABILLAGE DE PHOTOS EN NOIR ET BLANC 
+SUR LE THEME DE BRIGITTE BARDOT JUSQU'AU 1ER NOV 2026 A LA POSITION :
+43-16.36N 006-37.95E
+(CARTE FR7267)
+MARQUE LATERALE BABORD
+LIVRE DES FEUX L1 - 60080
+ISO.WR.4S
+NAVIGUER AVEC PRUDENCE
+REMPLACE AVURNAV LOCAL TOULON 3165/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.105.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.12.2024"><id>NW.AVINAV_TOULON.12.2024</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>12</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2024</year></messageSeriesIdentifier><publicationDate>2024-02-12T07:44:52.044126Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>BOUCHES DE BONIFACIO</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.12.2024.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.12.2024.1"><id>NW.AVINAV_TOULON.12.2024.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     1030182.29385583,5059363.47695289 
   </gml:coordinates>
@@ -1066,7 +1126,82 @@ DE LA SNSM A LA POSITION :
 43-04.46N 005-53.68E
 LIVRE DES FEUX L1 NON RENSEIGNE
 NAVIGUER AVEC PRUDENCE
-ANNULE ET REMPLACE AVURNAV LOCAL TOULON 3654/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.125.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.111.2025"><id>NW.AVINAV_TOULON.111.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>111</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-07-17T07:26:43.668306Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>PORT DE PLAISANCE DU CAP D'AGDE  </text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.111.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.111.2025.1"><id>NW.AVINAV_TOULON.111.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 3654/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.125.2024"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.93.2026"><id>NW.AVINAV_TOULON.93.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>93</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-24T11:22:59.263550Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>GOLFE DE SANT'AMANZA</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.93.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.93.2026.1"><id>NW.AVINAV_TOULON.93.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1027929.92949211,5075472.88817468 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_ESTABLISHMENT</warningHazardTypeDetails><information>BOUEE METEO DE LA ZMEL DE SANT'AMANZA A LA POSITION:
+41-25.597N 009-14.043E
+(CARTE FR6929)
+FL.Y 3M
+MARQUE : SPECIALE
+CROIX DE ST-ANDRE - REFLECTEUR RADAR
+COULEUR JAUNE
+AIS
+LIVRE DES FEUX L1 : NON RENSEIGNE
+NAVIGUER AVEC PRUDENCE ET RESPECTER LES TERMES DE L'AP 189/26
+REMPLACE AVURNAV LOCAL TOULON 2981/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.93.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.86.2026"><id>NW.AVINAV_TOULON.86.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>86</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-01T07:26:25.391480Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GOLFE DE FOS SUR MER</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.86.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.86.2026.1"><id>NW.AVINAV_TOULON.86.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    559016.98309876,5366304.11498119 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    558998.42985029,5366339.83838615 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    559042.95764661,5366270.94337101 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SEASONAL_RECOMMISSIONING_COMPLETE</warningHazardTypeDetails><information>ANSE DES LAURONS - ZONE DE LA CENTRALE ELECTRIQUE
+BOUEES PASSIVES DELIMITANT LA ZONE REGLEMENTEE AUX POSITIONS :
+BOUEE SUD
+43-21.34N 005-01.32E
+BOUEE DU MILIEU
+43-21.36N 005-01.30E
+BOUEE NORD
+43-21.37N 005-01.29E
+(CARTE FR6684)
+CARACTERISTIQUES :
+COULEUR JAUNE
+SPHERIQUE
+NON LUMINEUSE
+LF L1 NON REFERENCE 
+NAVIGUER AVEC PRUDENCE
+REMPLACE AVURNAV LOCAL TOULON 2857/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.86.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.94.2026"><id>NW.AVINAV_TOULON.94.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>94</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-24T11:29:02.626281Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS DE PORT-LA-NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.94.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.94.2026.1"><id>NW.AVINAV_TOULON.94.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    343552.14320396,5314487.21080236 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    344025.38384975,5314971.09874117 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    343508.73813757,5314800.25360497 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    343711.95285806,5315017.27908069 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_REMOVAL</warningHazardTypeDetails><information>RETRAIT EFFECTUE DES COFFRES D'AMARRAGE DE LA ZONE DE MANOEUVRE DES PETROLIERS
+DU SEA-LINE AUX POSITIONS :
+A 43-00.99N 003-05.17E
+B 43-01.11N 003-05.15E
+C 43-01.20N 003-05.26E
+D 43-01.18N 003-05.43E
+PRESENCE DES CORPS-MORTS ET DES LIGNES D'ANCRAGES SUR LE FOND. 
+ZONE TOUJOURS INTERDITE AU MOUILLAGE D'UN RAYON DE 0.3 M CENTREE SUR:
+43-01.06N 003-05.35E
+RESPECTER LES TERMES DE L'ARRETE INTERPREFECTORAL 344/21
+REMPLACE AVURNAV LOCAL TOULON 3044/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.94.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.111.2025"><id>NW.AVINAV_TOULON.111.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>111</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-07-17T07:26:43.668306Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>PORT DE PLAISANCE DU CAP D'AGDE  </text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.111.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.111.2025.1"><id>NW.AVINAV_TOULON.111.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     390076.66854604,5354805.7641777 
   </gml:coordinates>
@@ -1077,7 +1212,21 @@ MARQUE : LATERALE TRIBORD
 FL.G
 FONCTION PRINCIPALE : CHENALAGE/ALIGNEMENT
 LIVRE DES FEUX L1 : NON RENSEIGNE
-NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.111.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.10.2025"><id>NW.AVINAV_TOULON.10.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>10</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-01-15T08:16:13.723895Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS PORT LA NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.10.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.10.2025.1"><id>NW.AVINAV_TOULON.10.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.111.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.81.2026"><id>NW.AVINAV_TOULON.81.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>81</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-26T08:42:05.841573Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>GOLFE DE LA NAPOULE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.81.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.81.2026.1"><id>NW.AVINAV_TOULON.81.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    780349.63046085,5394581.0918597 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_ESTABLISHMENT</warningHazardTypeDetails><information>MISE EN PLACE DE BOUEE CACPL A LA POSITION :
+43-32.42N 007-00.60E
+(CARTE FR7205)
+MARQUE : SPÉCIALE
+FONCTION PRINCIPALE : AUTRE
+N° LIVRE DES FEUX L1 : NON RENSEIGNE
+PORTEE : 2MN
+RYTHME : FL(5)
+NAVIGUER AVEC PRUDENCE
+REMPLAVE AVURNAV LOCAL TOULON 2809/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.81.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.10.2025"><id>NW.AVINAV_TOULON.10.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>10</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-01-15T08:16:13.723895Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS PORT LA NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.10.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.10.2025.1"><id>NW.AVINAV_TOULON.10.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     343218.39868897,5312608.61461326 
   </gml:coordinates>
@@ -1088,7 +1237,18 @@ MARQUE : LATERALE BABORD
 FL.R.4S
 LF L1 : 49910
 NAVIGUER AVEC PRUDENCE
-ANNULE ET REMPLACE AVURNAV LOCAL TOULON 3772/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.10.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.64.2026"><id>NW.AVINAV_TOULON.64.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>64</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-06T08:23:29.105886Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>PETITE RADE DU PORT DE TOULON</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.64.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.64.2026.1"><id>NW.AVINAV_TOULON.64.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+ANNULE ET REMPLACE AVURNAV LOCAL TOULON 3772/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.10.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.87.2026"><id>NW.AVINAV_TOULON.87.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>87</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-07-10T08:51:01.099992Z</publicationDate><generalArea><locationName><text>MADDALENA</text></locationName></generalArea><locality><locationName><text>ABORDS SOLENZARA</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.87.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.87.2026.1"><id>NW.AVINAV_TOULON.87.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    1046811.38492301,5139408.38008972 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_ESTABLISHMENT</warningHazardTypeDetails><information>BOUÉE BABORD SOLENZARA A LA POSITION :
+41-51.35N 009-24.22E
+(CARTE FR6855)
+FONCTION PRINCIPALE : CHENALAGE/ALIGNEMENT
+LIVRE DES FEUX L1 : 68320
+ISO.R.4S 3M
+NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.87.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.64.2026"><id>NW.AVINAV_TOULON.64.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>64</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-06T08:23:29.105886Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>PETITE RADE DU PORT DE TOULON</text></locationName></locality><warningHazardTypeGeneral>WORKS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.64.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.64.2026.1"><id>NW.AVINAV_TOULON.64.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     657443.9492415193,5329018.507504543 
   </gml:coordinates>
@@ -1116,18 +1276,42 @@ UN FEU A ECLAT BLANC PORTEE 3 M SUR PIEU BALISE LE
 SUD DE LA ZONE DE TRAVAUX A LA POSITION :
 43-06.71N 005-54.36E
 PRENDRE UN LARGE TOUR ET NAVIGUER AVEC PRUDENCE
-REMPLACE AVINAV TOULON 049/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.64.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.66.2026"><id>NW.AVINAV_TOULON.66.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>66</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-05-11T07:19:04.801850Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>PORT MEDITERRANEE SIX-FOURS LES PLAGES</text></locationName></locality><warningHazardTypeGeneral>ROUTING_INFORMATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.66.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.66.2026.1"><id>NW.AVINAV_TOULON.66.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVINAV TOULON 049/24</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.64.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.85.2026"><id>NW.AVINAV_TOULON.85.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>85</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-06-29T07:46:24.309892Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>GOLFE DE FOS SUR MER</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.85.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.85.2026.1"><id>NW.AVINAV_TOULON.85.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
-    647096.27615157,5328117.5137265 
+    558600.49359279,5366041.12690403 
   </gml:coordinates>
 </gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:fixedDateRange><timeOfDayStart>06:00:00</timeOfDayStart><dateStart><date>2026-04-03</date></dateStart><dateEnd/></S124:fixedDateRange><S124:warningInformation><warningHazardTypeDetails>OPEN_CLOSE_HARBOUR</warningHazardTypeDetails><information>FERMETURE POUR UNE DUREE INDETERMINEE DU PORT EN RAISON DE L'ENSABLEMENT DE L'AVANT-PORT 
-A LA POSITION :
-43-06.36N 005-48.78E 
-FERMETURE RENDUE NECESSAIRE POUR PERMETTRE DES TRAVAUX DE DRAGAGE ET LA REALISATION 
-D'UN SEUIL DE LA PASSE NORD. 
+</S100:Point></S100:pointProperty></geometry><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    557280.35668934,5366969.65303168 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_TEMPORARY_ESTABLISHMENT</warningHazardTypeDetails><information>BOUEES OCEANOGRAPHIQUES AUX ABORDS DE LA CENTRALE ELECTRIQUE EDF DE PONTEAU
+AUX POSITIONS :
+BOUEE 1
+43-21.25N 005-01.08E
+BOUEE 2
+43-21.65N 005-00.37E
+(CARTE FR6684)
+CARACTERISTIQUES :
+COULEUR JAUNE
+FL(5)Y.20S 2M
+MARQUE SPECIALE
+LF L1 NON REFERENCE 
+NAVIGUER AVEC PRUDENCE ET PRENDRE UN LARGE TOUR
+REMPLACE AVURNAV LOCAL TOULON 2853/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.85.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.107.2026"><id>NW.AVINAV_TOULON.107.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>107</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-24T08:59:44.601977Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>ABORDS POINTE DU CAP ROUX</text></locationName></locality><warningHazardTypeGeneral>NEWLY_DISCOVERED_DANGERS</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.107.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.107.2026.1"><id>NW.AVINAV_TOULON.107.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    772612.92585072,5382661.68749661 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>DANGEROUS_WRECK</warningHazardTypeDetails><information>VEDETTE A MOTEUR "CAROLINE OF ST TROPEZ" COULÉE A LA POSITION :
+43-27.76N 006-56.43E
+(CARTE FR7408)
+PAVILLON : GRANDE BRETAGNE
+LONGUEUR : 12 M 
+PROFONDEUR : 140 M
 DANGEREUX POUR LA NAVIGATION
-REMPLACE AVURNAV LOCAL TOULON 2511/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.66.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.27.2026"><id>NW.AVINAV_TOULON.27.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>27</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-02-20T11:28:08.659791Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS PORT LA NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.27.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.27.2026.1"><id>NW.AVINAV_TOULON.27.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 3204/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.107.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.27.2026"><id>NW.AVINAV_TOULON.27.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>27</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-02-20T11:28:08.659791Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS PORT LA NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.27.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.27.2026.1"><id>NW.AVINAV_TOULON.27.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     370486.29349127,5315087.85510396 
   </gml:coordinates>
@@ -1154,12 +1338,7 @@ PRESENCE D'UN OU PLUSIEURS ENROCHEMENTS A FLEUR DE LA SURFACE
 DANS LA ZONE D'UN RAYON DE 30 METRES AUTOUR DE LA POSITION :
 42-45.16N 003-02.37E
 (CARTE FR6844)
-DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.70.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.36.2022"><id>NW.AVINAV_TOULON.36.2022</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>36</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2022</year></messageSeriesIdentifier><publicationDate>2023-05-31T12:16:43.568467Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>SAINT LAURENT DU VAR</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.36.2022.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.36.2022.1"><id>NW.AVINAV_TOULON.36.2022.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    798494.7074601514,5411771.016094103 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_TOPMARK_MISSING</warningHazardTypeDetails><information>LA MARQUE DE JOUR DE LA BOUEE CARDINALE EST LOULOUBAS II DE LA FERME MARINE EST SIGNALEE MANQUANTE (LFL1 62120) LE 191330UTC SEP 22.  43-39,13N 007-10,38E. LES NAVIGATEURS SONT PRIES DE NAVIGUER AVEC PRUDENCE</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.36.2022"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.39.2026"><id>NW.AVINAV_TOULON.39.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>39</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-02T13:13:19.250776Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILES DU FRIOUL</text></locationName></locality><locality><locationName><text>ABORDS DE MARSEILLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.39.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.39.2026.1"><id>NW.AVINAV_TOULON.39.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+DANGEREUX POUR LA NAVIGATION</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.70.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.39.2026"><id>NW.AVINAV_TOULON.39.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>39</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-03-02T13:13:19.250776Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ABORDS ILES DU FRIOUL</text></locationName></locality><locality><locationName><text>ABORDS DE MARSEILLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.39.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.39.2026.1"><id>NW.AVINAV_TOULON.39.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     588499.76470287,5349447.52961656 
   </gml:coordinates>
@@ -1172,7 +1351,23 @@ MARQUE SPECIALE
 Fl(5)Y.20s
 N° LIVRE DES FEUX L1 : 55580
 (CARTE FR7391)
-REMPLACE AVURNAV LOCAL TOULON 2183/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.39.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.123.2025"><id>NW.AVINAV_TOULON.123.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>123</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-08-14T05:58:04.825843Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS PORT LA NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.123.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.123.2025.1"><id>NW.AVINAV_TOULON.123.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLACE AVURNAV LOCAL TOULON 2183/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.39.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.103.2026"><id>NW.AVINAV_TOULON.103.2026</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>103</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2026</year></messageSeriesIdentifier><publicationDate>2026-08-10T07:03:22.965362Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>ETANG DE BERRE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.103.2026.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.103.2026.1"><id>NW.AVINAV_TOULON.103.2026.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+  <gml:coordinates>
+    556638.45664548,5387916.3572827 
+  </gml:coordinates>
+</gml:Point>
+</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>LIGHT_CHANGE</warningHazardTypeDetails><information>PORT D'ISTRES SAINT-MARTIN - LES HEURES CLAIRES
+PROLONGEMENT DE LA DIGUE ACHEVE
+FEU DIGUE EST A LA NOUVELLE POSITION :
+43-29.82N 005-00.02E
+(CARTE FR6907)
+ISO.G.4S 
+NOUVELLE PORTEE : 6 MILLES
+LIVRE DES FEUX L1 : 54600
+MARQUE : LATERALE TRIBORD
+FONCTION PRINCIPALE : CHENALAGE/ALIGNEMENT
+NAVIGUER AVEC PRUDENCE
+REMPLACE AVURNAV LOCAL TOULON 3143/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.103.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.123.2025"><id>NW.AVINAV_TOULON.123.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>123</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-08-14T05:58:04.825843Z</publicationDate><generalArea><locationName><text>LION</text></locationName></generalArea><locality><locationName><text>ABORDS PORT LA NOUVELLE</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.123.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.123.2025.1"><id>NW.AVINAV_TOULON.123.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     343292.61168284,5312456.39529099 
   </gml:coordinates>
@@ -1287,19 +1482,7 @@ ASM3
 RAYON DE SECURITE 200 METRES
 RESTRICTIONS DE PECHE ET DE MOUILLAGE CONFORMEMENT AUX
 TERMES DE L'ARRETE PREFECTORAL 003/26
-REMPLAVE AVURNAV TOULON 095/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.48.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.129.2025"><id>NW.AVINAV_TOULON.129.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>129</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-09-19T13:35:38.434105Z</publicationDate><generalArea><locationName><text>PROVENCE</text></locationName></generalArea><locality><locationName><text>PORT GRIMAUD</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.129.2025.1"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.129.2025.1"><id>NW.AVINAV_TOULON.129.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
-  <gml:coordinates>
-    733420.62220476,5353194.23287298 
-  </gml:coordinates>
-</gml:Point>
-</S100:Point></S100:pointProperty></geometry><S124:warningInformation><warningHazardTypeDetails>BUOY_TOPMARK_MISSING</warningHazardTypeDetails><warningHazardTypeDetails>LIGHT_BUOY_LIGHT_UNLIT</warningHazardTypeDetails><information>BOUEE DE LA GISCLE 
-A LA POSITION:
-43-16.212N 006-35.292E
-MARQUE: LATERALE TRIBORD
-FONCTION PRINCIPALE : CHENALAGE/ALIGNEMENT
-LF L1 : 60260
-NAVIGUER AVEC PRUDENCE
-REMPLACE AVURNAV LOCAL TOULON 3281/25</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.129.2025"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.155.2025"><id>NW.AVINAV_TOULON.155.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>155</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-12-19T09:08:51.491418Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>PORT DE SILVA MARIS</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.155.2025.1"/><theWarningPart xlink:href="#NW.AVINAV_TOULON.155.2025.2"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.155.2025.1"><id>NW.AVINAV_TOULON.155.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
+REMPLAVE AVURNAV TOULON 095/26</information></S124:warningInformation><header xlink:href="#PR.AVINAV_TOULON.48.2026"/></S124:NavigationalWarningFeaturePart></imember></S124:DataSet><S124:DataSet><imember><S124:NWPreamble gml:id="PR.AVINAV_TOULON.155.2025"><id>NW.AVINAV_TOULON.155.2025</id><messageSeriesIdentifier><nameOfSeries>AVINAV TOULON</nameOfSeries><productionAgency>CECMED</productionAgency><warningNumber>155</warningNumber><warningType>LOCAL_NOTICE_TO_MARINER</warningType><year>2025</year></messageSeriesIdentifier><publicationDate>2025-12-19T09:08:51.491418Z</publicationDate><generalArea><locationName><text>LIGURE</text></locationName></generalArea><locality><locationName><text>PORT DE SILVA MARIS</text></locationName></locality><warningHazardTypeGeneral>AIDS_TO_NAVIGATION</warningHazardTypeGeneral><theWarningPart xlink:href="#NW.AVINAV_TOULON.155.2025.1"/><theWarningPart xlink:href="#NW.AVINAV_TOULON.155.2025.2"/></S124:NWPreamble></imember><imember><S124:NavigationalWarningFeaturePart gml:id="NW.AVINAV_TOULON.155.2025.1"><id>NW.AVINAV_TOULON.155.2025.1</id><geometry><S100:pointProperty><S100:Point><gml:Point srsName='EPSG:3857'>
   <gml:coordinates>
     818372.84339862,5421774.57990905 
   </gml:coordinates>
@@ -1376,7 +1559,7 @@ REMPLACE AVURNAV LOCAL TOULON 3605/25</information></S124:warningInformation><he
     </gml:LinearRing>
   </gml:outerBoundaryIs>
 </gml:Polygon>
-</S100:Surface></S100:surfaceProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SANDSPIT</warningHazardTypeDetails><warningHazardTypeDetails>SHALLOW_DEPTH_REPORTED</warningHazardTypeDetails><information>BANC DE SABLE REPORTE LE 201029 UTC MAR 26
+</S100:Surface></S100:surfaceProperty></geometry><S124:warningInformation><warningHazardTypeDetails>SHALLOW_DEPTH_REPORTED</warningHazardTypeDetails><warningHazardTypeDetails>SANDSPIT</warningHazardTypeDetails><information>BANC DE SABLE REPORTE LE 201029 UTC MAR 26
 DANS LA ZONE DELIMITEE PAR : 
 42-37.22N 003-02.49E/42-37.23N 003-02.48E
 42-37.25N 003-02.45E/42-37.27N 003-02.49E

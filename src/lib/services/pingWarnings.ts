@@ -29,29 +29,37 @@ const SERIES: SeriesDef[] = [
   { name: 'AVURNAV Local Brest', id: 'AVURNAV LOCAL BREST', fallbackUrl: '/data/avurnav_local_brest.xml', enabled: true, type: 'avurnav_local' },
   { name: 'AVURNAV Local Cherbourg', id: 'AVURNAV LOCAL CHERBOURG', fallbackUrl: '/data/avurnav_local_cherbourg.xml', enabled: true, type: 'avurnav_local' },
 
-  { name: 'AVURNAV Antilles', id: 'AVURNAV ANTILLES', fallbackUrl: '/data/antilles.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV Guyane', id: 'AVURNAV GUYANE', fallbackUrl: '/data/guyane.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV Réunion', id: 'AVURNAV REUNION', fallbackUrl: '/data/reunion.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV Mayotte', id: 'AVURNAV MAYOTTE', fallbackUrl: '/data/mayotte.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV Nouvelle Calédonie', id: 'AVURNAV NOUVELLE CALEDONIE', fallbackUrl: '/data/nouvelle_caledonie.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV Polynésie', id: 'AVURNAV POLYNESIE', fallbackUrl: '/data/polynesie.xml', enabled: true, type: 'avurnav' },
-  { name: 'AVURNAV St Pierre et Miquelon', id: 'AVURNAV ST PIERRE ET MIQUELON', fallbackUrl: '/data/st_pierre_miquelon.xml', enabled: true, type: 'avurnav' },
+  // The overseas series aren't named after the territory on this API but
+  // after the maritime rescue center (MRCC) that issues them — verified
+  // against the live API (see scripts/refresh-warnings-data.mjs). Mayotte,
+  // Nouvelle Calédonie and St Pierre et Miquelon are left disabled: no
+  // working series name was found for them (their fallback files have
+  // always been empty stubs, never real captured data), so there's nothing
+  // live to fall back from — surfacing them as "always empty" would be
+  // more misleading than just not listing them.
+  { name: 'AVURNAV Antilles', id: 'AVURNAV FORT DE FRANCE', fallbackUrl: '/data/antilles.xml', enabled: true, type: 'avurnav' },
+  { name: 'AVURNAV Guyane', id: 'AVURNAV CAYENNE', fallbackUrl: '/data/guyane.xml', enabled: true, type: 'avurnav' },
+  { name: 'AVURNAV Réunion', id: 'AVURNAV LA REUNION', fallbackUrl: '/data/reunion.xml', enabled: true, type: 'avurnav' },
+  { name: 'AVURNAV Mayotte', id: 'AVURNAV MAYOTTE', fallbackUrl: '/data/mayotte.xml', enabled: false, type: 'avurnav' },
+  { name: 'AVURNAV Nouvelle Calédonie', id: 'AVURNAV NOUVELLE CALEDONIE', fallbackUrl: '/data/nouvelle_caledonie.xml', enabled: false, type: 'avurnav' },
+  { name: 'AVURNAV Polynésie', id: 'AVURNAV PAPEETE', fallbackUrl: '/data/polynesie.xml', enabled: true, type: 'avurnav' },
+  { name: 'AVURNAV St Pierre et Miquelon', id: 'AVURNAV ST PIERRE ET MIQUELON', fallbackUrl: '/data/st_pierre_miquelon.xml', enabled: false, type: 'avurnav' },
 
-  { name: 'AVINAV Antilles', id: 'AVINAV ANTILLES', fallbackUrl: '/data/avinav_antilles.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV Guyane', id: 'AVINAV GUYANE', fallbackUrl: '/data/avinav_guyane.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV Réunion', id: 'AVINAV REUNION', fallbackUrl: '/data/avinav_reunion.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV Mayotte', id: 'AVINAV MAYOTTE', fallbackUrl: '/data/avinav_mayotte.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV Nouvelle Calédonie', id: 'AVINAV NOUVELLE CALEDONIE', fallbackUrl: '/data/avinav_nouvelle_caledonie.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV Polynésie', id: 'AVINAV POLYNESIE', fallbackUrl: '/data/avinav_polynesie.xml', enabled: true, type: 'avinav' },
-  { name: 'AVINAV St Pierre et Miquelon', id: 'AVINAV ST PIERRE ET MIQUELON', fallbackUrl: '/data/avinav_st_pierre_miquelon.xml', enabled: true, type: 'avinav' },
+  { name: 'AVINAV Antilles', id: 'AVINAV FORT DE FRANCE', fallbackUrl: '/data/avinav_antilles.xml', enabled: true, type: 'avinav' },
+  { name: 'AVINAV Guyane', id: 'AVINAV CAYENNE', fallbackUrl: '/data/avinav_guyane.xml', enabled: true, type: 'avinav' },
+  { name: 'AVINAV Réunion', id: 'AVINAV LA REUNION', fallbackUrl: '/data/avinav_reunion.xml', enabled: true, type: 'avinav' },
+  { name: 'AVINAV Mayotte', id: 'AVINAV MAYOTTE', fallbackUrl: '/data/avinav_mayotte.xml', enabled: false, type: 'avinav' },
+  { name: 'AVINAV Nouvelle Calédonie', id: 'AVINAV NOUVELLE CALEDONIE', fallbackUrl: '/data/avinav_nouvelle_caledonie.xml', enabled: false, type: 'avinav' },
+  { name: 'AVINAV Polynésie', id: 'AVINAV PAPEETE', fallbackUrl: '/data/avinav_polynesie.xml', enabled: true, type: 'avinav' },
+  { name: 'AVINAV St Pierre et Miquelon', id: 'AVINAV ST PIERRE ET MIQUELON', fallbackUrl: '/data/avinav_st_pierre_miquelon.xml', enabled: false, type: 'avinav' },
 
-  { name: 'AVURNAV Local Antilles', id: 'AVURNAV LOCAL ANTILLES', fallbackUrl: '/data/avurnav_local_antilles.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local Guyane', id: 'AVURNAV LOCAL GUYANE', fallbackUrl: '/data/avurnav_local_guyane.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local Réunion', id: 'AVURNAV LOCAL REUNION', fallbackUrl: '/data/avurnav_local_reunion.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local Mayotte', id: 'AVURNAV LOCAL MAYOTTE', fallbackUrl: '/data/avurnav_local_mayotte.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local Nouvelle Calédonie', id: 'AVURNAV LOCAL NOUVELLE CALEDONIE', fallbackUrl: '/data/avurnav_local_nouvelle_caledonie.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local Polynésie', id: 'AVURNAV LOCAL POLYNESIE', fallbackUrl: '/data/avurnav_local_polynesie.xml', enabled: true, type: 'avurnav_local' },
-  { name: 'AVURNAV Local St Pierre et Miquelon', id: 'AVURNAV LOCAL ST PIERRE ET MIQUELON', fallbackUrl: '/data/avurnav_local_st_pierre_miquelon.xml', enabled: true, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Antilles', id: 'AVURNAV LOCAL FORT DE FRANCE', fallbackUrl: '/data/avurnav_local_antilles.xml', enabled: true, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Guyane', id: 'AVURNAV LOCAL CAYENNE', fallbackUrl: '/data/avurnav_local_guyane.xml', enabled: true, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Réunion', id: 'AVURNAV LOCAL LA REUNION', fallbackUrl: '/data/avurnav_local_reunion.xml', enabled: true, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Mayotte', id: 'AVURNAV LOCAL MAYOTTE', fallbackUrl: '/data/avurnav_local_mayotte.xml', enabled: false, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Nouvelle Calédonie', id: 'AVURNAV LOCAL NOUVELLE CALEDONIE', fallbackUrl: '/data/avurnav_local_nouvelle_caledonie.xml', enabled: false, type: 'avurnav_local' },
+  { name: 'AVURNAV Local Polynésie', id: 'AVURNAV LOCAL PAPEETE', fallbackUrl: '/data/avurnav_local_polynesie.xml', enabled: true, type: 'avurnav_local' },
+  { name: 'AVURNAV Local St Pierre et Miquelon', id: 'AVURNAV LOCAL ST PIERRE ET MIQUELON', fallbackUrl: '/data/avurnav_local_st_pierre_miquelon.xml', enabled: false, type: 'avurnav_local' },
 ];
 
 for (const s of SERIES) {
@@ -426,12 +434,14 @@ async function loadNgaWarnings(): Promise<{ items: Warning[]; source: 'live' | '
     }
   }
 
-  // NGA's live feed already asks for status=active, but the bundled local
-  // fallback is a frozen dump (seen carrying multi-year-old warnings) with
-  // no server-side filtering at all — apply the same staleness rule here.
-  const items = (raw ?? [])
-    .map(parseNgaWarning)
-    .filter((w) => !isWarningExpired(w.dateEnd, w.preamble?.publicationDate));
+  const parsed = (raw ?? []).map(parseNgaWarning);
+  // NGA's live feed already asks for status=active — that's NGA's own
+  // authoritative call and can include genuinely long-standing NAVAREA
+  // notices, so it's trusted as-is. The bundled local fallback is just a
+  // frozen dump with no such filtering (seen carrying warnings 2+ years
+  // old), so the staleness rule only applies there.
+  const items =
+    source === 'local' ? parsed.filter((w) => !isWarningExpired(w.dateEnd, w.preamble?.publicationDate)) : parsed;
   return { items, source };
 }
 
