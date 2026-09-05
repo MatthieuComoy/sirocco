@@ -126,5 +126,18 @@
   "day_abbr_csv": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
   "active_count_lbl": "active",
   "speed_short": "Speed",
-  "cog_short": "Heading"
+  "cog_short": "Heading",
+  "port_search_title": "Port Search",
+  "port_search_placeholder": "Search a port or city…",
+  "port_search_hint": "Type at least 2 characters to search.",
+  "port_search_no_results": "No matching port found.",
+  "port_search_load_error": "Couldn't load the port directory.",
+  "port_vhf_lbl": "VHF",
+  "port_phone_lbl": "Harbour office",
+  "port_visitor_berths_lbl": "Visitor berths",
+  "port_wiki_link_lbl": "Read more on Wikipedia",
+  "port_search_online_btn": "Search \"{query}\" online",
+  "port_search_online_searching": "Searching online…",
+  "port_search_online_geocode_failed": "Couldn't locate that place online.",
+  "port_search_online_no_port": "No known marina within 10 km of that place."
 }
