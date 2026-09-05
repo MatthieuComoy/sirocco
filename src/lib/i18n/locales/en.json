@@ -139,5 +139,10 @@
   "port_search_online_btn": "Search \"{query}\" online",
   "port_search_online_searching": "Searching online…",
   "port_search_online_geocode_failed": "Couldn't locate that place online.",
-  "port_search_online_no_port": "No known marina within 10 km of that place."
+  "port_search_online_no_port": "No known marina within 10 km of that place.",
+  "port_fuel_dock_lbl": "Fuel dock",
+  "port_lock_gate_lbl": "Lock (tidal access)",
+  "port_haul_out_lbl": "Haul-out yard",
+  "yes_lbl": "Yes",
+  "no_lbl": "No"
 }

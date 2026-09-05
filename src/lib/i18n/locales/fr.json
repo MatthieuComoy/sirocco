@@ -139,5 +139,10 @@
   "port_search_online_btn": "Rechercher « {query} » en ligne",
   "port_search_online_searching": "Recherche en ligne…",
   "port_search_online_geocode_failed": "Impossible de localiser ce lieu en ligne.",
-  "port_search_online_no_port": "Aucun port connu à moins de 10 km de ce lieu."
+  "port_search_online_no_port": "Aucun port connu à moins de 10 km de ce lieu.",
+  "port_fuel_dock_lbl": "Avitaillement carburant",
+  "port_lock_gate_lbl": "Écluse (accès marée)",
+  "port_haul_out_lbl": "Chantier naval (mise à sec)",
+  "yes_lbl": "Oui",
+  "no_lbl": "Non"
 }

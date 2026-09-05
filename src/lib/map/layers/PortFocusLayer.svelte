@@ -57,6 +57,15 @@
     if (port.visitorBerths !== null) {
       rows.push(`<div class="port-popup-row"><span>${$_('port_visitor_berths_lbl')}</span><span>${port.visitorBerths}</span></div>`);
     }
+    if (port.fuelDock !== null) {
+      rows.push(`<div class="port-popup-row"><span>${$_('port_fuel_dock_lbl')}</span><span>${port.fuelDock ? $_('yes_lbl') : $_('no_lbl')}</span></div>`);
+    }
+    if (port.lockGate !== null) {
+      rows.push(`<div class="port-popup-row"><span>${$_('port_lock_gate_lbl')}</span><span>${port.lockGate ? $_('yes_lbl') : $_('no_lbl')}</span></div>`);
+    }
+    if (port.haulOut !== null) {
+      rows.push(`<div class="port-popup-row"><span>${$_('port_haul_out_lbl')}</span><span>${port.haulOut ? $_('yes_lbl') : $_('no_lbl')}</span></div>`);
+    }
 
     const thumbnail = wiki?.thumbnailUrl
       ? `<img class="port-popup-photo" src="${escapeXml(wiki.thumbnailUrl)}" alt="${escapeXml(wiki.title)}" />`

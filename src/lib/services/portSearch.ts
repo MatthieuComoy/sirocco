@@ -13,6 +13,11 @@ export interface Port {
   phone: string | null;
   visitorBerths: number | null;
   description: string;
+  // Cruising-relevant extras, all `null` when not confidently known rather
+  // than guessed.
+  fuelDock: boolean | null;
+  lockGate: boolean | null;
+  haulOut: boolean | null;
 }
 
 export interface PortSearchResult {

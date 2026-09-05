@@ -15,7 +15,7 @@
       <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
       <line x1="12" y1="20" x2="12.01" y2="20" />
     </svg>
-    {#if $density !== 'mobile'}<span>{$_('offline_badge')}</span>{/if}
+    {#if $density !== 'mobile'}<span class="badge-label">{$_('offline_badge')}</span>{/if}
   </div>
 {/if}
 
@@ -36,5 +36,12 @@
 
   .badge svg {
     flex-shrink: 0;
+  }
+
+  /* Header's own width, not the viewport's — see .app-header's `container`. */
+  @container app-header (max-width: 900px) {
+    .badge-label {
+      display: none;
+    }
   }
 </style>
