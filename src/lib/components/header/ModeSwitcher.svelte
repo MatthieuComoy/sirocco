@@ -40,11 +40,11 @@
           <path d={m.icon} fill="currentColor" />
         {/if}
       </svg>
-      {#if $density !== 'mobile'}<span>{$_(m.labelKey)}</span>{/if}
+      {#if $density !== 'mobile'}<span class="mode-label">{$_(m.labelKey)}</span>{/if}
       {#if m.id === 'navigation' && $isTracking}
         <span class="rec-indicator">
           <span class="rec-dot"></span>
-          {#if $density !== 'mobile'}REC{/if}
+          {#if $density !== 'mobile'}<span class="mode-label">REC</span>{/if}
         </span>
       {/if}
     </button>
@@ -107,5 +107,12 @@
   @keyframes pulse-scale {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.35; }
+  }
+
+  /* Header's own width, not the viewport's — see .app-header's `container`. */
+  @container app-header (max-width: 900px) {
+    .mode-label {
+      display: none;
+    }
   }
 </style>

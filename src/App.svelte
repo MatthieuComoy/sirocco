@@ -29,6 +29,8 @@
   import { loadAllWarnings } from './lib/services/pingWarnings';
   import SettingsControl from './lib/components/header/SettingsControl.svelte';
   import ConnectivityBadge from './lib/components/header/ConnectivityBadge.svelte';
+  import PortSearchControl from './lib/components/header/PortSearchControl.svelte';
+  import PortFocusLayer from './lib/map/layers/PortFocusLayer.svelte';
   import { theme } from './lib/stores/theme';
   import { initSimOptionsSync } from './lib/services/gpsSimulator';
   import { initConnectivity } from './lib/services/connectivity';
@@ -92,6 +94,7 @@
     {/snippet}
     {#snippet actions()}
       <ConnectivityBadge />
+      <PortSearchControl />
       <AnchorControl />
       <SettingsControl />
     {/snippet}
@@ -109,6 +112,7 @@
         <BoatMarker />
         <NavigationMapEffects />
         <AnchorLayer />
+        <PortFocusLayer />
         <TrackLine />
         <TrackPreviewLayer />
         <GribOverlay />
