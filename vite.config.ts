@@ -17,7 +17,9 @@ export default defineConfig({
         // Include the SHOM/NGA XML+JSON fallback data alongside the app
         // shell so the warnings service still has a local fallback on a
         // brand-new install that goes offline before its first fetch.
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest,xml,json}'],
+        // geojson is the bundled land-polygon data the route planner needs
+        // to work fully offline (see scripts/generate-land-polygons.mjs).
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest,xml,json,geojson}'],
       },
       devOptions: {
         enabled: false,

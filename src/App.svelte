@@ -33,6 +33,11 @@
   import { initSimOptionsSync } from './lib/services/gpsSimulator';
   import { initConnectivity } from './lib/services/connectivity';
   import { initOfflineMaps } from './lib/services/offlineMaps';
+  import { initRoutePlanningData } from './lib/services/routePlanning';
+  import RouteSearchControl from './lib/components/header/RouteSearchControl.svelte';
+  import RouteLayer from './lib/map/layers/RouteLayer.svelte';
+  import RoutePlanMapEffects from './lib/map/layers/RoutePlanMapEffects.svelte';
+  import RoutePickHintBanner from './lib/components/hud/RoutePickHintBanner.svelte';
 
   let sidebarOpen = $state(true);
   let sheetValue = $state<'closed' | 'half' | 'full'>('closed');
@@ -62,6 +67,10 @@
     setTimeout(() => {
       loadAllWarnings();
     }, 850);
+
+    setTimeout(() => {
+      initRoutePlanningData();
+    }, 1500);
   });
 
   // Mirrors the legacy setAppMode(): auto-collapse on entering navigation,
@@ -93,6 +102,7 @@
     {#snippet actions()}
       <ConnectivityBadge />
       <AnchorControl />
+      <RouteSearchControl />
       <SettingsControl />
     {/snippet}
   </Header>
@@ -116,9 +126,12 @@
         {#if $appMode !== 'weather'}
           <WarningsLayer />
         {/if}
+        <RouteLayer />
+        <RoutePlanMapEffects />
       </MapCanvas>
 
       <MapOverlays />
+      <RoutePickHintBanner />
       <AlarmModal />
 
       {#if $appMode === 'weather'}
